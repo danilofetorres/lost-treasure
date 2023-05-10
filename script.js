@@ -13,16 +13,76 @@ function preload() {
 
     this.load.tilemapTiledJSON('map1', 'assets/tilesets/teste.json')
     this.load.tilemapTiledJSON('map2', 'assets/tilesets/map2.json')
+    // this.load.spritesheet({
+    //     key: 'player',
+    //     url: 'assets/character/knight/idle/player_idle.png',
+    //     frameConfig: {
+    //         frameWidth: 64,
+    //         frameHeight: 64,
+    //         startFrame: 0,
+    //         endFrame: 14
+    //     }
+    // });
     this.load.spritesheet({
-    key: 'player',
-    url: 'assets/character/knight/idle/knight_idle.png',
-    frameConfig: {
-        frameWidth: 64,
-        frameHeight: 64,
-        startFrame: 0,
-        endFrame: 14
-    }
-});
+        key: 'knight',
+        url: 'assets/character/knight/idle/knight_idle.png',
+        frameConfig: {
+            frameWidth: 64,
+            frameHeight: 64,
+            startFrame: 0,
+            endFrame: 14
+        }
+    });
+    this.load.spritesheet({
+        key: 'warrior',
+        url: 'assets/character/warrior/idle/warrior_idle.png',
+        frameConfig: {
+            frameWidth: 96,
+            frameHeight: 96,
+            startFrame: 0,
+            endFrame: 20
+        }
+    });
+    this.load.spritesheet({
+        key: 'archer',
+        url: 'assets/character/archer/idle/archer_idle.png',
+        frameConfig: {
+            frameWidth: 96,
+            frameHeight: 96,
+            startFrame: 0,
+            endFrame: 15
+        }
+    });
+    this.load.spritesheet({
+        key: 'necromancer',
+        url: 'assets/character/necromancer/idle/necromancer_idle.png',
+        frameConfig: {
+            frameWidth: 96,
+            frameHeight: 96,
+            startFrame: 0,
+            endFrame: 50
+        }
+    });
+     this.load.spritesheet({
+        key: 'king',
+        url: 'assets/character/king/idle/king_idle.png',
+        frameConfig: {
+            frameWidth: 128,
+            frameHeight: 128,
+            startFrame: 0,
+            endFrame: 17
+        }
+    });
+    // this.load.spritesheet({
+    //     key: 'archer_2',
+    //     url: 'assets/character/archer_2/idle/archer2_idle.png',
+    //     frameConfig: {
+    //         frameWidth: 128,
+    //         frameHeight: 128,
+    //         startFrame: 0,
+    //         endFrame: 7
+    //     }
+    // });
 }
 
 function create() {
@@ -45,16 +105,72 @@ function create() {
     this.s = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S)
     this.d = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D)
     
-    const anim = {
-            key: 'idle',
-            frames: this.anims.generateFrameNumbers('player', { start: 0, end: 14, first: 14 }),
+    // const animPlayer = {
+    //         key: 'idle',
+    //         frames: this.anims.generateFrameNumbers('player', { start: 0, end: 14, first: 14 }),
+    //         frameRate: 10,
+    //         repeat: -1
+    // };
+    const animKnight = {
+            key: 'idleKnight',
+            frames: this.anims.generateFrameNumbers('knight', { start: 0, end: 14, first: 14 }),
             frameRate: 10,
             repeat: -1
-        };
-    this.anims.create(anim);
+    };
+    const animWarrior = {
+        key: 'idleWarrior',
+            frames: this.anims.generateFrameNumbers('warrior', { start: 0, end: 20, first: 20 }),
+            frameRate: 10,
+            repeat: -1
+    }
+    const animArcher = {
+        key: 'idleArcher',
+            frames: this.anims.generateFrameNumbers('archer', { start: 1, end: 15, first: 15 }),
+            frameRate: 10,
+            repeat: -1
+    }
+    const animNecro = {
+        key: 'idleNecro',
+            frames: this.anims.generateFrameNumbers('necromancer', { start: 0, end: 45, first: 45 }),
+            frameRate: 10,
+            repeat: -1
+    }
+    const animKing = {
+        key: 'idleKing',
+            frames: this.anims.generateFrameNumbers('king', { start: 0, end: 17, first: 17 }),
+            frameRate: 10,
+            repeat: -1
+    }
+    // const animDashArc = {
+    //     key: 'idleDashArc',
+    //         frames: this.anims.generateFrameNumbers('archer_2', { start: 0, end: 7, first: 7 }),
+    //         frameRate: 10,
+    //         repeat: -1
+    // }
+    //this.anims.create(animPlayer);
+    this.anims.create(animWarrior);
+    this.anims.create(animArcher);
+    this.anims.create(animNecro);
+    this.anims.create(animKnight);
+    this.anims.create(animKing);
+    // this.anims.create(animDashArc);
 
-    this.player = this.physics.add.sprite(70, 528/2, 'player');
-    this.player.play('idle');
+    this.player = this.physics.add.sprite(70, 264, 'knight');
+    this.player.play('idleKnight');
+
+    this.warrior = this.physics.add.sprite(700, 264, 'warrior');
+    this.warrior.play('idleWarrior')
+
+    this.warrior = this.physics.add.sprite(750, 264, 'archer');
+    this.warrior.play('idleArcher')
+    this.warrior = this.physics.add.sprite(800, 264, 'necromancer');
+    this.warrior.play('idleNecro')
+  //  this.warrior = this.physics.add.sprite(950, 264, 'knight');
+   // this.warrior.play('idleKnight')
+    this.warrior = this.physics.add.sprite(850, 264, 'king');
+    this.warrior.play('idleKing')
+    // this.warrior = this.physics.add.sprite(950, 264, 'archer_2');
+    // this.warrior.play('idleDashArc')
 
     
     //this.add.image(config.width / 2, config.height / 2, 'player', 0);
@@ -81,8 +197,8 @@ else this.player.setVelocityX(0);
         this.player.y = 528/2;
         loadmap2(this);
 
-        this.player = this.physics.add.sprite(70, 528/2, 'player');
-        this.player.play('idle');
+        this.player = this.physics.add.sprite(70, 528/2, 'knight');
+        this.player.play('idleKnight');
         this.player.setCollideWorldBounds(true);
     }
 }
