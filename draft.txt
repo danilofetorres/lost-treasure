@@ -1,0 +1,13 @@
+let x = Math.round(this.player.x);
+let y = Math.round(this.player.y);
+
+if (x > 65 && x < 75 && y > 1320 && y < 1330) {
+  this.player.x = 70;
+  this.player.y = 528 / 2;
+
+  loadmap2(this);
+
+  this.player = this.physics.add.sprite(70, 528 / 2, "knight");
+  this.player.play("idleKnight");
+  this.player.setCollideWorldBounds(true);
+}
