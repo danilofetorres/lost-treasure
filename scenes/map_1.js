@@ -64,7 +64,7 @@ class Map1 extends Phaser.Scene {
     this.anims.create(cfg.anims(this, "idleKing", "king", 17));
     this.anims.create(cfg.anims(this, "idleArcher2", "archer_2", 7));
 
-    this.player = this.physics.add.sprite(70, 264, "player");
+    this.player = this.physics.add.sprite(160, 200, "player").setSize(35, 35).setOffset(63, 41);
     this.player.play("idle");
 
     this.knight = this.physics.add.sprite(100, 264, "knight");
@@ -86,6 +86,12 @@ class Map1 extends Phaser.Scene {
     this.archer2.play("idleArcher2");
 
     this.player.setCollideWorldBounds(true);
+
+    this.physics.world.setBounds(0, 0, 2100, 400);
+
+    const camera = this.cameras.main;
+    camera.setBounds(0, 0, 2100, 400);
+    camera.startFollow(this.player, true, 0.08, 0.08);
   }
 
   update(time, delta) {

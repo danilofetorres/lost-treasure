@@ -3,8 +3,8 @@ import Map2 from "./scenes/map_2.js";
 
 const config = {
   type: Phaser.AUTO,
-  width: 2160,
-  height: 1440,
+  width: 800,
+  height: 400,
   backgroundColor: "#f9f9f9",
   physics: {
     default: "arcade",
