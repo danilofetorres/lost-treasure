@@ -3,7 +3,7 @@ import * as cfg from "../utils/config.js";
 class Map1 extends Phaser.Scene {
   
   cursors;
-  necromancer;
+  knight;
 
   constructor() {
     super("Map1");
@@ -28,8 +28,8 @@ class Map1 extends Phaser.Scene {
     this.load.image('ladder_middle(0px)', 'assets/tilesets/ladder_middle(0px).png');
 
     // Load characters
-    this.load.atlas("necromancer", "../assets/character/necromancer/atlas/necromancer.png", "../assets/character/necromancer/atlas/necromancer.json");
-    this.load.json("necromancer_physics", "../assets/character/necromancer/physics/necromancer.json");
+    this.load.atlas("knight", "../assets/character/knight/atlas/knight.png", "../assets/character/knight/atlas/knight.json");
+    this.load.json("knight_physics", "../assets/character/knight/physics/knight.json");
   }
 
   create(data) {
@@ -67,42 +67,42 @@ class Map1 extends Phaser.Scene {
     this.matter.world.convertTilemapLayer(blockLayer);
     
     // Create characters
-    const necromancerPhysics = this.cache.json.get("necromancer_physics");
-    this.necromancer = this.matter.add.sprite(200, 200, "necromancer", "necromancer_idle-0.png", { shape: necromancerPhysics.necromancer });
-    this.necromancer.setScale(1.5);
-    this.necromancer.setFixedRotation();
-    this.necromancer.depth = 1
+    const knightPhysics = this.cache.json.get("knight_physics");
+    this.knight = this.matter.add.sprite(200, 200, "knight", "knight_idle-0.png", { shape: knightPhysics.knight });
+    this.knight.setScale(1.5);
+    this.knight.setFixedRotation();
+    this.knight.depth = 1
 
-    camera.startFollow(this.necromancer, true, 0.08, 0.08);
+    camera.startFollow(this.knight, true, 0.08, 0.08);
     
     // Create animations
-    this.anims.create(cfg.anims(this, "idle", "necromancer", 49));
-    this.anims.create(cfg.anims(this, "walk", "necromancer", 9));
-    this.anims.create(cfg.anims(this, "jump", "necromancer", 11));   
+    this.anims.create(cfg.anims(this, "idle", "knight", 14));
+    this.anims.create(cfg.anims(this, "walk", "knight", 7));
+    this.anims.create(cfg.anims(this, "jump", "knight", 13));   
   }
   
   update(time, delta) {
     const speed = 2;
 
     if(this.cursors.left.isDown) {
-      this.necromancer.flipX = true;
-      this.necromancer.setVelocityX(-speed);
-      this.necromancer.play("walk", true);
+      this.knight.flipX = true;
+      this.knight.setVelocityX(-speed);
+      this.knight.play("walk", true);
 
     } else if(this.cursors.right.isDown) {
-      this.necromancer.flipX = false;
-      this.necromancer.setVelocityX(speed);
-      this.necromancer.play("walk", true);
+      this.knight.flipX = false;
+      this.knight.setVelocityX(speed);
+      this.knight.play("walk", true);
 
     } else {
-      this.necromancer.setVelocityX(0);
-      this.necromancer.play("idle", true);
+      this.knight.setVelocityX(0);
+      this.knight.play("idle", true);
     }
 
     const upJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.up);
 
     if(upJustPressed) {
-      this.necromancer.setVelocityY(-7);
+      this.knight.setVelocityY(-7);
     } 
   }
 }
