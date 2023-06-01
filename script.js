@@ -3,16 +3,12 @@ import Map2 from "./scenes/map_2.js";
 
 const config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 400,
-  backgroundColor: "#f9f9f9",
+  width: 1280,
+  height: 720,
   physics: {
-    default: "arcade",
-    arcade: {
-      gravity: {
-        y: 0,
-      },
-      debug: true,
+    default: "matter",
+    matter: {
+      debug: false,
     },
   },
   scene: [Map1, Map2],

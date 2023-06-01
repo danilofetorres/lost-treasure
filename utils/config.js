@@ -1,25 +1,14 @@
-export function sheet(key, url, width, height, endFrame) {
-  return {
-    key: key,
-    url: url,
-    frameConfig: {
-      frameWidth: width,
-      frameHeight: height,
-      startFrame: 0,
-      endFrame: endFrame,
-    },
-  };
-}
-
 export function anims(obj, key, character, endFrame) {
   return {
     key: key,
-    frames: obj.anims.generateFrameNumbers(character, {
+    frameRate: 10,
+    frames: obj.anims.generateFrameNames(character, {
+      prefix: `${character}_${key}-`,
+      suffix: ".png",
       start: 0,
       end: endFrame,
-      first: endFrame,
+      zeroPad: 1,
     }),
-    frameRate: 10,
     repeat: -1,
   };
 }
