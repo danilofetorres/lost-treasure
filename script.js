@@ -8,10 +8,10 @@ const config = {
   physics: {
     default: "matter",
     matter: {
-      debug: true,
+      debug: false,
     },
   },
-  scene: [Map1],
+  scene: [Map1, Map2],
 };
 
 const game = new Phaser.Game(config);
