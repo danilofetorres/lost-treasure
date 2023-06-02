@@ -18,14 +18,8 @@ class Map1 extends Phaser.Scene {
     this.load.tilemapTiledJSON("map1", "assets/tilesets/map1.json");
 
     // Load images
-    this.load.image("tiles", "assets/tilesets/tiles.png");
-    this.load.image('door_1(7px)', 'assets/tilesets/door_1(7px).png');
-    this.load.image('barril', 'assets/tilesets/barrel_1(0px).png');
-    this.load.image('escada', 'assets/tilesets/ladder(7px).png');
-    this.load.image('door_2(14px)', 'assets/tilesets/door_2(14px).png');
-    this.load.image('torch(7px)', 'assets/tilesets/torch(7px).png');
-    this.load.image('window(19px)', 'assets/tilesets/window(19px).png');
-    this.load.image('ladder_middle(0px)', 'assets/tilesets/ladder_middle(0px).png');
+    this.load.image("tileset", "assets/tilesets/tileset.png");
+
 
     // Load characters
     this.load.atlas("knight", "../assets/character/knight/atlas/knight.png", "../assets/character/knight/atlas/knight.json");
@@ -37,25 +31,20 @@ class Map1 extends Phaser.Scene {
     this.map = this.make.tilemap({ key: "map1" });
 
     // Create tiles
-    const blocks = this.map.addTilesetImage("ts1", "tiles");
-    const closed_door_tile = this.map.addTilesetImage("door_1(7px)", "door_1(7px)");
-    const stairs_tiles = this.map.addTilesetImage("ladder(7px)", "escada");
-    const barrel_tile = this.map.addTilesetImage("barrel(1px)", "barril");
-    const opened_door_tile = this.map.addTilesetImage("door_2(14px)", "door_2(14px)");
-    const torch_tile = this.map.addTilesetImage("torch(7px)", "torch(7px)");
-    const ladder_middle_tile = this.map.addTilesetImage("ladder_middle(0px)", "ladder_middle(0px)");
-    const window_tile = this.map.addTilesetImage("window(19px)", "window(19px)");
+    const blocks = this.map.addTilesetImage("tileset", "tileset");
+
     
     // Create layers
     const inner_background = this.map.createLayer("fundo_interno", blocks, 0, 0);
     const outside_background = this.map.createLayer("fundo", blocks, 0, 0);
-    const closed_door = this.map.createLayer("porta_fechada", closed_door_tile, 0, 0);
-    const opened_door = this.map.createLayer("porta_aberta", opened_door_tile, 0, 0);
-    const stairs = this.map.createLayer("escadas", stairs_tiles, 0, 0);
-    const barrels = this.map.createLayer("barris", barrel_tile, 0, 0);
-    const torchs = this.map.createLayer("tochas", torch_tile, 0, 0);
-    const middle_ladder = this.map.createLayer("escada_meio", ladder_middle_tile, 0, 0);
-    const windows = this.map.createLayer("janelas", window_tile, 0, 0);
+    const closed_door = this.map.createLayer("porta_fechada", blocks, 0, 0);
+    const opened_door = this.map.createLayer("porta_aberta", blocks, 0, 0);
+    const stairs = this.map.createLayer("escadas", blocks, 0, 0);
+    const barrels = this.map.createLayer("barris", blocks, 0, 0);
+    const torchs = this.map.createLayer("tochas", blocks, 0, 0);
+    const middle_ladder = this.map.createLayer("escada_meio", blocks, 0, 0);
+    const windows = this.map.createLayer("janelas", blocks, 0, 0);
+    const traps = this.map.createLayer("armadilhas", blocks, 0, 0);
     const blockLayer = this.map.createLayer("blocklayer", blocks, 0, 0);
 
     // Create camera
