@@ -19,6 +19,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
 
     createAnim(scene, "idle", "knight", 14);
     createAnim(scene, "walk", "knight", 7);
+    createAnim(scene, "attack", "knight", 21);
   }
 
   idle() {

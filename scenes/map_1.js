@@ -19,6 +19,7 @@ class Map1 extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
     this.camera = this.cameras.main;
     this.floor = 0;
+    this.pointer = this.input.activePointer;
   }
 
   preload() {
@@ -69,13 +70,24 @@ class Map1 extends Phaser.Scene {
   
   update() {
     // knight movimentation
-    if(this.cursors.left.isDown) {
+    if(this.pointer.isDown){
+      this.knight.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + 'attack', () => {
+       // this.knight.play('idle')
+  
+        // TODO: hide and remove the sword swing hitbox
+        // this.swordHitbox.body.enable = false
+        // this.physics.world.remove(this.swordHitbox.body)
+      });
+  
+    }
+    
+   if(this.cursors.left.isDown) {
       this.knight.walk("left");
 
     } else if(this.cursors.right.isDown) {
       this.knight.walk("right");
-
-    } else {
+    } 
+    else {
       this.knight.idle();
     }
 
