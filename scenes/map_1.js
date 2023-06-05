@@ -54,6 +54,12 @@ class Map1 extends Phaser.Scene {
     // Set collision
     blockLayer.setCollisionByProperty({ collides: true });
     this.matter.world.convertTilemapLayer(blockLayer);
+
+    traps.setCollisionByProperty({ collides: true });
+    this.matter.world.convertTilemapLayer(traps);
+
+    barrels.setCollisionByProperty({ collides: true });
+    this.matter.world.convertTilemapLayer(barrels);
     
     // Create characters
     const knightPhysics = this.cache.json.get("knight_physics");
