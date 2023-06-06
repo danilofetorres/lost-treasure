@@ -4,7 +4,7 @@ import Map2 from "./scenes/map_2.js";
 const config = {
   type: Phaser.AUTO,
   width: 1280,
-  height: 720,
+  height: 480,
   physics: {
     default: "matter",
     matter: {
