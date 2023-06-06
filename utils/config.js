@@ -4,7 +4,7 @@ export function createLayer(scene, key) {
 
 export function createAnim(scene, key, character, endFrame) {
   scene.anims.create({
-    key: key,
+    key: `${character}_${key}`,
     frameRate: 10,
     frames: scene.anims.generateFrameNames(character, {
       prefix: `${character}_${key}-`,
@@ -13,7 +13,7 @@ export function createAnim(scene, key, character, endFrame) {
       end: endFrame,
       zeroPad: 1,
     }),
-    repeat: -1,
+    repeat: 0,
   });
 }
 

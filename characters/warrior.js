@@ -1,13 +1,13 @@
 import { createAnim } from "../utils/config.js";
 
-class Knight extends Phaser.Physics.Matter.Sprite {
+class Warrior extends Phaser.Physics.Matter.Sprite {
   speed;
 
   constructor(scene, x, y, texture, frame, physics) {
-    const knightPhysics = scene.cache.json.get(physics);
+    const warriorPhysics = scene.cache.json.get(physics);
 
     super(scene.matter.world, x, y, texture, frame, {
-      shape: knightPhysics.knight,
+      shape: warriorPhysics.warrior,
     });
 
     scene.add.existing(this);
@@ -17,14 +17,14 @@ class Knight extends Phaser.Physics.Matter.Sprite {
     this.setFixedRotation();
     this.depth = 1;
 
-    createAnim(scene, "idle", "knight", 14);
-    createAnim(scene, "walk", "knight", 7);
-    createAnim(scene, "attack", "knight", 13);
+    createAnim(scene, "idle", "warrior", 14);
+    createAnim(scene, "walk", "warrior", 7);
+    createAnim(scene, "attack", "warrior", 21);
   }
 
   idle() {
     this.setVelocityX(0);
-    this.play("knight_idle", true);
+    this.play("warrior_idle", true);
   }
 
   walk(direction) {
@@ -38,16 +38,8 @@ class Knight extends Phaser.Physics.Matter.Sprite {
       this.setVelocityX(this.speed);
     }
 
-    this.play("knight_walk", true);
-  }
-
-  attack() {
-    this.play("knight_attack", true);
-  }
-
-  jump() {
-    this.setVelocityY(-7);
+    this.play("warrior_walk", true);
   }
 }
 
-export default Knight;
+export default Warrior;
