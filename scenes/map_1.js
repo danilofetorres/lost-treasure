@@ -1,9 +1,12 @@
-import * as cfg from "../utils/config.js";
+import { setCollision } from "../utils/config.js";
+import { createLayer } from "../utils/config.js";
+
 import Knight from "../characters/knight.js";
 
 class Map1 extends Phaser.Scene {
-  
+  blocks;
   cursors;
+  map;
   knight;
   camera;
   floor;
@@ -30,75 +33,60 @@ class Map1 extends Phaser.Scene {
     this.load.json("knight_physics", "../assets/character/knight/physics/knight.json");
   }
 
-  create(data) {
+  create() {
     // Create map
     this.map = this.make.tilemap({ key: "map1" });
 
     // Create tiles
-    const blocks = this.map.addTilesetImage("tileset", "tileset");
+    this.blocks = this.map.addTilesetImage("tileset", "tileset");
 
     // Create layers
-    const inner_background = this.map.createLayer("fundo_interno", blocks, 0, 0);
-    const outside_background = this.map.createLayer("fundo", blocks, 0, 0);
-    const closed_door = this.map.createLayer("porta_fechada", blocks, 0, 0);
-    const opened_door = this.map.createLayer("porta_aberta", blocks, 0, 0);
-    const stairs = this.map.createLayer("escadas", blocks, 0, 0);
-    const barrels = this.map.createLayer("barris", blocks, 0, 0);
-    const torchs = this.map.createLayer("tochas", blocks, 0, 0);
-    const middle_ladder = this.map.createLayer("escada_meio", blocks, 0, 0);
-    const windows = this.map.createLayer("janelas", blocks, 0, 0);
-    const traps = this.map.createLayer("armadilhas", blocks, 0, 0);
-    const blockLayer = this.map.createLayer("blocklayer", blocks, 0, 0);   
+    createLayer(this, "fundo_interno");
+    createLayer(this, "fundo");
+    createLayer(this, "porta_fechada");
+    createLayer(this, "porta_aberta");
+    createLayer(this, "escadas");
+    createLayer(this, "tochas");
+    createLayer(this, "escada_meio");
+    createLayer(this, "janelas");
+
+    const blockLayer = createLayer(this, "blocklayer");
+    const traps = createLayer(this, "armadilhas");
+    const barrels = createLayer(this, "barris");
     
-    // Set collision
-    blockLayer.setCollisionByProperty({ collides: true });
-    this.matter.world.convertTilemapLayer(blockLayer);
-    
-    traps.setCollisionByProperty({ collides: true });
-    this.matter.world.convertTilemapLayer(traps);
-    
-    barrels.setCollisionByProperty({ collides: true });
-    this.matter.world.convertTilemapLayer(barrels);
+    // Set collisions
+    setCollision(this, blockLayer);
+    setCollision(this, traps);
+    setCollision(this, barrels);
     
     // Create characters
     this.knight = new Knight(this, 200, 200, "knight", "knight_idle-0.png", "knight_physics");
 
     // Set camera
     this.camera.setBounds(0, 48, 2112, 480);
-    this.camera.startFollow(this.knight, true, 0.08, 0.08, 80);   
-    
-    // Create animations
-    this.anims.create(cfg.anims(this, "idle", "knight", 14));
-    this.anims.create(cfg.anims(this, "walk", "knight", 7));
-    this.anims.create(cfg.anims(this, "jump", "knight", 13));   
+    this.camera.startFollow(this.knight, true, 0.08, 0.08, 80);        
   }
   
-  update(time, delta) {
-    const speed = 2;
-
+  update() {
+    // knight movimentation
     if(this.cursors.left.isDown) {
-      this.knight.flipX = true;
-      this.knight.setVelocityX(-speed);
-      this.knight.play("walk", true);
+      this.knight.walk("left");
 
     } else if(this.cursors.right.isDown) {
-      this.knight.flipX = false;
-      this.knight.setVelocityX(speed);
-      this.knight.play("walk", true);
+      this.knight.walk("right");
 
     } else {
-      this.knight.setVelocityX(0);
-      this.knight.play("idle", true);
+      this.knight.idle();
     }
 
     const upJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.up);
 
     if(upJustPressed) {
-      this.knight.setVelocityY(-7);
+      this.knight.jump();
     }
 
     // Camera transitions
-    if(this.knight.y > 0 && this.knight.y < 528 && this.floor != 0) {
+    if(this.knight.y > 0 && this.knight.y < 528 && this.floor !== 0) {
       this.camera.setBounds(0, 48, 2112, 480);
       this.floor = 0;
 

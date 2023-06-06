@@ -1,8 +1,12 @@
-export function anims(obj, key, character, endFrame) {
-  return {
+export function createLayer(scene, key) {
+  return scene.map.createLayer(key, scene.blocks, 0, 0);
+}
+
+export function createAnim(scene, key, character, endFrame) {
+  scene.anims.create({
     key: key,
     frameRate: 10,
-    frames: obj.anims.generateFrameNames(character, {
+    frames: scene.anims.generateFrameNames(character, {
       prefix: `${character}_${key}-`,
       suffix: ".png",
       start: 0,
@@ -10,5 +14,10 @@ export function anims(obj, key, character, endFrame) {
       zeroPad: 1,
     }),
     repeat: -1,
-  };
+  });
+}
+
+export function setCollision(scene, layer) {
+  layer.setCollisionByProperty({ collides: true });
+  scene.matter.world.convertTilemapLayer(layer);
 }
