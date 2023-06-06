@@ -1,4 +1,5 @@
 import * as cfg from "../utils/config.js";
+import Knight from "../characters/knight.js";
 
 class Map1 extends Phaser.Scene {
   
@@ -27,7 +28,7 @@ class Map1 extends Phaser.Scene {
     this.load.image('window(19px)', 'assets/tilesets/window(19px).png');
     this.load.image('ladder_middle(0px)', 'assets/tilesets/ladder_middle(0px).png');
 
-    // Load characters
+    // Load character assets
     this.load.atlas("knight", "../assets/character/knight/atlas/knight.png", "../assets/character/knight/atlas/knight.json");
     this.load.json("knight_physics", "../assets/character/knight/physics/knight.json");
   }
@@ -67,11 +68,7 @@ class Map1 extends Phaser.Scene {
     this.matter.world.convertTilemapLayer(blockLayer);
     
     // Create characters
-    const knightPhysics = this.cache.json.get("knight_physics");
-    this.knight = this.matter.add.sprite(200, 200, "knight", "knight_idle-0.png", { shape: knightPhysics.knight });
-    this.knight.setScale(1.5);
-    this.knight.setFixedRotation();
-    this.knight.depth = 1
+    this.knight = new Knight(this, 200, 200, "knight", "knight_idle-0.png", "knight_physics");
 
     camera.startFollow(this.knight, true, 0.08, 0.08);
     
