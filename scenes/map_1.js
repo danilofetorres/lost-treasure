@@ -16,11 +16,9 @@ class Map1 extends Phaser.Scene {
   constructor() {
     super({
       key: "Map1", physics: {
-        matter: {
-          debug: true
-        },
+        matter: {},
         arcade: {
-          debug: true,
+          debug: false,
           gravity: { y: 0 }
         }
       }
@@ -91,16 +89,18 @@ class Map1 extends Phaser.Scene {
 
     //hit
     this.canHit = true;
+    this.canHit2 = true;
 
     // Set camera
     this.camera.setBounds(0, 48, 2112, 480);
-    this.camera.startFollow(this.knight, true, 0.08, 0.08, 80);        
-    this.canHit2 = true;
+    this.camera.startFollow(this.knight, true, 0.08, 0.08, 80);
   }
 
   update() {
 
     if (this.cursors.space.isDown) {
+
+      this.warrior.get_hit();
 
       this.knight.attack();
       // TODO: move sword swing hitbox into place
@@ -115,6 +115,7 @@ class Map1 extends Phaser.Scene {
 
           this.swordHitbox1.y = this.knight.y - 5;
           this.swordHitbox1.body.enable = true;
+
           this.physics.world.add(this.swordHitbox1.body);
 
           let hit = false;
@@ -123,6 +124,7 @@ class Map1 extends Phaser.Scene {
 
             if(this.canHit) {
               console.log('hit'); 
+              this.warrior.play("warrior_get_hit",true)
             }
 
             this.canHit = false;
@@ -140,11 +142,12 @@ class Map1 extends Phaser.Scene {
 
           if(this.collide(this.warrior, this.swordHitbox1)) {
 
-           if(this.canHit2) {
-             console.log('hit'); 
-           }
+            if(this.canHit2) {
+              console.log('hit'); 
+              this.warrior.get_hit();
+            }
 
-           this.canHit2 = false;
+            this.canHit2 = false;
           }
         }
 
@@ -153,9 +156,9 @@ class Map1 extends Phaser.Scene {
 
       this.knight.on(Phaser.Animations.Events.ANIMATION_UPDATE, startHit);
 
-      this.knight.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + 'attack', () => {
+      this.knight.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + 'knight_attack', () => {
         this.swordHitbox1.body.enable = false;
-        this.physics.world.remove(this.swordHitbox1.body);
+        this.physics.world.remove(this.swordHitbox1.body)
         this.swordHitbox2.body.enable = false;
         this.physics.world.remove(this.swordHitbox2.body);
         this.canHit = true;
@@ -177,6 +180,7 @@ class Map1 extends Phaser.Scene {
 
     } else if(this.cursors.right.isDown) {
       this.knight.walk("right");
+      
     } else {
       this.knight.idle();
     }

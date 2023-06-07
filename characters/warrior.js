@@ -20,6 +20,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
     createAnim(scene, "idle", "warrior", 14);
     createAnim(scene, "walk", "warrior", 7);
     createAnim(scene, "attack", "warrior", 21);
+    createAnim(scene, "get_hit", "warrior", 8);
   }
 
   idle() {
@@ -39,6 +40,10 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
     }
 
     this.play("warrior_walk", true);
+  }
+
+  get_hit() {
+    this.play("warrior_get_hit", true);
   }
 }
 
