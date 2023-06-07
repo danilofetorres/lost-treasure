@@ -95,6 +95,7 @@ class Map1 extends Phaser.Scene {
     // Set camera
     this.camera.setBounds(0, 48, 2112, 480);
     this.camera.startFollow(this.knight, true, 0.08, 0.08, 80);        
+    this.canHit2 = true;
   }
 
   update() {
@@ -114,17 +115,11 @@ class Map1 extends Phaser.Scene {
 
           this.swordHitbox1.y = this.knight.y - 5;
           this.swordHitbox1.body.enable = true;
-
           this.physics.world.add(this.swordHitbox1.body);
 
           let hit = false;
          
-          if(
-            this.warrior.x < this.swordHitbox1.x + this.swordHitbox1.width &&
-            this.warrior.x + this.warrior.width > this.swordHitbox1.x &&
-            this.warrior.y < this.swordHitbox1.y + this.swordHitbox1.height &&
-            this.warrior.y + this.warrior.height > this.swordHitbox1.y
-          ) {
+          if(this.collide(this.warrior, this.swordHitbox1)) {
 
             if(this.canHit) {
               console.log('hit'); 
@@ -142,6 +137,15 @@ class Map1 extends Phaser.Scene {
           this.swordHitbox2.body.enable = true;
 
           this.physics.world.add(this.swordHitbox2.body);
+
+          if(this.collide(this.warrior, this.swordHitbox1)) {
+
+           if(this.canHit2) {
+             console.log('hit'); 
+           }
+
+           this.canHit2 = false;
+          }
         }
 
         this.knight.off(Phaser.Animations.Events.ANIMATION_UPDATE, startHit);
@@ -155,6 +159,7 @@ class Map1 extends Phaser.Scene {
         this.swordHitbox2.body.enable = false;
         this.physics.world.remove(this.swordHitbox2.body);
         this.canHit = true;
+        this.canHit2 = true;
       });
 
       this.knight.once(Phaser.Animations.Events.ANIMATION_STOP, () => {
@@ -163,6 +168,7 @@ class Map1 extends Phaser.Scene {
         this.swordHitbox2.body.enable = false;
         this.physics.world.remove(this.swordHitbox2.body);
         this.canHit = true;
+        this.canHit2 = true;
       });
     }
     
@@ -171,8 +177,7 @@ class Map1 extends Phaser.Scene {
 
     } else if(this.cursors.right.isDown) {
       this.knight.walk("right");
-    } 
-    else {
+    } else {
       this.knight.idle();
     }
 
@@ -199,6 +204,15 @@ class Map1 extends Phaser.Scene {
       this.camera.setBounds(0, 1350, 2112, 570);
       this.floor = 3;
     }
+  }
+
+  collide(object1, object2) {
+    return (
+      object1.x < object2.x + object2.width &&
+      object1.x + object1.width/4 > object2.x &&
+      object1.y/1.05 < object2.y + object2.height &&
+      object1.y + object1.height/2 > object2.y
+    );
   }
 }
 
