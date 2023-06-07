@@ -188,27 +188,6 @@
             <key type="filename">../action/knight_jump-8.png</key>
             <key type="filename">../action/knight_jump-9.png</key>
             <key type="filename">../attack/knight_attack-0.png</key>
-            <key type="filename">../attack/knight_attack-1.png</key>
-            <key type="filename">../attack/knight_attack-10.png</key>
-            <key type="filename">../attack/knight_attack-11.png</key>
-            <key type="filename">../attack/knight_attack-12.png</key>
-            <key type="filename">../attack/knight_attack-13.png</key>
-            <key type="filename">../attack/knight_attack-14.png</key>
-            <key type="filename">../attack/knight_attack-15.png</key>
-            <key type="filename">../attack/knight_attack-16.png</key>
-            <key type="filename">../attack/knight_attack-17.png</key>
-            <key type="filename">../attack/knight_attack-18.png</key>
-            <key type="filename">../attack/knight_attack-19.png</key>
-            <key type="filename">../attack/knight_attack-2.png</key>
-            <key type="filename">../attack/knight_attack-20.png</key>
-            <key type="filename">../attack/knight_attack-21.png</key>
-            <key type="filename">../attack/knight_attack-3.png</key>
-            <key type="filename">../attack/knight_attack-4.png</key>
-            <key type="filename">../attack/knight_attack-5.png</key>
-            <key type="filename">../attack/knight_attack-6.png</key>
-            <key type="filename">../attack/knight_attack-7.png</key>
-            <key type="filename">../attack/knight_attack-8.png</key>
-            <key type="filename">../attack/knight_attack-9.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -294,6 +273,18 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../attack/knight_attack-1.png</key>
+            <key type="filename">../attack/knight_attack-10.png</key>
+            <key type="filename">../attack/knight_attack-11.png</key>
+            <key type="filename">../attack/knight_attack-12.png</key>
+            <key type="filename">../attack/knight_attack-2.png</key>
+            <key type="filename">../attack/knight_attack-3.png</key>
+            <key type="filename">../attack/knight_attack-4.png</key>
+            <key type="filename">../attack/knight_attack-5.png</key>
+            <key type="filename">../attack/knight_attack-6.png</key>
+            <key type="filename">../attack/knight_attack-7.png</key>
+            <key type="filename">../attack/knight_attack-8.png</key>
+            <key type="filename">../attack/knight_attack-9.png</key>
             <key type="filename">../idle/knight_idle-0.png</key>
             <key type="filename">../idle/knight_idle-1.png</key>
             <key type="filename">../idle/knight_idle-10.png</key>
@@ -365,27 +356,6 @@
                     <filename>../action/knight_shield-5.png</filename>
                     <filename>../action/knight_shield-6.png</filename>
                     <filename>../attack/knight_attack-0.png</filename>
-                    <filename>../attack/knight_attack-1.png</filename>
-                    <filename>../attack/knight_attack-10.png</filename>
-                    <filename>../attack/knight_attack-11.png</filename>
-                    <filename>../attack/knight_attack-12.png</filename>
-                    <filename>../attack/knight_attack-13.png</filename>
-                    <filename>../attack/knight_attack-14.png</filename>
-                    <filename>../attack/knight_attack-15.png</filename>
-                    <filename>../attack/knight_attack-16.png</filename>
-                    <filename>../attack/knight_attack-17.png</filename>
-                    <filename>../attack/knight_attack-18.png</filename>
-                    <filename>../attack/knight_attack-19.png</filename>
-                    <filename>../attack/knight_attack-2.png</filename>
-                    <filename>../attack/knight_attack-20.png</filename>
-                    <filename>../attack/knight_attack-21.png</filename>
-                    <filename>../attack/knight_attack-3.png</filename>
-                    <filename>../attack/knight_attack-4.png</filename>
-                    <filename>../attack/knight_attack-5.png</filename>
-                    <filename>../attack/knight_attack-6.png</filename>
-                    <filename>../attack/knight_attack-7.png</filename>
-                    <filename>../attack/knight_attack-8.png</filename>
-                    <filename>../attack/knight_attack-9.png</filename>
                     <filename>../death/knight_death-0.png</filename>
                     <filename>../death/knight_death-1.png</filename>
                     <filename>../death/knight_death-10.png</filename>
@@ -424,6 +394,18 @@
                     <filename>../walk/knight_walk-5.png</filename>
                     <filename>../walk/knight_walk-6.png</filename>
                     <filename>../walk/knight_walk-7.png</filename>
+                    <filename>../attack/knight_attack-1.png</filename>
+                    <filename>../attack/knight_attack-10.png</filename>
+                    <filename>../attack/knight_attack-11.png</filename>
+                    <filename>../attack/knight_attack-12.png</filename>
+                    <filename>../attack/knight_attack-2.png</filename>
+                    <filename>../attack/knight_attack-3.png</filename>
+                    <filename>../attack/knight_attack-4.png</filename>
+                    <filename>../attack/knight_attack-5.png</filename>
+                    <filename>../attack/knight_attack-6.png</filename>
+                    <filename>../attack/knight_attack-7.png</filename>
+                    <filename>../attack/knight_attack-8.png</filename>
+                    <filename>../attack/knight_attack-9.png</filename>
                 </array>
             </struct>
         </map>

@@ -4,8 +4,8 @@
 			"image": "knight.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 1980,
-				"h": 384
+				"w": 1836,
+				"h": 320
 			},
 			"scale": 1,
 			"frames": [
@@ -14,19 +14,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -35,19 +35,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 144,
+						"x": 64,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -56,19 +56,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 288,
+						"x": 128,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -77,19 +77,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 432,
+						"x": 192,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -98,19 +98,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 576,
+						"x": 256,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -119,19 +119,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 720,
+						"x": 320,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -140,19 +140,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 864,
+						"x": 384,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -161,19 +161,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 1008,
+						"x": 448,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -182,19 +182,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 1152,
+						"x": 512,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -203,19 +203,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 1296,
+						"x": 576,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -224,19 +224,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 1440,
+						"x": 640,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -245,19 +245,19 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
-						"x": 1584,
+						"x": 704,
 						"y": 0,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -266,208 +266,334 @@
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 144,
+						"w": 64,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 144,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 768,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 832,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 896,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 960,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1024,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1088,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-5.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1152,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-6.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1216,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-7.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1280,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1344,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-9.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1408,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-10.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1472,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-11.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1536,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-12.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1600,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-13.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 1664,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_idle-14.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
 						"h": 64
 					},
 					"frame": {
 						"x": 1728,
 						"y": 0,
-						"w": 144,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_attack-13.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 144,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 144,
-						"h": 64
-					},
-					"frame": {
-						"x": 0,
-						"y": 64,
-						"w": 144,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_attack-14.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 144,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 144,
-						"h": 64
-					},
-					"frame": {
-						"x": 144,
-						"y": 64,
-						"w": 144,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_attack-15.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 144,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 144,
-						"h": 64
-					},
-					"frame": {
-						"x": 288,
-						"y": 64,
-						"w": 144,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_attack-16.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 144,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 144,
-						"h": 64
-					},
-					"frame": {
-						"x": 432,
-						"y": 64,
-						"w": 144,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_attack-17.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 144,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 144,
-						"h": 64
-					},
-					"frame": {
-						"x": 576,
-						"y": 64,
-						"w": 144,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_attack-18.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 144,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 144,
-						"h": 64
-					},
-					"frame": {
-						"x": 720,
-						"y": 64,
-						"w": 144,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_attack-19.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 144,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 144,
-						"h": 64
-					},
-					"frame": {
-						"x": 864,
-						"y": 64,
-						"w": 144,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_attack-20.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 144,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 144,
-						"h": 64
-					},
-					"frame": {
-						"x": 1008,
-						"y": 64,
-						"w": 144,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_attack-21.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 144,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 144,
-						"h": 64
-					},
-					"frame": {
-						"x": 1152,
-						"y": 64,
-						"w": 144,
+						"w": 64,
 						"h": 64
 					}
 				},
@@ -486,7 +612,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1296,
+						"x": 0,
 						"y": 64,
 						"w": 96,
 						"h": 64
@@ -507,7 +633,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1392,
+						"x": 96,
 						"y": 64,
 						"w": 96,
 						"h": 64
@@ -528,7 +654,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1488,
+						"x": 192,
 						"y": 64,
 						"w": 96,
 						"h": 64
@@ -549,7 +675,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1584,
+						"x": 288,
 						"y": 64,
 						"w": 96,
 						"h": 64
@@ -570,7 +696,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1680,
+						"x": 384,
 						"y": 64,
 						"w": 96,
 						"h": 64
@@ -591,7 +717,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1776,
+						"x": 480,
 						"y": 64,
 						"w": 96,
 						"h": 64
@@ -612,7 +738,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1872,
+						"x": 576,
 						"y": 64,
 						"w": 96,
 						"h": 64
@@ -633,6 +759,258 @@
 						"h": 64
 					},
 					"frame": {
+						"x": 672,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_death-8.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 768,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_death-9.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 864,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_death-10.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 960,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_death-11.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 1056,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_death-12.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 1152,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_death-13.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 1248,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_death-14.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 1344,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_shield-0.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 1440,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_shield-1.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 1536,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_shield-2.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 1632,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_shield-3.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
+						"x": 1728,
+						"y": 64,
+						"w": 96,
+						"h": 64
+					}
+				},
+				{
+					"filename": "knight_shield-4.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 96,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 96,
+						"h": 64
+					},
+					"frame": {
 						"x": 0,
 						"y": 128,
 						"w": 96,
@@ -640,7 +1018,7 @@
 					}
 				},
 				{
-					"filename": "knight_death-8.png",
+					"filename": "knight_shield-5.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -661,7 +1039,7 @@
 					}
 				},
 				{
-					"filename": "knight_death-9.png",
+					"filename": "knight_shield-6.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -682,7 +1060,7 @@
 					}
 				},
 				{
-					"filename": "knight_death-10.png",
+					"filename": "knight_walk-0.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -703,7 +1081,7 @@
 					}
 				},
 				{
-					"filename": "knight_death-11.png",
+					"filename": "knight_walk-1.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -724,7 +1102,7 @@
 					}
 				},
 				{
-					"filename": "knight_death-12.png",
+					"filename": "knight_walk-2.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -745,7 +1123,7 @@
 					}
 				},
 				{
-					"filename": "knight_death-13.png",
+					"filename": "knight_walk-3.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -766,7 +1144,7 @@
 					}
 				},
 				{
-					"filename": "knight_death-14.png",
+					"filename": "knight_walk-4.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
@@ -787,317 +1165,65 @@
 					}
 				},
 				{
-					"filename": "knight_idle-0.png",
+					"filename": "knight_walk-5.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 64,
+						"w": 96,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 64,
+						"w": 96,
 						"h": 64
 					},
 					"frame": {
 						"x": 768,
 						"y": 128,
-						"w": 64,
+						"w": 96,
 						"h": 64
 					}
 				},
 				{
-					"filename": "knight_idle-1.png",
+					"filename": "knight_walk-6.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 64,
+						"w": 96,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 64,
+						"w": 96,
 						"h": 64
 					},
 					"frame": {
-						"x": 832,
+						"x": 864,
 						"y": 128,
-						"w": 64,
+						"w": 96,
 						"h": 64
 					}
 				},
 				{
-					"filename": "knight_idle-2.png",
+					"filename": "knight_walk-7.png",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 64,
+						"w": 96,
 						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 896,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-3.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
+						"w": 96,
 						"h": 64
 					},
 					"frame": {
 						"x": 960,
 						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-4.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1024,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-5.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1088,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-6.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1152,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-7.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1216,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-8.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1280,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-9.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1344,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-10.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1408,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-11.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1472,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-12.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1536,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-13.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1600,
-						"y": 128,
-						"w": 64,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_idle-14.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 64,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 64,
-						"h": 64
-					},
-					"frame": {
-						"x": 1664,
-						"y": 128,
-						"w": 64,
+						"w": 96,
 						"h": 64
 					}
 				},
@@ -1116,7 +1242,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1728,
+						"x": 1056,
 						"y": 128,
 						"w": 144,
 						"h": 64
@@ -1137,8 +1263,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 0,
-						"y": 192,
+						"x": 1200,
+						"y": 128,
 						"w": 144,
 						"h": 64
 					}
@@ -1158,8 +1284,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 144,
-						"y": 192,
+						"x": 1344,
+						"y": 128,
 						"w": 144,
 						"h": 64
 					}
@@ -1179,8 +1305,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 288,
-						"y": 192,
+						"x": 1488,
+						"y": 128,
 						"w": 144,
 						"h": 64
 					}
@@ -1200,8 +1326,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 432,
-						"y": 192,
+						"x": 1632,
+						"y": 128,
 						"w": 144,
 						"h": 64
 					}
@@ -1221,7 +1347,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 576,
+						"x": 0,
 						"y": 192,
 						"w": 144,
 						"h": 64
@@ -1242,7 +1368,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 720,
+						"x": 144,
 						"y": 192,
 						"w": 144,
 						"h": 64
@@ -1263,7 +1389,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 864,
+						"x": 288,
 						"y": 192,
 						"w": 144,
 						"h": 64
@@ -1284,7 +1410,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1008,
+						"x": 432,
 						"y": 192,
 						"w": 144,
 						"h": 64
@@ -1305,7 +1431,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1152,
+						"x": 576,
 						"y": 192,
 						"w": 144,
 						"h": 64
@@ -1326,7 +1452,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1296,
+						"x": 720,
 						"y": 192,
 						"w": 144,
 						"h": 64
@@ -1347,7 +1473,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1440,
+						"x": 864,
 						"y": 192,
 						"w": 144,
 						"h": 64
@@ -1368,7 +1494,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1584,
+						"x": 1008,
 						"y": 192,
 						"w": 144,
 						"h": 64
@@ -1389,7 +1515,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1728,
+						"x": 1152,
 						"y": 192,
 						"w": 144,
 						"h": 64
@@ -1410,8 +1536,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 0,
-						"y": 256,
+						"x": 1296,
+						"y": 192,
 						"w": 180,
 						"h": 64
 					}
@@ -1431,8 +1557,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 180,
-						"y": 256,
+						"x": 1476,
+						"y": 192,
 						"w": 180,
 						"h": 64
 					}
@@ -1452,8 +1578,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 360,
-						"y": 256,
+						"x": 1656,
+						"y": 192,
 						"w": 180,
 						"h": 64
 					}
@@ -1473,7 +1599,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 540,
+						"x": 0,
 						"y": 256,
 						"w": 180,
 						"h": 64
@@ -1494,7 +1620,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 720,
+						"x": 180,
 						"y": 256,
 						"w": 180,
 						"h": 64
@@ -1515,7 +1641,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 900,
+						"x": 360,
 						"y": 256,
 						"w": 180,
 						"h": 64
@@ -1536,7 +1662,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1080,
+						"x": 540,
 						"y": 256,
 						"w": 180,
 						"h": 64
@@ -1557,7 +1683,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1260,
+						"x": 720,
 						"y": 256,
 						"w": 180,
 						"h": 64
@@ -1578,7 +1704,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1440,
+						"x": 900,
 						"y": 256,
 						"w": 180,
 						"h": 64
@@ -1599,7 +1725,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1620,
+						"x": 1080,
 						"y": 256,
 						"w": 180,
 						"h": 64
@@ -1620,7 +1746,7 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 1800,
+						"x": 1260,
 						"y": 256,
 						"w": 180,
 						"h": 64
@@ -1641,8 +1767,8 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 0,
-						"y": 320,
+						"x": 1440,
+						"y": 256,
 						"w": 180,
 						"h": 64
 					}
@@ -1662,324 +1788,9 @@
 						"h": 64
 					},
 					"frame": {
-						"x": 180,
-						"y": 320,
+						"x": 1620,
+						"y": 256,
 						"w": 180,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_shield-0.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 360,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_shield-1.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 456,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_shield-2.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 552,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_shield-3.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 648,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_shield-4.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 744,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_shield-5.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 840,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_shield-6.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 936,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_walk-0.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 1032,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_walk-1.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 1128,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_walk-2.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 1224,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_walk-3.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 1320,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_walk-4.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 1416,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_walk-5.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 1512,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_walk-6.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 1608,
-						"y": 320,
-						"w": 96,
-						"h": 64
-					}
-				},
-				{
-					"filename": "knight_walk-7.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 96,
-						"h": 64
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 96,
-						"h": 64
-					},
-					"frame": {
-						"x": 1704,
-						"y": 320,
-						"w": 96,
 						"h": 64
 					}
 				}
@@ -1989,6 +1800,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:b8a8ba02a6fadf32050a19f63f2dd3a3:53dadd4294f2ade8f1a6288a3ecc3744:775abec68cea152a8c833d779d2191cb$"
+		"smartupdate": "$TexturePacker:SmartUpdate:dbaaeacebdfe16d7e5e870cc2e6adb34:a737311b698ea3dd8c5a66c44161ac35:775abec68cea152a8c833d779d2191cb$"
 	}
 }
