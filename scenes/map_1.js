@@ -9,6 +9,9 @@ class Map1 extends Phaser.Scene {
   cursors;
   pointer;
   map;
+  blockLayer;
+  traps;
+  barrels;
   knight;
   camera;
   floor;
@@ -59,27 +62,52 @@ class Map1 extends Phaser.Scene {
     createLayer(this, "porta_fechada");
     createLayer(this, "porta_aberta");
     createLayer(this, "escadas");
-    createLayer(this, "tochas");
     createLayer(this, "escada_meio");
+    createLayer(this, "tochas");
     createLayer(this, "janelas");
+    
+    this.blockLayer = createLayer(this, "blocklayer");
+    this.traps = createLayer(this, "armadilhas");
+    this.barrels = createLayer(this, "barris");
 
-    const blockLayer = createLayer(this, "blocklayer");
-    const traps = createLayer(this, "armadilhas");
-    const barrels = createLayer(this, "barris");
-    
     // Set collisions
-    setCollision(this, blockLayer);
-    setCollision(this, traps);
-    setCollision(this, barrels);
-    
+    setCollision(this, this.blockLayer);
+    setCollision(this, this.traps);
+    setCollision(this, this.barrels);
+
+    const layer = this.map.getLayer("escada_meio");
+
+    // Get the tiles within the layer
+    const tiles = layer.tilemapLayer.getTilesWithin();
+
+    this.coords = []
+    // Iterate over the tiles and log their positions
+    tiles.forEach(tile => {
+
+      if(tile.index === 9) {
+        this.coords.push({x: tile.pixelX, y: tile.pixelY, height: 48, width: 48});
+      }
+    });
+
     // Create characters
     this.knight = new Knight(this, 200, 200, "knight", "knight_idle-0.png", "knight_physics");
     this.warrior = new Warrior(this, 250, 200, "warrior", "warrior_idle-0.png", "warrior_physics");
 
     //hitbox
-    this.swordHitbox1 = this.add.rectangle(this.knight.x + 15, this.knight.y - 10, 30, 6);
+    this.swordHitbox1 = this.add.rectangle(
+      this.knight.x + 15,
+      this.knight.y - 10,
+      30,
+      6
+    );
+
     this.physics.add.existing(this.swordHitbox1);
-    this.swordHitbox2 = this.add.circle(this.knight.x + 15, this.knight.y - 10, 15);
+    this.swordHitbox2 = this.add.circle(
+      this.knight.x + 15,
+      this.knight.y - 10,
+      15
+    );
+
     this.physics.add.existing(this.swordHitbox2);
     this.swordHitbox2.body.setCircle(15);
     this.swordHitbox1.body.enable = false;
@@ -94,18 +122,37 @@ class Map1 extends Phaser.Scene {
     // Set camera
     this.camera.setBounds(0, 48, 2112, 480);
     this.camera.startFollow(this.knight, true, 0.08, 0.08, 80);
+
+    this.matter.world.on('beforeupdate', () => {
+      this.coords.forEach((position) => {
+        if (this.collide(this.knight, position, 10, 1.05)) {
+         
+          
+          if(this.cursors.up.isDown){
+            this.knight.setVelocityY(0);
+            this.matter.world.setGravity(0, -1);
+            this.knight.y -= 1;
+
+          } else if(this.cursors.down.isDown){
+            this.knight.setVelocityY(0);
+            this.matter.world.setGravity(0, -1);
+            this.knight.y += 2;
+          }
+        }
+        this.matter.world.setGravity(0, 1);
+
+      });
+    });
   }
 
   update() {
+    const speed = 2.5;
 
-    if (this.cursors.space.isDown) {
-
-      this.warrior.get_hit();
-
+    if (this.pointer.isDown) {
       this.knight.attack();
       // TODO: move sword swing hitbox into place
       // does it need to start part way into the animation?
-     
+
       const startHit = (anim, frame) => {
 
         if(frame.index >= 5 && frame.index <= 10) {
@@ -115,16 +162,13 @@ class Map1 extends Phaser.Scene {
 
           this.swordHitbox1.y = this.knight.y - 5;
           this.swordHitbox1.body.enable = true;
-
           this.physics.world.add(this.swordHitbox1.body);
 
-          let hit = false;
-         
-          if(this.collide(this.warrior, this.swordHitbox1)) {
+          if(this.collide(this.warrior, this.swordHitbox1, 2, 1.05)) {
 
-            if(this.canHit) {
-              console.log('hit'); 
-              this.warrior.play("warrior_get_hit",true)
+            if (this.canHit) {
+              console.log("hit");
+              this.warrior.get_hit();
             }
 
             this.canHit = false;
@@ -137,34 +181,33 @@ class Map1 extends Phaser.Scene {
 
           this.swordHitbox2.y = this.knight.y - 5;
           this.swordHitbox2.body.enable = true;
-
           this.physics.world.add(this.swordHitbox2.body);
 
-          if(this.collide(this.warrior, this.swordHitbox1)) {
+          if(this.collide(this.warrior, this.swordHitbox1, 2, 1.05)) {
 
-            if(this.canHit2) {
-              console.log('hit'); 
+            if (this.canHit2) {
               this.warrior.get_hit();
             }
-
             this.canHit2 = false;
           }
         }
 
         this.knight.off(Phaser.Animations.Events.ANIMATION_UPDATE, startHit);
-      }
+      };
 
       this.knight.on(Phaser.Animations.Events.ANIMATION_UPDATE, startHit);
 
-      this.knight.once(Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + 'knight_attack', () => {
-        this.swordHitbox1.body.enable = false;
-        this.physics.world.remove(this.swordHitbox1.body)
-        this.swordHitbox2.body.enable = false;
-        this.physics.world.remove(this.swordHitbox2.body);
-        this.canHit = true;
-        this.canHit2 = true;
-      });
-
+      this.knight.once(
+        Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + "knight_attack",
+        () => {
+          this.swordHitbox1.body.enable = false;
+          this.physics.world.remove(this.swordHitbox1.body);
+          this.swordHitbox2.body.enable = false;
+          this.physics.world.remove(this.swordHitbox2.body);
+          this.canHit = true;
+          this.canHit2 = true;
+        }
+      );
       this.knight.once(Phaser.Animations.Events.ANIMATION_STOP, () => {
         this.swordHitbox1.body.enable = false;
         this.physics.world.remove(this.swordHitbox1.body);
@@ -173,22 +216,37 @@ class Map1 extends Phaser.Scene {
         this.canHit = true;
         this.canHit2 = true;
       });
-    }
-    
-   if(this.cursors.left.isDown) {
+
+    } else if (this.cursors.left.isDown) {
       this.knight.walk("left");
 
-    } else if(this.cursors.right.isDown) {
+    } else if (this.cursors.right.isDown) {
       this.knight.walk("right");
-      
+
     } else {
       this.knight.idle();
     }
 
     const upJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.up);
 
-    if(upJustPressed) {
-      this.knight.jump();
+    if (this.cursors.space.isDown) {
+      this.matter.world.once("collisionactive", (event) => {
+        event.pairs.forEach((pair) => {
+          const { bodyA, bodyB } = pair;
+          if (
+            (bodyA.label === "knight" || bodyB.label === "knight") &&
+            (bodyA.gameObject.tile?.layer.name === this.blockLayer.layer.name ||
+              bodyB.gameObject.tile?.layer.name ===
+                this.blockLayer.layer.name ||
+              bodyA.gameObject.tile?.layer.name === this.barrels.layer.name ||
+              bodyB.gameObject.tile?.layer.name === this.barrels.layer.name ||
+              bodyA.gameObject.tile?.layer.name === this.traps.layer.name ||
+              bodyB.gameObject.tile?.layer.name === this.traps.layer.name)
+          ) {
+            this.knight.jump();
+          }
+        });
+      });
     }
 
     // Camera transitions
@@ -210,12 +268,12 @@ class Map1 extends Phaser.Scene {
     }
   }
 
-  collide(object1, object2) {
+  collide(object1, object2, multiplicador1, multiplicador2) {
     return (
       object1.x < object2.x + object2.width &&
-      object1.x + object1.width/4 > object2.x &&
-      object1.y/1.05 < object2.y + object2.height &&
-      object1.y + object1.height/2 > object2.y
+      object1.x + object1.width / (multiplicador1 * 2) > object2.x &&
+      object1.y / multiplicador2 < object2.y + object2.height &&
+      object1.y + object1.height / multiplicador1 > object2.y
     );
   }
 }

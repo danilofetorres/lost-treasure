@@ -1,0 +1,2603 @@
+{
+	"textures": [
+		{
+			"image": "player.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1598,
+				"h": 249
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "player_leap-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 106,
+						"y": 0,
+						"w": 182,
+						"h": 97
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 182,
+						"h": 97
+					}
+				},
+				{
+					"filename": "player_leap-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 0,
+						"w": 181,
+						"h": 97
+					},
+					"frame": {
+						"x": 1,
+						"y": 100,
+						"w": 181,
+						"h": 97
+					}
+				},
+				{
+					"filename": "player_leap-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 131,
+						"y": 8,
+						"w": 22,
+						"h": 49
+					},
+					"frame": {
+						"x": 1,
+						"y": 199,
+						"w": 22,
+						"h": 49
+					}
+				},
+				{
+					"filename": "player_leap-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 131,
+						"y": 10,
+						"w": 22,
+						"h": 49
+					},
+					"frame": {
+						"x": 25,
+						"y": 199,
+						"w": 22,
+						"h": 49
+					}
+				},
+				{
+					"filename": "player_attack-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 56,
+						"y": 25,
+						"w": 56,
+						"h": 48
+					},
+					"frame": {
+						"x": 49,
+						"y": 199,
+						"w": 56,
+						"h": 48
+					}
+				},
+				{
+					"filename": "player_leap-36.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 240,
+						"y": 51,
+						"w": 35,
+						"h": 46
+					},
+					"frame": {
+						"x": 107,
+						"y": 199,
+						"w": 35,
+						"h": 46
+					}
+				},
+				{
+					"filename": "player_spinAttack-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 28,
+						"w": 57,
+						"h": 44
+					},
+					"frame": {
+						"x": 144,
+						"y": 199,
+						"w": 57,
+						"h": 44
+					}
+				},
+				{
+					"filename": "player_leap-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 0,
+						"w": 180,
+						"h": 97
+					},
+					"frame": {
+						"x": 184,
+						"y": 100,
+						"w": 180,
+						"h": 97
+					}
+				},
+				{
+					"filename": "player_leap-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 0,
+						"w": 176,
+						"h": 97
+					},
+					"frame": {
+						"x": 185,
+						"y": 1,
+						"w": 176,
+						"h": 97
+					}
+				},
+				{
+					"filename": "player_leap-29.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 103,
+						"y": 0,
+						"w": 176,
+						"h": 97
+					},
+					"frame": {
+						"x": 363,
+						"y": 1,
+						"w": 176,
+						"h": 97
+					}
+				},
+				{
+					"filename": "player_spinAttack-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 81,
+						"y": 29,
+						"w": 57,
+						"h": 44
+					},
+					"frame": {
+						"x": 203,
+						"y": 199,
+						"w": 57,
+						"h": 44
+					}
+				},
+				{
+					"filename": "player_attack-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 53,
+						"y": 29,
+						"w": 52,
+						"h": 44
+					},
+					"frame": {
+						"x": 262,
+						"y": 199,
+						"w": 52,
+						"h": 44
+					}
+				},
+				{
+					"filename": "player_leap-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 122,
+						"y": 3,
+						"w": 44,
+						"h": 44
+					},
+					"frame": {
+						"x": 316,
+						"y": 199,
+						"w": 44,
+						"h": 44
+					}
+				},
+				{
+					"filename": "player_attack-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 53,
+						"y": 29,
+						"w": 35,
+						"h": 44
+					},
+					"frame": {
+						"x": 362,
+						"y": 199,
+						"w": 35,
+						"h": 44
+					}
+				},
+				{
+					"filename": "player_leap-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 0,
+						"w": 171,
+						"h": 97
+					},
+					"frame": {
+						"x": 366,
+						"y": 100,
+						"w": 171,
+						"h": 97
+					}
+				},
+				{
+					"filename": "player_attack-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 53,
+						"y": 29,
+						"w": 35,
+						"h": 44
+					},
+					"frame": {
+						"x": 399,
+						"y": 199,
+						"w": 35,
+						"h": 44
+					}
+				},
+				{
+					"filename": "player_attack-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 53,
+						"y": 29,
+						"w": 35,
+						"h": 44
+					},
+					"frame": {
+						"x": 436,
+						"y": 199,
+						"w": 35,
+						"h": 44
+					}
+				},
+				{
+					"filename": "player_attack-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 30,
+						"w": 63,
+						"h": 43
+					},
+					"frame": {
+						"x": 473,
+						"y": 199,
+						"w": 63,
+						"h": 43
+					}
+				},
+				{
+					"filename": "player_attack-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 30,
+						"w": 60,
+						"h": 43
+					},
+					"frame": {
+						"x": 538,
+						"y": 199,
+						"w": 60,
+						"h": 43
+					}
+				},
+				{
+					"filename": "player_leap-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 113,
+						"y": 0,
+						"w": 167,
+						"h": 97
+					},
+					"frame": {
+						"x": 539,
+						"y": 100,
+						"w": 167,
+						"h": 97
+					}
+				},
+				{
+					"filename": "player_leap-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 0,
+						"w": 156,
+						"h": 97
+					},
+					"frame": {
+						"x": 541,
+						"y": 1,
+						"w": 156,
+						"h": 97
+					}
+				},
+				{
+					"filename": "player_leap-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 114,
+						"y": 2,
+						"w": 174,
+						"h": 95
+					},
+					"frame": {
+						"x": 699,
+						"y": 1,
+						"w": 174,
+						"h": 95
+					}
+				},
+				{
+					"filename": "player_attack-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 65,
+						"y": 30,
+						"w": 56,
+						"h": 43
+					},
+					"frame": {
+						"x": 600,
+						"y": 199,
+						"w": 56,
+						"h": 43
+					}
+				},
+				{
+					"filename": "player_spinAttack-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 30,
+						"w": 50,
+						"h": 43
+					},
+					"frame": {
+						"x": 658,
+						"y": 199,
+						"w": 50,
+						"h": 43
+					}
+				},
+				{
+					"filename": "player_leap-26.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 120,
+						"y": 5,
+						"w": 168,
+						"h": 92
+					},
+					"frame": {
+						"x": 708,
+						"y": 98,
+						"w": 168,
+						"h": 92
+					}
+				},
+				{
+					"filename": "player_leap-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 122,
+						"y": 0,
+						"w": 92,
+						"h": 52
+					},
+					"frame": {
+						"x": 710,
+						"y": 192,
+						"w": 92,
+						"h": 52
+					}
+				},
+				{
+					"filename": "player_attack-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 22,
+						"w": 61,
+						"h": 51
+					},
+					"frame": {
+						"x": 804,
+						"y": 192,
+						"w": 61,
+						"h": 51
+					}
+				},
+				{
+					"filename": "player_leap-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 128,
+						"y": 9,
+						"w": 33,
+						"h": 82
+					},
+					"frame": {
+						"x": 875,
+						"y": 1,
+						"w": 33,
+						"h": 82
+					}
+				},
+				{
+					"filename": "player_spinAttack-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 75,
+						"y": 30,
+						"w": 50,
+						"h": 43
+					},
+					"frame": {
+						"x": 867,
+						"y": 192,
+						"w": 50,
+						"h": 43
+					}
+				},
+				{
+					"filename": "player_leap-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 128,
+						"y": 11,
+						"w": 32,
+						"h": 82
+					},
+					"frame": {
+						"x": 878,
+						"y": 85,
+						"w": 32,
+						"h": 82
+					}
+				},
+				{
+					"filename": "player_leap-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 129,
+						"y": 15,
+						"w": 30,
+						"h": 82
+					},
+					"frame": {
+						"x": 910,
+						"y": 1,
+						"w": 30,
+						"h": 82
+					}
+				},
+				{
+					"filename": "player_leap-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 131,
+						"y": 19,
+						"w": 26,
+						"h": 77
+					},
+					"frame": {
+						"x": 912,
+						"y": 85,
+						"w": 26,
+						"h": 77
+					}
+				},
+				{
+					"filename": "player_leap-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 118,
+						"y": 0,
+						"w": 129,
+						"h": 74
+					},
+					"frame": {
+						"x": 919,
+						"y": 164,
+						"w": 129,
+						"h": 74
+					}
+				},
+				{
+					"filename": "player_spinAttack-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 79,
+						"y": 30,
+						"w": 39,
+						"h": 43
+					},
+					"frame": {
+						"x": 940,
+						"y": 85,
+						"w": 39,
+						"h": 43
+					}
+				},
+				{
+					"filename": "player_attack-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 63,
+						"y": 41,
+						"w": 62,
+						"h": 32
+					},
+					"frame": {
+						"x": 940,
+						"y": 130,
+						"w": 62,
+						"h": 32
+					}
+				},
+				{
+					"filename": "player_spinAttack-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 59,
+						"y": 30,
+						"w": 37,
+						"h": 43
+					},
+					"frame": {
+						"x": 942,
+						"y": 1,
+						"w": 37,
+						"h": 43
+					}
+				},
+				{
+					"filename": "player_spinAttack-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 87,
+						"y": 36,
+						"w": 53,
+						"h": 37
+					},
+					"frame": {
+						"x": 942,
+						"y": 46,
+						"w": 53,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 76,
+						"y": 30,
+						"w": 37,
+						"h": 43
+					},
+					"frame": {
+						"x": 981,
+						"y": 1,
+						"w": 37,
+						"h": 43
+					}
+				},
+				{
+					"filename": "player_spinAttack-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 65,
+						"y": 30,
+						"w": 35,
+						"h": 43
+					},
+					"frame": {
+						"x": 981,
+						"y": 85,
+						"w": 35,
+						"h": 43
+					}
+				},
+				{
+					"filename": "player_attack-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 41,
+						"w": 47,
+						"h": 32
+					},
+					"frame": {
+						"x": 1004,
+						"y": 130,
+						"w": 47,
+						"h": 32
+					}
+				},
+				{
+					"filename": "player_attack-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 36,
+						"w": 44,
+						"h": 37
+					},
+					"frame": {
+						"x": 997,
+						"y": 46,
+						"w": 44,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 71,
+						"y": 31,
+						"w": 31,
+						"h": 42
+					},
+					"frame": {
+						"x": 1020,
+						"y": 1,
+						"w": 31,
+						"h": 42
+					}
+				},
+				{
+					"filename": "player_spinAttack-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 88,
+						"y": 31,
+						"w": 31,
+						"h": 42
+					},
+					"frame": {
+						"x": 1018,
+						"y": 85,
+						"w": 31,
+						"h": 42
+					}
+				},
+				{
+					"filename": "player_walk-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 35,
+						"w": 46,
+						"h": 38
+					},
+					"frame": {
+						"x": 1043,
+						"y": 45,
+						"w": 46,
+						"h": 38
+					}
+				},
+				{
+					"filename": "player_spinAttack-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 72,
+						"y": 32,
+						"w": 52,
+						"h": 41
+					},
+					"frame": {
+						"x": 1053,
+						"y": 1,
+						"w": 52,
+						"h": 41
+					}
+				},
+				{
+					"filename": "player_spinAttack-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 32,
+						"w": 48,
+						"h": 41
+					},
+					"frame": {
+						"x": 1051,
+						"y": 85,
+						"w": 48,
+						"h": 41
+					}
+				},
+				{
+					"filename": "player_idle-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 34,
+						"w": 36,
+						"h": 39
+					},
+					"frame": {
+						"x": 1091,
+						"y": 44,
+						"w": 36,
+						"h": 39
+					}
+				},
+				{
+					"filename": "player_spinAttack-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 84,
+						"y": 32,
+						"w": 48,
+						"h": 41
+					},
+					"frame": {
+						"x": 1107,
+						"y": 1,
+						"w": 48,
+						"h": 41
+					}
+				},
+				{
+					"filename": "player_leap-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 130,
+						"y": 8,
+						"w": 26,
+						"h": 41
+					},
+					"frame": {
+						"x": 1050,
+						"y": 164,
+						"w": 26,
+						"h": 41
+					}
+				},
+				{
+					"filename": "player_attack-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 61,
+						"y": 39,
+						"w": 57,
+						"h": 34
+					},
+					"frame": {
+						"x": 1053,
+						"y": 128,
+						"w": 57,
+						"h": 34
+					}
+				},
+				{
+					"filename": "player_walk-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 35,
+						"w": 44,
+						"h": 38
+					},
+					"frame": {
+						"x": 1101,
+						"y": 85,
+						"w": 44,
+						"h": 38
+					}
+				},
+				{
+					"filename": "player_idle-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 35,
+						"w": 37,
+						"h": 38
+					},
+					"frame": {
+						"x": 1129,
+						"y": 44,
+						"w": 37,
+						"h": 38
+					}
+				},
+				{
+					"filename": "player_idle-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 35,
+						"w": 37,
+						"h": 38
+					},
+					"frame": {
+						"x": 1157,
+						"y": 1,
+						"w": 37,
+						"h": 38
+					}
+				},
+				{
+					"filename": "player_idle-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 35,
+						"w": 37,
+						"h": 38
+					},
+					"frame": {
+						"x": 1050,
+						"y": 207,
+						"w": 37,
+						"h": 38
+					}
+				},
+				{
+					"filename": "player_idle-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 35,
+						"w": 37,
+						"h": 38
+					},
+					"frame": {
+						"x": 1078,
+						"y": 164,
+						"w": 37,
+						"h": 38
+					}
+				},
+				{
+					"filename": "player_idle-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 35,
+						"w": 37,
+						"h": 38
+					},
+					"frame": {
+						"x": 1078,
+						"y": 164,
+						"w": 37,
+						"h": 38
+					}
+				},
+				{
+					"filename": "player_walk-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 36,
+						"w": 42,
+						"h": 37
+					},
+					"frame": {
+						"x": 1112,
+						"y": 125,
+						"w": 42,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 36,
+						"w": 39,
+						"h": 37
+					},
+					"frame": {
+						"x": 1147,
+						"y": 84,
+						"w": 39,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_attack-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 59,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1168,
+						"y": 41,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_attack-29.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 59,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1196,
+						"y": 1,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_idle-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1089,
+						"y": 204,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_idle-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1117,
+						"y": 164,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_idle-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1128,
+						"y": 203,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_idle-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1156,
+						"y": 123,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_idle-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1156,
+						"y": 162,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_idle-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1188,
+						"y": 80,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_idle-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1207,
+						"y": 40,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_idle-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1235,
+						"y": 1,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_idle-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1167,
+						"y": 201,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_leap-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 126,
+						"y": 60,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1195,
+						"y": 119,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_leap-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 126,
+						"y": 60,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1227,
+						"y": 79,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_leap-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 126,
+						"y": 60,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1246,
+						"y": 40,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_leap-38.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 237,
+						"y": 60,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1274,
+						"y": 1,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_leap-39.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 237,
+						"y": 60,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1274,
+						"y": 1,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 59,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1195,
+						"y": 158,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 59,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1195,
+						"y": 158,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 59,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1195,
+						"y": 158,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 59,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1206,
+						"y": 197,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 93,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1234,
+						"y": 118,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 93,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1266,
+						"y": 79,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-26.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 93,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1266,
+						"y": 79,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 93,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1266,
+						"y": 79,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 93,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1285,
+						"y": 40,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 36,
+						"w": 37,
+						"h": 37
+					},
+					"frame": {
+						"x": 1313,
+						"y": 1,
+						"w": 37,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_walk-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 60,
+						"y": 36,
+						"w": 36,
+						"h": 37
+					},
+					"frame": {
+						"x": 1234,
+						"y": 157,
+						"w": 36,
+						"h": 37
+					}
+				},
+				{
+					"filename": "player_spinAttack-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 53,
+						"y": 37,
+						"w": 58,
+						"h": 36
+					},
+					"frame": {
+						"x": 1245,
+						"y": 196,
+						"w": 58,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_spinAttack-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 37,
+						"w": 53,
+						"h": 36
+					},
+					"frame": {
+						"x": 1272,
+						"y": 157,
+						"w": 53,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_attack-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 60,
+						"y": 37,
+						"w": 52,
+						"h": 36
+					},
+					"frame": {
+						"x": 1273,
+						"y": 118,
+						"w": 52,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_spinAttack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 37,
+						"w": 51,
+						"h": 36
+					},
+					"frame": {
+						"x": 1305,
+						"y": 79,
+						"w": 51,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_spinAttack-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 91,
+						"y": 37,
+						"w": 51,
+						"h": 36
+					},
+					"frame": {
+						"x": 1324,
+						"y": 40,
+						"w": 51,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 37,
+						"w": 40,
+						"h": 36
+					},
+					"frame": {
+						"x": 1352,
+						"y": 1,
+						"w": 40,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 37,
+						"w": 38,
+						"h": 36
+					},
+					"frame": {
+						"x": 1305,
+						"y": 195,
+						"w": 38,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_leap-37.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 237,
+						"y": 61,
+						"w": 37,
+						"h": 36
+					},
+					"frame": {
+						"x": 1327,
+						"y": 117,
+						"w": 37,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_spinAttack-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 92,
+						"y": 37,
+						"w": 37,
+						"h": 36
+					},
+					"frame": {
+						"x": 1358,
+						"y": 78,
+						"w": 37,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 37,
+						"w": 36,
+						"h": 36
+					},
+					"frame": {
+						"x": 1377,
+						"y": 39,
+						"w": 36,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_leap-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 128,
+						"y": 8,
+						"w": 29,
+						"h": 36
+					},
+					"frame": {
+						"x": 1394,
+						"y": 1,
+						"w": 29,
+						"h": 36
+					}
+				},
+				{
+					"filename": "player_spinAttack-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 38,
+						"w": 51,
+						"h": 35
+					},
+					"frame": {
+						"x": 1327,
+						"y": 155,
+						"w": 51,
+						"h": 35
+					}
+				},
+				{
+					"filename": "player_leap-33.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 241,
+						"y": 62,
+						"w": 42,
+						"h": 35
+					},
+					"frame": {
+						"x": 1366,
+						"y": 116,
+						"w": 42,
+						"h": 35
+					}
+				},
+				{
+					"filename": "player_idle-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 38,
+						"w": 38,
+						"h": 35
+					},
+					"frame": {
+						"x": 1397,
+						"y": 77,
+						"w": 38,
+						"h": 35
+					}
+				},
+				{
+					"filename": "player_leap-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 126,
+						"y": 62,
+						"w": 38,
+						"h": 35
+					},
+					"frame": {
+						"x": 1415,
+						"y": 39,
+						"w": 38,
+						"h": 35
+					}
+				},
+				{
+					"filename": "player_leap-34.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 241,
+						"y": 62,
+						"w": 35,
+						"h": 35
+					},
+					"frame": {
+						"x": 1425,
+						"y": 1,
+						"w": 35,
+						"h": 35
+					}
+				},
+				{
+					"filename": "player_attack-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 61,
+						"y": 39,
+						"w": 55,
+						"h": 34
+					},
+					"frame": {
+						"x": 1345,
+						"y": 192,
+						"w": 55,
+						"h": 34
+					}
+				},
+				{
+					"filename": "player_attack-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 62,
+						"y": 39,
+						"w": 52,
+						"h": 34
+					},
+					"frame": {
+						"x": 1380,
+						"y": 153,
+						"w": 52,
+						"h": 34
+					}
+				},
+				{
+					"filename": "player_attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 39,
+						"w": 39,
+						"h": 34
+					},
+					"frame": {
+						"x": 1410,
+						"y": 114,
+						"w": 39,
+						"h": 34
+					}
+				},
+				{
+					"filename": "player_attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 39,
+						"w": 39,
+						"h": 34
+					},
+					"frame": {
+						"x": 1437,
+						"y": 76,
+						"w": 39,
+						"h": 34
+					}
+				},
+				{
+					"filename": "player_attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 39,
+						"w": 39,
+						"h": 34
+					},
+					"frame": {
+						"x": 1455,
+						"y": 38,
+						"w": 39,
+						"h": 34
+					}
+				},
+				{
+					"filename": "player_leap-32.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 242,
+						"y": 63,
+						"w": 39,
+						"h": 34
+					},
+					"frame": {
+						"x": 1462,
+						"y": 1,
+						"w": 39,
+						"h": 34
+					}
+				},
+				{
+					"filename": "player_leap-35.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 241,
+						"y": 63,
+						"w": 37,
+						"h": 34
+					},
+					"frame": {
+						"x": 1402,
+						"y": 189,
+						"w": 37,
+						"h": 34
+					}
+				},
+				{
+					"filename": "player_attack-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 61,
+						"y": 40,
+						"w": 56,
+						"h": 33
+					},
+					"frame": {
+						"x": 1434,
+						"y": 150,
+						"w": 56,
+						"h": 33
+					}
+				},
+				{
+					"filename": "player_attack-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 61,
+						"y": 40,
+						"w": 56,
+						"h": 33
+					},
+					"frame": {
+						"x": 1451,
+						"y": 112,
+						"w": 56,
+						"h": 33
+					}
+				},
+				{
+					"filename": "player_attack-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 63,
+						"y": 40,
+						"w": 49,
+						"h": 33
+					},
+					"frame": {
+						"x": 1478,
+						"y": 74,
+						"w": 49,
+						"h": 33
+					}
+				},
+				{
+					"filename": "player_leap-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 113,
+						"y": 7,
+						"w": 68,
+						"h": 29
+					},
+					"frame": {
+						"x": 1529,
+						"y": 1,
+						"w": 68,
+						"h": 29
+					}
+				},
+				{
+					"filename": "player_attack-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 40,
+						"w": 39,
+						"h": 33
+					},
+					"frame": {
+						"x": 1496,
+						"y": 37,
+						"w": 39,
+						"h": 33
+					}
+				},
+				{
+					"filename": "player_attack-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 42,
+						"w": 66,
+						"h": 31
+					},
+					"frame": {
+						"x": 1529,
+						"y": 72,
+						"w": 66,
+						"h": 31
+					}
+				},
+				{
+					"filename": "player_attack-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 64,
+						"y": 42,
+						"w": 65,
+						"h": 31
+					},
+					"frame": {
+						"x": 1529,
+						"y": 105,
+						"w": 65,
+						"h": 31
+					}
+				},
+				{
+					"filename": "player_leap-31.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 236,
+						"y": 65,
+						"w": 44,
+						"h": 32
+					},
+					"frame": {
+						"x": 1537,
+						"y": 32,
+						"w": 44,
+						"h": 32
+					}
+				},
+				{
+					"filename": "player_leap-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 124,
+						"y": 65,
+						"w": 43,
+						"h": 32
+					},
+					"frame": {
+						"x": 1441,
+						"y": 185,
+						"w": 43,
+						"h": 32
+					}
+				},
+				{
+					"filename": "player_leap-30.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 230,
+						"y": 69,
+						"w": 49,
+						"h": 28
+					},
+					"frame": {
+						"x": 1441,
+						"y": 219,
+						"w": 49,
+						"h": 28
+					}
+				},
+				{
+					"filename": "player_attack-26.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 41,
+						"w": 42,
+						"h": 32
+					},
+					"frame": {
+						"x": 1486,
+						"y": 185,
+						"w": 42,
+						"h": 32
+					}
+				},
+				{
+					"filename": "player_attack-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 144,
+						"h": 96
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 41,
+						"w": 42,
+						"h": 32
+					},
+					"frame": {
+						"x": 1492,
+						"y": 147,
+						"w": 42,
+						"h": 32
+					}
+				},
+				{
+					"filename": "player_leap-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 125,
+						"y": 66,
+						"w": 42,
+						"h": 31
+					},
+					"frame": {
+						"x": 1536,
+						"y": 138,
+						"w": 42,
+						"h": 31
+					}
+				},
+				{
+					"filename": "player_leap-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 124,
+						"y": 66,
+						"w": 42,
+						"h": 31
+					},
+					"frame": {
+						"x": 1536,
+						"y": 171,
+						"w": 42,
+						"h": 31
+					}
+				},
+				{
+					"filename": "player_leap-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 288,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 125,
+						"y": 66,
+						"w": 42,
+						"h": 31
+					},
+					"frame": {
+						"x": 1530,
+						"y": 204,
+						"w": 42,
+						"h": 31
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:69c2dfb5723e96b35105f489675306d3:a238b019bf30e901bf7a7023b1aca27a:86d5339b780aedd87b35e2b7c0a7e11b$"
+	}
+}
