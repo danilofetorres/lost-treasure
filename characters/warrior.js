@@ -22,11 +22,11 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
     this.setFixedRotation();
     this.depth = 1;
 
-    createAnim(scene, id, "idle", "warrior", 14);
-    createAnim(scene, id, "walk", "warrior", 7);
-    createAnim(scene, id, "attack", "warrior", 21);
-    createAnim(scene, id, "get_hit", "warrior", 8);
-    createAnim(scene, id, "death", "warrior", 35, 30);
+    createAnim(scene, "idle", "warrior", 14, this.id);
+    createAnim(scene, "walk", "warrior", 7, this.id);
+    createAnim(scene, "attack", "warrior", 21, this.id);
+    createAnim(scene, "get_hit", "warrior", 8, this.id);
+    createAnim(scene, "death", "warrior", 35, this.id, 0, 30);
   }
 
   idle() {

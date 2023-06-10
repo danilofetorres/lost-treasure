@@ -1,0 +1,60 @@
+{
+  "textures": [
+    {
+      "image": "heart.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 85,
+        "h": 17
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "heart_deplete-0.png",
+          "frame": { "x": 0, "y": 0, "w": 17, "h": 17 },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": { "x": 0, "y": 0, "w": 17, "h": 17 },
+          "sourceSize": { "w": 17, "h": 17 }
+        },
+        {
+          "filename": "heart_deplete-1.png",
+          "frame": { "x": 17, "y": 0, "w": 17, "h": 17 },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": { "x": 0, "y": 0, "w": 17, "h": 17 },
+          "sourceSize": { "w": 17, "h": 17 }
+        },
+        {
+          "filename": "heart_deplete-2.png",
+          "frame": { "x": 34, "y": 0, "w": 17, "h": 17 },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": { "x": 0, "y": 0, "w": 17, "h": 17 },
+          "sourceSize": { "w": 17, "h": 17 }
+        },
+        {
+          "filename": "heart_deplete-3.png",
+          "frame": { "x": 51, "y": 0, "w": 17, "h": 17 },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": { "x": 0, "y": 0, "w": 17, "h": 17 },
+          "sourceSize": { "w": 17, "h": 17 }
+        },
+        {
+          "filename": "heart_deplete-4.png",
+          "frame": { "x": 68, "y": 0, "w": 17, "h": 17 },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": { "x": 0, "y": 0, "w": 17, "h": 17 },
+          "sourceSize": { "w": 17, "h": 17 }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "3.0",
+    "smartupdate": "$TexturePacker:SmartUpdate:dbaaeacebdfe16d7e5e870cc2e6adb34:a737311b698ea3dd8c5a66c44161ac35:775abec68cea152a8c833d779d2191cb$"
+  }
+}

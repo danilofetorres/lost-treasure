@@ -44,6 +44,7 @@ class Map1 extends Phaser.Scene {
 
     // Load images
     this.load.image("tileset", "assets/tilesets/tileset.png");
+    this.load.atlas("heart", "../assets/icons/atlas/heart.png", "../assets/icons/atlas/heart.json");
 
     // Load character assets
     this.load.atlas("knight", "../assets/character/knight/atlas/knight.png", "../assets/character/knight/atlas/knight.json");
@@ -88,7 +89,7 @@ class Map1 extends Phaser.Scene {
       this.enemies.push(new Warrior(this, i*100+250, 200, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
     }
     
-    this.knight.resetHitbox(this);
+    this.knight.resetHitbox(this);   
     
     // Set camera
     this.camera.setBounds(0, 48, 2112, 480);
@@ -123,7 +124,7 @@ class Map1 extends Phaser.Scene {
       });
     });
   }
-
+  
   update() {
     // Character movement
     if(this.pointer.isDown) {
@@ -143,6 +144,7 @@ class Map1 extends Phaser.Scene {
 
     if(spaceJustPressed) {
       this.knight.jump(this);
+      // this.knight.get_hit(1);
     }
 
     // Camera transitions

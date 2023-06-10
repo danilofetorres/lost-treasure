@@ -3,6 +3,7 @@ import collide from "../utils/helper.js";
 
 class Knight extends Phaser.Physics.Matter.Sprite {
   health;
+  health_bar;
   speed;
   depth;
   sword_hitbox_1;
@@ -31,9 +32,30 @@ class Knight extends Phaser.Physics.Matter.Sprite {
     this.sword_hitbox_2 = scene.add.circle(this.x + 15, this.y - 10, 15);
     scene.physics.add.existing(this.sword_hitbox_2);
 
-    createAnim(scene, null, "idle", "knight", 14);
-    createAnim(scene, null, "walk", "knight", 7);
-    createAnim(scene, null, "attack", "knight", 12, 15);
+    this.health_bar = scene.add.group();
+
+    const max_health = 4;
+    const spacing = 28;
+    const start_y = 60;
+
+    for(let i=0; i<max_health; i++) {
+      const heart_x = 10 + spacing * i;
+      const heart_y = start_y;
+
+      const heart = scene.add
+        .sprite(heart_x, heart_y, "heart", "heart_deplete-0.png")
+        .setOrigin(0, 0)
+        .setScale(1.5);
+      
+      this.health_bar.add(heart);
+    }
+
+    createAnim(scene, "idle", "knight", 14);
+    createAnim(scene, "walk", "knight", 7);
+    createAnim(scene, "attack", "knight", 12, null, 0, 15);
+    createAnim(scene, "deplete", "heart", 4);
+    createAnim(scene, "deplete", "heart", 2, "first_half", 0);
+    createAnim(scene, "deplete", "heart", 4, "second_half", 2);
   }
 
   idle() {
@@ -154,6 +176,28 @@ class Knight extends Phaser.Physics.Matter.Sprite {
     } else if(direction === "down") {
       this.y += 2;
     }
+  }
+
+  get_hit(damage) {
+    this.health -= damage;
+
+    this.health_bar.children.iterate((heart, index) => {
+      if(index < Math.floor(this.health)) {
+        heart.setFrame("heart_deplete-0.png");
+
+      } else if(index === Math.floor(this.health) && this.health !== Math.floor(this.health)) {
+        heart.play("heart_deplete_first_half");
+
+      } else {
+
+        if(heart.frame.name === "heart_deplete-0.png") {
+          heart.play("heart_deplete");
+
+        } else if (heart.frame.name === "heart_deplete-2.png") {
+          heart.play("heart_deplete_second_half");
+        }
+      }
+    });
   }
 
   resetHitbox(scene) {
