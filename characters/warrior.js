@@ -29,7 +29,6 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
   }
 
   walk(direction) {
-    
     if(direction === "left") {
       this.flipX = true;
       this.setVelocityX(this.speed * -1);
@@ -43,7 +42,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
   }
 
   get_hit() {
-    this.play("warrior_get_hit", true);
+    this.play("warrior_get_hit");
   }
 }
 
