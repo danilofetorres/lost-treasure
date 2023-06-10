@@ -4,6 +4,7 @@ import collide from "../utils/helper.js";
 class Knight extends Phaser.Physics.Matter.Sprite {
   health;
   speed;
+  depth;
   sword_hitbox_1;
   sword_hitbox_2;
   can_hit_1;
@@ -30,9 +31,9 @@ class Knight extends Phaser.Physics.Matter.Sprite {
     this.sword_hitbox_2 = scene.add.circle(this.x + 15, this.y - 10, 15);
     scene.physics.add.existing(this.sword_hitbox_2);
 
-    createAnim(scene, "idle", "knight", 14);
-    createAnim(scene, "walk", "knight", 7);
-    createAnim(scene, "attack", "knight", 12);
+    createAnim(scene, null, "idle", "knight", 14);
+    createAnim(scene, null, "walk", "knight", 7);
+    createAnim(scene, null, "attack", "knight", 12, 15);
   }
 
   idle() {
@@ -57,34 +58,53 @@ class Knight extends Phaser.Physics.Matter.Sprite {
     this.play("knight_attack", true);
 
     const startHit = (anim, frame) => {
-      if(frame.index >= 5 && frame.index <= 10) {
-        this.sword_hitbox_1.x = this.flipX ? this.x - 30 : this.x + 30;
-        this.sword_hitbox_1.y = this.y - 5;
+      if(scene.enemies) {
 
-        this.sword_hitbox_1.body.enable = true;
-        scene.physics.world.add(this.sword_hitbox_1.body);
+        if(frame.index >= 5 && frame.index <= 10) {
+          this.sword_hitbox_1.x = this.flipX ? this.x - 30 : this.x + 30;
+          this.sword_hitbox_1.y = this.y - 5;
+  
+          this.sword_hitbox_1.body.enable = true;
+          scene.physics.world.add(this.sword_hitbox_1.body);
+  
+          for(let i=0; i<scene.enemies.length; i++) {
 
-        if(collide(scene.warrior, this.sword_hitbox_1, 2, 1.05)) {
-          if(this.can_hit_1) {
-            scene.warrior.get_hit();
+            if(collide(scene.enemies[i], this.sword_hitbox_1, 2, 1.05)) {
+              if(this.can_hit_1) {
+                scene.enemies[i].get_hit();
+
+                if(scene.enemies[i].health <= 0) {
+                  scene.enemies[i].die();
+                  scene.enemies.splice(i, 1);
+                }
+              }
+    
+              this.can_hit_1 = false;
+            }
           }
 
-          this.can_hit_1 = false;
-        }
+        } else if(frame.index > 10) {
+          this.sword_hitbox_2.x = this.flipX ? this.x - 30 : this.x + 30;
+          this.sword_hitbox_2.y = this.y - 5;
+  
+          this.sword_hitbox_2.body.enable = true;
+          scene.physics.world.add(this.sword_hitbox_2.body);
+  
+          for(let i=0; i<scene.enemies.length; i++) {
+            
+            if(collide(scene.enemies[i], this.sword_hitbox_2, 2, 1.05)) {
+              if(this.can_hit_2) {
+                scene.enemies[i].get_hit();
 
-      } else if(frame.index > 10) {
-        this.sword_hitbox_2.x = this.flipX ? this.x - 30 : this.x + 30;
-        this.sword_hitbox_2.y = this.y - 5;
-
-        this.sword_hitbox_2.body.enable = true;
-        scene.physics.world.add(this.sword_hitbox_2.body);
-
-        if(collide(scene.warrior, this.sword_hitbox_2, 2, 1.05)) {
-          if(this.can_hit_2) {
-            scene.warrior.get_hit();
+                if(scene.enemies[i].health <= 0) {
+                  scene.enemies[i].die();
+                  scene.enemies.splice(i, 1);
+                }
+              }
+    
+              this.can_hit_2 = false;
+            }
           }
-
-          this.can_hit_2 = false;
         }
       }
 

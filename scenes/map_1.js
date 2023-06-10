@@ -16,7 +16,7 @@ class Map1 extends Phaser.Scene {
   cursors;
   pointer;
   knight;
-  warrior;
+  enemies;
 
   constructor() {
     super({
@@ -80,7 +80,13 @@ class Map1 extends Phaser.Scene {
 
     // Create characters
     this.knight = new Knight(this, 200, 200, "knight", "knight_idle-0.png", "knight_physics");
-    this.warrior = new Warrior(this, 250, 200, "warrior", "warrior_idle-0.png", "warrior_physics");  
+    
+    let enemy_id = 0;
+    this.enemies = [];
+
+    for(let i=0; i<4; i++) {
+      this.enemies.push(new Warrior(this, i*100+250, 200, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
+    }
     
     this.knight.resetHitbox(this);
     
@@ -133,7 +139,9 @@ class Map1 extends Phaser.Scene {
       this.knight.idle();
     }
 
-    if(this.cursors.space.isDown) {
+    const spaceJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.space);
+
+    if(spaceJustPressed) {
       this.knight.jump(this);
     }
 
