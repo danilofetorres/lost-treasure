@@ -16,6 +16,7 @@ class Map1 extends Phaser.Scene {
   cursors;
   pointer;
   knight;
+  warrior;
 
   constructor() {
     super({
@@ -104,10 +105,10 @@ class Map1 extends Phaser.Scene {
         if(collide(this.knight, position, 10, 1.05)) {
           this.matter.world.setGravity(0, -1);
 
-          if(this.cursors.up.isDown) {
+          if(this.input.keyboard.addKey('W').isDown) {
             this.knight.climb("up");
 
-          } else if(this.cursors.down.isDown) {
+          } else if(this.input.keyboard.addKey('S').isDown) {
             this.knight.climb("down");
           }
         }
@@ -122,10 +123,10 @@ class Map1 extends Phaser.Scene {
     if(this.pointer.isDown) {
       this.knight.attack(this);
 
-    } else if(this.cursors.left.isDown) {
+    } else if(this.input.keyboard.addKey('A').isDown) {
       this.knight.walk("left");
 
-    } else if(this.cursors.right.isDown) {
+    } else if(this.input.keyboard.addKey('D').isDown) {
       this.knight.walk("right");
 
     } else {

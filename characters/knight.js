@@ -2,6 +2,7 @@ import { createAnim } from "../utils/config.js";
 import collide from "../utils/helper.js";
 
 class Knight extends Phaser.Physics.Matter.Sprite {
+  health;
   speed;
   sword_hitbox_1;
   sword_hitbox_2;
@@ -17,6 +18,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
 
     scene.add.existing(this);
 
+    this.health = 4;
     this.speed = 2;
     this.setScale(1.5);
     this.setFixedRotation();
@@ -77,7 +79,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
         this.sword_hitbox_2.body.enable = true;
         scene.physics.world.add(this.sword_hitbox_2.body);
 
-        if(collide(scene.warrior, this.sword_hitbox_1, 2, 1.05)) {
+        if(collide(scene.warrior, this.sword_hitbox_2, 2, 1.05)) {
           if(this.can_hit_2) {
             scene.warrior.get_hit();
           }
@@ -111,10 +113,10 @@ class Knight extends Phaser.Physics.Matter.Sprite {
           (
             bodyA.gameObject.tile?.layer.name === scene.block_layer.layer.name ||
             bodyB.gameObject.tile?.layer.name === scene.block_layer.layer.name ||
-            bodyA.gameObject.tile?.layer.name === scene.barrels.layer.name ||
-            bodyB.gameObject.tile?.layer.name === scene.barrels.layer.name ||
-            bodyA.gameObject.tile?.layer.name === scene.traps.layer.name ||
-            bodyB.gameObject.tile?.layer.name === scene.traps.layer.name
+            bodyA.gameObject.tile?.layer.name === scene.barrel_layer.layer.name ||
+            bodyB.gameObject.tile?.layer.name === scene.barrel_layer.layer.name ||
+            bodyA.gameObject.tile?.layer.name === scene.trap_layer.layer.name ||
+            bodyB.gameObject.tile?.layer.name === scene.trap_layer.layer.name
           )
         ) {
           this.setVelocityY(-7);

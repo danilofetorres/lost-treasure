@@ -1,6 +1,7 @@
 import { createAnim } from "../utils/config.js";
 
 class Warrior extends Phaser.Physics.Matter.Sprite {
+  health;
   speed;
 
   constructor(scene, x, y, texture, frame, physics) {
@@ -12,6 +13,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
 
     scene.add.existing(this);
 
+    this.health = 3;
     this.speed = 2;
     this.setScale(1.5);
     this.setFixedRotation();
@@ -43,6 +45,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
 
   get_hit() {
     this.play("warrior_get_hit");
+    this.health -= 1;
   }
 }
 
