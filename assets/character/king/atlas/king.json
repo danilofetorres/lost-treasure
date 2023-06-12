@@ -1,0 +1,3191 @@
+{
+	"textures": [
+		{
+			"image": "king.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1600,
+				"h": 128
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "king_attack-41.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 74,
+						"y": 0,
+						"w": 45,
+						"h": 77
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 45,
+						"h": 77
+					}
+				},
+				{
+					"filename": "king_ground_attack-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 30,
+						"w": 51,
+						"h": 47
+					},
+					"frame": {
+						"x": 1,
+						"y": 80,
+						"w": 51,
+						"h": 47
+					}
+				},
+				{
+					"filename": "king_ground_attack-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 45,
+						"y": 3,
+						"w": 30,
+						"h": 74
+					},
+					"frame": {
+						"x": 48,
+						"y": 1,
+						"w": 30,
+						"h": 74
+					}
+				},
+				{
+					"filename": "king_attack-36.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 27,
+						"w": 55,
+						"h": 50
+					},
+					"frame": {
+						"x": 54,
+						"y": 77,
+						"w": 55,
+						"h": 50
+					}
+				},
+				{
+					"filename": "king_attack-42.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 74,
+						"y": 5,
+						"w": 45,
+						"h": 72
+					},
+					"frame": {
+						"x": 80,
+						"y": 1,
+						"w": 45,
+						"h": 72
+					}
+				},
+				{
+					"filename": "king_ground_attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 26,
+						"w": 18,
+						"h": 51
+					},
+					"frame": {
+						"x": 111,
+						"y": 75,
+						"w": 18,
+						"h": 51
+					}
+				},
+				{
+					"filename": "king_attack-40.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 74,
+						"y": 7,
+						"w": 47,
+						"h": 70
+					},
+					"frame": {
+						"x": 127,
+						"y": 1,
+						"w": 47,
+						"h": 70
+					}
+				},
+				{
+					"filename": "king_ground_attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 26,
+						"w": 18,
+						"h": 51
+					},
+					"frame": {
+						"x": 131,
+						"y": 73,
+						"w": 18,
+						"h": 51
+					}
+				},
+				{
+					"filename": "king_ground_attack-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 26,
+						"w": 18,
+						"h": 51
+					},
+					"frame": {
+						"x": 151,
+						"y": 73,
+						"w": 18,
+						"h": 51
+					}
+				},
+				{
+					"filename": "king_ground_attack-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 26,
+						"w": 18,
+						"h": 51
+					},
+					"frame": {
+						"x": 171,
+						"y": 73,
+						"w": 18,
+						"h": 51
+					}
+				},
+				{
+					"filename": "king_ground_attack-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 45,
+						"y": 7,
+						"w": 30,
+						"h": 70
+					},
+					"frame": {
+						"x": 176,
+						"y": 1,
+						"w": 30,
+						"h": 70
+					}
+				},
+				{
+					"filename": "king_ground_attack-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 26,
+						"w": 18,
+						"h": 51
+					},
+					"frame": {
+						"x": 191,
+						"y": 73,
+						"w": 18,
+						"h": 51
+					}
+				},
+				{
+					"filename": "king_attack-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 46,
+						"y": 11,
+						"w": 71,
+						"h": 66
+					},
+					"frame": {
+						"x": 208,
+						"y": 1,
+						"w": 71,
+						"h": 66
+					}
+				},
+				{
+					"filename": "king_ground_attack-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 26,
+						"w": 18,
+						"h": 51
+					},
+					"frame": {
+						"x": 211,
+						"y": 69,
+						"w": 18,
+						"h": 51
+					}
+				},
+				{
+					"filename": "king_ground_attack-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 26,
+						"w": 18,
+						"h": 51
+					},
+					"frame": {
+						"x": 231,
+						"y": 69,
+						"w": 18,
+						"h": 51
+					}
+				},
+				{
+					"filename": "king_ground_attack-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 26,
+						"w": 18,
+						"h": 51
+					},
+					"frame": {
+						"x": 251,
+						"y": 69,
+						"w": 18,
+						"h": 51
+					}
+				},
+				{
+					"filename": "king_ground_attack-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 26,
+						"w": 18,
+						"h": 51
+					},
+					"frame": {
+						"x": 271,
+						"y": 69,
+						"w": 18,
+						"h": 51
+					}
+				},
+				{
+					"filename": "king_ground_attack-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 26,
+						"w": 18,
+						"h": 51
+					},
+					"frame": {
+						"x": 271,
+						"y": 69,
+						"w": 18,
+						"h": 51
+					}
+				},
+				{
+					"filename": "king_attack-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 46,
+						"y": 11,
+						"w": 71,
+						"h": 66
+					},
+					"frame": {
+						"x": 281,
+						"y": 1,
+						"w": 71,
+						"h": 66
+					}
+				},
+				{
+					"filename": "king_ground_attack-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 27,
+						"w": 20,
+						"h": 50
+					},
+					"frame": {
+						"x": 291,
+						"y": 69,
+						"w": 20,
+						"h": 50
+					}
+				},
+				{
+					"filename": "king_attack-29.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 28,
+						"w": 38,
+						"h": 49
+					},
+					"frame": {
+						"x": 313,
+						"y": 69,
+						"w": 38,
+						"h": 49
+					}
+				},
+				{
+					"filename": "king_attack-30.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 28,
+						"w": 38,
+						"h": 49
+					},
+					"frame": {
+						"x": 353,
+						"y": 69,
+						"w": 38,
+						"h": 49
+					}
+				},
+				{
+					"filename": "king_attack-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 46,
+						"y": 11,
+						"w": 71,
+						"h": 66
+					},
+					"frame": {
+						"x": 354,
+						"y": 1,
+						"w": 71,
+						"h": 66
+					}
+				},
+				{
+					"filename": "king_attack-31.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 28,
+						"w": 38,
+						"h": 49
+					},
+					"frame": {
+						"x": 393,
+						"y": 69,
+						"w": 38,
+						"h": 49
+					}
+				},
+				{
+					"filename": "king_attack-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 46,
+						"y": 11,
+						"w": 70,
+						"h": 66
+					},
+					"frame": {
+						"x": 427,
+						"y": 1,
+						"w": 70,
+						"h": 66
+					}
+				},
+				{
+					"filename": "king_attack-32.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 28,
+						"w": 38,
+						"h": 49
+					},
+					"frame": {
+						"x": 433,
+						"y": 69,
+						"w": 38,
+						"h": 49
+					}
+				},
+				{
+					"filename": "king_attack-33.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 28,
+						"w": 38,
+						"h": 49
+					},
+					"frame": {
+						"x": 473,
+						"y": 69,
+						"w": 38,
+						"h": 49
+					}
+				},
+				{
+					"filename": "king_attack-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 46,
+						"y": 11,
+						"w": 55,
+						"h": 66
+					},
+					"frame": {
+						"x": 499,
+						"y": 1,
+						"w": 55,
+						"h": 66
+					}
+				},
+				{
+					"filename": "king_attack-34.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 28,
+						"w": 38,
+						"h": 49
+					},
+					"frame": {
+						"x": 513,
+						"y": 69,
+						"w": 38,
+						"h": 49
+					}
+				},
+				{
+					"filename": "king_attack-35.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 61,
+						"y": 28,
+						"w": 36,
+						"h": 49
+					},
+					"frame": {
+						"x": 553,
+						"y": 69,
+						"w": 36,
+						"h": 49
+					}
+				},
+				{
+					"filename": "king_ground_attack-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 51,
+						"y": 11,
+						"w": 33,
+						"h": 66
+					},
+					"frame": {
+						"x": 556,
+						"y": 1,
+						"w": 33,
+						"h": 66
+					}
+				},
+				{
+					"filename": "king_ground_attack-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 14,
+						"w": 41,
+						"h": 63
+					},
+					"frame": {
+						"x": 591,
+						"y": 1,
+						"w": 41,
+						"h": 63
+					}
+				},
+				{
+					"filename": "king_ground_attack-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 17,
+						"w": 23,
+						"h": 60
+					},
+					"frame": {
+						"x": 591,
+						"y": 66,
+						"w": 23,
+						"h": 60
+					}
+				},
+				{
+					"filename": "king_ground_attack-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 18,
+						"w": 22,
+						"h": 59
+					},
+					"frame": {
+						"x": 616,
+						"y": 66,
+						"w": 22,
+						"h": 59
+					}
+				},
+				{
+					"filename": "king_attack-39.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 74,
+						"y": 15,
+						"w": 53,
+						"h": 62
+					},
+					"frame": {
+						"x": 634,
+						"y": 1,
+						"w": 53,
+						"h": 62
+					}
+				},
+				{
+					"filename": "king_ground_attack-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 15,
+						"w": 25,
+						"h": 62
+					},
+					"frame": {
+						"x": 640,
+						"y": 65,
+						"w": 25,
+						"h": 62
+					}
+				},
+				{
+					"filename": "king_idle-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 29,
+						"w": 20,
+						"h": 48
+					},
+					"frame": {
+						"x": 667,
+						"y": 65,
+						"w": 20,
+						"h": 48
+					}
+				},
+				{
+					"filename": "king_death-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 65,
+						"w": 20,
+						"h": 12
+					},
+					"frame": {
+						"x": 667,
+						"y": 115,
+						"w": 20,
+						"h": 12
+					}
+				},
+				{
+					"filename": "king_ground_attack-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 44,
+						"y": 30,
+						"w": 32,
+						"h": 47
+					},
+					"frame": {
+						"x": 689,
+						"y": 1,
+						"w": 32,
+						"h": 47
+					}
+				},
+				{
+					"filename": "king_idle-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 30,
+						"w": 19,
+						"h": 47
+					},
+					"frame": {
+						"x": 689,
+						"y": 50,
+						"w": 19,
+						"h": 47
+					}
+				},
+				{
+					"filename": "king_death-34.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 60,
+						"w": 35,
+						"h": 25
+					},
+					"frame": {
+						"x": 689,
+						"y": 99,
+						"w": 35,
+						"h": 25
+					}
+				},
+				{
+					"filename": "king_attack-38.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 74,
+						"y": 31,
+						"w": 55,
+						"h": 46
+					},
+					"frame": {
+						"x": 710,
+						"y": 50,
+						"w": 55,
+						"h": 46
+					}
+				},
+				{
+					"filename": "king_ground_attack-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 33,
+						"y": 48,
+						"w": 55,
+						"h": 29
+					},
+					"frame": {
+						"x": 726,
+						"y": 98,
+						"w": 55,
+						"h": 29
+					}
+				},
+				{
+					"filename": "king_walk-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 32,
+						"w": 19,
+						"h": 45
+					},
+					"frame": {
+						"x": 723,
+						"y": 1,
+						"w": 19,
+						"h": 45
+					}
+				},
+				{
+					"filename": "king_idle-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 32,
+						"w": 18,
+						"h": 45
+					},
+					"frame": {
+						"x": 744,
+						"y": 1,
+						"w": 18,
+						"h": 45
+					}
+				},
+				{
+					"filename": "king_walk-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 56,
+						"y": 32,
+						"w": 16,
+						"h": 45
+					},
+					"frame": {
+						"x": 764,
+						"y": 1,
+						"w": 16,
+						"h": 45
+					}
+				},
+				{
+					"filename": "king_walk-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 56,
+						"y": 32,
+						"w": 15,
+						"h": 45
+					},
+					"frame": {
+						"x": 767,
+						"y": 48,
+						"w": 15,
+						"h": 45
+					}
+				},
+				{
+					"filename": "king_death-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 35,
+						"w": 13,
+						"h": 32
+					},
+					"frame": {
+						"x": 783,
+						"y": 95,
+						"w": 13,
+						"h": 32
+					}
+				},
+				{
+					"filename": "king_ground_attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 33,
+						"w": 18,
+						"h": 44
+					},
+					"frame": {
+						"x": 782,
+						"y": 1,
+						"w": 18,
+						"h": 44
+					}
+				},
+				{
+					"filename": "king_idle-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 33,
+						"w": 18,
+						"h": 44
+					},
+					"frame": {
+						"x": 784,
+						"y": 47,
+						"w": 18,
+						"h": 44
+					}
+				},
+				{
+					"filename": "king_attack-37.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 74,
+						"y": 43,
+						"w": 61,
+						"h": 34
+					},
+					"frame": {
+						"x": 798,
+						"y": 93,
+						"w": 61,
+						"h": 34
+					}
+				},
+				{
+					"filename": "king_walk-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 33,
+						"w": 17,
+						"h": 44
+					},
+					"frame": {
+						"x": 802,
+						"y": 1,
+						"w": 17,
+						"h": 44
+					}
+				},
+				{
+					"filename": "king_walk-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 53,
+						"y": 34,
+						"w": 21,
+						"h": 43
+					},
+					"frame": {
+						"x": 804,
+						"y": 47,
+						"w": 21,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_ground_attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 19,
+						"h": 43
+					},
+					"frame": {
+						"x": 821,
+						"y": 1,
+						"w": 19,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_idle-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 827,
+						"y": 46,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_idle-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 842,
+						"y": 1,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_idle-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 847,
+						"y": 46,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_ground_attack-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 41,
+						"w": 69,
+						"h": 36
+					},
+					"frame": {
+						"x": 861,
+						"y": 91,
+						"w": 69,
+						"h": 36
+					}
+				},
+				{
+					"filename": "king_idle-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 862,
+						"y": 1,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_idle-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 867,
+						"y": 46,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_idle-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 882,
+						"y": 1,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_idle-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 887,
+						"y": 46,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_idle-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 902,
+						"y": 1,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_idle-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 907,
+						"y": 46,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_idle-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 922,
+						"y": 1,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_idle-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 927,
+						"y": 46,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_walk-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 34,
+						"w": 18,
+						"h": 43
+					},
+					"frame": {
+						"x": 942,
+						"y": 1,
+						"w": 18,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_death-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 59,
+						"y": 41,
+						"w": 11,
+						"h": 36
+					},
+					"frame": {
+						"x": 932,
+						"y": 91,
+						"w": 11,
+						"h": 36
+					}
+				},
+				{
+					"filename": "king_attack-44.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 73,
+						"y": 42,
+						"w": 45,
+						"h": 35
+					},
+					"frame": {
+						"x": 945,
+						"y": 91,
+						"w": 45,
+						"h": 35
+					}
+				},
+				{
+					"filename": "king_walk-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 56,
+						"y": 34,
+						"w": 15,
+						"h": 43
+					},
+					"frame": {
+						"x": 947,
+						"y": 46,
+						"w": 15,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_walk-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 56,
+						"y": 34,
+						"w": 15,
+						"h": 43
+					},
+					"frame": {
+						"x": 962,
+						"y": 1,
+						"w": 15,
+						"h": 43
+					}
+				},
+				{
+					"filename": "king_attack-51.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 35,
+						"w": 60,
+						"h": 42
+					},
+					"frame": {
+						"x": 964,
+						"y": 46,
+						"w": 60,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-45.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 72,
+						"y": 40,
+						"w": 35,
+						"h": 37
+					},
+					"frame": {
+						"x": 992,
+						"y": 90,
+						"w": 35,
+						"h": 37
+					}
+				},
+				{
+					"filename": "king_attack-47.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 35,
+						"w": 46,
+						"h": 42
+					},
+					"frame": {
+						"x": 979,
+						"y": 1,
+						"w": 46,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-48.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 35,
+						"w": 46,
+						"h": 42
+					},
+					"frame": {
+						"x": 979,
+						"y": 1,
+						"w": 46,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-49.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 43,
+						"y": 35,
+						"w": 46,
+						"h": 42
+					},
+					"frame": {
+						"x": 979,
+						"y": 1,
+						"w": 46,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-50.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 35,
+						"w": 36,
+						"h": 42
+					},
+					"frame": {
+						"x": 1026,
+						"y": 45,
+						"w": 36,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-26.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 60,
+						"y": 39,
+						"w": 36,
+						"h": 38
+					},
+					"frame": {
+						"x": 1029,
+						"y": 89,
+						"w": 36,
+						"h": 38
+					}
+				},
+				{
+					"filename": "king_attack-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 60,
+						"y": 39,
+						"w": 36,
+						"h": 38
+					},
+					"frame": {
+						"x": 1029,
+						"y": 89,
+						"w": 36,
+						"h": 38
+					}
+				},
+				{
+					"filename": "king_attack-52.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 35,
+						"w": 34,
+						"h": 42
+					},
+					"frame": {
+						"x": 1027,
+						"y": 1,
+						"w": 34,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-53.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 35,
+						"w": 34,
+						"h": 42
+					},
+					"frame": {
+						"x": 1063,
+						"y": 1,
+						"w": 34,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-54.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 35,
+						"w": 34,
+						"h": 42
+					},
+					"frame": {
+						"x": 1063,
+						"y": 1,
+						"w": 34,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-55.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 65,
+						"y": 35,
+						"w": 24,
+						"h": 42
+					},
+					"frame": {
+						"x": 1064,
+						"y": 45,
+						"w": 24,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-43.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 74,
+						"y": 43,
+						"w": 45,
+						"h": 34
+					},
+					"frame": {
+						"x": 1067,
+						"y": 89,
+						"w": 45,
+						"h": 34
+					}
+				},
+				{
+					"filename": "king_attack-56.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 35,
+						"w": 22,
+						"h": 42
+					},
+					"frame": {
+						"x": 1090,
+						"y": 45,
+						"w": 22,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 71,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1099,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-57.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 71,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1099,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1099,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_ground_attack-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1099,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_ground_attack-29.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1099,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_idle-0.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1099,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_idle-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1099,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_attack-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 71,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1114,
+						"y": 45,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_idle-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1114,
+						"y": 45,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1119,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 35,
+						"w": 13,
+						"h": 31
+					},
+					"frame": {
+						"x": 1114,
+						"y": 89,
+						"w": 13,
+						"h": 31
+					}
+				},
+				{
+					"filename": "king_ground_attack-26.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 45,
+						"y": 52,
+						"w": 29,
+						"h": 25
+					},
+					"frame": {
+						"x": 1129,
+						"y": 89,
+						"w": 29,
+						"h": 25
+					}
+				},
+				{
+					"filename": "king_death-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1134,
+						"y": 45,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1139,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1154,
+						"y": 45,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1159,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 67,
+						"w": 24,
+						"h": 10
+					},
+					"frame": {
+						"x": 1129,
+						"y": 116,
+						"w": 24,
+						"h": 10
+					}
+				},
+				{
+					"filename": "king_death-21.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1155,
+						"y": 116,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-22.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1155,
+						"y": 116,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-23.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1155,
+						"y": 116,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-24.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1155,
+						"y": 116,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-36.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1155,
+						"y": 116,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-35.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 62,
+						"w": 33,
+						"h": 21
+					},
+					"frame": {
+						"x": 1160,
+						"y": 89,
+						"w": 33,
+						"h": 21
+					}
+				},
+				{
+					"filename": "king_death-32.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 65,
+						"w": 30,
+						"h": 15
+					},
+					"frame": {
+						"x": 1183,
+						"y": 112,
+						"w": 30,
+						"h": 15
+					}
+				},
+				{
+					"filename": "king_death-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1174,
+						"y": 45,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_ground_attack-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 18,
+						"h": 42
+					},
+					"frame": {
+						"x": 1179,
+						"y": 1,
+						"w": 18,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 35,
+						"w": 17,
+						"h": 42
+					},
+					"frame": {
+						"x": 1194,
+						"y": 45,
+						"w": 17,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 56,
+						"y": 35,
+						"w": 15,
+						"h": 42
+					},
+					"frame": {
+						"x": 1199,
+						"y": 1,
+						"w": 15,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_ground_attack-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 45,
+						"y": 58,
+						"w": 30,
+						"h": 19
+					},
+					"frame": {
+						"x": 1195,
+						"y": 89,
+						"w": 30,
+						"h": 19
+					}
+				},
+				{
+					"filename": "king_death-33.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 64,
+						"w": 31,
+						"h": 17
+					},
+					"frame": {
+						"x": 1215,
+						"y": 110,
+						"w": 31,
+						"h": 17
+					}
+				},
+				{
+					"filename": "king_death-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 56,
+						"y": 35,
+						"w": 15,
+						"h": 42
+					},
+					"frame": {
+						"x": 1213,
+						"y": 45,
+						"w": 15,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 56,
+						"y": 35,
+						"w": 15,
+						"h": 42
+					},
+					"frame": {
+						"x": 1216,
+						"y": 1,
+						"w": 15,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-25.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1227,
+						"y": 89,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 58,
+						"y": 35,
+						"w": 13,
+						"h": 42
+					},
+					"frame": {
+						"x": 1230,
+						"y": 45,
+						"w": 13,
+						"h": 42
+					}
+				},
+				{
+					"filename": "king_death-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 54,
+						"y": 36,
+						"w": 20,
+						"h": 41
+					},
+					"frame": {
+						"x": 1233,
+						"y": 1,
+						"w": 20,
+						"h": 41
+					}
+				},
+				{
+					"filename": "king_death-26.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1227,
+						"y": 99,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_attack-2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 70,
+						"y": 36,
+						"w": 18,
+						"h": 41
+					},
+					"frame": {
+						"x": 1245,
+						"y": 44,
+						"w": 18,
+						"h": 41
+					}
+				},
+				{
+					"filename": "king_attack-3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 66,
+						"y": 37,
+						"w": 21,
+						"h": 40
+					},
+					"frame": {
+						"x": 1255,
+						"y": 87,
+						"w": 21,
+						"h": 40
+					}
+				},
+				{
+					"filename": "king_attack-46.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 72,
+						"y": 37,
+						"w": 18,
+						"h": 40
+					},
+					"frame": {
+						"x": 1255,
+						"y": 1,
+						"w": 18,
+						"h": 40
+					}
+				},
+				{
+					"filename": "king_ground_attack-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 37,
+						"w": 18,
+						"h": 40
+					},
+					"frame": {
+						"x": 1265,
+						"y": 43,
+						"w": 18,
+						"h": 40
+					}
+				},
+				{
+					"filename": "king_attack-9.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 38,
+						"w": 65,
+						"h": 39
+					},
+					"frame": {
+						"x": 1275,
+						"y": 1,
+						"w": 65,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 52,
+						"y": 38,
+						"w": 57,
+						"h": 39
+					},
+					"frame": {
+						"x": 1278,
+						"y": 85,
+						"w": 57,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 38,
+						"w": 52,
+						"h": 39
+					},
+					"frame": {
+						"x": 1285,
+						"y": 42,
+						"w": 52,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 38,
+						"w": 52,
+						"h": 39
+					},
+					"frame": {
+						"x": 1337,
+						"y": 83,
+						"w": 52,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 38,
+						"w": 52,
+						"h": 39
+					},
+					"frame": {
+						"x": 1339,
+						"y": 42,
+						"w": 52,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 38,
+						"w": 52,
+						"h": 39
+					},
+					"frame": {
+						"x": 1342,
+						"y": 1,
+						"w": 52,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 38,
+						"w": 52,
+						"h": 39
+					},
+					"frame": {
+						"x": 1391,
+						"y": 83,
+						"w": 52,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 38,
+						"w": 52,
+						"h": 39
+					},
+					"frame": {
+						"x": 1393,
+						"y": 42,
+						"w": 52,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 38,
+						"w": 52,
+						"h": 39
+					},
+					"frame": {
+						"x": 1396,
+						"y": 1,
+						"w": 52,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-17.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 38,
+						"w": 52,
+						"h": 39
+					},
+					"frame": {
+						"x": 1445,
+						"y": 83,
+						"w": 52,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 35,
+						"y": 38,
+						"w": 52,
+						"h": 39
+					},
+					"frame": {
+						"x": 1447,
+						"y": 42,
+						"w": 52,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-19.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 40,
+						"y": 38,
+						"w": 47,
+						"h": 39
+					},
+					"frame": {
+						"x": 1450,
+						"y": 1,
+						"w": 47,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 49,
+						"y": 38,
+						"w": 38,
+						"h": 39
+					},
+					"frame": {
+						"x": 1499,
+						"y": 1,
+						"w": 38,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 49,
+						"y": 38,
+						"w": 38,
+						"h": 39
+					},
+					"frame": {
+						"x": 1499,
+						"y": 83,
+						"w": 38,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-7.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 49,
+						"y": 38,
+						"w": 38,
+						"h": 39
+					},
+					"frame": {
+						"x": 1501,
+						"y": 42,
+						"w": 38,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 59,
+						"y": 38,
+						"w": 37,
+						"h": 39
+					},
+					"frame": {
+						"x": 1539,
+						"y": 1,
+						"w": 37,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-8.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 55,
+						"y": 38,
+						"w": 32,
+						"h": 39
+					},
+					"frame": {
+						"x": 1539,
+						"y": 83,
+						"w": 32,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_attack-4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 160,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 60,
+						"y": 38,
+						"w": 27,
+						"h": 39
+					},
+					"frame": {
+						"x": 1541,
+						"y": 42,
+						"w": 27,
+						"h": 39
+					}
+				},
+				{
+					"filename": "king_death-27.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1573,
+						"y": 42,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-28.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1573,
+						"y": 52,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-29.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1573,
+						"y": 62,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-30.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1573,
+						"y": 72,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-31.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 26,
+						"h": 8
+					},
+					"frame": {
+						"x": 1573,
+						"y": 82,
+						"w": 26,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-20.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 25,
+						"h": 8
+					},
+					"frame": {
+						"x": 1573,
+						"y": 92,
+						"w": 25,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-16.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 53,
+						"y": 69,
+						"w": 23,
+						"h": 8
+					},
+					"frame": {
+						"x": 1573,
+						"y": 102,
+						"w": 23,
+						"h": 8
+					}
+				},
+				{
+					"filename": "king_death-18.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 128,
+						"h": 128
+					},
+					"spriteSourceSize": {
+						"x": 57,
+						"y": 69,
+						"w": 22,
+						"h": 8
+					},
+					"frame": {
+						"x": 1573,
+						"y": 112,
+						"w": 22,
+						"h": 8
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b94edad3234e9ee62ed2636456d43034:bef8b7b3671deb14b34d12c47d47ece9:b87ab59cb13ddb41e4ee765df637d99d$"
+	}
+}

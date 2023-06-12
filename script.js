@@ -8,7 +8,7 @@ const config = {
   physics: {
     default: "matter",
     matter: {
-      debug: false,
+      debug: true,
     },
   },
   scene: [Map1, Map2],

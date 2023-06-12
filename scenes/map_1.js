@@ -4,6 +4,7 @@ import collide from "../utils/helper.js";
 
 import Knight from "../characters/knight.js";
 import Warrior from "../characters/warrior.js";
+import King from "../characters/king.js";
 
 class Map1 extends Phaser.Scene {
   map;
@@ -18,6 +19,7 @@ class Map1 extends Phaser.Scene {
   pointer;
   knight;
   enemies;
+  king;
 
   constructor() {
     super({
@@ -52,6 +54,8 @@ class Map1 extends Phaser.Scene {
     this.load.json("knight_physics", "../assets/character/knight/physics/knight.json");
     this.load.atlas("warrior", "../assets/character/warrior/atlas/warrior.png", "../assets/character/warrior/atlas/warrior.json");
     this.load.json("warrior_physics", "../assets/character/warrior/physics/warrior.json");
+    this.load.atlas("king", "../assets/character/king/atlas/king.png", "../assets/character/king/atlas/king.json");
+    this.load.json("king_physics", "../assets/character/king/physics/king.json");
   }
 
   create() {
@@ -89,7 +93,8 @@ class Map1 extends Phaser.Scene {
     for(let i=0; i<4; i++) {
       this.enemies.push(new Warrior(this, i*100+250, 200, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
     }
-    
+    this.king = new King(this, 150, 200, "king", "king_idle-0.png", "king_physics", 1);
+    this.enemies.push(this.king);
     this.knight.resetHitbox(this);   
     
     // Set camera
@@ -129,6 +134,7 @@ class Map1 extends Phaser.Scene {
     // Character movement
     if(this.pointer.isDown) {
       this.knight.attack(this);
+      this.king.ground_attack(this);
 
     } else if(this.input.keyboard.addKey('A').isDown) {
       this.knight.walk("left");
