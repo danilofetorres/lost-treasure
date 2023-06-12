@@ -21,7 +21,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
     scene.add.existing(this);
 
     this.health = 4;
-    this.speed = 2;
+    this.speed = 2.6;
     this.setScale(1.5);
     this.setFixedRotation();
     this.depth = 1;
@@ -161,7 +161,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
             bodyB.gameObject.tile?.layer.name === scene.trap_layer.layer.name
           )
         ) {
-          this.setVelocityY(-7);
+          this.setVelocityY(-8);
         }
       });
     });
@@ -171,7 +171,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
     this.setVelocityY(0);
 
     if(direction === "up") {
-      this.y -= 2;
+      this.y -= 1;
 
     } else if(direction === "down") {
       this.y += 2;

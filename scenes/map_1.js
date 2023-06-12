@@ -8,6 +8,7 @@ import Warrior from "../characters/warrior.js";
 class Map1 extends Phaser.Scene {
   map;
   blocks;
+  wall_layer;
   barrel_layer;
   block_layer;
   trap_layer;
@@ -66,15 +67,15 @@ class Map1 extends Phaser.Scene {
     createLayer(this, "porta_fechada");
     createLayer(this, "porta_aberta");
     createLayer(this, "escadas");
-    createLayer(this, "escada_meio");
     createLayer(this, "tochas");
     createLayer(this, "janelas");
-    
+    this.wall_layer = createLayer(this, "paredes");
     this.block_layer = createLayer(this, "blocklayer");
     this.trap_layer = createLayer(this, "armadilhas");
     this.barrel_layer = createLayer(this, "barris");
 
     // Set collisions
+    setCollision(this, this.wall_layer);
     setCollision(this, this.block_layer);
     setCollision(this, this.trap_layer);
     setCollision(this, this.barrel_layer);
@@ -96,13 +97,12 @@ class Map1 extends Phaser.Scene {
     this.camera.startFollow(this.knight, true, 0.08, 0.08, 80);
     
     // Ladder climbing logic
-    const ladder_layer = this.map.getLayer("escada_meio");
+    const ladder_layer = this.map.getLayer("escadas");
     const ladder_tiles = ladder_layer.tilemapLayer.getTilesWithin();
 
     const coords = [];
-  
     ladder_tiles.forEach(tile => {
-      if(tile.index === 9) {
+      if(tile.index === 8 || tile.index === 9 || tile.index === 47) {
         coords.push({ x: tile.pixelX, y: tile.pixelY, height: 48, width: 48 });
       }
     });
