@@ -4,6 +4,7 @@ import collide from "../utils/helper.js";
 class Knight extends Phaser.Physics.Matter.Sprite {
   health;
   health_bar;
+  health_container;
   speed;
   depth;
   sword_hitbox_1;
@@ -32,22 +33,25 @@ class Knight extends Phaser.Physics.Matter.Sprite {
     this.sword_hitbox_2 = scene.add.circle(this.x + 15, this.y - 10, 15);
     scene.physics.add.existing(this.sword_hitbox_2);
 
-    this.health_bar = scene.add.group();
+    this.health_bar = scene.add.graphics();
+    this.health_bar.fillStyle(0x99adff, 1);
+    this.health_bar.fillRoundedRect(13, 63, 130, 45, 10);
 
-    const max_health = 4;
-    const spacing = 28;
-    const start_y = 60;
-
-    for(let i=0; i<max_health; i++) {
-      const heart_x = 10 + spacing * i;
+    this.health_container = scene.add.container(0, 0);
+    
+    const spacing = 29;
+    const start_y = 66;
+    
+    for(let i=0; i<this.health; i++) {
+      const heart_x = 22 + spacing * i;
       const heart_y = start_y;
-
-      const heart = scene.add
-        .sprite(heart_x, heart_y, "heart", "heart_deplete-0.png")
-        .setOrigin(0, 0)
-        .setScale(1.5);
       
-      this.health_bar.add(heart);
+      const heart = scene.add
+      .sprite(heart_x, heart_y, "heart", "heart_deplete-0.png")
+      .setOrigin(0, 0)
+      .setScale(1.5);
+      
+      this.health_container.add(heart);
     }
 
     createAnim(scene, "idle", "knight", 14);
@@ -181,7 +185,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
   get_hit(damage) {
     this.health -= damage;
 
-    this.health_bar.children.iterate((heart, index) => {
+    this.health_container.children.iterate((heart, index) => {
       if(index < Math.floor(this.health)) {
         heart.setFrame("heart_deplete-0.png");
 

@@ -27,8 +27,6 @@ class Archer extends Phaser.Physics.Matter.Sprite {
     this.depth = 1;
 
     this.arrow_hitbox = scene.add.rectangle(this.x, this.y, 27, 30, '0xffffff', 1);
-
-
     scene.physics.add.existing(this.arrow_hitbox);
 
     this.can_hit = true;
@@ -76,15 +74,16 @@ class Archer extends Phaser.Physics.Matter.Sprite {
     this.play(`archer_attack_${this.id}`);
 
     const startHit = (anim, frame) => {
-      if (frame.index >= 11 && frame.index <= 17) {
+      if(frame.index >= 11 && frame.index <= 17) {
         this.arrow_hitbox.x = this.x;
         this.arrow_hitbox.y = this.y;
 
         this.arrow_hitbox.body.enable = true;
         scene.physics.world.add(this.arrow_hitbox.body);
-        if (collide(scene.knight, this.arrow_hitbox, 1, 1.01)) {
+
+        if(collide(scene.knight, this.arrow_hitbox, 1, 1.01)) {
           if (this.can_hit) {
-            console.log('2897y')
+            console.log('2897y');
           }
           this.can_hit= false;
         }

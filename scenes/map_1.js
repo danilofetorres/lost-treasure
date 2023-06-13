@@ -41,6 +41,7 @@ class Map1 extends Phaser.Scene {
     this.floor = 0;
     this.cursors = this.input.keyboard.createCursorKeys();
     this.pointer = this.input.activePointer;
+    this.enemies = [];
   }
 
   preload() {
@@ -54,8 +55,10 @@ class Map1 extends Phaser.Scene {
     // Load character assets
     this.load.atlas("knight", "../assets/character/knight/atlas/knight.png", "../assets/character/knight/atlas/knight.json");
     this.load.json("knight_physics", "../assets/character/knight/physics/knight.json");
+
     this.load.atlas("warrior", "../assets/character/warrior/atlas/warrior.png", "../assets/character/warrior/atlas/warrior.json");
     this.load.json("warrior_physics", "../assets/character/warrior/physics/warrior.json");
+
     this.load.atlas("king", "../assets/character/king/atlas/king.png", "../assets/character/king/atlas/king.json");
     this.load.json("king_physics", "../assets/character/king/physics/king.json");
     this.load.atlas("archer", "../assets/character/archer/atlas/archer.png", "../assets/character/archer/atlas/archer.json");
@@ -77,6 +80,7 @@ class Map1 extends Phaser.Scene {
     createLayer(this, "escadas");
     createLayer(this, "tochas");
     createLayer(this, "janelas");
+
     this.wall_layer = createLayer(this, "paredes");
     this.block_layer = createLayer(this, "blocklayer");
     this.trap_layer = createLayer(this, "armadilhas");
@@ -87,22 +91,24 @@ class Map1 extends Phaser.Scene {
     setCollision(this, this.block_layer);
     setCollision(this, this.trap_layer);
     setCollision(this, this.barrel_layer);
-
-    // Create characters
-    this.archer= new Archer(this, 300, 200, "archer", "archer_idle-0.png", "archer_physics", 2)
-
-    this.knight = new Knight(this, 200, 200, "knight", "knight_idle-0.png", "knight_physics");
     
-    let enemy_id = 0;
-    this.enemies = [];
+    // Create characters
+    this.knight = new Knight(this, 200, 200, "knight", "knight_idle-0.png", "knight_physics");
+    this.knight.resetHitbox(this);  
+    
+    
+    this.archer = new Archer(this, 300, 200, "archer", "archer_idle-0.png", "archer_physics", 2)
+    this.enemies.push(this.archer);
+    console.log(this.archer);
+    
+    // let enemy_id = 0;
 
     // for(let i=0; i<4; i++) {
     //   this.enemies.push(new Warrior(this, i*100+250, 200, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
     // }
+
     this.king = new King(this, 150, 200, "king", "king_idle-0.png", "king_physics", 1);
     this.enemies.push(this.king);
-    this.knight.resetHitbox(this);   
-    this.enemies.push(this.archer);
     
     // Set camera
     this.camera.setBounds(0, 48, 2112, 480);
@@ -113,6 +119,7 @@ class Map1 extends Phaser.Scene {
     const ladder_tiles = ladder_layer.tilemapLayer.getTilesWithin();
 
     const coords = [];
+    
     ladder_tiles.forEach(tile => {
       if(tile.index === 8 || tile.index === 9 || tile.index === 47) {
         coords.push({ x: tile.pixelX, y: tile.pixelY, height: 48, width: 48 });
@@ -135,7 +142,6 @@ class Map1 extends Phaser.Scene {
         this.matter.world.setGravity(0, 1);
       });
     });
-    console.log(this.archer);
   }
   
   update() {
@@ -178,6 +184,12 @@ class Map1 extends Phaser.Scene {
       this.camera.setBounds(0, 1350, 2112, 570);
       this.floor = 3;
     }
+
+    this.knight.health_container.x = this.cameras.main.scrollX;
+    this.knight.health_container.y = this.cameras.main.scrollY-40;
+
+    this.knight.health_bar.x = this.cameras.main.scrollX;
+    this.knight.health_bar.y = this.cameras.main.scrollY-48;
   }
 }
 

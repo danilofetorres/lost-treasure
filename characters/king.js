@@ -30,21 +30,13 @@ class King extends Phaser.Physics.Matter.Sprite {
     this.depth = 1;
 
     this.weapon_hitbox_1 = scene.add.circle(this.x, this.y, 42);
-    this.weapon_hitbox_2 = scene.add.rectangle(
-      this.x + 20,
-      this.y + this.height / 5,
-      30,
-      50
-    );
-    this.weapon_hitbox_3 = scene.add.rectangle(
-      this.x + 20,
-      this.y + this.height / 5,
-      50,
-      10
-    );
+    this.weapon_hitbox_2 = scene.add.rectangle(this.x+20, this.y + this.height/5, 30, 50);
+    this.weapon_hitbox_3 = scene.add.rectangle(this.x+20, this.y + this.height/5, 50, 10);
+
     scene.physics.add.existing(this.weapon_hitbox_1);
     scene.physics.add.existing(this.weapon_hitbox_2);
     scene.physics.add.existing(this.weapon_hitbox_3);
+
     this.can_hit_1 = true;
     this.can_hit_2 = true;
     this.can_hit_3 = true;
@@ -62,16 +54,18 @@ class King extends Phaser.Physics.Matter.Sprite {
   }
 
   walk(direction) {
-    if (direction === "left") {
+    if(direction === "left") {
       this.flipX = true;
       this.setVelocityX(this.speed * -1);
-    } else if (direction === "right") {
+
+    } else if(direction === "right") {
       this.flipX = false;
       this.setVelocityX(this.speed);
     }
 
     this.play(`king_walk_${this.id}`, true);
   }
+  
   get_hit() {}
 
   attack(scene) {
@@ -128,15 +122,19 @@ class King extends Phaser.Physics.Matter.Sprite {
       if (frame.index >= 19 && frame.index <= 25) {
         this.weapon_hitbox_3.x = this.x;
         this.weapon_hitbox_3.y = this.y + this.height / 8;
-        //console.log("idoaw");
+
         this.weapon_hitbox_3.body.enable = true;
+
         scene.physics.world.add(this.weapon_hitbox_3.body);
+
         if (collide(scene.knight, this.weapon_hitbox_3, 1, 1.01)) {
           if (this.can_hit_3) {
             console.log("bndiwao");
           }
+          
           this.can_hit_3 = false;
         }
+
       } else if (frame.index > 26) {
         return;
       }
