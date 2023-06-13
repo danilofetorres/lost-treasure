@@ -96,7 +96,6 @@ class Map1 extends Phaser.Scene {
     this.knight = new Knight(this, 200, 200, "knight", "knight_idle-0.png", "knight_physics");
     this.knight.resetHitbox(this);  
     
-    
     this.archer = new Archer(this, 300, 200, "archer", "archer_idle-0.png", "archer_physics", 2)
     this.enemies.push(this.archer);
     console.log(this.archer);
@@ -146,24 +145,27 @@ class Map1 extends Phaser.Scene {
   
   update() {
     // Character movement
-    if(this.pointer.isDown) {
-      this.knight.attack(this);
-      this.archer.idle();
+    if(this.knight.health > 0) {
 
-    } else if(this.input.keyboard.addKey('A').isDown) {
-      this.knight.walk("left");
+      if(this.pointer.isDown) {
+        this.knight.attack(this);
+        this.archer.idle();
+  
+      } else if(this.input.keyboard.addKey('A').isDown) {
+        this.knight.walk("left");
+  
+      } else if(this.input.keyboard.addKey('D').isDown) {
+        this.knight.walk("right");
+  
+      } else {
+        this.knight.idle();
+      }
 
-    } else if(this.input.keyboard.addKey('D').isDown) {
-      this.knight.walk("right");
-
-    } else {
-      this.knight.idle();
-    }
-
-    const spaceJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.space);
-
-    if(spaceJustPressed) {
-      this.knight.jump(this);
+      const spaceJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.space);
+  
+      if(spaceJustPressed) {
+        this.knight.jump(this);
+      }
     }
 
     // Camera transitions
@@ -183,6 +185,28 @@ class Map1 extends Phaser.Scene {
       this.camera.setBounds(0, 1350, 2112, 570);
       this.floor = 3;
     }
+
+    // Traps collision
+    this.matter.world.once("collisionstart", (event) => {
+      event.pairs.forEach((pair) => {
+        const { bodyA, bodyB } = pair;
+
+        if ((bodyA.label === "knight" || bodyB.label === "knight") &&
+          (
+            bodyA.gameObject.tile?.layer.name === this.trap_layer.layer.name ||
+            bodyB.gameObject.tile?.layer.name === this.trap_layer.layer.name
+          )
+        ) {
+          if(!this.knight.trap_collision) {
+            this.knight.get_hit(0.5);
+            this.knight.trap_collision = true;
+          }
+          setTimeout(() => {
+            this.knight.trap_collision = false;
+          }, "1000");
+        }
+      });
+    });
   }
 }
 

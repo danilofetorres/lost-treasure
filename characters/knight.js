@@ -11,6 +11,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
   sword_hitbox_2;
   can_hit_1;
   can_hit_2;
+  trap_collision;
 
   constructor(scene, x, y, texture, frame, physics) {
     const knight_physics = scene.cache.json.get(physics);
@@ -26,6 +27,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
     this.setScale(1.5);
     this.setFixedRotation();
     this.depth = 1;
+    this.trap_collision = false;
 
     this.sword_hitbox_1 = scene.add.rectangle(this.x + 15, this.y - 10, 30, 6);
     scene.physics.add.existing(this.sword_hitbox_1);
@@ -59,13 +61,14 @@ class Knight extends Phaser.Physics.Matter.Sprite {
     this.hearts_group.children.iterate(function (heart) {
       heart.setScrollFactor(0);
     });
-    
+
     createAnim(scene, "idle", "knight", 14);
     createAnim(scene, "walk", "knight", 7);
     createAnim(scene, "attack", "knight", 12, null, 0, 15, 0);
     createAnim(scene, "deplete", "heart", 4, null, 0, 10, 0);
     createAnim(scene, "deplete", "heart", 2, "first_half", 0, 10, 0,);
     createAnim(scene, "deplete", "heart", 4, "second_half", 2, 10, 0);
+    createAnim(scene, "death", "knight", 14, null, 0, 10, 0);
   }
 
   idle() {
@@ -191,23 +194,43 @@ class Knight extends Phaser.Physics.Matter.Sprite {
   get_hit(damage) {
     this.health -= damage;
 
-    this.hearts_group.children.iterate((heart, index) => {
-      if(index < Math.floor(this.health)) {
-        heart.setFrame("heart_deplete-0.png");
+    this.hearts_group.children.iterate(this.updateHearts.bind(this));
 
-      } else if(index === Math.floor(this.health) && this.health !== Math.floor(this.health)) {
-        heart.play("heart_deplete_first_half");
+    if(this.health <= 0) {
+      this.die();
+    }
+  }
 
-      } else {
+  die() {
+    this.play("knight_death", true);
 
-        if(heart.frame.name === "heart_deplete-0.png") {
-          heart.play("heart_deplete");
+    this.once(
+      Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + "knight_death", 
+      () => {
+        this.setX(200).setY(200);
+        this.health = 4;
 
-        } else if (heart.frame.name === "heart_deplete-2.png") {
-          heart.play("heart_deplete_second_half");
-        }
+        this.hearts_group.children.iterate(this.updateHearts.bind(this));
       }
-    });
+    );
+  }
+
+  updateHearts(heart, index) {
+    if(index < Math.floor(this.health)) {
+      heart.setFrame("heart_deplete-0.png");
+
+    } else if(index === Math.floor(this.health) && this.health !== Math.floor(this.health)) {
+      heart.play("heart_deplete_first_half");
+
+    } else {
+
+      if(heart.frame.name === "heart_deplete-0.png") {
+        heart.play("heart_deplete");
+
+      } else if (heart.frame.name === "heart_deplete-2.png") {
+        heart.play("heart_deplete_second_half");
+      }
+    }
   }
 
   resetHitbox(scene) {
