@@ -119,7 +119,7 @@ class Map1 extends Phaser.Scene {
     const ladder_tiles = ladder_layer.tilemapLayer.getTilesWithin();
 
     const coords = [];
-    
+
     ladder_tiles.forEach(tile => {
       if(tile.index === 8 || tile.index === 9 || tile.index === 47) {
         coords.push({ x: tile.pixelX, y: tile.pixelY, height: 48, width: 48 });
@@ -164,7 +164,6 @@ class Map1 extends Phaser.Scene {
 
     if(spaceJustPressed) {
       this.knight.jump(this);
-      // this.knight.get_hit(1);
     }
 
     // Camera transitions
@@ -184,12 +183,6 @@ class Map1 extends Phaser.Scene {
       this.camera.setBounds(0, 1350, 2112, 570);
       this.floor = 3;
     }
-
-    this.knight.health_container.x = this.cameras.main.scrollX;
-    this.knight.health_container.y = this.cameras.main.scrollY-40;
-
-    this.knight.health_bar.x = this.cameras.main.scrollX;
-    this.knight.health_bar.y = this.cameras.main.scrollY-48;
   }
 }
 

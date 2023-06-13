@@ -4,7 +4,7 @@ import collide from "../utils/helper.js";
 class Knight extends Phaser.Physics.Matter.Sprite {
   health;
   health_bar;
-  health_container;
+  hearts_group;
   speed;
   depth;
   sword_hitbox_1;
@@ -35,12 +35,14 @@ class Knight extends Phaser.Physics.Matter.Sprite {
 
     this.health_bar = scene.add.graphics();
     this.health_bar.fillStyle(0x99adff, 1);
-    this.health_bar.fillRoundedRect(13, 63, 130, 45, 10);
+    this.health_bar.fillRoundedRect(13, 15, 132, 45, 10);
 
-    this.health_container = scene.add.container(0, 0);
+    this.health_bar.setScrollFactor(0);
+
+    this.hearts_group = scene.add.group();
     
     const spacing = 29;
-    const start_y = 66;
+    const start_y = 26;
     
     for(let i=0; i<this.health; i++) {
       const heart_x = 22 + spacing * i;
@@ -51,9 +53,13 @@ class Knight extends Phaser.Physics.Matter.Sprite {
       .setOrigin(0, 0)
       .setScale(1.5);
       
-      this.health_container.add(heart);
+      this.hearts_group.add(heart);
     }
-
+    
+    this.hearts_group.children.iterate(function (heart) {
+      heart.setScrollFactor(0);
+    });
+    
     createAnim(scene, "idle", "knight", 14);
     createAnim(scene, "walk", "knight", 7);
     createAnim(scene, "attack", "knight", 12, null, 0, 15, 0);
@@ -185,7 +191,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
   get_hit(damage) {
     this.health -= damage;
 
-    this.health_container.children.iterate((heart, index) => {
+    this.hearts_group.children.iterate((heart, index) => {
       if(index < Math.floor(this.health)) {
         heart.setFrame("heart_deplete-0.png");
 
