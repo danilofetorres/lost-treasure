@@ -5,6 +5,7 @@ import collide from "../utils/helper.js";
 import Knight from "../characters/knight.js";
 import Warrior from "../characters/warrior.js";
 import King from "../characters/king.js";
+import Archer from "../characters/archer.js";
 
 class Map1 extends Phaser.Scene {
   map;
@@ -20,6 +21,7 @@ class Map1 extends Phaser.Scene {
   knight;
   enemies;
   king;
+  archer;
 
   constructor() {
     super({
@@ -56,6 +58,8 @@ class Map1 extends Phaser.Scene {
     this.load.json("warrior_physics", "../assets/character/warrior/physics/warrior.json");
     this.load.atlas("king", "../assets/character/king/atlas/king.png", "../assets/character/king/atlas/king.json");
     this.load.json("king_physics", "../assets/character/king/physics/king.json");
+    this.load.atlas("archer", "../assets/character/archer/atlas/archer.png", "../assets/character/archer/atlas/archer.json");
+    this.load.json("archer_physics", "../assets/character/archer/physics/archer.json");
   }
 
   create() {
@@ -85,17 +89,20 @@ class Map1 extends Phaser.Scene {
     setCollision(this, this.barrel_layer);
 
     // Create characters
+    this.archer= new Archer(this, 300, 200, "archer", "archer_idle-0.png", "archer_physics", 2)
+
     this.knight = new Knight(this, 200, 200, "knight", "knight_idle-0.png", "knight_physics");
     
     let enemy_id = 0;
     this.enemies = [];
 
-    for(let i=0; i<4; i++) {
-      this.enemies.push(new Warrior(this, i*100+250, 200, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
-    }
+    // for(let i=0; i<4; i++) {
+    //   this.enemies.push(new Warrior(this, i*100+250, 200, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
+    // }
     this.king = new King(this, 150, 200, "king", "king_idle-0.png", "king_physics", 1);
     this.enemies.push(this.king);
     this.knight.resetHitbox(this);   
+    this.enemies.push(this.archer);
     
     // Set camera
     this.camera.setBounds(0, 48, 2112, 480);
@@ -128,13 +135,14 @@ class Map1 extends Phaser.Scene {
         this.matter.world.setGravity(0, 1);
       });
     });
+    console.log(this.archer);
   }
   
   update() {
     // Character movement
     if(this.pointer.isDown) {
       this.knight.attack(this);
-      this.king.ground_attack(this);
+      this.archer.idle();
 
     } else if(this.input.keyboard.addKey('A').isDown) {
       this.knight.walk("left");

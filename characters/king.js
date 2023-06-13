@@ -40,9 +40,7 @@ class King extends Phaser.Physics.Matter.Sprite {
       this.x + 20,
       this.y + this.height / 5,
       50,
-      10,
-      "0x#ffffff",
-      1
+      10
     );
     scene.physics.add.existing(this.weapon_hitbox_1);
     scene.physics.add.existing(this.weapon_hitbox_2);
