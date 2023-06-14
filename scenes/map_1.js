@@ -50,19 +50,19 @@ class Map1 extends Phaser.Scene {
 
     // Load images
     this.load.image("tileset", "assets/tilesets/tileset.png");
-    this.load.atlas("heart", "../assets/icons/atlas/heart.png", "../assets/icons/atlas/heart.json");
+    this.load.atlas("heart", "assets/icons/atlas/heart.png", "assets/icons/atlas/heart.json");
 
     // Load character assets
-    this.load.atlas("knight", "../assets/character/knight/atlas/knight.png", "../assets/character/knight/atlas/knight.json");
-    this.load.json("knight_physics", "../assets/character/knight/physics/knight.json");
+    this.load.atlas("knight", "assets/character/knight/atlas/knight.png", "assets/character/knight/atlas/knight.json");
+    this.load.json("knight_physics", "assets/character/knight/physics/knight.json");
 
-    this.load.atlas("warrior", "../assets/character/warrior/atlas/warrior.png", "../assets/character/warrior/atlas/warrior.json");
-    this.load.json("warrior_physics", "../assets/character/warrior/physics/warrior.json");
+    this.load.atlas("warrior", "assets/character/warrior/atlas/warrior.png", "assets/character/warrior/atlas/warrior.json");
+    this.load.json("warrior_physics", "assets/character/warrior/physics/warrior.json");
 
-    this.load.atlas("king", "../assets/character/king/atlas/king.png", "../assets/character/king/atlas/king.json");
-    this.load.json("king_physics", "../assets/character/king/physics/king.json");
-    this.load.atlas("archer", "../assets/character/archer/atlas/archer.png", "../assets/character/archer/atlas/archer.json");
-    this.load.json("archer_physics", "../assets/character/archer/physics/archer.json");
+    this.load.atlas("king", "assets/character/king/atlas/king.png", "assets/character/king/atlas/king.json");
+    this.load.json("king_physics", "assets/character/king/physics/king.json");
+    this.load.atlas("archer", "assets/character/archer/atlas/archer.png", "assets/character/archer/atlas/archer.json");
+    this.load.json("archer_physics", "assets/character/archer/physics/archer.json");
   }
 
   create() {
