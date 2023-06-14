@@ -186,6 +186,15 @@ class Map1 extends Phaser.Scene {
       this.floor = 3;
     }
 
+    const distance = Phaser.Math.Distance.Between(this.knight.x, this.knight.y, this.king.x, this.king.y);
+
+    if(distance < 50) {
+      this.king.attack(this);
+
+    } else {
+      this.king.walk(this);
+    }
+
     // Traps collision
     this.matter.world.once("collisionstart", (event) => {
       event.pairs.forEach((pair) => {

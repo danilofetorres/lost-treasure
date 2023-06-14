@@ -53,17 +53,19 @@ class King extends Phaser.Physics.Matter.Sprite {
     this.play(`king_idle_${this.id}`, true);
   }
 
-  walk(direction) {
-    if(direction === "left") {
-      this.flipX = true;
-      this.setVelocityX(this.speed * -1);
+  walk(scene) {
+    this.play(`king_walk_${this.id}`, true);
 
-    } else if(direction === "right") {
+    if(scene.knight.x < this.x) {
+      this.flipX = true;
+
+    } else {
       this.flipX = false;
-      this.setVelocityX(this.speed);
     }
 
-    this.play(`king_walk_${this.id}`, true);
+    const direction = new Phaser.Math.Vector2(scene.knight.x - this.x, scene.knight.y - this.y).normalize();
+
+    this.setVelocityX(direction.x * this.speed);
   }
   
   get_hit() {}
@@ -73,13 +75,14 @@ class King extends Phaser.Physics.Matter.Sprite {
 
     const startHit = (anim, frame) => {
       if (frame.index >= 21 && frame.index <= 27) {
-        this.weapon_hitbox_1.x = this.x;
+        this.weapon_hitbox_1.x = this.flipX ? this.x - 20 : this.x;
         this.weapon_hitbox_1.y = this.y;
 
         this.weapon_hitbox_1.body.enable = true;
         scene.physics.world.add(this.weapon_hitbox_1.body);
         if (collide(scene.knight, this.weapon_hitbox_1, 1, 1.01)) {
           if (this.can_hit_1) {
+            scene.knight.get_hit(1);
           }
           this.can_hit_1 = false;
         }
@@ -92,6 +95,7 @@ class King extends Phaser.Physics.Matter.Sprite {
 
         if (collide(scene.knight, this.weapon_hitbox_2, 1, 1.05)) {
           if (this.can_hit_2) {
+            scene.knight.get_hit(1);
           }
           this.can_hit_2 = false;
         }
