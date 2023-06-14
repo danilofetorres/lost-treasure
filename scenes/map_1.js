@@ -27,9 +27,11 @@ class Map1 extends Phaser.Scene {
     super({
       key: "Map1", 
       physics: {
-        matter: {},
+        matter: {
+          debug: true
+        },
         arcade: {
-          debug: false,
+          debug: true,
           gravity: { y: 0 }
         }
       }
@@ -48,7 +50,10 @@ class Map1 extends Phaser.Scene {
     // Load map
     this.load.tilemapTiledJSON("map1", "assets/tilesets/map1.json");
 
+
+
     // Load images
+    this.load.image("arrow", "/assets/character/archer/attack/archer_arrow.png")
     this.load.image("tileset", "assets/tilesets/tileset.png");
     this.load.atlas("heart", "../assets/icons/atlas/heart.png", "../assets/icons/atlas/heart.json");
 
@@ -68,7 +73,7 @@ class Map1 extends Phaser.Scene {
   create() {
     // Create map
     this.map = this.make.tilemap({ key: "map1" });
-
+    
     // Create tiles
     this.blocks = this.map.addTilesetImage("tileset", "tileset");
 
@@ -96,17 +101,17 @@ class Map1 extends Phaser.Scene {
     this.knight = new Knight(this, 200, 200, "knight", "knight_idle-0.png", "knight_physics");
     this.knight.resetHitbox(this);  
     
-    this.archer = new Archer(this, 300, 200, "archer", "archer_idle-0.png", "archer_physics", 2)
+    this.archer = new Archer(this, 300, 350, "archer", "archer_idle-0.png", "archer_physics", 2, "arrow")
     this.enemies.push(this.archer);
-    console.log(this.archer);
     
     // let enemy_id = 0;
-
+    
     // for(let i=0; i<4; i++) {
-    //   this.enemies.push(new Warrior(this, i*100+250, 200, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
-    // }
-
-    this.king = new King(this, 150, 200, "king", "king_idle-0.png", "king_physics", 1);
+      //   this.enemies.push(new Warrior(this, i*100+250, 200, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
+      // }
+      
+    
+    this.king = new King(this, 400, 200, "king", "king_idle-0.png", "king_physics", 1);
     this.enemies.push(this.king);
     
     // Set camera
@@ -116,7 +121,7 @@ class Map1 extends Phaser.Scene {
     // Ladder climbing logic
     const ladder_layer = this.map.getLayer("escadas");
     const ladder_tiles = ladder_layer.tilemapLayer.getTilesWithin();
-
+    
     const coords = [];
 
     ladder_tiles.forEach(tile => {
@@ -124,15 +129,15 @@ class Map1 extends Phaser.Scene {
         coords.push({ x: tile.pixelX, y: tile.pixelY, height: 48, width: 48 });
       }
     });
-
+    
     this.matter.world.on('beforeupdate', () => {
       coords.forEach((position) => {
         if(collide(this.knight, position, 10, 1.05)) {
           this.matter.world.setGravity(0, -1);
-
+          
           if(this.input.keyboard.addKey('W').isDown) {
             this.knight.climb("up");
-
+            
           } else if(this.input.keyboard.addKey('S').isDown) {
             this.knight.climb("down");
           }
@@ -149,7 +154,6 @@ class Map1 extends Phaser.Scene {
 
       if(this.pointer.isDown) {
         this.knight.attack(this);
-        this.archer.idle();
   
       } else if(this.input.keyboard.addKey('A').isDown) {
         this.knight.walk("left");
