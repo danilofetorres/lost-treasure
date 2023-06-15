@@ -288,6 +288,77 @@
          "y":0
         }, 
         {
+         "draworder":"topdown",
+         "id":19,
+         "name":"archer_spawn",
+         "objects":[
+                {
+                 "height":0,
+                 "id":18,
+                 "name":"spawn_5",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":791,
+                 "y":683
+                }, 
+                {
+                 "height":0,
+                 "id":20,
+                 "name":"spawn_4",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":705,
+                 "y":1050
+                }, 
+                {
+                 "height":0,
+                 "id":21,
+                 "name":"spawn_3",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":916,
+                 "y":1052
+                }, 
+                {
+                 "height":0,
+                 "id":22,
+                 "name":"spawn_2",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":937,
+                 "y":1542
+                }, 
+                {
+                 "height":0,
+                 "id":23,
+                 "name":"spawn_1",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":504,
+                 "y":1587
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -703,8 +774,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":19,
- "nextobjectid":18,
+ "nextlayerid":20,
+ "nextobjectid":24,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",

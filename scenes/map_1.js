@@ -104,11 +104,13 @@ class Map1 extends Phaser.Scene {
     // Create characters
     this.knight = new Knight(this, player_spawn.x, player_spawn.y, "knight", "knight_idle-0.png", "knight_physics");
     this.knight.resetHitbox(this);  
-    
-    this.archer = new Archer(this, 300, 200, "archer", "archer_idle-0.png", "archer_physics", 2)
-    this.enemies.push(this.archer);
-    
+
     let enemy_id = 0;
+
+    for(let i=1; i<=5; i++) {
+        const spawn = this.map.findObject("archer_spawn", obj => obj.name === `spawn_${i}`);
+        this.enemies.push(new Archer(this, spawn.x, spawn.y, "archer", "archer_idle-0.png", "archer_physics", enemy_id++));
+    }
 
     for(let i=1; i<=6; i++) {
         const spawn = this.map.findObject("warrior_spawn", obj => obj.name === `spawn_${i}`);
