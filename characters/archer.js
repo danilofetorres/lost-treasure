@@ -1,5 +1,6 @@
 import { createAnim } from "../utils/config.js";
 import collide from "../utils/helper.js";
+import Arrow from "./arrow.js";
 
 
 class Archer extends Phaser.Physics.Matter.Sprite {
@@ -7,16 +8,16 @@ class Archer extends Phaser.Physics.Matter.Sprite {
   health;
   speed;
   depth;
-  arrow_hitbox;
+  arrow;
+  physics;
   can_hit;
 
-  constructor(scene, x, y, texture, frame, physics, id) {
+  constructor(scene, x, y, texture, frame, physics, id, arrow) {
     const archerPhysics = scene.cache.json.get(physics);
 
-    super(scene.matter.world, x, y, texture, frame, {
-      shape: archerPhysics.archer,
-    });
-
+    super(scene.matter.world, x, y, texture, frame, { shape: archerPhysics.archer });
+    //this.setBody({ type: 'rectangle', width: 25, height: 32 });
+    this.setName("Archer");
     scene.add.existing(this);
 
     this.id = id;
@@ -25,12 +26,12 @@ class Archer extends Phaser.Physics.Matter.Sprite {
     this.setScale(1.5);
     this.setFixedRotation();
     this.depth = 1;
-
-    this.arrow_hitbox = scene.add.rectangle(this.x, this.y, 27, 30, '0xffffff', 1);
-    scene.physics.add.existing(this.arrow_hitbox);
-
+   this.setFlipX(false)
     this.can_hit = true;
+    this.body.collisionFilter.category = 0x0002;
 
+    this.arrow = arrow;
+    this.physics = archerPhysics.arrow;
     createAnim(scene, "idle", "archer", 16, this.id,);
     createAnim(scene, "walk", "archer", 7, this.id);
     createAnim(scene, "attack", "archer", 33, this.id, 0, 16, 0);
@@ -44,11 +45,11 @@ class Archer extends Phaser.Physics.Matter.Sprite {
   }
 
   walk(direction) {
-    if(direction === "left") {
+    if (direction === "left") {
       this.flipX = true;
       this.setVelocityX(this.speed * -1);
 
-    } else if(direction === "right") {
+    } else if (direction === "right") {
       this.flipX = false;
       this.setVelocityX(this.speed);
     }
@@ -65,29 +66,32 @@ class Archer extends Phaser.Physics.Matter.Sprite {
     this.play(`archer_death_${this.id}`);
 
     this.once(
-      Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + `archer_death_${this.id}`, 
+      Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + `archer_death_${this.id}`,
       this.destroy
     );
   }
 
-  attack(scene){
-    this.play(`archer_attack_${this.id}`);
+  attack(scene) {
+    this.play(`archer_attack_${this.id}`, true);
 
     const startHit = (anim, frame) => {
-      if(frame.index >= 11 && frame.index <= 17) {
-        this.arrow_hitbox.x = this.x;
-        this.arrow_hitbox.y = this.y;
-
-        this.arrow_hitbox.body.enable = true;
-        scene.physics.world.add(this.arrow_hitbox.body);
-
-        if(collide(scene.knight, this.arrow_hitbox, 1, 1.01)) {
-          if (this.can_hit) {
-            console.log('2897y');
-          }
-          this.can_hit= false;
+      if (frame.index == 29) {
+        if(this.can_hit){
+          var arrow = new Arrow(scene, this.flipX? this.x - 40 : this.x + 40, this.y - 10, this.arrow, null, this.physics, this.flipX);
+          scene.arrows.push(arrow);
         }
-      } 
+
+        //this.arrow_hitbox.body.enable = true;
+        //scene.physics.world.add(this.arrow_hitbox.body);
+
+        // if (collide(scene.knight, this.arrow_hitbox, 1, 1.01)) {
+        //   if (this.can_hit) {
+
+        //   }
+           this.can_hit = false;
+        // }
+      }
+      
       this.off(Phaser.Animations.Events.ANIMATION_UPDATE, startHit);
     };
 
@@ -104,11 +108,11 @@ class Archer extends Phaser.Physics.Matter.Sprite {
     );
   }
   resetHitbox(scene) {
-    this.arrow_hitbox.body.enable = false;
+    // this.arrow_hitbox.body.enable = false;
 
-    scene.physics.world.remove(this.arrow_hitbox.body);
+    // scene.physics.world.remove(this.arrow_hitbox.body);
 
-    this.can_hit= true;
+     this.can_hit = true;
   }
 }
 

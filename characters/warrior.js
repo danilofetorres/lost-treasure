@@ -28,6 +28,8 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
     this.setScale(1.5);
     this.setFixedRotation();
     this.depth = 1;
+    this.body.collisionFilter.category = 0x0004;
+
 
     this.weapon_hitbox_1 = scene.add.circle(this.x, this.y, 27);
     this.weapon_hitbox_2 = scene.add.rectangle(

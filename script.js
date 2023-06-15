@@ -5,12 +5,6 @@ const config = {
   type: Phaser.AUTO,
   width: 1280,
   height: 480,
-  physics: {
-    default: "matter",
-    matter: {
-      debug: false,
-    },
-  },
   scene: [Map1, Map2],
 };
 
