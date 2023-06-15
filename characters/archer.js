@@ -1,5 +1,6 @@
 import { createAnim } from "../utils/config.js";
 import collide from "../utils/helper.js";
+import Arrow from "./arrow.js";
 
 
 class Archer extends Phaser.Physics.Matter.Sprite {
@@ -7,7 +8,8 @@ class Archer extends Phaser.Physics.Matter.Sprite {
   health;
   speed;
   depth;
-  arrow_hitbox;
+  arrow;
+  physics;
   can_hit;
 
   constructor(scene, x, y, texture, frame, physics, id, arrow) {
@@ -24,33 +26,12 @@ class Archer extends Phaser.Physics.Matter.Sprite {
     this.setScale(1.5);
     this.setFixedRotation();
     this.depth = 1;
-    this.arrow_hitbox = scene.matter.add.sprite(this.x, this.y, arrow, null, {
-      shape: archerPhysics.arrow, 
-     
-    });
-    this.arrow_hitbox.setScale(1.8)
-    this.arrow_hitbox.setIgnoreGravity(true);
-    this.arrow_hitbox.setFixedRotation();
-
-    this.arrow_hitbox.body.collisionFilter.category = 0x0002;
-    this.arrow_hitbox.body.collisionFilter.mask = 0x0001;
-
-
-
-
-    //this.arrow_hitbox.setSize(30, 10).setOffset(70, 35)
-    //this.arrow_hitbox.body.setPolygon(vertices);    //this.arrow_hitbox.setBody({ type: 'rectangle', width: this.arrow_hitbox.width, height: this.arrow_hitbox.height });
-    console.log(this.arrow_hitbox);
-    //scene.physics.add.existing(this.arrow_hitbox);
-
-
-    // scene.matter.world.add(this.arrow_hitbox);
-
-    //setVisible  
-    //this.arrow_hitbox.body.enable = false;
-
+   this.setFlipX(false)
     this.can_hit = true;
+    this.body.collisionFilter.category = 0x0002;
 
+    this.arrow = arrow;
+    this.physics = archerPhysics.arrow;
     createAnim(scene, "idle", "archer", 16, this.id,);
     createAnim(scene, "walk", "archer", 7, this.id);
     createAnim(scene, "attack", "archer", 33, this.id, 0, 16, 0);
@@ -95,19 +76,22 @@ class Archer extends Phaser.Physics.Matter.Sprite {
 
     const startHit = (anim, frame) => {
       if (frame.index == 29) {
-        this.arrow_hitbox.x = this.x+ 40;
-        this.arrow_hitbox.y = this.y - 10;
-        this.arrow_hitbox.setVelocityX(5)
-        this.arrow_hitbox.body.enable = true;
-        scene.physics.world.add(this.arrow_hitbox.body);
-
-        if (collide(scene.knight, this.arrow_hitbox, 1, 1.01)) {
-          if (this.can_hit) {
-
-          }
-          this.can_hit = false;
+        if(this.can_hit){
+          var arrow = new Arrow(scene, this.flipX? this.x - 40 : this.x + 40, this.y - 10, this.arrow, null, this.physics, this.flipX);
+          scene.arrows.push(arrow);
         }
+
+        //this.arrow_hitbox.body.enable = true;
+        //scene.physics.world.add(this.arrow_hitbox.body);
+
+        // if (collide(scene.knight, this.arrow_hitbox, 1, 1.01)) {
+        //   if (this.can_hit) {
+
+        //   }
+           this.can_hit = false;
+        // }
       }
+      
       this.off(Phaser.Animations.Events.ANIMATION_UPDATE, startHit);
     };
 
@@ -124,11 +108,11 @@ class Archer extends Phaser.Physics.Matter.Sprite {
     );
   }
   resetHitbox(scene) {
-    this.arrow_hitbox.body.enable = false;
+    // this.arrow_hitbox.body.enable = false;
 
-    scene.physics.world.remove(this.arrow_hitbox.body);
+    // scene.physics.world.remove(this.arrow_hitbox.body);
 
-    this.can_hit = true;
+     this.can_hit = true;
   }
 }
 

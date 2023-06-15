@@ -138,10 +138,10 @@
 			"category": 1,
 			"mask": 255
 		},
-		"label": "archer_arrow.png",
+		"label": "arrow",
 		"fixtures": [
 			{
-				"label": "archer_arrow.png-fixture-0",
+				"label": "arrow",
 				"isSensor": false,
 				"vertices": [
 					[

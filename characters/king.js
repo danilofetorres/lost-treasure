@@ -29,13 +29,18 @@ class King extends Phaser.Physics.Matter.Sprite {
     this.setFixedRotation();
     this.depth = 1;
 
+
     this.weapon_hitbox_1 = scene.add.circle(this.x, this.y, 42);
     this.weapon_hitbox_2 = scene.add.rectangle(this.x+20, this.y + this.height/5, 30, 50);
     this.weapon_hitbox_3 = scene.add.rectangle(this.x+20, this.y + this.height/5, 50, 10);
+    
 
     scene.physics.add.existing(this.weapon_hitbox_1);
     scene.physics.add.existing(this.weapon_hitbox_2);
     scene.physics.add.existing(this.weapon_hitbox_3);
+    this.weapon_hitbox_1.body.enable = false;
+    this.weapon_hitbox_2.body.enable = false;
+    this.weapon_hitbox_3.body.enable = false;
 
     this.can_hit_1 = true;
     this.can_hit_2 = true;
