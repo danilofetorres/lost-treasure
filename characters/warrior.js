@@ -11,6 +11,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
   weapon_hitbox_2;
   can_hit_1;
   can_hit_2;
+  isAttackAnimationDone;
 
   constructor(scene, x, y, texture, frame, physics, id) {
     const warriorPhysics = scene.cache.json.get(physics);
@@ -42,6 +43,12 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
     this.can_hit_1 = true;
     this.can_hit_2 = true;
 
+    this.isAttackAnimationDone = false;
+
+    this.on(`animationrepeat`, () => {
+      this.isAttackAnimationDone = true;
+    });
+
     createAnim(scene, "idle", "warrior", 14, this.id,);
     createAnim(scene, "walk", "warrior", 7, this.id);
     createAnim(scene, "attack", "warrior", 32, this.id,7, 10, 0);
@@ -54,17 +61,19 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
     this.play(`warrior_idle_${this.id}`, true);
   }
 
-  walk(direction) {
-    if(direction === "left") {
-      this.flipX = true;
-      this.setVelocityX(this.speed * -1);
+  walk(scene) {
+    this.play(`warrior_walk_${this.id}`, true);
 
-    } else if(direction === "right") {
+    if(scene.knight.x < this.x) {
+      this.flipX = true;
+
+    } else {
       this.flipX = false;
-      this.setVelocityX(this.speed);
     }
 
-    this.play(`warrior_walk_${this.id}`, true);
+    const direction = new Phaser.Math.Vector2(scene.knight.x - this.x, scene.knight.y - this.y).normalize();
+
+    this.setVelocityX(direction.x * this.speed);
   }
 
   get_hit() {
@@ -82,7 +91,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
   }
 
   attack(scene){
-    this.play(`warrior_attack_${this.id}`);
+    this.play(`warrior_attack_${this.id}`, true);
 
     const startHit = (anim, frame) => {
       if (frame.index >= 11 && frame.index <= 17) {
@@ -93,7 +102,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
         scene.physics.world.add(this.weapon_hitbox_1.body);
         if (collide(scene.knight, this.weapon_hitbox_1, 1, 1.01)) {
           if (this.can_hit_1) {
-            console.log('2897y')
+            scene.knight.get_hit(1);
           }
           this.can_hit_1 = false;
         }
@@ -106,7 +115,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
 
         if (collide(scene.knight, this.weapon_hitbox_2, 1, 1.05)) {
           if (this.can_hit_2) {
-            console.log('7218321')
+            scene.knight.get_hit(1);
           }
           this.can_hit_2 = false;
         }

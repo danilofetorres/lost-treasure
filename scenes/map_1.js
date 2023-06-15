@@ -91,22 +91,26 @@ class Map1 extends Phaser.Scene {
     setCollision(this, this.block_layer);
     setCollision(this, this.trap_layer);
     setCollision(this, this.barrel_layer);
-    
+
+    const player_spawn = this.map.findObject("player_spawn", obj => obj.name === "player_spawn");
+
     // Create characters
-    this.knight = new Knight(this, 200, 200, "knight", "knight_idle-0.png", "knight_physics");
+    this.knight = new Knight(this, player_spawn.x, player_spawn.y, "knight", "knight_idle-0.png", "knight_physics");
     this.knight.resetHitbox(this);  
     
     this.archer = new Archer(this, 300, 200, "archer", "archer_idle-0.png", "archer_physics", 2)
     this.enemies.push(this.archer);
-    console.log(this.archer);
     
-    // let enemy_id = 0;
+    let enemy_id = 0;
 
-    // for(let i=0; i<4; i++) {
-    //   this.enemies.push(new Warrior(this, i*100+250, 200, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
-    // }
+    for(let i=1; i<=6; i++) {
+        const spawn = this.map.findObject("warrior_spawn", obj => obj.name === `spawn_${i}`);
+        this.enemies.push(new Warrior(this, spawn.x, spawn.y, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
+    }
 
-    this.king = new King(this, 150, 200, "king", "king_idle-0.png", "king_physics", 1);
+    const king_spawn = this.map.findObject("king_spawn", obj => obj.name === "king_spawn");
+
+    this.king = new King(this, king_spawn.x, king_spawn.y, "king", "king_idle-0.png", "king_physics", 1);
     this.enemies.push(this.king);
     
     // Set camera
@@ -186,15 +190,21 @@ class Map1 extends Phaser.Scene {
       this.floor = 3;
     }
 
-    const distance = Phaser.Math.Distance.Between(this.knight.x, this.knight.y, this.king.x, this.king.y);
+    // King AI
+    for(const enemy of this.enemies) {
+      const distance = Phaser.Math.Distance.Between(this.knight.x, this.knight.y, enemy.x, enemy.y);
 
-    if(distance < 50) {
-      this.king.attack(this);
+      if(distance < 50 && !enemy.isAttackAnimationDone) {
+        enemy.attack(this);
 
-    } else {
-      this.king.walk(this);
+      } else if(enemy.isAttackAnimationDone) {
+        enemy.walk(this);
+
+        if(distance < 50) {
+          enemy.isAttackAnimationDone = false;
+        }
+      }
     }
-
     // Traps collision
     this.matter.world.once("collisionstart", (event) => {
       event.pairs.forEach((pair) => {

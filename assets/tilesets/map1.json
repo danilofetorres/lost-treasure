@@ -159,6 +159,135 @@
          "y":0
         }, 
         {
+         "draworder":"topdown",
+         "id":16,
+         "name":"player_spawn",
+         "objects":[
+                {
+                 "height":0,
+                 "id":5,
+                 "name":"player_spawn",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":73,
+                 "y":427
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":17,
+         "name":"warrior_spawn",
+         "objects":[
+                {
+                 "height":0,
+                 "id":11,
+                 "name":"spawn_6",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1176,
+                 "y":445
+                }, 
+                {
+                 "height":0,
+                 "id":12,
+                 "name":"spawn_5",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1489,
+                 "y":445
+                }, 
+                {
+                 "height":0,
+                 "id":13,
+                 "name":"spawn_4",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1776,
+                 "y":804
+                }, 
+                {
+                 "height":0,
+                 "id":14,
+                 "name":"spawn_3",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1727,
+                 "y":1105
+                }, 
+                {
+                 "height":0,
+                 "id":15,
+                 "name":"spawn_2",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1613,
+                 "y":1732
+                }, 
+                {
+                 "height":0,
+                 "id":16,
+                 "name":"spawn_1",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1412,
+                 "y":1631
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":18,
+         "name":"king_spawn",
+         "objects":[
+                {
+                 "height":0,
+                 "id":17,
+                 "name":"king_spawn",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":929,
+                 "y":1789
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -574,8 +703,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":16,
- "nextobjectid":1,
+ "nextlayerid":19,
+ "nextobjectid":18,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",

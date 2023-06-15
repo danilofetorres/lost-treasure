@@ -22,7 +22,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
 
     scene.add.existing(this);
 
-    this.health = 4;
+    this.health = 6;
     this.speed = 2.6;
     this.setScale(1.5);
     this.setFixedRotation();
@@ -37,7 +37,7 @@ class Knight extends Phaser.Physics.Matter.Sprite {
 
     this.health_bar = scene.add.graphics();
     this.health_bar.fillStyle(0x99adff, 1);
-    this.health_bar.fillRoundedRect(13, 15, 132, 45, 10);
+    this.health_bar.fillRoundedRect(13, 15, 190, 45, 10);
 
     this.health_bar.setScrollFactor(0);
 

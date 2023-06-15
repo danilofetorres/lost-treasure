@@ -12,6 +12,7 @@ class King extends Phaser.Physics.Matter.Sprite {
   can_hit_1;
   can_hit_2;
   can_hit_3;
+  isAttackAnimationDone;
 
   constructor(scene, x, y, texture, frame, physics, id) {
     const kingPhysics = scene.cache.json.get(physics);
@@ -23,7 +24,7 @@ class King extends Phaser.Physics.Matter.Sprite {
     scene.add.existing(this);
 
     this.id = id;
-    this.health = 3;
+    this.health = 10;
     this.speed = 2;
     this.setScale(1.5);
     this.setFixedRotation();
@@ -41,10 +42,16 @@ class King extends Phaser.Physics.Matter.Sprite {
     this.can_hit_2 = true;
     this.can_hit_3 = true;
 
+    this.isAttackAnimationDone = false;
+
+    this.on(`animationrepeat`, () => {
+      this.isAttackAnimationDone = true;
+    });
+
     createAnim(scene, "idle", "king", 17, this.id);
     createAnim(scene, "walk", "king", 7, this.id);
-    createAnim(scene, "attack", "king", 57, this.id, 0, 35, 0);
-    createAnim(scene, "ground_attack", "king", 29, this.id, 0, 25, 0);
+    createAnim(scene, "attack", "king", 57, this.id);
+    createAnim(scene, "ground_attack", "king", 29, this.id);
     createAnim(scene, "death", "king", 36, this.id, 0, 30, 0);
   }
 
@@ -68,7 +75,9 @@ class King extends Phaser.Physics.Matter.Sprite {
     this.setVelocityX(direction.x * this.speed);
   }
   
-  get_hit() {}
+  get_hit() {
+    this.health -= 1;
+  }
 
   attack(scene) {
     this.play(`king_attack_${this.id}`, true);
@@ -80,12 +89,14 @@ class King extends Phaser.Physics.Matter.Sprite {
 
         this.weapon_hitbox_1.body.enable = true;
         scene.physics.world.add(this.weapon_hitbox_1.body);
+
         if (collide(scene.knight, this.weapon_hitbox_1, 1, 1.01)) {
           if (this.can_hit_1) {
             scene.knight.get_hit(1);
           }
           this.can_hit_1 = false;
         }
+
       } else if (frame.index >= 37 && frame.index <= 45) {
         this.weapon_hitbox_2.x = this.flipX ? this.x - 50 : this.x + 50;
         this.weapon_hitbox_2.y = this.y;
@@ -111,11 +122,11 @@ class King extends Phaser.Physics.Matter.Sprite {
     this.once(
       Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +
         `king_attack_${this.id}`,
-      () => this.resetHitbox(scene)
+      () => this.reset_hitbox_atk(scene)
     );
 
     this.once(Phaser.Animations.Events.ANIMATION_STOP, () =>
-      this.resetHitbox(scene)
+      this.reset_hitbox_atk(scene)
     );
   }
 
@@ -132,8 +143,9 @@ class King extends Phaser.Physics.Matter.Sprite {
         scene.physics.world.add(this.weapon_hitbox_3.body);
 
         if (collide(scene.knight, this.weapon_hitbox_3, 1, 1.01)) {
+
           if (this.can_hit_3) {
-            console.log("bndiwao");
+            scene.knight.get_hit(1);
           }
           
           this.can_hit_3 = false;
@@ -151,11 +163,11 @@ class King extends Phaser.Physics.Matter.Sprite {
     this.once(
       Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +
         `king_ground_attack_${this.id}`,
-      () => this.resetHitbox(scene)
+      () => this.reset_hitbox_grd_atk(scene)
     );
 
     this.once(Phaser.Animations.Events.ANIMATION_STOP, () =>
-      this.resetHitbox(scene)
+      this.reset_hitbox_grd_atk(scene)
     );
   }
 
@@ -168,18 +180,23 @@ class King extends Phaser.Physics.Matter.Sprite {
     );
   }
 
-  resetHitbox(scene) {
+  reset_hitbox_grd_atk(scene) {
+    this.weapon_hitbox_3.body.enable = false;
+
+    scene.physics.world.remove(this.weapon_hitbox_3.body);
+
+    this.can_hit_3 = true;
+  }
+
+  reset_hitbox_atk(scene) {
     this.weapon_hitbox_1.body.enable = false;
     this.weapon_hitbox_2.body.enable = false;
-    this.weapon_hitbox_3.body.enable = false;
 
     scene.physics.world.remove(this.weapon_hitbox_1.body);
     scene.physics.world.remove(this.weapon_hitbox_2.body);
-    scene.physics.world.remove(this.weapon_hitbox_3.body);
 
     this.can_hit_1 = true;
     this.can_hit_2 = true;
-    this.can_hit_3 = true;
   }
 }
 
