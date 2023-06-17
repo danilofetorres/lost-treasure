@@ -24,7 +24,7 @@ class King extends Phaser.Physics.Matter.Sprite {
     scene.add.existing(this);
 
     this.id = id;
-    this.health = 10;
+    this.hearts = 10;
     this.speed = 2;
     this.setScale(1.5);
     this.setFixedRotation();
@@ -81,7 +81,7 @@ class King extends Phaser.Physics.Matter.Sprite {
   }
   
   get_hit() {
-    this.health -= 1;
+    this.hearts -= 1;
   }
 
   attack(scene) {
@@ -97,7 +97,7 @@ class King extends Phaser.Physics.Matter.Sprite {
 
         if (collide(scene.knight, this.weapon_hitbox_1, 1, 1.01)) {
           if (this.can_hit_1) {
-            scene.knight.get_hit(1);
+            scene.knight.getHit(1);
           }
           this.can_hit_1 = false;
         }
@@ -111,7 +111,7 @@ class King extends Phaser.Physics.Matter.Sprite {
 
         if (collide(scene.knight, this.weapon_hitbox_2, 1, 1.05)) {
           if (this.can_hit_2) {
-            scene.knight.get_hit(1);
+            scene.knight.getHit(1);
           }
           this.can_hit_2 = false;
         }

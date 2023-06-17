@@ -39,7 +39,7 @@ canHit;
                         arrow.canHit = false;
                         arrow.setVisible(false);
                         arrow.body.destroy();
-                        this.scene.knight.get_hit(0.5); 
+                        this.scene.knight.getHit(0.5); 
                     }
                   });
                // console.log("yes");

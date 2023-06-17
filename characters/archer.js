@@ -21,7 +21,7 @@ class Archer extends Phaser.Physics.Matter.Sprite {
     scene.add.existing(this);
 
     this.id = id;
-    this.health = 3;
+    this.hearts = 3;
     this.speed = 2;
     this.setScale(1.5);
     this.setFixedRotation();
@@ -59,7 +59,7 @@ class Archer extends Phaser.Physics.Matter.Sprite {
 
   get_hit() {
     this.play(`archer_get_hit_${this.id}`);
-    this.health -= 1;
+    this.hearts -= 1;
   }
 
   die() {

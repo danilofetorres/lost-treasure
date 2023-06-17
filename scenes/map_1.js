@@ -52,10 +52,7 @@ class Map1 extends Phaser.Scene {
     this.load.tilemapTiledJSON("map1", "assets/tilesets/map1.json");
 
     // Load images
-    this.load.image(
-      "arrow",
-      "/assets/character/archer/attack/archer_arrow.png"
-    );
+    this.load.image("arrow", "/assets/character/archer/attack/archer_arrow.png");
     this.load.image("tileset", "assets/tilesets/tileset.png");
     this.load.atlas("heart", "assets/icons/atlas/heart.png", "assets/icons/atlas/heart.json");
 
@@ -99,11 +96,15 @@ class Map1 extends Phaser.Scene {
     setCollision(this, this.trap_layer);
     setCollision(this, this.barrel_layer);
 
+    // Create characters
     const player_spawn = this.map.findObject("player_spawn", obj => obj.name === "player_spawn");
 
-    // Create characters
-    this.knight = new Knight(this, player_spawn.x, player_spawn.y, "knight", "knight_idle-0.png", "knight_physics");
-    this.knight.resetHitbox(this);  
+    this.knight = new Knight(this, player_spawn.x, player_spawn.y, "knight", "knight_idle-0.png", "knight_physics", 6, 2.5); 
+
+    const king_spawn = this.map.findObject("king_spawn", obj => obj.name === "king_spawn");
+
+    this.king = new King(this, king_spawn.x, king_spawn.y, "king", "king_idle-0.png", "king_physics", 1);
+    this.enemies.push(this.king);
 
     let enemy_id = 0;
 
@@ -116,11 +117,6 @@ class Map1 extends Phaser.Scene {
         const spawn = this.map.findObject("warrior_spawn", obj => obj.name === `spawn_${i}`);
         this.enemies.push(new Warrior(this, spawn.x, spawn.y, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
     }
-
-    const king_spawn = this.map.findObject("king_spawn", obj => obj.name === "king_spawn");
-
-    this.king = new King(this, king_spawn.x, king_spawn.y, "king", "king_idle-0.png", "king_physics", 1);
-    this.enemies.push(this.king);
 
     // Set camera
     this.camera.setBounds(0, 48, 2112, 480);
@@ -158,15 +154,18 @@ class Map1 extends Phaser.Scene {
 
   update() {
     // Character movement
-    if (this.knight.health > 0) {
+    if (this.knight.hearts > 0) {
       if (this.pointer.isDown) {
-        this.knight.attack(this);
+        this.knight.attack("knight_attack", this, this.knight.hitboxes);
+
       } else if (this.input.keyboard.addKey("A").isDown) {
-        this.knight.walk("left");
+        this.knight.walk("knight_walk", "left");
+
       } else if (this.input.keyboard.addKey("D").isDown) {
-        this.knight.walk("right");
+        this.knight.walk("knight_walk", "right");
+
       } else {
-        this.knight.idle();
+        this.knight.idle("knight_idle");
       }
 
       const spaceJustPressed = Phaser.Input.Keyboard.JustDown(
@@ -182,30 +181,21 @@ class Map1 extends Phaser.Scene {
     if (this.knight.y > 0 && this.knight.y < 528 && this.floor !== 0) {
       this.camera.setBounds(0, 48, 2112, 480);
       this.floor = 0;
-    } else if (
-      this.knight.y >= 528 &&
-      this.knight.y < 912 &&
-      this.floor !== 1
-    ) {
+
+    } else if (this.knight.y >= 528 && this.knight.y < 912 && this.floor !== 1) {
       this.camera.setBounds(0, 480, 2112, 480);
       this.floor = 1;
-    } else if (
-      this.knight.y >= 912 &&
-      this.knight.y < 1344 &&
-      this.floor !== 2
-    ) {
+
+    } else if (this.knight.y >= 912 && this.knight.y < 1344 && this.floor !== 2) {
       this.camera.setBounds(0, 910, 2112, 480);
       this.floor = 2;
-    } else if (
-      this.knight.y >= 1344 &&
-      this.knight.y < 1920 &&
-      this.floor !== 3
-    ) {
+
+    } else if (this.knight.y >= 1344 && this.knight.y < 1920 && this.floor !== 3) {
       this.camera.setBounds(0, 1350, 2112, 570);
       this.floor = 3;
     }
 
-    // King AI
+    // Enemy AI
     for(const enemy of this.enemies) {
       const distance = Phaser.Math.Distance.Between(this.knight.x, this.knight.y, enemy.x, enemy.y);
 
@@ -220,6 +210,7 @@ class Map1 extends Phaser.Scene {
         }
       }
     }
+
     // Traps collision
     this.matter.world.once("collisionstart", (event) => {
       event.pairs.forEach((pair) => {
@@ -230,18 +221,18 @@ class Map1 extends Phaser.Scene {
           (bodyA.gameObject.tile?.layer.name === this.trap_layer.layer.name ||
             bodyB.gameObject.tile?.layer.name === this.trap_layer.layer.name)
         ) {
-          if (!this.knight.trap_collision) {
-            this.knight.get_hit(0.5);
-            this.knight.trap_collision = true;
+          if (!this.knight.is_colliding_with_trap) {
+            this.knight.getHit(0.5);
+            this.knight.is_colliding_with_trap = true;
           }
           setTimeout(() => {
-            this.knight.trap_collision = false;
+            this.knight.is_colliding_with_trap = false;
           }, "1000");
         }
       });
     });
+
     this.arrows.forEach((arrow) => {
-      // Example code for arrow movement
       arrow.update();
     });
   }

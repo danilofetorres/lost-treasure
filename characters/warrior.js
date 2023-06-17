@@ -23,7 +23,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
     scene.add.existing(this);
 
     this.id = id;
-    this.health = 3;
+    this.hearts = 3;
     this.speed = 2;
     this.setScale(1.5);
     this.setFixedRotation();
@@ -80,7 +80,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
 
   get_hit() {
     this.play(`warrior_get_hit_${this.id}`);
-    this.health -= 1;
+    this.hearts -= 1;
   }
 
   die() {
@@ -104,7 +104,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
         scene.physics.world.add(this.weapon_hitbox_1.body);
         if (collide(scene.knight, this.weapon_hitbox_1, 1, 1.01)) {
           if (this.can_hit_1) {
-            scene.knight.get_hit(1);
+            scene.knight.getHit(1);
           }
           this.can_hit_1 = false;
         }
@@ -117,7 +117,7 @@ class Warrior extends Phaser.Physics.Matter.Sprite {
 
         if (collide(scene.knight, this.weapon_hitbox_2, 1, 1.05)) {
           if (this.can_hit_2) {
-            scene.knight.get_hit(1);
+            scene.knight.getHit(1);
           }
           this.can_hit_2 = false;
         }
