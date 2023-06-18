@@ -1,12 +1,10 @@
-import { setCollision } from "../utils/config.js";
-import { createLayer } from "../utils/config.js";
-import collide from "../utils/helper.js";
-
 import Knight from "../characters/knight.js";
 import Warrior from "../characters/warrior.js";
 import King from "../characters/king.js";
 import Archer from "../characters/archer.js";
-import Arrow from "../characters/arrow.js";
+
+import { setCollision } from "../utils/config.js";
+import { createLayer } from "../utils/config.js";
 
 class Map1 extends Phaser.Scene {
   map;
@@ -15,13 +13,13 @@ class Map1 extends Phaser.Scene {
   barrel_layer;
   block_layer;
   trap_layer;
+  ladder_coords;
   camera;
   floor;
   cursors;
   pointer;
-  knight;
+  player;
   enemies;
-  king;
   arrows;
 
   constructor() {
@@ -45,6 +43,8 @@ class Map1 extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
     this.pointer = this.input.activePointer;
     this.enemies = [];
+    this.arrows = [];
+    this.ladder_coords = [];
   }
 
   preload() {
@@ -98,13 +98,10 @@ class Map1 extends Phaser.Scene {
 
     // Create characters
     const player_spawn = this.map.findObject("player_spawn", obj => obj.name === "player_spawn");
-
-    this.knight = new Knight(this, player_spawn.x, player_spawn.y, "knight", "knight_idle-0.png", "knight_physics", 6, 2.5); 
+    this.player = new Knight(this, player_spawn.x, player_spawn.y, "knight", "knight_idle-0.png", "knight_physics", 6, 2.5); 
 
     const king_spawn = this.map.findObject("king_spawn", obj => obj.name === "king_spawn");
-
-    this.king = new King(0, this, king_spawn.x, king_spawn.y, "king", "king_idle-0.png", "king_physics", 10, 1);
-    this.enemies.push(this.king);
+    this.enemies.push(new King(0, this, king_spawn.x, king_spawn.y, "king", "king_idle-0.png", "king_physics", 10, 1));
 
     let enemy_id = 0;
 
@@ -120,90 +117,73 @@ class Map1 extends Phaser.Scene {
 
     // Set camera
     this.camera.setBounds(0, 48, 2112, 480);
-    this.camera.startFollow(this.knight, true, 0.08, 0.08, 80);
+    this.camera.startFollow(this.player, true, 0.08, 0.08, 80);
 
     // Ladder climbing logic
     const ladder_layer = this.map.getLayer("escadas");
     const ladder_tiles = ladder_layer.tilemapLayer.getTilesWithin();
 
-    const coords = [];
-
     ladder_tiles.forEach((tile) => {
-      if (tile.index === 8 || tile.index === 9 || tile.index === 47) {
-        coords.push({ x: tile.pixelX, y: tile.pixelY, height: 48, width: 48 });
+      if(tile.index === 8 || tile.index === 9 || tile.index === 47) {
+        this.ladder_coords.push({ x: tile.pixelX, y: tile.pixelY, height: 48, width: 48 });
       }
     });
-    this.arrows = [];
-
+    
     this.matter.world.on("beforeupdate", () => {
-      coords.forEach((position) => {
-        if (collide(this.knight, position, 10, 1.05)) {
-          this.matter.world.setGravity(0, -1);
-
-          if (this.input.keyboard.addKey("W").isDown) {
-            this.knight.climb("up");
-          } else if (this.input.keyboard.addKey("S").isDown) {
-            this.knight.climb("down");
-          }
-        }
-
-        this.matter.world.setGravity(0, 1);
-      });
+      this.player.ladderColider(this);
     });
   }
 
   update() {
     // Character movement
-    if (this.knight.hearts > 0) {
-      if (this.pointer.isDown) {
-        this.knight.attack("knight_attack", this, this.knight.hitboxes);
+    if(this.player.hearts > 0) {
+      if(this.pointer.isDown) {
+        this.player.attack("knight_attack", this, this.player.hitboxes);
 
-      } else if (this.input.keyboard.addKey("A").isDown) {
-        this.knight.walk("knight_walk", "left");
+      } else if(this.input.keyboard.addKey("A").isDown) {
+        this.player.walk("knight_walk", "left");
 
-      } else if (this.input.keyboard.addKey("D").isDown) {
-        this.knight.walk("knight_walk", "right");
+      } else if(this.input.keyboard.addKey("D").isDown) {
+        this.player.walk("knight_walk", "right");
 
       } else {
-        this.knight.idle("knight_idle");
+        this.player.idle("knight_idle");
       }
 
-      const spaceJustPressed = Phaser.Input.Keyboard.JustDown(
-        this.cursors.space
-      );
+      const spaceJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.space);
 
-      if (spaceJustPressed) {
-        this.knight.jump(this);
+      if(spaceJustPressed) {
+        this.player.jump(this);
       }
     }
 
     // Camera transitions
-    if (this.knight.y > 0 && this.knight.y < 528 && this.floor !== 0) {
+    if(this.player.y > 0 && this.player.y < 528 && this.floor !== 0) {
       this.camera.setBounds(0, 48, 2112, 480);
       this.floor = 0;
 
-    } else if (this.knight.y >= 528 && this.knight.y < 912 && this.floor !== 1) {
+    } else if(this.player.y >= 528 && this.player.y < 912 && this.floor !== 1) {
       this.camera.setBounds(0, 480, 2112, 480);
       this.floor = 1;
 
-    } else if (this.knight.y >= 912 && this.knight.y < 1344 && this.floor !== 2) {
+    } else if(this.player.y >= 912 && this.player.y < 1344 && this.floor !== 2) {
       this.camera.setBounds(0, 910, 2112, 480);
       this.floor = 2;
 
-    } else if (this.knight.y >= 1344 && this.knight.y < 1920 && this.floor !== 3) {
+    } else if(this.player.y >= 1344 && this.player.y < 1920 && this.floor !== 3) {
       this.camera.setBounds(0, 1350, 2112, 570);
       this.floor = 3;
     }
 
     // Enemy AI
     for(const enemy of this.enemies) {
-      const distance = Phaser.Math.Distance.Between(this.knight.x, this.knight.y, enemy.x, enemy.y);
+      const distance = Phaser.Math.Distance.Between(this.player.x, this.player.y, enemy.x, enemy.y);
 
       if(distance < 50 && !enemy.isAttackAnimationDone) {
         enemy.attack(`${enemy.texture.key}_attack_${enemy.id}`, this, enemy.hitboxes);
 
       } else if(enemy.isAttackAnimationDone) {
-        enemy.followPlayer(this.knight, `${enemy.texture.key}_walk_${enemy.id}`);
+        enemy.followPlayer(this.player, `${enemy.texture.key}_walk_${enemy.id}`);
 
         if(distance < 50) {
           enemy.isAttackAnimationDone = false;
@@ -213,23 +193,7 @@ class Map1 extends Phaser.Scene {
 
     // Traps collision
     this.matter.world.once("collisionstart", (event) => {
-      event.pairs.forEach((pair) => {
-        const { bodyA, bodyB } = pair;
-
-        if (
-          (bodyA.label === "knight" || bodyB.label === "knight") &&
-          (bodyA.gameObject.tile?.layer.name === this.trap_layer.layer.name ||
-            bodyB.gameObject.tile?.layer.name === this.trap_layer.layer.name)
-        ) {
-          if (!this.knight.is_colliding_with_trap) {
-            this.knight.getHit(0.5);
-            this.knight.is_colliding_with_trap = true;
-          }
-          setTimeout(() => {
-            this.knight.is_colliding_with_trap = false;
-          }, "1000");
-        }
-      });
+      this.player.trapColider(event, this);
     });
 
     this.arrows.forEach((arrow) => {

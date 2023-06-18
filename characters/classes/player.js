@@ -179,6 +179,42 @@ class Player extends Character {
       }
     });
   }
+
+  ladderColider(scene) {
+    scene.ladder_coords.forEach((position) => {
+      if(collide(scene.player, position, 10, 1.05)) {
+        scene.matter.world.setGravity(0, -1);
+
+        if(scene.input.keyboard.addKey("W").isDown) {
+          scene.player.climb("up");
+
+        } else if(scene.input.keyboard.addKey("S").isDown) {
+          scene.player.climb("down");
+        }
+      }
+      scene.matter.world.setGravity(0, 1);
+    });
+  }
+
+  trapColider(event, scene) {
+    event.pairs.forEach((pair) => {
+      const { bodyA, bodyB } = pair;
+
+      if (
+        (bodyA.label === `${this.texture.key}` || bodyB.label === `${this.texture.key}`) &&
+        (bodyA.gameObject.tile?.layer.name === scene.trap_layer.layer.name ||
+          bodyB.gameObject.tile?.layer.name === scene.trap_layer.layer.name)
+      ) {
+        if (!this.is_colliding_with_trap) {
+          this.getHit(0.5);
+          this.is_colliding_with_trap = true;
+        }
+        setTimeout(() => {
+          this.is_colliding_with_trap = false;
+        }, "1000");
+      }
+    });
+  }
 }
 
 export default Player;

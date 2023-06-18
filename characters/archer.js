@@ -41,7 +41,7 @@ class Archer extends Enemy {
         //this.arrow_hitbox.body.enable = true;
         //scene.physics.world.add(this.arrow_hitbox.body);
 
-        // if (collide(scene.knight, this.arrow_hitbox, 1, 1.01)) {
+        // if (collide(scene.player, this.arrow_hitbox, 1, 1.01)) {
         //   if (this.can_hit) {
 
         //   }

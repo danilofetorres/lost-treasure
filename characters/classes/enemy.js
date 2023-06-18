@@ -22,10 +22,10 @@ class Enemy extends Character {
       hitboxes[index].hitbox.body.enable = true;
       scene.physics.world.add(hitboxes[index].hitbox.body);
       
-      if(collide(scene.knight, hitboxes[index].hitbox, m1, m2)) {
+      if(collide(scene.player, hitboxes[index].hitbox, m1, m2)) {
 
         if(hitboxes[index].can_hit) {
-          scene.knight.getHit(1);  
+          scene.player.getHit(1);  
         }
 
         hitboxes[index].can_hit = false;
