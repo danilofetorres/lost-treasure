@@ -1,74 +1,31 @@
-import { createAnim } from "../utils/config.js";
-import collide from "../utils/helper.js";
+import Enemy from "./classes/enemy.js";
 import Arrow from "./arrow.js";
 
+import { createAnim } from "../utils/config.js";
 
-class Archer extends Phaser.Physics.Matter.Sprite {
-  id;
-  health;
-  speed;
-  depth;
+class Archer extends Enemy { 
   arrow;
   physics;
   can_hit;
 
-  constructor(scene, x, y, texture, frame, physics, id, arrow) {
+  constructor(id, scene, x, y, texture, frame, physics, max_health, speed) {
     const archerPhysics = scene.cache.json.get(physics);
 
-    super(scene.matter.world, x, y, texture, frame, { shape: archerPhysics.archer });
+    super(id, scene, x, y, texture, frame, archerPhysics.archer, max_health, speed);
     //this.setBody({ type: 'rectangle', width: 25, height: 32 });
-    this.setName("Archer");
-    scene.add.existing(this);
 
-    this.id = id;
-    this.hearts = 3;
-    this.speed = 2;
-    this.setScale(1.5);
-    this.setFixedRotation();
-    this.depth = 1;
-   this.setFlipX(false)
+    this.setName("Archer");
+    this.setFlipX(false);
     this.can_hit = true;
     this.body.collisionFilter.category = 0x0002;
 
-    this.arrow = arrow;
     this.physics = archerPhysics.arrow;
+
     createAnim(scene, "idle", "archer", 16, this.id,);
     createAnim(scene, "walk", "archer", 7, this.id);
     createAnim(scene, "attack", "archer", 33, this.id, 0, 16, 0);
     createAnim(scene, "get_hit", "archer", 8, this.id, 0, 10, 0);
     createAnim(scene, "death", "archer", 14, this.id, 0, 30, 0);
-  }
-
-  idle() {
-    this.setVelocityX(0);
-    this.play(`archer_idle_${this.id}`, true);
-  }
-
-  walk(direction) {
-    if (direction === "left") {
-      this.flipX = true;
-      this.setVelocityX(this.speed * -1);
-
-    } else if (direction === "right") {
-      this.flipX = false;
-      this.setVelocityX(this.speed);
-    }
-
-    this.play(`archer_walk_${this.id}`, true);
-  }
-
-  get_hit() {
-    this.play(`archer_get_hit_${this.id}`);
-    this.hearts -= 1;
-  }
-
-  die() {
-    this.play(`archer_death_${this.id}`);
-
-    this.once(
-      Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + `archer_death_${this.id}`,
-      this.destroy
-    );
   }
 
   attack(scene) {

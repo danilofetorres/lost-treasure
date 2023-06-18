@@ -3,6 +3,7 @@ class Character extends Phaser.Physics.Matter.Sprite {
   hearts;
   speed;
   depth;
+  hitboxes;
  
   constructor(scene, x, y, texture, frame, shape, max_health, speed) {
     super(scene.matter.world, x, y, texture, frame, { shape: shape });
@@ -31,8 +32,8 @@ class Character extends Phaser.Physics.Matter.Sprite {
     );
   }
 
-  resetHitbox(scene, hitboxes) {
-    for(const hitbox of hitboxes) {
+  resetHitbox(scene) {
+    for(const hitbox of this.hitboxes) {
       hitbox.hitbox.body.enable = false;
       
       scene.physics.world.remove(hitbox.hitbox.body);

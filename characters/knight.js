@@ -3,8 +3,6 @@ import Player from "./classes/player.js";
 import { createAnim } from "../utils/config.js";
 
 class Knight extends Player {
-  hitboxes;
-
   constructor(scene, x, y, texture, frame, physics, max_health, speed) {
     const knight_physics = scene.cache.json.get(physics);
 

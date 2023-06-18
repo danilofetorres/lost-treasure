@@ -103,19 +103,19 @@ class Map1 extends Phaser.Scene {
 
     const king_spawn = this.map.findObject("king_spawn", obj => obj.name === "king_spawn");
 
-    this.king = new King(this, king_spawn.x, king_spawn.y, "king", "king_idle-0.png", "king_physics", 1);
+    this.king = new King(0, this, king_spawn.x, king_spawn.y, "king", "king_idle-0.png", "king_physics", 10, 1);
     this.enemies.push(this.king);
 
     let enemy_id = 0;
 
     for(let i=1; i<=5; i++) {
       const spawn = this.map.findObject("archer_spawn", obj => obj.name === `spawn_${i}`);
-      this.enemies.push(new Archer(this, spawn.x, spawn.y, "archer", "archer_idle-0.png", "archer_physics", enemy_id++));
+      this.enemies.push(new Archer(enemy_id++, this, spawn.x, spawn.y, "archer", "archer_idle-0.png", "archer_physics", 3, 1.5));
     }
 
     for(let i=1; i<=6; i++) {
       const spawn = this.map.findObject("warrior_spawn", obj => obj.name === `spawn_${i}`);
-      this.enemies.push(new Warrior(enemy_id++, this, spawn.x, spawn.y, "warrior", "warrior_idle-0.png", "warrior_physics", 3, 2));
+      this.enemies.push(new Warrior(enemy_id++, this, spawn.x, spawn.y, "warrior", "warrior_idle-0.png", "warrior_physics", 3, 1.5));
     }
 
     // Set camera

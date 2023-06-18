@@ -3,7 +3,6 @@ import Enemy from "./classes/enemy.js";
 import { createAnim } from "../utils/config.js";
 
 class Warrior extends Enemy {
-  hitboxes;
   isAttackAnimationDone;
 
   constructor(id, scene, x, y, texture, frame, physics, max_health, speed) {
@@ -30,7 +29,7 @@ class Warrior extends Enemy {
 
     createAnim(scene, "idle", "warrior", 14, this.id,);
     createAnim(scene, "walk", "warrior", 7, this.id);
-    createAnim(scene, "attack", "warrior", 32, this.id,7, 10, 0);
+    createAnim(scene, "attack", "warrior", 32, this.id,7, 10, -1);
     createAnim(scene, "get_hit", "warrior", 8, this.id, 0, 10, 0);
     createAnim(scene, "death", "warrior", 35, this.id, 0, 30, 0);
   }

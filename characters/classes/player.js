@@ -135,12 +135,12 @@ class Player extends Character {
 
     this.once(
       Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + anim,
-      () => this.resetHitbox(scene, hitboxes)
+      () => this.resetHitbox(scene)
     );
 
     this.once(
       Phaser.Animations.Events.ANIMATION_STOP,
-      () => this.resetHitbox(scene, hitboxes)
+      () => this.resetHitbox(scene)
     );
   }
 
