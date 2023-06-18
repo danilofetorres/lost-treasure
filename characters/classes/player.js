@@ -96,14 +96,17 @@ class Player extends Character {
       scene.physics.world.add(hitboxes[index].hitbox.body);
       
       for(let i=0; i<scene.enemies.length; i++) {
+        const enemy = scene.enemies[i];
         
-        if(collide(scene.enemies[i], hitboxes[index].hitbox, m1, m2)) {
+        if(collide(enemy, hitboxes[index].hitbox, m1, m2)) {
 
           if(hitboxes[index].can_hit) {
-            scene.enemies[i].get_hit();
+            enemy.getHit(`${enemy.texture.key}_get_hit_${enemy.id}`);
             
-            if(scene.enemies[i].hearts <= 0) {
-              scene.enemies[i].die();
+            if(enemy.hearts <= 0) {
+              enemy.die(`${enemy.texture.key}_death_${enemy.id}`, () => {
+                enemy.destroy();
+              });
               scene.enemies.splice(i, 1);
             }
           }
@@ -131,7 +134,7 @@ class Player extends Character {
     this.on(Phaser.Animations.Events.ANIMATION_UPDATE, startHit);
 
     this.once(
-      Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + "knight_attack",
+      Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + anim,
       () => this.resetHitbox(scene, hitboxes)
     );
 
@@ -147,22 +150,13 @@ class Player extends Character {
     this.updateHearts();
 
     if(this.hearts <= 0) {
-      this.die("knight_death");
-    }
-  }
-
-  die(anim) {
-    this.play(anim, true);
-
-    this.once(
-      Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + anim,
-      () => {
+      this.die("knight_death", () => {
         this.setX(200).setY(200);
         this.hearts = this.max_health;
 
         this.updateHearts();
-      }
-    );
+      });
+    }
   }
 
   updateHearts() {

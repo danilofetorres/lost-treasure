@@ -22,6 +22,15 @@ class Character extends Phaser.Physics.Matter.Sprite {
     this.play(anim, true);
   }
 
+  die(anim, callback) {
+    this.play(anim, true);
+
+    this.once(
+      Phaser.Animations.Events.ANIMATION_COMPLETE_KEY + anim,
+      callback
+    );
+  }
+
   resetHitbox(scene, hitboxes) {
     for(const hitbox of hitboxes) {
       hitbox.hitbox.body.enable = false;

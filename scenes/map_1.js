@@ -109,13 +109,13 @@ class Map1 extends Phaser.Scene {
     let enemy_id = 0;
 
     for(let i=1; i<=5; i++) {
-        const spawn = this.map.findObject("archer_spawn", obj => obj.name === `spawn_${i}`);
-        this.enemies.push(new Archer(this, spawn.x, spawn.y, "archer", "archer_idle-0.png", "archer_physics", enemy_id++));
+      const spawn = this.map.findObject("archer_spawn", obj => obj.name === `spawn_${i}`);
+      this.enemies.push(new Archer(this, spawn.x, spawn.y, "archer", "archer_idle-0.png", "archer_physics", enemy_id++));
     }
 
     for(let i=1; i<=6; i++) {
-        const spawn = this.map.findObject("warrior_spawn", obj => obj.name === `spawn_${i}`);
-        this.enemies.push(new Warrior(this, spawn.x, spawn.y, "warrior", "warrior_idle-0.png", "warrior_physics", enemy_id++));
+      const spawn = this.map.findObject("warrior_spawn", obj => obj.name === `spawn_${i}`);
+      this.enemies.push(new Warrior(enemy_id++, this, spawn.x, spawn.y, "warrior", "warrior_idle-0.png", "warrior_physics", 3, 2));
     }
 
     // Set camera
@@ -200,10 +200,10 @@ class Map1 extends Phaser.Scene {
       const distance = Phaser.Math.Distance.Between(this.knight.x, this.knight.y, enemy.x, enemy.y);
 
       if(distance < 50 && !enemy.isAttackAnimationDone) {
-        enemy.attack(this);
+        enemy.attack(`${enemy.texture.key}_attack_${enemy.id}`, this, enemy.hitboxes);
 
       } else if(enemy.isAttackAnimationDone) {
-        enemy.walk(this);
+        enemy.followPlayer(this.knight, `${enemy.texture.key}_walk_${enemy.id}`);
 
         if(distance < 50) {
           enemy.isAttackAnimationDone = false;
