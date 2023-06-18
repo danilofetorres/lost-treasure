@@ -14,13 +14,9 @@ class Character extends Phaser.Physics.Matter.Sprite {
     this.max_health = max_health;
     this.hearts = max_health;
     this.speed = speed;
+
     this.setScale(1.5);
     this.setFixedRotation();
-  }
-
-  idle(anim) {
-    this.setVelocityX(0);
-    this.play(anim, true);
   }
 
   die(anim, callback) {

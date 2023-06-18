@@ -2,6 +2,7 @@ import Knight from "../characters/knight.js";
 import Warrior from "../characters/warrior.js";
 import King from "../characters/king.js";
 import Archer from "../characters/archer.js";
+import PlayerController from "../state_machine/player/controller/playerController.js";
 
 import { setCollision } from "../utils/config.js";
 import { createLayer } from "../utils/config.js";
@@ -19,6 +20,8 @@ class Map1 extends Phaser.Scene {
   cursors;
   pointer;
   player;
+  player_spawn;
+  player_controller;
   enemies;
   arrows;
 
@@ -97,8 +100,11 @@ class Map1 extends Phaser.Scene {
     setCollision(this, this.barrel_layer);
 
     // Create characters
-    const player_spawn = this.map.findObject("player_spawn", obj => obj.name === "player_spawn");
-    this.player = new Knight(this, player_spawn.x, player_spawn.y, "knight", "knight_idle-0.png", "knight_physics", 6, 2.5); 
+    this.player_spawn = this.map.findObject("player_spawn", obj => obj.name === "player_spawn");
+    this.player = new Knight(this, this.player_spawn.x, this.player_spawn.y, "knight", "knight_idle-0.png", "knight_physics", 6, 2.5); 
+
+    this.player_controller = new PlayerController(this, this.player);
+    this.player_controller.setState("idle");
 
     const king_spawn = this.map.findObject("king_spawn", obj => obj.name === "king_spawn");
     this.enemies.push(new King(0, this, king_spawn.x, king_spawn.y, "king", "king_idle-0.png", "king_physics", 10, 1));
@@ -135,28 +141,31 @@ class Map1 extends Phaser.Scene {
   }
 
   update() {
+    this.player_controller.update();
+
     // Character movement
-    if(this.player.hearts > 0) {
-      if(this.pointer.isDown) {
-        this.player.attack("knight_attack", this, this.player.hitboxes);
+    if(this.player.hearts <= 0) {
+      this.player_controller.setState("die");
 
-      } else if(this.input.keyboard.addKey("A").isDown) {
-        this.player.walk("knight_walk", "left");
+    } else if(this.pointer.isDown) {
+      this.player_controller.setState("attack");
 
-      } else if(this.input.keyboard.addKey("D").isDown) {
-        this.player.walk("knight_walk", "right");
+    } else if(this.input.keyboard.addKey("A").isDown) {
+      this.player_controller.setState("moveLeft");
 
-      } else {
-        this.player.idle("knight_idle");
-      }
+    } else if(this.input.keyboard.addKey("D").isDown) {
+      this.player_controller.setState("moveRight");
 
-      const spaceJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.space);
-
-      if(spaceJustPressed) {
-        this.player.jump(this);
-      }
+    } else {
+      this.player_controller.setState("idle");
     }
 
+    const spaceJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.space);
+
+    if(spaceJustPressed) {
+      this.player.jump(this);
+    }
+    
     // Camera transitions
     if(this.player.y > 0 && this.player.y < 528 && this.floor !== 0) {
       this.camera.setBounds(0, 48, 2112, 480);

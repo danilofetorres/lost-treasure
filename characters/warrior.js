@@ -21,6 +21,8 @@ class Warrior extends Enemy {
       scene.physics.add.existing(hitbox.hitbox);
     }
 
+    this.resetHitbox(scene);
+
     this.isAttackAnimationDone = false;
 
     this.on(`animationrepeat`, () => {
