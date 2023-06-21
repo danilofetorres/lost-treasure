@@ -24,10 +24,6 @@ class King extends Enemy {
 
     this.isAttackAnimationDone = false;
 
-    this.on(`animationrepeat`, () => {
-      this.isAttackAnimationDone = true;
-    });
-
     createAnim(scene, "idle", "king", 17, this.id);
     createAnim(scene, "walk", "king", 7, this.id);
     createAnim(scene, "attack", "king", 57, this.id);

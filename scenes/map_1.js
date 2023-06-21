@@ -6,6 +6,7 @@ import PlayerController from "../state_machine/player/controller/playerControlle
 
 import { setCollision } from "../utils/config.js";
 import { createLayer } from "../utils/config.js";
+import EnemyController from "../state_machine/enemy/controller/enemyController.js";
 
 class Map1 extends Phaser.Scene {
   map;
@@ -101,7 +102,7 @@ class Map1 extends Phaser.Scene {
 
     // Create characters
     this.player_spawn = this.map.findObject("player_spawn", obj => obj.name === "player_spawn");
-    this.player = new Knight(this, this.player_spawn.x, this.player_spawn.y, "knight", "knight_idle-0.png", "knight_physics", 6, 2.5); 
+    this.player = new Knight(this, this.player_spawn.x, this.player_spawn.y, "knight", "knight_idle-0.png", "knight_physics", 6, 3.5); 
 
     this.player_controller = new PlayerController(this, this.player);
     this.player_controller.setState("idle");
@@ -119,6 +120,11 @@ class Map1 extends Phaser.Scene {
     for(let i=1; i<=6; i++) {
       const spawn = this.map.findObject("warrior_spawn", obj => obj.name === `spawn_${i}`);
       this.enemies.push(new Warrior(enemy_id++, this, spawn.x, spawn.y, "warrior", "warrior_idle-0.png", "warrior_physics", 3, 1.5));
+    }
+
+    for(const enemy of this.enemies) {
+      enemy.controller = new EnemyController(this, enemy, this.player);
+      enemy.controller.setState("idle");
     }
 
     // Set camera
@@ -186,16 +192,18 @@ class Map1 extends Phaser.Scene {
 
     // Enemy AI
     for(const enemy of this.enemies) {
+      enemy.controller.update();
+
       const distance = Phaser.Math.Distance.Between(this.player.x, this.player.y, enemy.x, enemy.y);
 
       if(distance < 50 && !enemy.isAttackAnimationDone) {
-        enemy.attack(`${enemy.texture.key}_attack_${enemy.id}`, this, enemy.hitboxes);
+        enemy.controller.setState("attack");
 
-      } else if(enemy.isAttackAnimationDone) {
-        enemy.followPlayer(this.player, `${enemy.texture.key}_walk_${enemy.id}`);
+      } else if (enemy.isAttackAnimationDone) {
+        enemy.controller.setState("followPlayer");
 
         if(distance < 50) {
-          enemy.isAttackAnimationDone = false;
+         enemy.isAttackAnimationDone = false;
         }
       }
     }

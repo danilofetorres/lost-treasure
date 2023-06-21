@@ -10,6 +10,8 @@ class Warrior extends Enemy {
 
     super(id, scene, x, y, texture, frame, warriorPhysics.warrior, max_health, speed);
 
+    this.flipX = true;
+
     this.body.collisionFilter.category = 0x0004;
 
     this.hitboxes = [
@@ -25,12 +27,8 @@ class Warrior extends Enemy {
 
     this.isAttackAnimationDone = false;
 
-    this.on(`animationrepeat`, () => {
-      this.isAttackAnimationDone = true;
-    });
-
-    createAnim(scene, "idle", "warrior", 14, this.id,);
-    createAnim(scene, "walk", "warrior", 7, this.id);
+    createAnim(scene, "idle", "warrior", 14, this.id, 0, 10, -1);
+    createAnim(scene, "walk", "warrior", 7, this.id, 0, 10, -1);
     createAnim(scene, "attack", "warrior", 32, this.id,7, 10, -1);
     createAnim(scene, "get_hit", "warrior", 8, this.id, 0, 10, 0);
     createAnim(scene, "death", "warrior", 35, this.id, 0, 30, 0);

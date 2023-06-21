@@ -101,7 +101,7 @@ class Player extends Character {
   ladderColider(scene) {
     scene.ladder_coords.forEach((position) => {
       if(collide(scene.player, position, 10, 1.05)) {
-        scene.matter.world.setGravity(0, -1);
+        this.setIgnoreGravity(true);
 
         if(scene.input.keyboard.addKey("W").isDown) {
           scene.player.climb("up");
@@ -110,8 +110,8 @@ class Player extends Character {
           scene.player.climb("down");
         }
       }
-      scene.matter.world.setGravity(0, 1);
     });
+    this.setIgnoreGravity(false);
   }
 
   trapColider(event, scene) {
