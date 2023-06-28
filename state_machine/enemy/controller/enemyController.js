@@ -1,6 +1,7 @@
 import AttackState from "../attackState.js";
 import FollowPlayerState from "../followPlayerState.js";
 import IdleState from "../idleState.js";
+import ArrowState from "../ArrowState.js";
 
 class EnemyController {
   states;
@@ -11,6 +12,7 @@ class EnemyController {
       idle: new IdleState(enemy),
       followPlayer: new FollowPlayerState(enemy, player),
       attack: new AttackState(scene, enemy),
+      arrow_attack: new ArrowState(enemy, scene)
     };
   }
 

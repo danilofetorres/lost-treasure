@@ -78,7 +78,6 @@ class Enemy extends Character {
     }
 
     const direction = new Phaser.Math.Vector2(player.x - this.x, player.y - this.y).normalize();
-
     this.setVelocityX(direction.x * this.speed);
   }
 }
