@@ -34,7 +34,7 @@ class Map1 extends Phaser.Scene {
           debug: false,
         },
         arcade: {
-          debug: false,
+          debug: true,
           gravity: { y: 0 },
         },
       },

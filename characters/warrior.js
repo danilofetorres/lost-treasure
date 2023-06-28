@@ -15,8 +15,8 @@ class Warrior extends Enemy {
     this.body.collisionFilter.category = 0x0004;
 
     this.hitboxes = [
-      { hitbox: scene.add.circle(this.x, this.y, 27), can_hit: true, frames: [10, 15] },
-      { hitbox: scene.add.rectangle(this.x + 20, this.y + this.height/5, 20, 30), can_hit: true, frames: [24, 29] },
+      { hitbox: scene.add.circle(this.x, this.y, 15), can_hit: true, frames: [4, 10] },
+      { hitbox: scene.add.rectangle(this.x + 20, this.y + this.height/5, 20, 30), can_hit: true, frames: [19, 29] },
     ]
 
     for(const hitbox of this.hitboxes) {

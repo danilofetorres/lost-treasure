@@ -15,11 +15,11 @@ class AttackState {
   }
    
   onUpdate() {
-    const m1 = 1;
-    const m2 = 1.01;
+    const m1 = 2;
+    const m2 = 1.05;
     
     const hit = (index) => {
-      this.enemy.hitboxes[index].hitbox.x = this.enemy.flipX ? this.enemy.x - 30 : this.enemy.x + 30;
+      this.enemy.hitboxes[index].hitbox.x = this.enemy.flipX ? this.enemy.x - 45 : this.enemy.x + 30;
       this.enemy.hitboxes[index].hitbox.y = this.enemy.y - 5;
       
       this.enemy.hitboxes[index].hitbox.body.enable = true;
@@ -30,20 +30,23 @@ class AttackState {
         if(this.enemy.hitboxes[index].can_hit) {
           this.scene.player.getHit(1);  
         }
-
+        
         this.enemy.hitboxes[index].can_hit = false;
       }
     };
-
+    
     const startHit = (anim, frame) => { 
       this.enemy.hitboxes.forEach((hitbox, index) => {
-        if(frame.index >= hitbox.frames[0]  && frame.index <= hitbox.frames[1]) {
+        if(frame.index >= hitbox.frames[0] && frame.index <= hitbox.frames[1]) {
           hit(index);
-        }  
+
+        } else if(frame.index === hitbox.frames[1]+1) {
+          this.enemy.resetHitbox(this.scene);
+        } 
       });
       
       this.enemy.off(Phaser.Animations.Events.ANIMATION_UPDATE, startHit);
-    };
+    };  
 
     this.enemy.on(Phaser.Animations.Events.ANIMATION_UPDATE, startHit);
 
@@ -59,7 +62,6 @@ class AttackState {
   exit() {
     this.enemy.stop();
     this.enemy.off("animationrepeat");
-    this.enemy.resetHitbox(this.scene);
   }
 }
   

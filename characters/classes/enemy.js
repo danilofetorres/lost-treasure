@@ -60,6 +60,11 @@ class Enemy extends Character {
   getHit(anim) {
     this.play(anim);
     this.hearts -= 1;
+
+    this.on(`animationcomplete-${anim}`, () => {
+      this.resetHitbox(this.scene);
+      this.isAttackAnimationDone = true;
+    });
   }
 
   followPlayer(player, anim) {
