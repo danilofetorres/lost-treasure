@@ -29,12 +29,21 @@ class Character extends Phaser.Physics.Matter.Sprite {
   }
 
   resetHitbox(scene) {
-    for(const hitbox of this.hitboxes) {
-      hitbox.hitbox.body.enable = false;
-      
-      scene.physics.world.remove(hitbox.hitbox.body);
+    const reset = (scene, hitboxes) => {
+      for(const hitbox of hitboxes) {
+        hitbox.hitbox.body.enable = false;
+        scene.physics.world.remove(hitbox.hitbox.body);
+        hitbox.can_hit = true;
+      }
+    }
 
-      hitbox.can_hit = true;
+    if(this.hitboxes[0].constructor === Array) {
+      for(const attack of this.hitboxes) {
+        reset(scene, attack);
+      }
+
+    } else {
+      reset(scene, this.hitboxes);
     }
   }
 }

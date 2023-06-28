@@ -4,6 +4,7 @@ class AttackState {
   scene;
   enemy;
   player;
+  hitboxes;
   
   constructor(scene, enemy) {
     this.scene = scene;
@@ -11,7 +12,19 @@ class AttackState {
   }
   
   enter() {
-    this.enemy.play(`${this.enemy.texture.key}_attack_${this.enemy.id}`);
+    const rand = Math.floor(Math.random() * 2);
+
+    this.hitboxes = [];
+
+    if(this.enemy.hitboxes[0].constructor === Array) {
+      this.hitboxes = this.enemy.hitboxes[rand];
+      this.enemy.play(`${this.enemy.texture.key}_attack_${rand}_${this.enemy.id}`);
+
+    } else {
+      this.hitboxes = this.enemy.hitboxes;
+      this.enemy.play(`${this.enemy.texture.key}_attack_${this.enemy.id}`);
+    }
+
   }
    
   onUpdate() {
@@ -19,24 +32,24 @@ class AttackState {
     const m2 = 1.05;
     
     const hit = (index) => {
-      this.enemy.hitboxes[index].hitbox.x = this.enemy.flipX ? this.enemy.x - 45 : this.enemy.x + 30;
-      this.enemy.hitboxes[index].hitbox.y = this.enemy.y - 5;
+      this.hitboxes[index].hitbox.x = this.enemy.flipX ? this.enemy.x - 45 : this.enemy.x + 30;
+      this.hitboxes[index].hitbox.y = this.enemy.y - 5;
       
-      this.enemy.hitboxes[index].hitbox.body.enable = true;
-      this.scene.physics.world.add(this.enemy.hitboxes[index].hitbox.body);
+      this.hitboxes[index].hitbox.body.enable = true;
+      this.scene.physics.world.add(this.hitboxes[index].hitbox.body);
       
-      if(collide(this.scene.player, this.enemy.hitboxes[index].hitbox, m1, m2)) {
+      if(collide(this.scene.player, this.hitboxes[index].hitbox, m1, m2)) {
 
-        if(this.enemy.hitboxes[index].can_hit) {
+        if(this.hitboxes[index].can_hit) {
           this.scene.player.getHit(1);  
         }
         
-        this.enemy.hitboxes[index].can_hit = false;
+        this.hitboxes[index].can_hit = false;
       }
     };
     
     const startHit = (anim, frame) => { 
-      this.enemy.hitboxes.forEach((hitbox, index) => {
+      this.hitboxes.forEach((hitbox, index) => {
         if(frame.index >= hitbox.frames[0] && frame.index <= hitbox.frames[1]) {
           hit(index);
 

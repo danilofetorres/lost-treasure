@@ -11,13 +11,20 @@ class King extends Enemy {
     super(id, scene, x, y, texture, frame, kingPhysics.king, max_health, speed);
 
     this.hitboxes = [
-      { hitbox: scene.add.circle(this.x, this.y, 42), can_hit: true, frames: [21, 25] },
-      { hitbox: scene.add.rectangle(this.x + 20, this.y + this.height/5, 30, 50), can_hit: true, frames: [36, 45] },
-      // { hitbox: scene.add.rectangle(this.x + 20, this.y + this.height/5, 50, 10), can_hit: true, frames: [19, 25] },
+      [
+        { hitbox: scene.add.circle(this.x, this.y, 42), can_hit: true, frames: [21, 25] },
+        { hitbox: scene.add.rectangle(this.x + 20, this.y + this.height / 5, 30, 50), can_hit: true, frames: [36, 45] },
+      ],
+      [
+        { hitbox: scene.add.rectangle(this.x + 20, this.y + this.height / 5, 50, 10), can_hit: true, frames: [19, 25] },
+      ]
     ]
 
-    for(const hitbox of this.hitboxes) {
-      scene.physics.add.existing(hitbox.hitbox);
+    for(const attack of this.hitboxes) {
+
+      for(const hitbox of attack) {
+        scene.physics.add.existing(hitbox.hitbox);
+      }
     }
 
     this.resetHitbox(scene);
@@ -26,8 +33,8 @@ class King extends Enemy {
 
     createAnim(scene, "idle", "king", 17, this.id);
     createAnim(scene, "walk", "king", 7, this.id);
-    createAnim(scene, "attack", "king", 57, this.id);
-    createAnim(scene, "ground_attack", "king", 29, this.id);
+    createAnim(scene, "attack_0", "king", 57, this.id, 0, 10, -1, "attack");
+    createAnim(scene, "attack_1", "king", 29, this.id, 0, 10, -1, "ground_attack");
     createAnim(scene, "death", "king", 36, this.id, 0, 30, 0);
   }
 }
