@@ -191,6 +191,12 @@
                  "id":11,
                  "name":"spawn_6",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":0
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -203,6 +209,12 @@
                  "id":12,
                  "name":"spawn_5",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":0
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -215,6 +227,12 @@
                  "id":13,
                  "name":"spawn_4",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":1
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -227,6 +245,12 @@
                  "id":14,
                  "name":"spawn_3",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -239,6 +263,12 @@
                  "id":15,
                  "name":"spawn_2",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -251,6 +281,12 @@
                  "id":16,
                  "name":"spawn_1",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -274,6 +310,12 @@
                  "id":17,
                  "name":"king_spawn",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -297,6 +339,12 @@
                  "id":18,
                  "name":"spawn_5",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":1
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -309,6 +357,12 @@
                  "id":20,
                  "name":"spawn_4",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -321,6 +375,12 @@
                  "id":21,
                  "name":"spawn_3",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -333,6 +393,12 @@
                  "id":22,
                  "name":"spawn_2",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -345,6 +411,12 @@
                  "id":23,
                  "name":"spawn_1",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -1963,11 +2035,11 @@
                              "name":"",
                              "polygon":[
                                     {
-                                     "x":11,
+                                     "x":8,
                                      "y":0
                                     }, 
                                     {
-                                     "x":11,
+                                     "x":8,
                                      "y":-8
                                     }, 
                                     {

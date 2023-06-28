@@ -34,6 +34,7 @@ class AttackState {
               
             if(enemy.hearts <= 0) {
               enemy.die(`${enemy.texture.key}_death_${enemy.id}`, () => {
+                enemy.resetHitbox(this.scene);
                 enemy.destroy();
               });
 

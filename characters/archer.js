@@ -8,10 +8,10 @@ class Archer extends Enemy {
   physics;
   arrowData;
   can_hit;
-  constructor(id, scene, x, y, texture, frame, physics, max_health, speed, arrow) {
+  constructor(id, scene, spawn, texture, frame, physics, max_health, speed, arrow) {
     const archerPhysics = scene.cache.json.get(physics);
 
-    super(id, scene, x, y, texture, frame, archerPhysics.archer, max_health, speed);
+    super(id, scene, spawn, texture, frame, archerPhysics.archer, max_health, speed);
     this.body.collisionFilter.category = 0x0002;
 
     this.physics = archerPhysics.arrow;

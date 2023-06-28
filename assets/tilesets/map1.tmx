@@ -482,43 +482,79 @@
  </objectgroup>
  <objectgroup id="17" name="warrior_spawn">
   <object id="11" name="spawn_6" x="1176" y="445">
+   <properties>
+    <property name="floor" type="int" value="0"/>
+   </properties>
    <point/>
   </object>
   <object id="12" name="spawn_5" x="1489" y="445">
+   <properties>
+    <property name="floor" type="int" value="0"/>
+   </properties>
    <point/>
   </object>
   <object id="13" name="spawn_4" x="1776" y="804">
+   <properties>
+    <property name="floor" type="int" value="1"/>
+   </properties>
    <point/>
   </object>
   <object id="14" name="spawn_3" x="1727" y="1105">
+   <properties>
+    <property name="floor" type="int" value="2"/>
+   </properties>
    <point/>
   </object>
   <object id="15" name="spawn_2" x="1613" y="1732">
+   <properties>
+    <property name="floor" type="int" value="3"/>
+   </properties>
    <point/>
   </object>
   <object id="16" name="spawn_1" x="1412" y="1631">
+   <properties>
+    <property name="floor" type="int" value="3"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
  <objectgroup id="18" name="king_spawn">
   <object id="17" name="king_spawn" x="929" y="1789">
+   <properties>
+    <property name="floor" type="int" value="3"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>
  <objectgroup id="19" name="archer_spawn">
   <object id="18" name="spawn_5" x="791" y="683">
+   <properties>
+    <property name="floor" type="int" value="1"/>
+   </properties>
    <point/>
   </object>
   <object id="20" name="spawn_4" x="705" y="1050">
+   <properties>
+    <property name="floor" type="int" value="2"/>
+   </properties>
    <point/>
   </object>
   <object id="21" name="spawn_3" x="916" y="1052">
+   <properties>
+    <property name="floor" type="int" value="2"/>
+   </properties>
    <point/>
   </object>
   <object id="22" name="spawn_2" x="937" y="1542">
+   <properties>
+    <property name="floor" type="int" value="3"/>
+   </properties>
    <point/>
   </object>
   <object id="23" name="spawn_1" x="504" y="1587">
+   <properties>
+    <property name="floor" type="int" value="3"/>
+   </properties>
    <point/>
   </object>
  </objectgroup>

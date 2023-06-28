@@ -5,10 +5,10 @@ import { createAnim } from "../utils/config.js";
 class Warrior extends Enemy {
   isAttackAnimationDone;
 
-  constructor(id, scene, x, y, texture, frame, physics, max_health, speed) {
+  constructor(id, scene, spawn, texture, frame, physics, max_health, speed) {
     const warriorPhysics = scene.cache.json.get(physics);
 
-    super(id, scene, x, y, texture, frame, warriorPhysics.warrior, max_health, speed);
+    super(id, scene, spawn, texture, frame, warriorPhysics.warrior, max_health, speed);
 
     this.flipX = true;
 
@@ -25,7 +25,7 @@ class Warrior extends Enemy {
 
     this.resetHitbox(scene);
 
-    this.isAttackAnimationDone = false;
+    this.isAttackAnimationDone = true;
 
     createAnim(scene, "idle", "warrior", 14, this.id, 0, 10, -1);
     createAnim(scene, "walk", "warrior", 7, this.id, 0, 10, -1);

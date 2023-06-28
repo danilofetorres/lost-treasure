@@ -7,8 +7,8 @@ class Player extends Character {
   heart_group;
   is_colliding_with_trap;
   
-  constructor(scene, x, y, texture, frame, shape, max_health, speed) {
-    super(scene, x, y, texture, frame, shape, max_health, speed);
+  constructor(scene, spawn, texture, frame, shape, max_health, speed) {
+    super(scene, spawn, texture, frame, shape, max_health, speed);
 
     this.is_colliding_with_trap = false;
 

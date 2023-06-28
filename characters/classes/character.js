@@ -4,9 +4,10 @@ class Character extends Phaser.Physics.Matter.Sprite {
   speed;
   depth;
   hitboxes;
+  spawn;
  
-  constructor(scene, x, y, texture, frame, shape, max_health, speed) {
-    super(scene.matter.world, x, y, texture, frame, { shape: shape });
+  constructor(scene, spawn, texture, frame, shape, max_health, speed) {
+    super(scene.matter.world, spawn.x, spawn.y, texture, frame, { shape: shape });
 
     scene.add.existing(this);
 
@@ -14,6 +15,7 @@ class Character extends Phaser.Physics.Matter.Sprite {
     this.max_health = max_health;
     this.hearts = max_health;
     this.speed = speed;
+    this.spawn = spawn;
 
     this.setScale(1.5);
     this.setFixedRotation();

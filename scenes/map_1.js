@@ -3,10 +3,10 @@ import Warrior from "../characters/warrior.js";
 import King from "../characters/king.js";
 import Archer from "../characters/archer.js";
 import PlayerController from "../state_machine/player/controller/playerController.js";
+import EnemyController from "../state_machine/enemy/controller/enemyController.js";
 
 import { setCollision } from "../utils/config.js";
 import { createLayer } from "../utils/config.js";
-import EnemyController from "../state_machine/enemy/controller/enemyController.js";
 
 class Map1 extends Phaser.Scene {
   map;
@@ -102,24 +102,24 @@ class Map1 extends Phaser.Scene {
 
     // Create characters
     this.player_spawn = this.map.findObject("player_spawn", obj => obj.name === "player_spawn");
-    this.player = new Knight(this, 1000, 600, "knight", "knight_idle-0.png", "knight_physics", 6, 3.5); 
+    this.player = new Knight(this, this.player_spawn, "knight", "knight_idle-0.png", "knight_physics", 6, 3.5); 
 
     this.player_controller = new PlayerController(this, this.player);
     this.player_controller.setState("idle");
 
     const king_spawn = this.map.findObject("king_spawn", obj => obj.name === "king_spawn");
-    this.enemies.push(new King(0, this, king_spawn.x, king_spawn.y, "king", "king_idle-0.png", "king_physics", 10, 1));
+    this.enemies.push(new King(0, this, king_spawn, "king", "king_idle-0.png", "king_physics", 10, 1));
 
     let enemy_id = 0;
 
     for(let i=1; i<=5; i++) {
       const spawn = this.map.findObject("archer_spawn", obj => obj.name === `spawn_${i}`);
-      this.enemies.push(new Archer(enemy_id++, this, spawn.x, spawn.y, "archer", "archer_idle-0.png", "archer_physics", 3, 1.5, "arrow"));
+      this.enemies.push(new Archer(enemy_id++, this, spawn, "archer", "archer_idle-0.png", "archer_physics", 3, 1.5, "arrow"));
     }
 
     for(let i=1; i<=6; i++) {
       const spawn = this.map.findObject("warrior_spawn", obj => obj.name === `spawn_${i}`);
-      this.enemies.push(new Warrior(enemy_id++, this, spawn.x, spawn.y, "warrior", "warrior_idle-0.png", "warrior_physics", 3, 1.5));
+      this.enemies.push(new Warrior(enemy_id++, this, spawn, "warrior", "warrior_idle-0.png", "warrior_physics", 3, 1.5));
     }
 
     for(const enemy of this.enemies) {
@@ -196,25 +196,40 @@ class Map1 extends Phaser.Scene {
 
       const distance = Phaser.Math.Distance.Between(this.player.x, this.player.y, enemy.x, enemy.y);
 
+      if(enemy.spawn.properties[0].value === this.floor) {
 
-      if(distance < 600 && enemy.texture.key == 'archer' && !enemy.isAttackAnimationDone){
-        enemy.controller.setState("arrow_attack")
-      }
-      else if(distance < 50 && !enemy.isAttackAnimationDone) {
+        if(enemy.texture.key == 'archer') {
+  
+          if(distance < 600 && !enemy.isAttackAnimationDone) {
+            enemy.controller.setState("arrow_attack");
+  
+          } else if(enemy.isAttackAnimationDone) {
+            enemy.controller.setState("followPlayer");
+  
+            if(distance < 600) {
+              enemy.isAttackAnimationDone = false;
+            }
+          } 
+  
+        } else {
+  
+          if(distance < 60 && !enemy.isAttackAnimationDone) {
+            enemy.controller.setState("attack");
     
-          enemy.controller.setState("attack");
-        
-
-      } else if (enemy.isAttackAnimationDone) {
-        enemy.controller.setState("followPlayer");
-
-        if(distance < 600 && enemy.texture.key == 'archer')
-        {
-          enemy.isAttackAnimationDone = false;
+          } else if(distance < 550 && enemy.isAttackAnimationDone) {
+            enemy.controller.setState("followPlayer");
+    
+            if(distance < 60) {
+             enemy.isAttackAnimationDone = false;
+            }
+  
+          } else if(enemy.isAttackAnimationDone) {
+            enemy.controller.setState("idle");
+          }
         }
-        else if(distance < 50) {
-         enemy.isAttackAnimationDone = false;
-        }
+
+      } else {
+        enemy.controller.setState("idle");
       }
     }
 

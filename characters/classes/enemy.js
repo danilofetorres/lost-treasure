@@ -5,8 +5,8 @@ import collide from "../../utils/helper.js";
 class Enemy extends Character {
   id;
   
-  constructor(id, scene, x, y, texture, frame, shape, max_health, speed) {
-    super(scene, x, y, texture, frame, shape, max_health, speed);
+  constructor(id, scene, spawn, texture, frame, shape, max_health, speed) {
+    super(scene, spawn, texture, frame, shape, max_health, speed);
 
     this.id = id;
   }
