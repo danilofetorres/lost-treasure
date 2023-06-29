@@ -237,10 +237,6 @@ class Map1 extends Phaser.Scene {
     this.matter.world.once("collisionstart", (event) => {
       this.player.trapColider(event, this);
     });
-
-    this.arrows.forEach((arrow) => {
-      arrow.update();
-    });
   }
 }
 

@@ -8,6 +8,7 @@ class Archer extends Enemy {
   physics;
   arrowData;
   can_hit;
+  hitboxes;
   constructor(id, scene, spawn, texture, frame, physics, max_health, speed, arrow) {
     const archerPhysics = scene.cache.json.get(physics);
 
@@ -16,6 +17,7 @@ class Archer extends Enemy {
 
     this.physics = archerPhysics.arrow;
     this.arrow = arrow;
+    this.hitboxes = [];
     
     createAnim(scene, "idle", "archer", 16, this.id, 0, 10, -1);
     createAnim(scene, "walk", "archer", 7, this.id, 0, 10, -1);

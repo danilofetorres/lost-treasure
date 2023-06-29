@@ -67,55 +67,6 @@ class Arrow extends Phaser.Physics.Matter.Sprite {
     });
   });
   }
-
-  update() {
-    // this.scene.matter.world.once("collisionstart", (e) => {
-    //     //console.log(e)
-    //   e.pairs.forEach((pair) => {
-    //     const { bodyA, bodyB } = pair;
-
-    //     if ((bodyA.label === "knight" || bodyB.label === "knight") &&
-    //       (
-    //         bodyA.label === "arrow" ||
-    //         bodyB.label === "arrow"
-    //       )
-    //     ) {
-    //       this.scene.arrows.forEach((arrow) => {
-
-    //         if ((bodyA.gameObject.body === arrow.body || bodyB.gameObject.body === arrow.body) && arrow.canHit) {
-    //           arrow.canHit = false;
-    //           arrow.setVisible(false);
-    //           arrow.body.destroy();
-    //           this.scene.player.getHit(0.5);
-    //         }
-    //       });
-    //       // console.log("yes");
-    //     }
-
-    //     else if ((bodyA.label === "arrow" || bodyB.label === "arrow") &&
-    //       (
-    //         bodyA.label === "Body" ||
-    //         bodyB.label === "Body" ||
-    //         bodyA.label === "Rectangle Body" ||
-    //         bodyB.label === "Rectangle Body"
-            
-    //       )
-    //     ) {
-    //       this.scene.arrows.forEach((arrow) => {
-
-    //         if ((bodyA.gameObject.body === arrow.body || bodyB.gameObject.body === arrow.body) && arrow.canHit) {
-    //           arrow.canHit = false;
-    //           arrow.setVisible(false);
-    //           arrow.body.destroy();
-    //         }
-    //       });
-    //     }
-    //   });
-    // });
-
-    //console.log('hit')
-  }
-
 }
 
 export default Arrow;

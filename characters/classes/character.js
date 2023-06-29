@@ -39,7 +39,7 @@ class Character extends Phaser.Physics.Matter.Sprite {
       }
     }
 
-    if(this.hitboxes[0].constructor === Array) {
+    if(this.hitboxes[0]?.constructor === Array) {
       for(const attack of this.hitboxes) {
         reset(scene, attack);
       }
