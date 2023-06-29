@@ -6,6 +6,7 @@ class Player extends Character {
   health_bar;
   heart_group;
   is_colliding_with_trap;
+  is_climbing_ladder;
   
   constructor(scene, spawn, texture, frame, shape, max_health, speed) {
     super(scene, spawn, texture, frame, shape, max_health, speed);
@@ -16,7 +17,7 @@ class Player extends Character {
     this.health_bar.fillStyle(0x99adff, 1);
     this.health_bar.fillRoundedRect(13, 15, 190, 45, 10);
     this.health_bar.setScrollFactor(0);
-
+    this.is_climbing_ladder = false;
     this.heart_group = scene.add.group();
 
     const spacing = 29;
@@ -54,8 +55,8 @@ class Player extends Character {
     this.scene.matter.world.once("collisionactive", (event) => {
       event.pairs.forEach((pair) => {
         const { bodyA, bodyB } = pair;
-
-        if((bodyA.label === `${this.texture.key}` || bodyB.label === `${this.texture.key}`) &&
+        //console.log(this.is_climbing_ladder);
+        if(this.is_climbing_ladder || ((bodyA.label === `${this.texture.key}` || bodyB.label === `${this.texture.key}`) &&
           (
             bodyA.gameObject.tile?.layer.name === scene.block_layer.layer.name ||
             bodyB.gameObject.tile?.layer.name === scene.block_layer.layer.name ||
@@ -63,7 +64,7 @@ class Player extends Character {
             bodyB.gameObject.tile?.layer.name === scene.barrel_layer.layer.name ||
             bodyA.gameObject.tile?.layer.name === scene.trap_layer.layer.name ||
             bodyB.gameObject.tile?.layer.name === scene.trap_layer.layer.name
-          )
+          ))
         ) {
           this.setVelocityY(-8);
         }
@@ -101,6 +102,8 @@ class Player extends Character {
   ladderCollider(scene) {
     scene.ladder_coords.forEach((position) => {
       if(collide(scene.player, position, 10, 1.05)) {
+        this.is_climbing_ladder = true;
+        //console.log(this.is_climbing_ladder)
         this.setIgnoreGravity(true);
 
         if(scene.input.keyboard.addKey("W").isDown) {
@@ -108,7 +111,7 @@ class Player extends Character {
 
         } else if(scene.input.keyboard.addKey("S").isDown) {
           scene.player.climb("down");
-        }
+        } 
       }
     });
     this.setIgnoreGravity(false);
