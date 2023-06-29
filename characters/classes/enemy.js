@@ -87,13 +87,13 @@ class Enemy extends Character {
     event.pairs.forEach((pair) => {
       const { bodyA, bodyB } = pair;
 
-      if (
-        (bodyA.label === `${this.texture.key}` || bodyB.label === `${this.texture.key}`) &&
+      if(
+        (bodyA.gameObject.id == `${this.id}` || bodyB.gameObject.id == `${this.id}`) &&
         (bodyA.gameObject.tile?.layer.name === scene.trap_layer.layer.name ||
           bodyB.gameObject.tile?.layer.name === scene.trap_layer.layer.name)
       ) {
-        if (!this.is_colliding_with_trap) {
-          this.setVelocityY(-8);
+        if(!this.is_colliding_with_trap) {
+          this.setVelocityY(-6);
           this.is_colliding_with_trap = true;
         }
         setTimeout(() => {

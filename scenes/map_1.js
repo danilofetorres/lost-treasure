@@ -31,7 +31,7 @@ class Map1 extends Phaser.Scene {
       key: "Map1",
       physics: {
         matter: {
-          debug: false,
+          debug: true,
         },
         arcade: {
           debug: true,
@@ -56,7 +56,7 @@ class Map1 extends Phaser.Scene {
     this.load.tilemapTiledJSON("map1", "assets/tilesets/map1.json");
 
     // Load images
-    this.load.image("arrow", "/assets/character/archer/attack/archer_arrow.png");
+    this.load.image("arrow", "assets/character/archer/attack/archer_arrow.png");
     this.load.image("tileset", "assets/tilesets/tileset.png");
     this.load.atlas("heart", "assets/icons/atlas/heart.png", "assets/icons/atlas/heart.json");
 
