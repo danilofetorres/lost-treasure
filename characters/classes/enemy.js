@@ -4,11 +4,13 @@ import collide from "../../utils/helper.js";
 
 class Enemy extends Character {
   id;
+  is_colliding_with_trap;
   
   constructor(id, scene, spawn, texture, frame, shape, max_health, speed) {
     super(scene, spawn, texture, frame, shape, max_health, speed);
 
     this.id = id;
+    this.is_colliding_with_trap = false;
   }
 
   attack(anim, scene, hitboxes) {
@@ -79,6 +81,26 @@ class Enemy extends Character {
 
     const direction = new Phaser.Math.Vector2(player.x - this.x, player.y - this.y).normalize();
     this.setVelocityX(direction.x * this.speed);
+  }
+
+  trapCollider(event, scene) {
+    event.pairs.forEach((pair) => {
+      const { bodyA, bodyB } = pair;
+
+      if (
+        (bodyA.label === `${this.texture.key}` || bodyB.label === `${this.texture.key}`) &&
+        (bodyA.gameObject.tile?.layer.name === scene.trap_layer.layer.name ||
+          bodyB.gameObject.tile?.layer.name === scene.trap_layer.layer.name)
+      ) {
+        if (!this.is_colliding_with_trap) {
+          this.setVelocityY(-8);
+          this.is_colliding_with_trap = true;
+        }
+        setTimeout(() => {
+          this.is_colliding_with_trap = false;
+        }, "1000");
+      }
+    });
   }
 }
 

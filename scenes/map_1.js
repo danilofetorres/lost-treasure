@@ -142,7 +142,16 @@ class Map1 extends Phaser.Scene {
     });
     
     this.matter.world.on("beforeupdate", () => {
-      this.player.ladderColider(this);
+      this.player.ladderCollider(this);
+    });
+
+    // Traps collision
+    this.matter.world.on("collisionstart", (event) => {
+      this.player.trapCollider(event, this);
+
+      for(const enemy of this.enemies) {
+        enemy.trapCollider(event, this);
+      }
     });
   }
 
@@ -233,10 +242,7 @@ class Map1 extends Phaser.Scene {
       }
     }
 
-    // Traps collision
-    this.matter.world.once("collisionstart", (event) => {
-      this.player.trapColider(event, this);
-    });
+    
 
     this.arrows.forEach((arrow) => {
       arrow.update();
