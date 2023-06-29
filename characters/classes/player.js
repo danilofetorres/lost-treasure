@@ -98,7 +98,7 @@ class Player extends Character {
     });
   }
 
-  ladderColider(scene) {
+  ladderCollider(scene) {
     scene.ladder_coords.forEach((position) => {
       if(collide(scene.player, position, 10, 1.05)) {
         this.setIgnoreGravity(true);
@@ -114,7 +114,7 @@ class Player extends Character {
     this.setIgnoreGravity(false);
   }
 
-  trapColider(event, scene) {
+  trapCollider(event, scene) {
     event.pairs.forEach((pair) => {
       const { bodyA, bodyB } = pair;
 

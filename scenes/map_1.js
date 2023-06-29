@@ -31,7 +31,7 @@ class Map1 extends Phaser.Scene {
       key: "Map1",
       physics: {
         matter: {
-          debug: false,
+          debug: true,
         },
         arcade: {
           debug: true,
@@ -56,7 +56,7 @@ class Map1 extends Phaser.Scene {
     this.load.tilemapTiledJSON("map1", "assets/tilesets/map1.json");
 
     // Load images
-    this.load.image("arrow", "/assets/character/archer/attack/archer_arrow.png");
+    this.load.image("arrow", "assets/character/archer/attack/archer_arrow.png");
     this.load.image("tileset", "assets/tilesets/tileset.png");
     this.load.atlas("heart", "assets/icons/atlas/heart.png", "assets/icons/atlas/heart.json");
 
@@ -142,7 +142,16 @@ class Map1 extends Phaser.Scene {
     });
     
     this.matter.world.on("beforeupdate", () => {
-      this.player.ladderColider(this);
+      this.player.ladderCollider(this);
+    });
+
+    // Traps collision
+    this.matter.world.on("collisionstart", (event) => {
+      this.player.trapCollider(event, this);
+
+      for(const enemy of this.enemies) {
+        enemy.trapCollider(event, this);
+      }
     });
   }
 
@@ -233,10 +242,6 @@ class Map1 extends Phaser.Scene {
       }
     }
 
-    // Traps collision
-    this.matter.world.once("collisionstart", (event) => {
-      this.player.trapColider(event, this);
-    });
   }
 }
 
