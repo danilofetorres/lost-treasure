@@ -16,6 +16,7 @@ class Character extends Phaser.Physics.Matter.Sprite {
     this.hearts = max_health;
     this.speed = speed;
     this.spawn = spawn;
+    this.body.restitution = 0; 
 
     this.setScale(1.5);
     this.setFixedRotation();

@@ -88,9 +88,9 @@ class Enemy extends Character {
       const { bodyA, bodyB } = pair;
 
       if(
-        (bodyA.gameObject.id == `${this.id}` || bodyB.gameObject.id == `${this.id}`) &&
-        (bodyA.gameObject.tile?.layer.name === scene.trap_layer.layer.name ||
-          bodyB.gameObject.tile?.layer.name === scene.trap_layer.layer.name)
+        (bodyA.gameObject?.id == `${this.id}` || bodyB.gameObject?.id == `${this.id}`) &&
+        (bodyA.gameObject?.tile?.layer.name === scene.trap_layer.layer.name ||
+          bodyB.gameObject?.tile?.layer.name === scene.trap_layer.layer.name)
       ) {
         if(!this.is_colliding_with_trap) {
           this.setVelocityY(-6);

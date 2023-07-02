@@ -141,6 +141,8 @@ class Map1 extends Phaser.Scene {
       }
     });
     
+    
+       
     this.matter.world.on("beforeupdate", () => {
       this.player.ladderCollider(this);
     });
@@ -241,8 +243,9 @@ class Map1 extends Phaser.Scene {
         enemy.controller.setState("idle");
       }
     }
-
+    this.player.fallDamageHandlerUpdate(this);
   }
+  
 }
 
 export default Map1;
