@@ -10,8 +10,8 @@ class Player extends Character {
   can_jump;
   previous_velocity_y;
 
-  constructor(scene, spawn, texture, frame, shape, max_health, speed) {
-    super(scene, spawn, texture, frame, shape, max_health, speed);
+  constructor(scene, spawn, texture, frame, shape, max_health, speed, height, width) {
+    super(scene, spawn, texture, frame, shape, max_health, speed, height, width);
 
     this.is_colliding_with_trap = false;
     this.previous_velocity_y = 0;

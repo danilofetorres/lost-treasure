@@ -3,10 +3,10 @@ import Player from "./classes/player.js";
 import { createAnim } from "../utils/config.js";
 
 class Knight extends Player {
-  constructor(scene, spawn, texture, frame, physics, max_health, speed) {
+  constructor(scene, spawn, texture, frame, physics, max_health, speed, height, width) {
     const knight_physics = scene.cache.json.get(physics);
 
-    super(scene, spawn, texture, frame, knight_physics.knight, max_health, speed);
+    super(scene, spawn, texture, frame, knight_physics.knight, max_health, speed, height, width);
     
     this.body.collisionFilter.category = 0x0001;
 

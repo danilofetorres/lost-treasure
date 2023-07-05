@@ -5,12 +5,15 @@ class Character extends Phaser.Physics.Matter.Sprite {
   depth;
   hitboxes;
   spawn;
+  width;
+  height;
  
-  constructor(scene, spawn, texture, frame, shape, max_health, speed) {
+  constructor(scene, spawn, texture, frame, shape, max_health, speed, height, width) {
     super(scene.matter.world, spawn.x, spawn.y, texture, frame, { shape: shape });
 
     scene.add.existing(this);
-
+    this.height = height;
+    this.width = width;
     this.depth = 1;
     this.max_health = max_health;
     this.hearts = max_health;

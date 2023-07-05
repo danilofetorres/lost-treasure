@@ -18,7 +18,7 @@ class AttackState {
     const m2 = 1.05;
 
     const hit = (index) => {
-      this.player.hitboxes[index].hitbox.x = this.player.flipX ? this.player.x - 30 : this.player.x + 30;
+      this.player.hitboxes[index].hitbox.x = this.player.flipX ? this.player.x - 35 : this.player.x + 30;
       this.player.hitboxes[index].hitbox.y = this.player.y - 5;    
 
       this.player.hitboxes[index].hitbox.body.enable = true;

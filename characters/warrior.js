@@ -5,10 +5,10 @@ import { createAnim } from "../utils/config.js";
 class Warrior extends Enemy {
   isAttackAnimationDone;
 
-  constructor(id, scene, spawn, texture, frame, physics, max_health, speed) {
+  constructor(id, scene, spawn, texture, frame, physics, max_health, speed, height, width) {
     const warriorPhysics = scene.cache.json.get(physics);
 
-    super(id, scene, spawn, texture, frame, warriorPhysics.warrior, max_health, speed);
+    super(id, scene, spawn, texture, frame, warriorPhysics.warrior, max_health, speed, height, width);
 
     this.flipX = true;
 

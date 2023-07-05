@@ -5,10 +5,10 @@ import { createAnim } from "../utils/config.js";
 class King extends Enemy {
   isAttackAnimationDone;
 
-  constructor(id, scene, spawn, texture, frame, physics, max_health, speed) {
+  constructor(id, scene, spawn, texture, frame, physics, max_health, speed, height, width) {
     const kingPhysics = scene.cache.json.get(physics);
 
-    super(id, scene, spawn, texture, frame, kingPhysics.king, max_health, speed);
+    super(id, scene, spawn, texture, frame, kingPhysics.king, max_health, speed, height, width);
 
     this.hitboxes = [
       [
@@ -16,7 +16,7 @@ class King extends Enemy {
         { hitbox: scene.add.rectangle(this.x + 20, this.y + this.height / 5, 30, 50), can_hit: true, frames: [36, 45] },
       ],
       [
-        { hitbox: scene.add.rectangle(this.x + 20, this.y + this.height / 5, 50, 10), can_hit: true, frames: [19, 25] },
+        { hitbox: scene.add.rectangle(this.x , this.y + 10, 70, 10), can_hit: true, frames: [19, 25]},
       ]
     ]
 

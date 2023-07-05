@@ -538,7 +538,7 @@
   </object>
  </objectgroup>
  <objectgroup id="18" name="king_spawn">
-  <object id="17" name="king_spawn" x="929" y="1789">
+  <object id="17" name="king_spawn" x="925.97" y="1813.24">
    <properties>
     <property name="floor" type="int" value="3"/>
    </properties>
