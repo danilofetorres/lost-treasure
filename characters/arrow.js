@@ -51,13 +51,15 @@ class Arrow extends Phaser.Physics.Matter.Sprite {
           bodyA.label === "Body" ||
           bodyB.label === "Body" ||
           bodyA.label === "Rectangle Body" ||
-          bodyB.label === "Rectangle Body"
+          bodyB.label === "Rectangle Body" ||
+          bodyA.label === "paredes" ||
+          bodyB.label === "paredes"
           
         )
       ) {
         this.scene.arrows.forEach((arrow) => {
 
-          if ((bodyA.gameObject.body === arrow.body || bodyB.gameObject.body === arrow.body) && arrow.canHit) {
+          if ((bodyA?.gameObject?.body === arrow.body || bodyB?.gameObject?.body === arrow.body) && arrow.canHit) {
             arrow.canHit = false;
             arrow.setVisible(false);
             arrow.body.destroy();

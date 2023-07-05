@@ -134,6 +134,11 @@
    <properties>
     <property name="collides" type="bool" value="true"/>
    </properties>
+   <objectgroup draworder="index" id="2">
+    <object id="1" x="48.1818" y="0">
+     <polygon points="-0.0909091,-0.181818 -0.181818,48.9091 -0.545455,48.9091"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="93">
    <properties>
@@ -144,6 +149,11 @@
    <properties>
     <property name="collides" type="bool" value="true"/>
    </properties>
+   <objectgroup draworder="index" id="3">
+    <object id="5" x="47.9805" y="-0.0195313">
+     <polygon points="0,-0.363636 1.28054,48.0859 -49.1026,47.3626 -47.9169,-0.336293"/>
+    </object>
+   </objectgroup>
   </tile>
   <tile id="116">
    <properties>

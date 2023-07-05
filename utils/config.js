@@ -21,3 +21,11 @@ export function setCollision(scene, layer) {
   layer.setCollisionByProperty({ collides: true });
   scene.matter.world.convertTilemapLayer(layer);
 }
+
+export function createWall(scene, body) {
+  scene.add.existing(body);
+  body.friction = 0;
+  body.frictionAir = 0;
+  body.frictionStatic = 0;
+
+}

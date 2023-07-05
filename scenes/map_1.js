@@ -5,7 +5,7 @@ import Archer from "../characters/archer.js";
 import PlayerController from "../state_machine/player/controller/playerController.js";
 import EnemyController from "../state_machine/enemy/controller/enemyController.js";
 
-import { setCollision } from "../utils/config.js";
+import { createWall, setCollision } from "../utils/config.js";
 import { createLayer } from "../utils/config.js";
 
 class Map1 extends Phaser.Scene {
@@ -94,8 +94,12 @@ class Map1 extends Phaser.Scene {
     this.trap_layer = createLayer(this, "armadilhas");
     this.barrel_layer = createLayer(this, "barris");
 
+    this.wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 3840, {isStatic: true, label: "paredes"} );
+    this.wallCollisionRight = this.matter.add.rectangle(2070, 0, 10, 3840, {isStatic: true, label: "paredes"} );
+    
+    createWall(this, this.wallCollisionLeft);
+    createWall(this, this.wallCollisionRight);
     // Set collisions
-    setCollision(this, this.wall_layer);
     setCollision(this, this.block_layer);
     setCollision(this, this.trap_layer);
     setCollision(this, this.barrel_layer);
@@ -141,8 +145,6 @@ class Map1 extends Phaser.Scene {
       }
     });
     
-    
-       
     this.matter.world.on("beforeupdate", () => {
       this.player.ladderCollider(this);
     });
