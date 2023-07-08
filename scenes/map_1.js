@@ -125,6 +125,8 @@ class Map1 extends Phaser.Scene {
     this.trap_layer = createLayer(this, "armadilhas");
     this.barrel_layer = createLayer(this, "barris");
 
+    //this.matter.add.rectangle(200, 200, 30, 48);
+
     this.wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 3840, {
       isStatic: true,
       label: "paredes",
@@ -151,81 +153,84 @@ class Map1 extends Phaser.Scene {
       "knight",
       "knight_idle-0.png",
       "knight_physics",
-      6,
+      10,
       3.5,
       48,
       30
     );
-    
+
     this.player_controller = new PlayerController(this, this.player);
     this.player_controller.setState("idle");
-    
+
     const king_spawn = this.map.findObject(
       "king_spawn",
       (obj) => obj.name === "king_spawn"
-      );
-      this.enemies.push(
-        new King(
-          0,
-          this,
-          king_spawn,
-          "king",
-          "king_idle-0.png",
-          "king_physics",
-          10,
-          1,
-          48,
-          40
-          )
-          );
-          let enemy_id = 0;
-          
-          for (let i = 1; i <= 5; i++) {
+    );
+    let king = new King(
+      0,
+      this,
+      king_spawn,
+      "king",
+      "king_idle-0.png",
+      "king_physics",
+      10,
+      1,
+      48,
+      40
+    );
+    king.height = 48;
+    king.width = 40;
+    this.enemies.push(king);
+    let enemy_id = 0;
+
+    for (let i = 1; i <= 5; i++) {
       const spawn = this.map.findObject(
         "archer_spawn",
         (obj) => obj.name === `spawn_${i}`
-        );
-        this.enemies.push(
-          new Archer(
-          enemy_id++,
-          this,
-          spawn,
-          "archer",
-          "archer_idle-0.png",
-          "archer_physics",
-          3,
-          1.5,
-          "arrow",
-          48,
-          30
-        )
       );
+      let archer = new Archer(
+        enemy_id++,
+        this,
+        spawn,
+        "archer",
+        "archer_idle-0.png",
+        "archer_physics",
+        3,
+        1.5,
+        "arrow",
+        48,
+        30
+      );
+      archer.width = 30;
+      archer.height = 48;
+
+      this.enemies.push(archer);
     }
     for (let i = 1; i <= 5; i++) {
       const spawn = this.map.findObject(
         "warrior_spawn",
         (obj) => obj.name === `spawn_${i}`
       );
-      this.enemies.push(
-        new Warrior(
-          enemy_id++,
-          this,
-          spawn,
-          "warrior",
-          "warrior_idle-0.png",
-          "warrior_physics",
-          3,
-          1.5,
-          48,
-          30
-        )
+      let warrior = new Warrior(
+        enemy_id++,
+        this,
+        spawn,
+        "warrior",
+        "warrior_idle-0.png",
+        "warrior_physics",
+        3,
+        1.5,
+        48,
+        30
       );
+      warrior.height = 48;
+      warrior.length = 30;
+      this.enemies.push(warrior);
     }
 
     for (const enemy of this.enemies) {
       enemy.controller = new EnemyController(this, enemy, this.player);
       enemy.controller.setState("idle");
-      console.log(enemy.width);
     }
 
     // Set camera

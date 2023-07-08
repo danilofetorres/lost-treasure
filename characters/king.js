@@ -12,11 +12,11 @@ class King extends Enemy {
 
     this.hitboxes = [
       [
-        { hitbox: scene.add.circle(this.x, this.y, 42), can_hit: true, frames: [21, 25] },
-        { hitbox: scene.add.rectangle(this.x + 20, this.y + this.height / 5, 30, 50), can_hit: true, frames: [36, 45] },
+        { hitbox: scene.add.circle(this.x, this.y, 42), can_hit: true, frames: [21, 25], m1: 1, m2: 1.01 },
+        { hitbox: scene.add.rectangle(this.x + 20, this.y + this.height / 5, 30, 50), can_hit: true, frames: [36, 45], m1: 1, m2: 1.01 },
       ],
       [
-        { hitbox: scene.add.rectangle(this.x , this.y + 10, 70, 10), can_hit: true, frames: [19, 25]},
+        { hitbox: scene.add.rectangle(this.x , this.y + 10, 80, 10), can_hit: true, frames: [19, 25], x: 0, y: 25,m1: 1, m2: 1.05},
       ]
     ]
 

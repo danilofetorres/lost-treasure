@@ -32,13 +32,13 @@ class AttackState {
     const m2 = 1.05;
     
     const hit = (index) => {
-      this.hitboxes[index].hitbox.x = this.enemy.flipX ? this.enemy.x - 45 : this.enemy.x + 30;
-      this.hitboxes[index].hitbox.y = this.enemy.y - 5;
+      this.hitboxes[index].hitbox.x = this.hitboxes[index].x === 0 ? this.enemy.x : (this.enemy.flipX ? this.enemy.x - 45 : this.enemy.x + 30);
+      this.hitboxes[index].hitbox.y =  this.hitboxes[index].y > 0 ? this.hitboxes[index].y + this.enemy.y : this.enemy.y - 5;
       
       this.hitboxes[index].hitbox.body.enable = true;
       this.scene.physics.world.add(this.hitboxes[index].hitbox.body);
       
-      if(collide(this.scene.player, this.hitboxes[index].hitbox, m1, m2)) {
+      if(collide(this.scene.player, this.hitboxes[index].hitbox, this.hitboxes[index].m1, this.hitboxes[index].m2)) {
 
         if(this.hitboxes[index].can_hit) {
           this.scene.player.getHit(1);  

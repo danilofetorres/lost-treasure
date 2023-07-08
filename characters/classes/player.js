@@ -17,7 +17,7 @@ class Player extends Character {
     this.previous_velocity_y = 0;
     this.health_bar = scene.add.graphics();
     this.health_bar.fillStyle(0x99adff, 1);
-    this.health_bar.fillRoundedRect(13, 15, 190, 45, 10);
+    this.health_bar.fillRoundedRect(13, 15, 305, 45, 10);
     this.health_bar.setScrollFactor(0);
     this.is_climbing_ladder = false;
     this.heart_group = scene.add.group();
