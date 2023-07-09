@@ -27,5 +27,4 @@ export function createWall(scene, body) {
   body.friction = 0;
   body.frictionAir = 0;
   body.frictionStatic = 0;
-
 }

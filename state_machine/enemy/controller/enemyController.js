@@ -12,7 +12,7 @@ class EnemyController {
       idle: new IdleState(enemy),
       followPlayer: new FollowPlayerState(enemy, player),
       attack: new AttackState(scene, enemy),
-      arrow_attack: new ArrowState(enemy, scene, player)
+      arrowAttack: new ArrowState(enemy, scene, player)
     };
   }
 

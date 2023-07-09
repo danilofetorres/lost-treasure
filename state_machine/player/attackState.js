@@ -29,6 +29,7 @@ class AttackState {
         const enemy = this.scene.enemies[i];
 
         if(collide(enemy, this.player.hitboxes[index].hitbox, m1, m2)) {
+
           if(this.player.hitboxes[index].can_hit) {
             enemy.getHit(`${enemy.texture.key}_get_hit_${enemy.id}`);
               
@@ -49,8 +50,8 @@ class AttackState {
 
     const startHit = (anim, frame) => {
       if(this.scene.enemies) {
-  
         this.player.hitboxes.forEach((hitbox, index) => {
+
           if(frame.index >= hitbox.frames[0]  && frame.index <= hitbox.frames[1]) {
             hit(index);
           }  

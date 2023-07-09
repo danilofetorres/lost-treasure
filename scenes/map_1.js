@@ -25,8 +25,6 @@ class Map1 extends Phaser.Scene {
   player_controller;
   enemies;
   arrows;
-  wallCollisionLeft;
-  wallCollisionRight;
 
   constructor() {
     super({
@@ -44,10 +42,12 @@ class Map1 extends Phaser.Scene {
   }
 
   init() {
-    this.camera = this.cameras.main;
     this.floor = 0;
+
+    this.camera = this.cameras.main;
     this.cursors = this.input.keyboard.createCursorKeys();
     this.pointer = this.input.activePointer;
+
     this.enemies = [];
     this.arrows = [];
     this.ladder_coords = [];
@@ -60,48 +60,17 @@ class Map1 extends Phaser.Scene {
     // Load images
     this.load.image("arrow", "assets/character/archer/attack/archer_arrow.png");
     this.load.image("tileset", "assets/tilesets/tileset.png");
-    this.load.atlas(
-      "heart",
-      "assets/icons/atlas/heart.png",
-      "assets/icons/atlas/heart.json"
-    );
+    this.load.atlas("heart", "assets/icons/atlas/heart.png", "assets/icons/atlas/heart.json");
 
     // Load character assets
-    this.load.atlas(
-      "knight",
-      "assets/character/knight/atlas/knight.png",
-      "assets/character/knight/atlas/knight.json"
-    );
-    this.load.json(
-      "knight_physics",
-      "assets/character/knight/physics/knight.json"
-    );
-
-    this.load.atlas(
-      "warrior",
-      "assets/character/warrior/atlas/warrior.png",
-      "assets/character/warrior/atlas/warrior.json"
-    );
-    this.load.json(
-      "warrior_physics",
-      "assets/character/warrior/physics/warrior.json"
-    );
-
-    this.load.atlas(
-      "king",
-      "assets/character/king/atlas/king.png",
-      "assets/character/king/atlas/king.json"
-    );
+    this.load.atlas("knight", "assets/character/knight/atlas/knight.png", "assets/character/knight/atlas/knight.json");
+    this.load.json("knight_physics", "assets/character/knight/physics/knight.json");
+    this.load.atlas("warrior", "assets/character/warrior/atlas/warrior.png", "assets/character/warrior/atlas/warrior.json");
+    this.load.json("warrior_physics", "assets/character/warrior/physics/warrior.json");
+    this.load.atlas("king", "assets/character/king/atlas/king.png", "assets/character/king/atlas/king.json");
     this.load.json("king_physics", "assets/character/king/physics/king.json");
-    this.load.atlas(
-      "archer",
-      "assets/character/archer/atlas/archer.png",
-      "assets/character/archer/atlas/archer.json"
-    );
-    this.load.json(
-      "archer_physics",
-      "assets/character/archer/physics/archer.json"
-    );
+    this.load.atlas("archer", "assets/character/archer/atlas/archer.png", "assets/character/archer/atlas/archer.json");
+    this.load.json("archer_physics", "assets/character/archer/physics/archer.json");
   }
 
   create() {
@@ -127,108 +96,55 @@ class Map1 extends Phaser.Scene {
 
     //this.matter.add.rectangle(200, 200, 30, 48);
 
-    this.wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 3840, {
-      isStatic: true,
-      label: "paredes",
-    });
-    this.wallCollisionRight = this.matter.add.rectangle(2070, 0, 10, 3840, {
-      isStatic: true,
-      label: "paredes",
-    });
-    createWall(this, this.wallCollisionLeft);
-    createWall(this, this.wallCollisionRight);
+    const wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 3840, { isStatic: true, label: "paredes" });
+    const wallCollisionRight = this.matter.add.rectangle(2070, 0, 10, 3840, { isStatic: true, label: "paredes" });
+
+    createWall(this, wallCollisionLeft);
+    createWall(this, wallCollisionRight);
+
     // Set collisions
     setCollision(this, this.block_layer);
     setCollision(this, this.trap_layer);
     setCollision(this, this.barrel_layer);
 
     // Create characters
-    this.player_spawn = this.map.findObject(
-      "player_spawn",
-      (obj) => obj.name === "player_spawn"
-    );
-    this.player = new Knight(
-      this,
-      this.player_spawn,
-      "knight",
-      "knight_idle-0.png",
-      "knight_physics",
-      10,
-      3.5,
-      48,
-      30
-    );
+    this.player_spawn = this.map.findObject("player_spawn", (obj) => obj.name === "player_spawn");
+    this.player = new Knight(this, this.player_spawn, "knight", "knight_idle-0.png", "knight_physics", 10, 3.5, 48, 30);
 
     this.player_controller = new PlayerController(this, this.player);
     this.player_controller.setState("idle");
 
-    const king_spawn = this.map.findObject(
-      "king_spawn",
-      (obj) => obj.name === "king_spawn"
-    );
-    let king = new King(
-      0,
-      this,
-      king_spawn,
-      "king",
-      "king_idle-0.png",
-      "king_physics",
-      10,
-      1,
-      48,
-      40
-    );
+    const king_spawn = this.map.findObject("king_spawn", (obj) => obj.name === "king_spawn");
+    const king = new King(0, this, king_spawn, "king", "king_idle-0.png", "king_physics", 10, 1, 48, 40);
+
     king.height = 48;
     king.width = 40;
+
     this.enemies.push(king);
+
     let enemy_id = 0;
 
-    for (let i = 1; i <= 5; i++) {
-      const spawn = this.map.findObject(
-        "archer_spawn",
-        (obj) => obj.name === `spawn_${i}`
-      );
-      let archer = new Archer(
-        enemy_id++,
-        this,
-        spawn,
-        "archer",
-        "archer_idle-0.png",
-        "archer_physics",
-        3,
-        1.5,
-        "arrow",
-        48,
-        30
-      );
+    for(let i=1; i<=5; i++) {
+      const spawn = this.map.findObject("archer_spawn", (obj) => obj.name === `spawn_${i}`);
+      const archer = new Archer(enemy_id++, this, spawn, "archer", "archer_idle-0.png", "archer_physics", 3, 1.5, "arrow", 48, 30);
+
       archer.width = 30;
       archer.height = 48;
 
       this.enemies.push(archer);
     }
-    for (let i = 1; i <= 5; i++) {
-      const spawn = this.map.findObject(
-        "warrior_spawn",
-        (obj) => obj.name === `spawn_${i}`
-      );
-      let warrior = new Warrior(
-        enemy_id++,
-        this,
-        spawn,
-        "warrior",
-        "warrior_idle-0.png",
-        "warrior_physics",
-        3,
-        1.5,
-        48,
-        30
-      );
+
+    for(let i=1; i<=5; i++) {
+      const spawn = this.map.findObject("warrior_spawn", (obj) => obj.name === `spawn_${i}`);
+      const warrior = new Warrior(enemy_id++, this, spawn, "warrior", "warrior_idle-0.png", "warrior_physics", 3, 1.5, 48, 30);
+
       warrior.height = 48;
       warrior.length = 30;
+
       this.enemies.push(warrior);
     }
 
-    for (const enemy of this.enemies) {
+    for(const enemy of this.enemies) {
       enemy.controller = new EnemyController(this, enemy, this.player);
       enemy.controller.setState("idle");
     }
@@ -242,7 +158,7 @@ class Map1 extends Phaser.Scene {
     const ladder_tiles = ladder_layer.tilemapLayer.getTilesWithin();
 
     ladder_tiles.forEach((tile) => {
-      if (tile.index === 8 || tile.index === 9 || tile.index === 47) {
+      if(tile.index === 8 || tile.index === 9 || tile.index === 47) {
         this.ladder_coords.push({
           x: tile.pixelX,
           y: tile.pixelY,
@@ -260,7 +176,7 @@ class Map1 extends Phaser.Scene {
     this.matter.world.on("collisionstart", (event) => {
       this.player.trapCollider(event, this);
 
-      for (const enemy of this.enemies) {
+      for(const enemy of this.enemies) {
         enemy.trapCollider(event, this);
       }
     });
@@ -270,87 +186,85 @@ class Map1 extends Phaser.Scene {
     this.player_controller.update();
 
     // Character movement
-    if (this.player.hearts <= 0) {
+    if(this.player.hearts <= 0) {
       this.player_controller.setState("die");
-    } else if (this.pointer.isDown) {
+
+    } else if(this.pointer.isDown) {
       this.player_controller.setState("attack");
-    } else if (this.input.keyboard.addKey("A").isDown) {
+
+    } else if(this.input.keyboard.addKey("A").isDown) {
       this.player_controller.setState("moveLeft");
-    } else if (this.input.keyboard.addKey("D").isDown) {
+
+    } else if(this.input.keyboard.addKey("D").isDown) {
       this.player_controller.setState("moveRight");
+
     } else {
       this.player_controller.setState("idle");
     }
 
     const spaceJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.space);
 
-    if (spaceJustPressed) {
+    if(spaceJustPressed) {
       this.player.jump(this);
     }
 
     // Camera transitions
-    if (this.player.y > 0 && this.player.y < 528 && this.floor !== 0) {
+    if(this.player.y > 0 && this.player.y < 528 && this.floor !== 0) {
       this.camera.setBounds(0, 48, 2112, 480);
       this.floor = 0;
-    } else if (
-      this.player.y >= 528 &&
-      this.player.y < 912 &&
-      this.floor !== 1
-    ) {
+
+    } else if(this.player.y >= 528 && this.player.y < 912 && this.floor !== 1) {
       this.camera.setBounds(0, 480, 2112, 480);
       this.floor = 1;
-    } else if (
-      this.player.y >= 912 &&
-      this.player.y < 1344 &&
-      this.floor !== 2
-    ) {
+
+    } else if(this.player.y >= 912 && this.player.y < 1344 && this.floor !== 2) {
       this.camera.setBounds(0, 910, 2112, 480);
       this.floor = 2;
-    } else if (
-      this.player.y >= 1344 &&
-      this.player.y < 1920 &&
-      this.floor !== 3
-    ) {
+
+    } else if(this.player.y >= 1344 && this.player.y < 1920 && this.floor !== 3) {
       this.camera.setBounds(0, 1350, 2112, 570);
       this.floor = 3;
     }
 
     // Enemy AI
-    for (const enemy of this.enemies) {
+    for(const enemy of this.enemies) {
       enemy.controller.update();
       enemy.updateHealthBar();
 
-      const distance = Phaser.Math.Distance.Between(
-        this.player.x,
-        this.player.y,
-        enemy.x,
-        enemy.y
-      );
+      const distance = Phaser.Math.Distance.Between(this.player.x, this.player.y, enemy.x, enemy.y);
 
-      if (enemy.spawn.properties[0].value === this.floor) {
-        if (enemy.texture.key == "archer") {
-          if (distance < 600 && !enemy.isAttackAnimationDone) {
-            enemy.controller.setState("arrow_attack");
-          } else if (enemy.isAttackAnimationDone) {
+      if(enemy.spawn.properties[0].value === this.floor) {
+
+        if(enemy.texture.key == "archer") {
+
+          if(distance < 600 && !enemy.isAttackAnimationDone) {
+            enemy.controller.setState("arrowAttack");
+
+          } else if(enemy.isAttackAnimationDone) {
             enemy.controller.setState("followPlayer");
 
-            if (distance < 600) {
+            if(distance < 600) {
               enemy.isAttackAnimationDone = false;
             }
           }
+
         } else {
-          if (distance < 60 && !enemy.isAttackAnimationDone) {
+
+          if(distance < 60 && !enemy.isAttackAnimationDone) {
             enemy.controller.setState("attack");
-          } else if (distance < 550 && enemy.isAttackAnimationDone) {
+
+          } else if(distance < 550 && enemy.isAttackAnimationDone) {
             enemy.controller.setState("followPlayer");
 
-            if (distance < 60) {
+            if(distance < 60) {
               enemy.isAttackAnimationDone = false;
             }
-          } else if (enemy.isAttackAnimationDone) {
+
+          } else if(enemy.isAttackAnimationDone) {
             enemy.controller.setState("idle");
           }
         }
+
       } else {
         enemy.controller.setState("idle");
       }

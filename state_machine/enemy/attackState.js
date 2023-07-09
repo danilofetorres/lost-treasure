@@ -50,6 +50,7 @@ class AttackState {
     
     const startHit = (anim, frame) => { 
       this.hitboxes.forEach((hitbox, index) => {
+
         if(frame.index >= hitbox.frames[0] && frame.index <= hitbox.frames[1]) {
           hit(index);
 
@@ -64,6 +65,7 @@ class AttackState {
     this.enemy.on(Phaser.Animations.Events.ANIMATION_UPDATE, startHit);
 
     this.enemy.on("animationrepeat", () => {
+      
       if(this.enemy.controller.current_state === this.enemy.controller.states["attack"]) {
         this.enemy.resetHitbox(this.scene);
         this.enemy.isAttackAnimationDone = true;
