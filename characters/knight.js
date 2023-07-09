@@ -11,8 +11,16 @@ class Knight extends Player {
     this.body.collisionFilter.category = 0x0001;
 
     this.hitboxes = [
-      { hitbox: scene.add.rectangle(this.x + 15, this.y - 10, 30, 6), can_hit: true, frames: [5, 10] },
-      { hitbox: scene.add.circle(this.x + 15, this.y - 10, 15), can_hit: true, frames: [11, 21] },
+      { 
+        hitbox: scene.add.rectangle(this.x + 15, this.y - 10, 30, 6), 
+        can_hit: true, 
+        frames: [5, 10] 
+      },
+      { 
+        hitbox: scene.add.circle(this.x + 15, this.y - 10, 15), 
+        can_hit: true, 
+        frames: [11, 21] 
+      },
     ]
 
     for(const hitbox of this.hitboxes) {

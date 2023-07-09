@@ -12,6 +12,7 @@ class Character extends Phaser.Physics.Matter.Sprite {
     super(scene.matter.world, spawn.x, spawn.y, texture, frame, { shape: shape });
 
     scene.add.existing(this);
+
     this.height = height;
     this.width = width;
     this.depth = 1;
@@ -20,7 +21,7 @@ class Character extends Phaser.Physics.Matter.Sprite {
     this.speed = speed;
     this.spawn = spawn;
     this.body.restitution = 0; 
-
+    
     this.setScale(1.5);
     this.setFixedRotation();
   }

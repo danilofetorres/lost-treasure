@@ -24,7 +24,6 @@ class AttackState {
       this.hitboxes = this.enemy.hitboxes;
       this.enemy.play(`${this.enemy.texture.key}_attack_${this.enemy.id}`);
     }
-
   }
    
   onUpdate() {
