@@ -31,10 +31,10 @@ class Map1 extends Phaser.Scene {
       key: "Map1",
       physics: {
         matter: {
-          debug: true,
+          debug: false,
         },
         arcade: {
-          debug: true,
+          debug: false,
           gravity: { y: 0 },
         },
       },
