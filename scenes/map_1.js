@@ -171,6 +171,24 @@ class Map1 extends Phaser.Scene {
         enemy.trapCollider(event, this);
       }
     });
+
+    // Put in separate file:
+    
+    // axios.get("http://localhost:3000/ranking").then((response) => {
+    //   const ranking = response.data;
+
+    //   ranking.sort((a, b) => a.time - b.time);
+
+    //   const leaderboardText = this.add.text(20, 120, '', { fontFamily: 'Arial', fontSize: 16, color: '#ffffff' });
+
+    //   let leaderboardTextContent = '';
+
+    //   ranking.forEach((entry, index) => {
+    //     leaderboardTextContent += `${index + 1}. ${entry.player}: ${entry.time}\n`;
+    //   });
+
+    //   leaderboardText.setText(leaderboardTextContent);
+    // });
   }
 
   update() {
