@@ -3,17 +3,18 @@ import Enemy from "./classes/enemy.js";
 import { createAnim } from "../utils/config.js";
 
 class Archer extends Enemy { 
+  damage;
   arrow;
   physics;
   arrowData;
   can_hit;
-  hitboxes;
 
   constructor(id, scene, spawn, texture, frame, physics, max_health, speed, arrow, height, width) {
     const archerPhysics = scene.cache.json.get(physics);
 
     super(id, scene, spawn, texture, frame, archerPhysics.archer, max_health, speed, height, width);
 
+    this.damage = 0.5;
     this.body.collisionFilter.category = 0x0002;
     this.physics = archerPhysics.arrow;
     this.arrow = arrow;

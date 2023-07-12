@@ -1,26 +1,15 @@
+import * as stopwatch from "../utils/stopwatch.js";
+import Map from "./classes/map.js";
 import Knight from "../characters/knight.js";
 import Warrior from "../characters/warrior.js";
 import King from "../characters/king.js";
 import Archer from "../characters/archer.js";
 import PlayerController from "../state_machine/player/controller/playerController.js";
 import EnemyController from "../state_machine/enemy/controller/enemyController.js";
-import * as stopwatch from "../utils/stopwatch.js";
 
-import { createWall, setCollision } from "../utils/config.js";
-import { createLayer } from "../utils/config.js";
-
-class Map1 extends Phaser.Scene {
-  map;
-  blocks;
-  wall_layer;
-  barrel_layer;
-  block_layer;
-  trap_layer;
-  ladder_coords;
+class Map1 extends Map {  
   camera;
   floor;
-  cursors;
-  pointer;
   player;
   player_spawn;
   player_controller;
@@ -28,40 +17,21 @@ class Map1 extends Phaser.Scene {
   arrows;
 
   constructor() {
-    super({
-      key: "Map1",
-      physics: {
-        matter: {
-          debug: false,
-        },
-        arcade: {
-          debug: false,
-          gravity: { y: 0 },
-        },
-      },
-    });
+    super("map1");
   }
 
   init() {
+    super.init();
+
     this.floor = 0;
-
     this.camera = this.cameras.main;
-    this.cursors = this.input.keyboard.createCursorKeys();
-    this.pointer = this.input.activePointer;
-
+  
     this.enemies = [];
     this.arrows = [];
-    this.ladder_coords = [];
   }
 
   preload() {
-    // Load map
-    this.load.tilemapTiledJSON("map1", "assets/tilesets/map1.json");
-
-    // Load images
-    this.load.image("arrow", "assets/character/archer/attack/archer_arrow.png");
-    this.load.image("tileset", "assets/tilesets/tileset.png");
-    this.load.atlas("heart", "assets/icons/atlas/heart.png", "assets/icons/atlas/heart.json");
+    super.preload();
 
     // Load character assets
     this.load.atlas("knight", "assets/character/knight/atlas/knight.png", "assets/character/knight/atlas/knight.json");
@@ -75,37 +45,7 @@ class Map1 extends Phaser.Scene {
   }
 
   create() {
-    // Create map
-    this.map = this.make.tilemap({ key: "map1" });
-
-    // Create tiles
-    this.blocks = this.map.addTilesetImage("tileset", "tileset");
-
-    // Create layers
-    createLayer(this, "fundo_interno");
-    createLayer(this, "fundo");
-    createLayer(this, "porta_fechada");
-    createLayer(this, "porta_aberta");
-    createLayer(this, "escadas");
-    createLayer(this, "tochas");
-    createLayer(this, "janelas");
-
-    this.wall_layer = createLayer(this, "paredes");
-    this.block_layer = createLayer(this, "blocklayer");
-    this.trap_layer = createLayer(this, "armadilhas");
-    this.barrel_layer = createLayer(this, "barris");
-
-    // Invisible walls
-    const wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 3840, { isStatic: true, label: "paredes" });
-    const wallCollisionRight = this.matter.add.rectangle(2070, 0, 10, 3840, { isStatic: true, label: "paredes" });
-
-    createWall(this, wallCollisionLeft);
-    createWall(this, wallCollisionRight);
-
-    // Set collisions
-    setCollision(this, this.block_layer);
-    setCollision(this, this.trap_layer);
-    setCollision(this, this.barrel_layer);
+    super.create();
 
     // Create characters
     this.player_spawn = this.map.findObject("player_spawn", (obj) => obj.name === "player_spawn");
@@ -144,21 +84,6 @@ class Map1 extends Phaser.Scene {
     this.camera.setBounds(0, 48, 2112, 480);
     this.camera.startFollow(this.player, true, 0.08, 0.08, 80);
 
-    // Ladder climbing logic
-    const ladder_layer = this.map.getLayer("escadas");
-    const ladder_tiles = ladder_layer.tilemapLayer.getTilesWithin();
-
-    ladder_tiles.forEach((tile) => {
-      if(tile.index === 8 || tile.index === 9 || tile.index === 47) {
-        this.ladder_coords.push({
-          x: tile.pixelX,
-          y: tile.pixelY,
-          height: 48,
-          width: 48,
-        });
-      }
-    });
-
     this.matter.world.on("beforeupdate", () => {
       this.player.ladderCollider(this);
     });
@@ -176,30 +101,7 @@ class Map1 extends Phaser.Scene {
   }
 
   update() {
-    this.player_controller.update();
-
-    // Character movement
-    if(this.player.hearts <= 0) {
-      this.player_controller.setState("die");
-
-    } else if(this.pointer.isDown) {
-      this.player_controller.setState("attack");
-
-    } else if(this.input.keyboard.addKey("A").isDown) {
-      this.player_controller.setState("moveLeft");
-
-    } else if(this.input.keyboard.addKey("D").isDown) {
-      this.player_controller.setState("moveRight");
-
-    } else {
-      this.player_controller.setState("idle");
-    }
-
-    const spaceJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.space);
-
-    if(spaceJustPressed) {
-      this.player.jump(this);
-    }
+    super.update(this); 
 
     // Camera transitions
     if(this.player.y > 0 && this.player.y < 528 && this.floor !== 0) {
@@ -218,52 +120,7 @@ class Map1 extends Phaser.Scene {
       this.camera.setBounds(0, 1350, 2112, 570);
       this.floor = 3;
     }
-
-    // Enemy AI
-    for(const enemy of this.enemies) {
-      enemy.controller.update();
-      enemy.updateHealthBar();
-
-      const distance = Phaser.Math.Distance.Between(this.player.x, this.player.y, enemy.x, enemy.y);
-
-      if(enemy.spawn.properties[0].value === this.floor) {
-
-        if(enemy.texture.key == "archer") {
-
-          if(distance < 600 && !enemy.isAttackAnimationDone) {
-            enemy.controller.setState("arrowAttack");
-
-          } else if(enemy.isAttackAnimationDone) {
-            enemy.controller.setState("followPlayer");
-
-            if(distance < 600) {
-              enemy.isAttackAnimationDone = false;
-            }
-          }
-
-        } else {
-
-          if(distance < 60 && !enemy.isAttackAnimationDone) {
-            enemy.controller.setState("attack");
-
-          } else if(distance < 550 && enemy.isAttackAnimationDone) {
-            enemy.controller.setState("followPlayer");
-
-            if(distance < 60) {
-              enemy.isAttackAnimationDone = false;
-            }
-
-          } else if(enemy.isAttackAnimationDone) {
-            enemy.controller.setState("idle");
-          }
-        }
-
-      } else {
-        enemy.controller.setState("idle");
-      }
-    }
-    this.player.fallDamageHandlerUpdate(this);
-  }
+  }  
 }
 
 export default Map1;

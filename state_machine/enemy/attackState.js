@@ -39,7 +39,7 @@ class AttackState {
       if(collide(this.scene.player, this.hitboxes[index].hitbox, this.hitboxes[index].m1, this.hitboxes[index].m2)) {
 
         if(this.hitboxes[index].can_hit) {
-          this.scene.player.getHit(1);  
+          this.scene.player.getHit(this.enemy.damage);  
         }
         
         this.hitboxes[index].can_hit = false;

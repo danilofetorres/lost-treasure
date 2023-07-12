@@ -3,12 +3,15 @@ import Enemy from "./classes/enemy.js";
 import { createAnim } from "../utils/config.js";
 
 class King extends Enemy {
+  damage;
   isAttackAnimationDone;
 
   constructor(id, scene, spawn, texture, frame, physics, max_health, speed, height, width) {
     const kingPhysics = scene.cache.json.get(physics);
 
     super(id, scene, spawn, texture, frame, kingPhysics.king, max_health, speed, height, width);
+
+    this.damage = 2;
 
     this.hitboxes = [
       [

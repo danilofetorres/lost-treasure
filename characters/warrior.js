@@ -3,6 +3,7 @@ import Enemy from "./classes/enemy.js";
 import { createAnim } from "../utils/config.js";
 
 class Warrior extends Enemy {
+  damage;
   isAttackAnimationDone;
 
   constructor(id, scene, spawn, texture, frame, physics, max_health, speed, height, width) {
@@ -10,6 +11,7 @@ class Warrior extends Enemy {
 
     super(id, scene, spawn, texture, frame, warriorPhysics.warrior, max_health, speed, height, width);
 
+    this.damage = 0.5;
     this.flipX = true;
     this.body.collisionFilter.category = 0x0004;
     this.isAttackAnimationDone = true;
