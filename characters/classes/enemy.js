@@ -2,6 +2,7 @@ import Character from "./character.js";
 
 class Enemy extends Character {
   id;
+  scene;
   is_colliding_with_trap;
   health_bar;
   current_hp;
@@ -11,6 +12,7 @@ class Enemy extends Character {
   constructor(id, scene, spawn, texture, frame, shape, max_health, speed, height, width) {
     super(scene, spawn, texture, frame, shape, max_health, speed, height, width);
 
+    this.scene = scene;
     this.id = id;
     this.is_colliding_with_trap = false;
     this.healthbarwidth = width;
@@ -43,6 +45,15 @@ class Enemy extends Character {
         }, "1000");
       }
     });
+  }
+
+  updateFlipX() {
+    if(this.scene.player.x < this.x) {
+      this.flipX = true;
+  
+    } else {
+      this.flipX = false;
+    }
   }
 
   updateHealth(){

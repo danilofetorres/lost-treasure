@@ -12,12 +12,7 @@ class FollowPlayerState {
   }
    
   onUpdate() {
-    if(this.player.x < this.enemy.x) {
-      this.enemy.flipX = true;
-  
-    } else {
-      this.enemy.flipX = false;
-    }
+    this.enemy.updateFlipX();
 
     const direction = new Phaser.Math.Vector2(this.player.x - this.enemy.x, this.player.y - this.enemy.y).normalize();
     this.enemy.setVelocityX(direction.x * this.enemy.speed);

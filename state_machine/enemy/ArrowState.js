@@ -16,6 +16,8 @@ class ArrowState {
   }
 
   onUpdate() {
+    this.enemy.updateFlipX();
+
     const startHit = (anim, frame) => {
 
       if(frame.index == this.enemy.arrowData.frame) {

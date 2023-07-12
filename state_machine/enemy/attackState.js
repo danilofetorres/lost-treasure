@@ -27,8 +27,7 @@ class AttackState {
   }
    
   onUpdate() {
-    const m1 = 2;
-    const m2 = 1.05;
+    this.enemy.updateFlipX();
     
     const hit = (index) => {
       this.hitboxes[index].hitbox.x = this.hitboxes[index].x === 0 ? this.enemy.x : (this.enemy.flipX ? this.enemy.x - 45 : this.enemy.x + 30);

@@ -94,8 +94,7 @@ class Map1 extends Phaser.Scene {
     this.trap_layer = createLayer(this, "armadilhas");
     this.barrel_layer = createLayer(this, "barris");
 
-    //this.matter.add.rectangle(200, 200, 30, 48);
-
+    // Invisible walls
     const wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 3840, { isStatic: true, label: "paredes" });
     const wallCollisionRight = this.matter.add.rectangle(2070, 0, 10, 3840, { isStatic: true, label: "paredes" });
 
