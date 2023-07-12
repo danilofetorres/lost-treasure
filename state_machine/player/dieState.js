@@ -24,7 +24,7 @@ class DieState {
     this.player.flipX = false;
 
     this.player.hearts = this.player.max_health;
-    this.player.updateHearts();
+    this.player.updateHealth();
   }
 }
 

@@ -26,6 +26,22 @@ class Character extends Phaser.Physics.Matter.Sprite {
     this.setFixedRotation();
   }
 
+  flashCharacter() {
+    this.setTintFill(0xfce7e6);
+
+    setTimeout(() => {
+      this.clearTint();
+    }, "150");
+  }
+
+  getHit(damage) {
+    this.flashCharacter();
+    setTimeout(this.flashCharacter.bind(this), "250");
+
+    this.hearts -= damage;
+    this.updateHealth();
+  }
+
   die(anim, callback) {
     this.play(anim, true);
 

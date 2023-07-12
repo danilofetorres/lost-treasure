@@ -31,7 +31,7 @@ class AttackState {
         if(collide(enemy, this.player.hitboxes[index].hitbox, m1, m2)) {
 
           if(this.player.hitboxes[index].can_hit) {
-            enemy.getHit(`${enemy.texture.key}_get_hit_${enemy.id}`);
+            enemy.getHit(1);
               
             if(enemy.hearts <= 0) {
               enemy.die(`${enemy.texture.key}_death_${enemy.id}`, () => {

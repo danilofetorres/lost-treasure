@@ -83,23 +83,7 @@ class Player extends Character {
     this.is_climbing_ladder = false;
   }
 
-  flashCharacter() {
-    this.setTintFill(0xfce7e6);
-
-    setTimeout(() => {
-      this.clearTint();
-    }, "150");
-  }
-
-  getHit(damage) {
-    this.flashCharacter();
-    setTimeout(this.flashCharacter.bind(this), "250");
-
-    this.hearts -= damage;
-    this.updateHearts();
-  }
-
-  updateHearts() {
+  updateHealth() {
     this.heart_group.children.iterate((heart, index) => {
 
       if(index < Math.floor(this.hearts)) {

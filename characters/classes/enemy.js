@@ -25,18 +25,6 @@ class Enemy extends Character {
     this.current_hp.fillRect(0, 0, this.healthbarwidth, 8);
   }
 
-  getHit(anim) {
-    this.play(anim);
-    this.hearts -= 1;
-
-    this.on(`animationcomplete-${anim}`, () => {
-      this.resetHitbox(this.scene);
-      this.isAttackAnimationDone = true;
-    });
-
-    this.healthBarChange();
-  }
-
   trapCollider(event, scene) {
     event.pairs.forEach((pair) => {
       const { bodyA, bodyB } = pair;
@@ -57,7 +45,7 @@ class Enemy extends Character {
     });
   }
 
-  healthBarChange(){
+  updateHealth(){
     const percentage = this.hearts / this.max_health; 
 
     this.current_hp.clear();

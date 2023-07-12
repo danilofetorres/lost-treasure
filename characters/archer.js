@@ -22,7 +22,6 @@ class Archer extends Enemy {
     createAnim(scene, "idle", "archer", 16, this.id, 0, 10, -1);
     createAnim(scene, "walk", "archer", 7, this.id, 0, 10, -1);
     createAnim(scene, "attack", "archer", 33, this.id, 0, 16, -1);
-    createAnim(scene, "get_hit", "archer", 8, this.id, 0, 10, 0);
     createAnim(scene, "death", "archer", 14, this.id, 0, 30, 0);
 
     this.can_hit = true;
