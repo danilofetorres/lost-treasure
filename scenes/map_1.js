@@ -4,6 +4,7 @@ import King from "../characters/king.js";
 import Archer from "../characters/archer.js";
 import PlayerController from "../state_machine/player/controller/playerController.js";
 import EnemyController from "../state_machine/enemy/controller/enemyController.js";
+import * as stopwatch from "../utils/stopwatch.js";
 
 import { createWall, setCollision } from "../utils/config.js";
 import { createLayer } from "../utils/config.js";
@@ -169,25 +170,9 @@ class Map1 extends Phaser.Scene {
       for(const enemy of this.enemies) {
         enemy.trapCollider(event, this);
       }
-    });
+    });  
 
-    // Put in separate file:
-    
-    // axios.get("http://localhost:3000/ranking").then((response) => {
-    //   const ranking = response.data;
-
-    //   ranking.sort((a, b) => a.time - b.time);
-
-    //   const leaderboardText = this.add.text(20, 120, '', { fontFamily: 'Arial', fontSize: 16, color: '#ffffff' });
-
-    //   let leaderboardTextContent = '';
-
-    //   ranking.forEach((entry, index) => {
-    //     leaderboardTextContent += `${index + 1}. ${entry.player}: ${entry.time}\n`;
-    //   });
-
-    //   leaderboardText.setText(leaderboardTextContent);
-    // });
+    stopwatch.startTimer(this);
   }
 
   update() {

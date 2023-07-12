@@ -16,11 +16,16 @@ canvas {
 }
 
 h1 {
-  color: #ebeaea;
+  color: #f8f3f3;
   font-family: "MedievalSharp", cursive;
   font-size: 40px;
+  font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
+}
+
+ul {
+  padding: 0;
 }
 
 .buttons {
@@ -30,4 +35,8 @@ h1 {
 
 .btn {
   margin: 0 0.5rem 0;
+}
+
+.modal-body {
+  display: block;
 }
