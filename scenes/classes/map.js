@@ -13,6 +13,7 @@ class Map extends Phaser.Scene {
   ladder_coords;
   cursors;
   pointer;
+  final_door;
 
   constructor(key) {
     super({
@@ -95,6 +96,10 @@ class Map extends Phaser.Scene {
         });
       }
     });
+
+    this.final_door = this.map.findObject("final_door", (obj) => obj.name === "final_door");
+
+    console.log(this.final_door);
   }
 
   update(scene) {

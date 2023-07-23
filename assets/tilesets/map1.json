@@ -172,8 +172,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":73,
-                 "y":427
+                 "x":71,
+                 "y":382
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -302,6 +302,29 @@
         }, 
         {
          "draworder":"topdown",
+         "id":20,
+         "name":"final_door",
+         "objects":[
+                {
+                 "height":0,
+                 "id":24,
+                 "name":"final_door",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":90,
+                 "y":1781
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":18,
          "name":"king_spawn",
          "objects":[
@@ -320,8 +343,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":925.969696969697,
-                 "y":1813.24242424242
+                 "x":925.97,
+                 "y":1813.24
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -846,8 +869,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":20,
- "nextobjectid":24,
+ "nextlayerid":21,
+ "nextobjectid":25,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",

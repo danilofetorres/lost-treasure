@@ -120,6 +120,10 @@ class Map1 extends Map {
       this.camera.setBounds(0, 1350, 2112, 570);
       this.floor = 3;
     }
+
+    if(this.player.x <= this.final_door.x && this.player.y >= this.final_door.y) {
+      this.scene.start("map2");
+    }
   }  
 }
 
