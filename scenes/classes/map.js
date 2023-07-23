@@ -20,10 +20,10 @@ class Map extends Phaser.Scene {
       key: key,
       physics: {
         matter: {
-          debug: false,
+          debug: true,
         },
         arcade: {
-          debug: false,
+          debug: true,
           gravity: { y: 0 },
         },
       },
@@ -59,23 +59,17 @@ class Map extends Phaser.Scene {
     // Create layers
     createLayer(this, "fundo_interno");
     createLayer(this, "fundo");
-    createLayer(this, "porta_fechada");
-    createLayer(this, "porta_aberta");
     createLayer(this, "escadas");
-    createLayer(this, "tochas");
-    createLayer(this, "janelas");
-
+    
     this.wall_layer = createLayer(this, "paredes");
     this.block_layer = createLayer(this, "blocklayer");
     this.trap_layer = createLayer(this, "armadilhas");
     this.barrel_layer = createLayer(this, "barris");
 
     // Invisible walls
-    const wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 3840, { isStatic: true, label: "paredes" });
-    const wallCollisionRight = this.matter.add.rectangle(2070, 0, 10, 3840, { isStatic: true, label: "paredes" });
+   
 
-    createWall(this, wallCollisionLeft);
-    createWall(this, wallCollisionRight);
+   
 
     // Set collisions
     setCollision(this, this.block_layer);
@@ -98,7 +92,6 @@ class Map extends Phaser.Scene {
     });
 
     this.final_door = this.map.findObject("final_door", (obj) => obj.name === "final_door");
-
     console.log(this.final_door);
   }
 

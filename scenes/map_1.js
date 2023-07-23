@@ -1,4 +1,6 @@
 import * as stopwatch from "../utils/stopwatch.js";
+import { createLayer } from "../../utils/config.js";
+
 import Map from "./classes/map.js";
 import Knight from "../characters/knight.js";
 import Warrior from "../characters/warrior.js";
@@ -6,6 +8,7 @@ import King from "../characters/king.js";
 import Archer from "../characters/archer.js";
 import PlayerController from "../state_machine/player/controller/playerController.js";
 import EnemyController from "../state_machine/enemy/controller/enemyController.js";
+import { createWall} from "../../utils/config.js";
 
 class Map1 extends Map {  
   camera;
@@ -15,6 +18,7 @@ class Map1 extends Map {
   player_controller;
   enemies;
   arrows;
+  scene_active = true;
 
   constructor() {
     super("map1");
@@ -46,7 +50,16 @@ class Map1 extends Map {
 
   create() {
     super.create();
+    createLayer(this, "porta_fechada");
+    createLayer(this, "porta_aberta");
+    createLayer(this, "tochas");
+    createLayer(this, "janelas");
+    
+    const wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 3840, { isStatic: true, label: "paredes" });
+    const wallCollisionRight = this.matter.add.rectangle(2070, 0, 10, 3840, { isStatic: true, label: "paredes" });
 
+    createWall(this, wallCollisionLeft);
+    createWall(this, wallCollisionRight);
     // Create characters
     this.player_spawn = this.map.findObject("player_spawn", (obj) => obj.name === "player_spawn");
     this.player = new Knight(this, this.player_spawn, "knight", "knight_idle-0.png", "knight_physics", 10, 3.5, 48, 30);
@@ -97,34 +110,57 @@ class Map1 extends Map {
       }
     });  
 
-    stopwatch.startTimer(this);
+    //stopwatch.startTimer(this);
+    this.destroy();
+
   }
 
   update() {
-    super.update(this); 
-
-    // Camera transitions
-    if(this.player.y > 0 && this.player.y < 528 && this.floor !== 0) {
-      this.camera.setBounds(0, 48, 2112, 480);
-      this.floor = 0;
-
-    } else if(this.player.y >= 528 && this.player.y < 912 && this.floor !== 1) {
-      this.camera.setBounds(0, 480, 2112, 480);
-      this.floor = 1;
-
-    } else if(this.player.y >= 912 && this.player.y < 1344 && this.floor !== 2) {
-      this.camera.setBounds(0, 910, 2112, 480);
-      this.floor = 2;
-
-    } else if(this.player.y >= 1344 && this.player.y < 1920 && this.floor !== 3) {
-      this.camera.setBounds(0, 1350, 2112, 570);
-      this.floor = 3;
-    }
-
-    if(this.player.x <= this.final_door.x && this.player.y >= this.final_door.y) {
-      this.scene.start("map2");
+    if(this.scene_active){
+      super.update(this); 
+     
+  
+      // Camera transitions
+      if(this.player.y > 0 && this.player.y < 528 && this.floor !== 0) {
+        this.camera.setBounds(0, 48, 2112, 480);
+        this.floor = 0;
+  
+      } else if(this.player.y >= 528 && this.player.y < 912 && this.floor !== 1) {
+        this.camera.setBounds(0, 480, 2112, 480);
+        this.floor = 1;
+  
+      } else if(this.player.y >= 912 && this.player.y < 1344 && this.floor !== 2) {
+        this.camera.setBounds(0, 910, 2112, 480);
+        this.floor = 2;
+  
+      } else if(this.player.y >= 1344 && this.player.y < 1920 && this.floor !== 3) {
+        this.camera.setBounds(0, 1350, 2112, 570);
+        this.floor = 3;
+      }
+  
+      if(this.player.x <= this.final_door.x && this.player.y >= this.final_door.y) {
+        this.scene_active = false;
+        this.destroy();
+        //
+        
+      }
     }
   }  
+  destroy(){
+    this.physics.world.shutdown();
+    const bodies = this.matter.world.getAllBodies();
+    bodies.forEach((body) => {
+      this.matter.world.remove(body);
+    });
+
+    // Destroy all game objects
+    const gameObjects = this.children.getChildren();
+    gameObjects.forEach((gameObject) => {
+      gameObject.destroy();
+    });
+
+    this.scene.start("map2");
+  }
 }
 
 export default Map1;
