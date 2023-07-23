@@ -144,8 +144,8 @@
     <property name="collides" type="bool" value="true"/>
    </properties>
    <objectgroup draworder="index" id="2">
-    <object id="1" x="-0.871143" y="-1.61784">
-     <polygon points="0,0 0,52.8182 52.1818,52.8182"/>
+    <object id="1" x="-0.621143" y="-1.49284">
+     <polygon points="0,0 0,51.9432 50.5568,51.9432"/>
     </object>
    </objectgroup>
   </tile>
