@@ -3,8 +3,8 @@ import Knight from "../characters/knight.js";
 import { createLayer } from "../utils/config.js";
 import PlayerController from "../state_machine/player/controller/playerController.js";
 import { createWall, setCollision } from "../../utils/config.js";
-
-
+import Archer2 from "../characters/archer2.js";
+import EnemyController from "../state_machine/enemy/controller/enemyController.js";
 class Map2 extends Map {
   camera;
   floor;
@@ -14,6 +14,7 @@ class Map2 extends Map {
   enemies;
   arrows;
   bloco_removivel_layer;
+  archer;
 
   constructor() {
     super("map2");
@@ -24,7 +25,7 @@ class Map2 extends Map {
 
     this.floor = 0;
     this.camera = this.cameras.main;
-  
+
     this.enemies = [];
     this.arrows = [];
   }
@@ -36,8 +37,24 @@ class Map2 extends Map {
     // this.load.image('chest(0px)', 'assets/tilesets/chest(0px).png');
     // this.load.image('coins', 'assets/tilesets/image-removebg-preview-removebg-preview.png');
 
-    this.load.atlas("knight", "assets/character/knight/atlas/knight.png", "assets/character/knight/atlas/knight.json");
-    this.load.json("knight_physics", "assets/character/knight/physics/knight.json");
+    this.load.atlas(
+      "knight",
+      "assets/character/knight/atlas/knight.png",
+      "assets/character/knight/atlas/knight.json"
+    );
+    this.load.json(
+      "knight_physics",
+      "assets/character/knight/physics/knight.json"
+    );
+    this.load.atlas(
+      "archer2",
+      "assets/character/archer_2/atlas/archer.png",
+      "assets/character/archer_2/atlas/archer.json"
+    );
+    this.load.json(
+      "archer2_physics",
+      "assets/character/archer_2/physics/archer2.json"
+    );
   }
 
   create() {
@@ -45,28 +62,73 @@ class Map2 extends Map {
     createLayer(this, "objetos");
     createLayer(this, "baus");
     this.bloco_removivel_layer = createLayer(this, "bloco_removivel");
-    createLayer(this, "moedas")
+    createLayer(this, "moedas");
     setCollision(this, this.bloco_removivel_layer);
-    const wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 6000, { isStatic: true, label: "paredes" });
-    const wallCollisionRight = this.matter.add.rectangle(2120, 0, 10, 6000, { isStatic: true, label: "paredes" });
-    const wall_1 = this.matter.add.rectangle(875, 1470, 10, 220, { isStatic: true, label: "paredes" });
-    const wall_2 = this.matter.add.rectangle(950, 1470, 10, 220, { isStatic: true, label: "paredes" });
-    const wall_3 = this.matter.add.rectangle(1210, 1470, 10, 300, { isStatic: true, label: "paredes" });
-    const wall_4 = this.matter.add.rectangle(1285, 1470, 10, 300, { isStatic: true, label: "paredes" });
-    const wall_5 = this.matter.add.rectangle(1690, 1520, 10, 120, { isStatic: true, label: "paredes" });
-    const wall_6 = this.matter.add.rectangle(1765, 1520, 10, 120, { isStatic: true, label: "paredes" });
-    const wall_7 = this.matter.add.rectangle(730, 2030, 10, 50, { isStatic: true, label: "paredes" });
-    const wall_8 = this.matter.add.rectangle(850, 2030, 10, 50, { isStatic: true, label: "paredes" });
-    const wall_9 = this.matter.add.rectangle(1020, 2030, 10, 70, { isStatic: true, label: "paredes" });
-    const wall_10 = this.matter.add.rectangle(1095, 2030, 10, 70, { isStatic: true, label: "paredes" });
-    const wall_11 = this.matter.add.rectangle(1835, 2560, 10, 70, { isStatic: true, label: "paredes" });
-    const wall_12 = this.matter.add.rectangle(1355, 950, 10, 120, { isStatic: true, label: "paredes" });
-    const wall_13 = this.matter.add.rectangle(1045, 950, 10, 120, { isStatic: true, label: "paredes" });
-    const wall_14 = this.matter.add.rectangle(1830, 480, 10, 100, { isStatic: true, label: "paredes" });
+    const wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 6000, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wallCollisionRight = this.matter.add.rectangle(2120, 0, 10, 6000, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_1 = this.matter.add.rectangle(875, 1470, 10, 220, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_2 = this.matter.add.rectangle(950, 1470, 10, 220, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_3 = this.matter.add.rectangle(1210, 1470, 10, 300, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_4 = this.matter.add.rectangle(1285, 1470, 10, 300, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_5 = this.matter.add.rectangle(1690, 1520, 10, 120, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_6 = this.matter.add.rectangle(1765, 1520, 10, 120, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_7 = this.matter.add.rectangle(730, 2030, 10, 50, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_8 = this.matter.add.rectangle(850, 2030, 10, 50, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_9 = this.matter.add.rectangle(1020, 2030, 10, 70, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_10 = this.matter.add.rectangle(1095, 2030, 10, 70, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_11 = this.matter.add.rectangle(1835, 2560, 10, 70, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_12 = this.matter.add.rectangle(1355, 950, 10, 120, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_13 = this.matter.add.rectangle(1045, 950, 10, 120, {
+      isStatic: true,
+      label: "paredes",
+    });
+    const wall_14 = this.matter.add.rectangle(1830, 480, 10, 100, {
+      isStatic: true,
+      label: "paredes",
+    });
 
-
-
-    
     createWall(this, wallCollisionLeft);
     createWall(this, wallCollisionRight);
     createWall(this, wall_1);
@@ -84,8 +146,6 @@ class Map2 extends Map {
     createWall(this, wall_13);
     createWall(this, wall_14);
 
-
-
     // const red_background = this.map.addTilesetImage("fundo_vermelho", "fundo_vermelho");
     // const coin = this.map.addTilesetImage("image-removebg-preview-removebg-preview", "coins");
     // const chest = this.map.addTilesetImage("chest(0px)", "chest(0px)");
@@ -96,14 +156,66 @@ class Map2 extends Map {
 
     // Create characters
     //this.player_spawn = this.map.findObject("player_spawn", (obj) => obj.name === "player_spawn");
-    this.player = new Knight(this, {x: 250, y:400}, "knight", "knight_idle-0.png", "knight_physics", 10, 3.5, 48, 30);
+    this.player = new Knight(
+      this,
+      { x: 250, y: 400 },
+      "knight",
+      "knight_idle-0.png",
+      "knight_physics",
+      10,
+      3.5,
+      48,
+      30
+    );
 
+    // this.archer = new Archer2(
+    //   1,
+    //   this,
+    //   { x: 400, y: 400 },
+    //   "archer2",
+    //   "archer2_idle-0.png",
+    //   "archer2_physics",
+    //   3,
+    //   2,
+    //   "arrow",
+    //   48,
+    //   30
+    // );
+    // this.archer.controller = new EnemyController(
+    //   this,
+    //   this.archer,
+    //   this.player
+    // );
+    // this.archer.controller.setState("idle");
     this.player_controller = new PlayerController(this, this.player);
     this.player_controller.setState("idle");
   }
 
   update() {
-   super.update(this);
+    super.update(this);
+    // this.archer.updateHealthBar();
+    // this.archer.controller.update();
+
+    // const distance = Phaser.Math.Distance.Between(
+    //   this.player.x,
+    //   this.player.y,
+    //   this.archer.x,
+    //   this.archer.y
+    // );
+    // if((distance > 70 && distance < 600) && !this.archer.isAttackAnimationDone) {
+    //   this.archer.controller.setState("arrowAttack");
+    // } else if (distance <= 70 && !this.archer.isAttackAnimationDone){
+    //   this.archer.controller.setState("melee");
+    // }
+    
+    // else if(this.archer.isAttackAnimationDone) {
+    //   this.archer.controller.setState("followPlayer");
+
+    //   if(distance < 600) {
+    //     this.archer.isAttackAnimationDone = false;
+    //   }
+    // }
+    
   }
 }
 

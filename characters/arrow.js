@@ -1,8 +1,9 @@
 class Arrow extends Phaser.Physics.Matter.Sprite {
   scene;
   canHit;
+  archer
 
-  constructor(scene, x, y, texture, frame, physics, flipX, coords) {
+  constructor(scene, x, y, texture, frame, physics, flipX, coords, archer) {
     super(scene.matter.world, x, y, texture, frame, { shape: physics });
     
     this.scene = scene;
@@ -12,7 +13,7 @@ class Arrow extends Phaser.Physics.Matter.Sprite {
     this.setIgnoreGravity(true);
     this.setFixedRotation();
     this.setFlipX(flipX);
-
+    this.archer = archer;
     const ca = coords.archerX - coords.playerX ;
     const co = coords.playerY - coords.archerY;
     const hip = Math.sqrt((ca * ca + co * co));
@@ -39,7 +40,7 @@ class Arrow extends Phaser.Physics.Matter.Sprite {
               arrow.setVisible(false);
               arrow.body.destroy();
 
-              scene.player.getHit(0.5);
+              scene.player.getHit(this.archer.damage);
             }
           });
 

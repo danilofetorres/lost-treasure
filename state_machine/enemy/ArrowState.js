@@ -17,13 +17,12 @@ class ArrowState {
 
   onUpdate() {
     this.enemy.updateFlipX();
-
     const startHit = (anim, frame) => {
-
+      
       if(frame.index == this.enemy.arrowData.frame) {
 
         if(this.enemy.can_hit) {
-          const arrow = new Arrow(this.scene, this.enemy.flipX ? this.enemy.x - this.enemy.arrowData.x : this.enemy.x + this.enemy.arrowData.x, this.enemy.y - this.enemy.arrowData.y, this.enemy.arrow, null, this.enemy.physics, this.enemy.flipX, {archerX: this.enemy.x, archerY: this.enemy.y, playerX: this.player.x, playerY: this.player.y});
+          const arrow = new Arrow(this.scene, this.enemy.flipX ? this.enemy.x - this.enemy.arrowData.x : this.enemy.x + this.enemy.arrowData.x, this.enemy.y - this.enemy.arrowData.y, this.enemy.arrow, null, this.enemy.physics, this.enemy.flipX, {archerX: this.enemy.x, archerY: this.enemy.y, playerX: this.player.x, playerY: this.player.y}, this.enemy);
           this.scene.arrows.push(arrow);
         }
 
