@@ -5,6 +5,7 @@ import PlayerController from "../state_machine/player/controller/playerControlle
 import { createWall, setCollision } from "../../utils/config.js";
 import Archer2 from "../characters/archer2.js";
 import EnemyController from "../state_machine/enemy/controller/enemyController.js";
+import Necromancer from "../characters/necromancer.js";
 class Map2 extends Map {
   camera;
   floor;
@@ -12,7 +13,7 @@ class Map2 extends Map {
   player_spawn;
   player_controller;
   enemies;
-  arrows;
+  projectiles;
   bloco_removivel_layer;
   archer;
 
@@ -27,7 +28,7 @@ class Map2 extends Map {
     this.camera = this.cameras.main;
 
     this.enemies = [];
-    this.arrows = [];
+    this.projectiles = [];
   }
 
   preload() {
@@ -55,6 +56,16 @@ class Map2 extends Map {
       "archer2_physics",
       "assets/character/archer_2/physics/archer2.json"
     );
+    this.load.atlas(
+      "necromancer",
+      "assets/character/necromancer/atlas/necromancer.png",
+      "assets/character/necromancer/atlas/necromancer.json"
+    );
+    this.load.json(
+      "necromancer_physics",
+      "assets/character/necromancer/physics/necromancer.json"
+    );
+    this.load.image("projectile", "assets/character/necromancer/Attack/necromancer_projectile.png");
   }
 
   create() {
@@ -168,16 +179,27 @@ class Map2 extends Map {
       30
     );
 
-    this.archer = new Archer2(
-      1,
+    this.archer = new Archer2(1,
       this,
-      { x: 400, y: 400 },
+      { x: 500, y: 400 },
       "archer2",
       "archer2_idle-0.png",
       "archer2_physics",
       3,
       2,
       "arrow",
+      48,
+      30)
+    this.necro = new Necromancer(
+      1,
+      this,
+      { x: 400, y: 400 },
+      "necromancer",
+      "necromancer_idle-0.png",
+      "necromancer_physics",
+      3,
+      2,
+      "projectile",
       48,
       30
     );
@@ -186,7 +208,14 @@ class Map2 extends Map {
       this.archer,
       this.player
     );
-    this.archer.controller.setState("idle");
+
+    this.necro.controller = new EnemyController(
+      this,
+      this.necro,
+      this.player
+    );
+   // this.archer.controller.setState("projectileAttack");
+    this.necro.controller.setState("projectileAttack");
     this.player_controller = new PlayerController(this, this.player);
     this.player_controller.setState("idle");
   }
@@ -195,24 +224,25 @@ class Map2 extends Map {
     super.update(this);
     // this.archer.updateHealthBar();
     // this.archer.controller.update();
+    //  this.necro.controller.update();
 
     // const distance = Phaser.Math.Distance.Between(
     //   this.player.x,
     //   this.player.y,
-    //   this.archer.x,
-    //   this.archer.y
+    //   this.necro.x,
+    //   this.necro.y
     // );
-    // if((distance > 70 && distance < 600) && !this.archer.isAttackAnimationDone) {
-    //   this.archer.controller.setState("arrowAttack");
-    // } else if (distance <= 70 && !this.archer.isAttackAnimationDone){
-    //   this.archer.controller.setState("melee");
+    // if((distance > 70 && distance < 600) && !this.necro.isAttackAnimationDone) {
+    //   this.necro.controller.setState("projectileAttack");
+    // } else if (distance <= 70 && !this.necro.isAttackAnimationDone){
+    //   this.necro.controller.setState("spawn");
     // }
     
-    // else if(this.archer.isAttackAnimationDone) {
-    //   this.archer.controller.setState("followPlayer");
+    // else if(this.necro.isAttackAnimationDone) {
+    //   this.necro.controller.setState("followPlayer");
 
     //   if(distance < 600) {
-    //     this.archer.isAttackAnimationDone = false;
+    //     this.necro.isAttackAnimationDone = false;
     //   }
     // }
     

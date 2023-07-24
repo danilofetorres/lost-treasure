@@ -1,6 +1,6 @@
 import collide from "../../utils/helper.js";
 
-class MeleeState {
+class SpawnState {
   scene;
   enemy;
   player;
@@ -13,7 +13,7 @@ class MeleeState {
   
   enter() {
     this.hitboxes = this.enemy.hitboxes;
-    this.enemy.play(`${this.enemy.texture.key}_melee_${this.enemy.id}`);
+    this.enemy.play(`${this.enemy.texture.key}_spawn_${this.enemy.id}`);
   }
    
   onUpdate() {
@@ -28,7 +28,7 @@ class MeleeState {
       
       if(collide(this.scene.player, this.hitboxes[index].hitbox, this.hitboxes[index].m1, this.hitboxes[index].m2)) {
           if(this.hitboxes[index].can_hit) {
-          this.scene.player.getHit(this.enemy.damage);  
+          this.scene.player.getHit(2.5);  
         }
         
         this.hitboxes[index].can_hit = false;
@@ -53,7 +53,7 @@ class MeleeState {
 
     this.enemy.on("animationrepeat", () => {
       
-      if(this.enemy.controller.current_state === this.enemy.controller.states["melee"]) {
+      if(this.enemy.controller.current_state === this.enemy.controller.states["spawn"]) {
         this.enemy.resetHitbox(this.scene);
         this.enemy.isAttackAnimationDone = true;
         this.exit();
@@ -67,5 +67,5 @@ class MeleeState {
   }
 }
   
-export default MeleeState;
+export default SpawnState;
   

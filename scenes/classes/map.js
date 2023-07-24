@@ -133,7 +133,7 @@ class Map extends Phaser.Scene {
         if(enemy.texture.key == "archer") {
 
           if(distance < 600 && !enemy.isAttackAnimationDone) {
-            enemy.controller.setState("arrowAttack");
+            enemy.controller.setState("projectileAttack");
 
           } else if(enemy.isAttackAnimationDone) {
             enemy.controller.setState("followPlayer");

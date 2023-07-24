@@ -1,6 +1,6 @@
-import Arrow from "../../characters/arrow.js";
+import Projectile from "../../characters/Projectile.js";
 
-class ArrowState {
+class ProjectileState {
   enemy;
   scene;
   player;
@@ -18,12 +18,11 @@ class ArrowState {
   onUpdate() {
     this.enemy.updateFlipX();
     const startHit = (anim, frame) => {
-      
-      if(frame.index == this.enemy.arrowData.frame) {
+      if(frame.index == this.enemy.projectileData.frame) {
 
         if(this.enemy.can_hit) {
-          const arrow = new Arrow(this.scene, this.enemy.flipX ? this.enemy.x - this.enemy.arrowData.x : this.enemy.x + this.enemy.arrowData.x, this.enemy.y - this.enemy.arrowData.y, this.enemy.arrow, null, this.enemy.physics, this.enemy.flipX, {archerX: this.enemy.x, archerY: this.enemy.y, playerX: this.player.x, playerY: this.player.y}, this.enemy);
-          this.scene.arrows.push(arrow);
+          const projectile = new Projectile(this.scene, this.enemy.flipX ? this.enemy.x - this.enemy.projectileData.x : this.enemy.x + this.enemy.projectileData.x, this.enemy.y - this.enemy.projectileData.y, this.enemy.projectile, null, this.enemy.physics, this.enemy.flipX, {enemyX: this.enemy.x, enemyY: this.enemy.y, playerX: this.player.x, playerY: this.player.y}, this.enemy);
+          this.scene.projectiles.push(projectile);
         }
 
         this.enemy.can_hit = false;
@@ -36,7 +35,7 @@ class ArrowState {
 
     this.enemy.on("animationrepeat", () => {
 
-      if(this.enemy.controller.current_state === this.enemy.controller.states["arrowAttack"]) {
+      if(this.enemy.controller.current_state === this.enemy.controller.states["projectileAttack"]) {
         this.enemy.isAttackAnimationDone = true;
         this.enemy.can_hit = true;  
         this.exit();
@@ -49,4 +48,4 @@ class ArrowState {
   }
 }
 
-export default ArrowState;
+export default ProjectileState;

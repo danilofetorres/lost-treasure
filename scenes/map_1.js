@@ -17,7 +17,7 @@ class Map1 extends Map {
   player_spawn;
   player_controller;
   enemies;
-  arrows;
+  projectiles;
   scene_active = true;
 
   constructor() {
@@ -31,7 +31,7 @@ class Map1 extends Map {
     this.camera = this.cameras.main;
   
     this.enemies = [];
-    this.arrows = [];
+    this.projectiles = [];
   }
 
   preload() {

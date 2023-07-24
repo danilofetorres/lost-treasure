@@ -306,56 +306,56 @@
             <key type="filename">../Death/necromancer_death-7.png</key>
             <key type="filename">../Death/necromancer_death-8.png</key>
             <key type="filename">../Death/necromancer_death-9.png</key>
-            <key type="filename">../Idle/necromancer_indle-0.png</key>
-            <key type="filename">../Idle/necromancer_indle-1.png</key>
-            <key type="filename">../Idle/necromancer_indle-10.png</key>
-            <key type="filename">../Idle/necromancer_indle-11.png</key>
-            <key type="filename">../Idle/necromancer_indle-12.png</key>
-            <key type="filename">../Idle/necromancer_indle-13.png</key>
-            <key type="filename">../Idle/necromancer_indle-14.png</key>
-            <key type="filename">../Idle/necromancer_indle-15.png</key>
-            <key type="filename">../Idle/necromancer_indle-16.png</key>
-            <key type="filename">../Idle/necromancer_indle-17.png</key>
-            <key type="filename">../Idle/necromancer_indle-18.png</key>
-            <key type="filename">../Idle/necromancer_indle-19.png</key>
-            <key type="filename">../Idle/necromancer_indle-2.png</key>
-            <key type="filename">../Idle/necromancer_indle-20.png</key>
-            <key type="filename">../Idle/necromancer_indle-21.png</key>
-            <key type="filename">../Idle/necromancer_indle-22.png</key>
-            <key type="filename">../Idle/necromancer_indle-23.png</key>
-            <key type="filename">../Idle/necromancer_indle-24.png</key>
-            <key type="filename">../Idle/necromancer_indle-25.png</key>
-            <key type="filename">../Idle/necromancer_indle-26.png</key>
-            <key type="filename">../Idle/necromancer_indle-27.png</key>
-            <key type="filename">../Idle/necromancer_indle-28.png</key>
-            <key type="filename">../Idle/necromancer_indle-29.png</key>
-            <key type="filename">../Idle/necromancer_indle-3.png</key>
-            <key type="filename">../Idle/necromancer_indle-30.png</key>
-            <key type="filename">../Idle/necromancer_indle-31.png</key>
-            <key type="filename">../Idle/necromancer_indle-32.png</key>
-            <key type="filename">../Idle/necromancer_indle-33.png</key>
-            <key type="filename">../Idle/necromancer_indle-34.png</key>
-            <key type="filename">../Idle/necromancer_indle-35.png</key>
-            <key type="filename">../Idle/necromancer_indle-36.png</key>
-            <key type="filename">../Idle/necromancer_indle-37.png</key>
-            <key type="filename">../Idle/necromancer_indle-38.png</key>
-            <key type="filename">../Idle/necromancer_indle-39.png</key>
-            <key type="filename">../Idle/necromancer_indle-4.png</key>
-            <key type="filename">../Idle/necromancer_indle-40.png</key>
-            <key type="filename">../Idle/necromancer_indle-41.png</key>
-            <key type="filename">../Idle/necromancer_indle-42.png</key>
-            <key type="filename">../Idle/necromancer_indle-43.png</key>
-            <key type="filename">../Idle/necromancer_indle-44.png</key>
-            <key type="filename">../Idle/necromancer_indle-45.png</key>
-            <key type="filename">../Idle/necromancer_indle-46.png</key>
-            <key type="filename">../Idle/necromancer_indle-47.png</key>
-            <key type="filename">../Idle/necromancer_indle-48.png</key>
-            <key type="filename">../Idle/necromancer_indle-49.png</key>
-            <key type="filename">../Idle/necromancer_indle-5.png</key>
-            <key type="filename">../Idle/necromancer_indle-6.png</key>
-            <key type="filename">../Idle/necromancer_indle-7.png</key>
-            <key type="filename">../Idle/necromancer_indle-8.png</key>
-            <key type="filename">../Idle/necromancer_indle-9.png</key>
+            <key type="filename">../Idle/necromancer_idle-0.png</key>
+            <key type="filename">../Idle/necromancer_idle-1.png</key>
+            <key type="filename">../Idle/necromancer_idle-10.png</key>
+            <key type="filename">../Idle/necromancer_idle-11.png</key>
+            <key type="filename">../Idle/necromancer_idle-12.png</key>
+            <key type="filename">../Idle/necromancer_idle-13.png</key>
+            <key type="filename">../Idle/necromancer_idle-14.png</key>
+            <key type="filename">../Idle/necromancer_idle-15.png</key>
+            <key type="filename">../Idle/necromancer_idle-16.png</key>
+            <key type="filename">../Idle/necromancer_idle-17.png</key>
+            <key type="filename">../Idle/necromancer_idle-18.png</key>
+            <key type="filename">../Idle/necromancer_idle-19.png</key>
+            <key type="filename">../Idle/necromancer_idle-2.png</key>
+            <key type="filename">../Idle/necromancer_idle-20.png</key>
+            <key type="filename">../Idle/necromancer_idle-21.png</key>
+            <key type="filename">../Idle/necromancer_idle-22.png</key>
+            <key type="filename">../Idle/necromancer_idle-23.png</key>
+            <key type="filename">../Idle/necromancer_idle-24.png</key>
+            <key type="filename">../Idle/necromancer_idle-25.png</key>
+            <key type="filename">../Idle/necromancer_idle-26.png</key>
+            <key type="filename">../Idle/necromancer_idle-27.png</key>
+            <key type="filename">../Idle/necromancer_idle-28.png</key>
+            <key type="filename">../Idle/necromancer_idle-29.png</key>
+            <key type="filename">../Idle/necromancer_idle-3.png</key>
+            <key type="filename">../Idle/necromancer_idle-30.png</key>
+            <key type="filename">../Idle/necromancer_idle-31.png</key>
+            <key type="filename">../Idle/necromancer_idle-32.png</key>
+            <key type="filename">../Idle/necromancer_idle-33.png</key>
+            <key type="filename">../Idle/necromancer_idle-34.png</key>
+            <key type="filename">../Idle/necromancer_idle-35.png</key>
+            <key type="filename">../Idle/necromancer_idle-36.png</key>
+            <key type="filename">../Idle/necromancer_idle-37.png</key>
+            <key type="filename">../Idle/necromancer_idle-38.png</key>
+            <key type="filename">../Idle/necromancer_idle-39.png</key>
+            <key type="filename">../Idle/necromancer_idle-4.png</key>
+            <key type="filename">../Idle/necromancer_idle-40.png</key>
+            <key type="filename">../Idle/necromancer_idle-41.png</key>
+            <key type="filename">../Idle/necromancer_idle-42.png</key>
+            <key type="filename">../Idle/necromancer_idle-43.png</key>
+            <key type="filename">../Idle/necromancer_idle-44.png</key>
+            <key type="filename">../Idle/necromancer_idle-45.png</key>
+            <key type="filename">../Idle/necromancer_idle-46.png</key>
+            <key type="filename">../Idle/necromancer_idle-47.png</key>
+            <key type="filename">../Idle/necromancer_idle-48.png</key>
+            <key type="filename">../Idle/necromancer_idle-49.png</key>
+            <key type="filename">../Idle/necromancer_idle-5.png</key>
+            <key type="filename">../Idle/necromancer_idle-6.png</key>
+            <key type="filename">../Idle/necromancer_idle-7.png</key>
+            <key type="filename">../Idle/necromancer_idle-8.png</key>
+            <key type="filename">../Idle/necromancer_idle-9.png</key>
             <key type="filename">../Walk/necromancer_walk-0.png</key>
             <key type="filename">../Walk/necromancer_walk-1.png</key>
             <key type="filename">../Walk/necromancer_walk-2.png</key>
@@ -481,61 +481,10 @@
                     <filename>../Death/necromancer_death-49.png</filename>
                     <filename>../Death/necromancer_death-5.png</filename>
                     <filename>../Death/necromancer_death-50.png</filename>
-                    <filename>../Death/necromancer_death-51.png</filename>
                     <filename>../Death/necromancer_death-6.png</filename>
                     <filename>../Death/necromancer_death-7.png</filename>
                     <filename>../Death/necromancer_death-8.png</filename>
                     <filename>../Death/necromancer_death-9.png</filename>
-                    <filename>../Idle/necromancer_indle-0.png</filename>
-                    <filename>../Idle/necromancer_indle-1.png</filename>
-                    <filename>../Idle/necromancer_indle-10.png</filename>
-                    <filename>../Idle/necromancer_indle-11.png</filename>
-                    <filename>../Idle/necromancer_indle-12.png</filename>
-                    <filename>../Idle/necromancer_indle-13.png</filename>
-                    <filename>../Idle/necromancer_indle-14.png</filename>
-                    <filename>../Idle/necromancer_indle-15.png</filename>
-                    <filename>../Idle/necromancer_indle-16.png</filename>
-                    <filename>../Idle/necromancer_indle-17.png</filename>
-                    <filename>../Idle/necromancer_indle-18.png</filename>
-                    <filename>../Idle/necromancer_indle-19.png</filename>
-                    <filename>../Idle/necromancer_indle-2.png</filename>
-                    <filename>../Idle/necromancer_indle-20.png</filename>
-                    <filename>../Idle/necromancer_indle-21.png</filename>
-                    <filename>../Idle/necromancer_indle-22.png</filename>
-                    <filename>../Idle/necromancer_indle-23.png</filename>
-                    <filename>../Idle/necromancer_indle-24.png</filename>
-                    <filename>../Idle/necromancer_indle-25.png</filename>
-                    <filename>../Idle/necromancer_indle-26.png</filename>
-                    <filename>../Idle/necromancer_indle-27.png</filename>
-                    <filename>../Idle/necromancer_indle-28.png</filename>
-                    <filename>../Idle/necromancer_indle-29.png</filename>
-                    <filename>../Idle/necromancer_indle-3.png</filename>
-                    <filename>../Idle/necromancer_indle-30.png</filename>
-                    <filename>../Idle/necromancer_indle-31.png</filename>
-                    <filename>../Idle/necromancer_indle-32.png</filename>
-                    <filename>../Idle/necromancer_indle-33.png</filename>
-                    <filename>../Idle/necromancer_indle-34.png</filename>
-                    <filename>../Idle/necromancer_indle-35.png</filename>
-                    <filename>../Idle/necromancer_indle-36.png</filename>
-                    <filename>../Idle/necromancer_indle-37.png</filename>
-                    <filename>../Idle/necromancer_indle-38.png</filename>
-                    <filename>../Idle/necromancer_indle-39.png</filename>
-                    <filename>../Idle/necromancer_indle-4.png</filename>
-                    <filename>../Idle/necromancer_indle-40.png</filename>
-                    <filename>../Idle/necromancer_indle-41.png</filename>
-                    <filename>../Idle/necromancer_indle-42.png</filename>
-                    <filename>../Idle/necromancer_indle-43.png</filename>
-                    <filename>../Idle/necromancer_indle-44.png</filename>
-                    <filename>../Idle/necromancer_indle-45.png</filename>
-                    <filename>../Idle/necromancer_indle-46.png</filename>
-                    <filename>../Idle/necromancer_indle-47.png</filename>
-                    <filename>../Idle/necromancer_indle-48.png</filename>
-                    <filename>../Idle/necromancer_indle-49.png</filename>
-                    <filename>../Idle/necromancer_indle-5.png</filename>
-                    <filename>../Idle/necromancer_indle-6.png</filename>
-                    <filename>../Idle/necromancer_indle-7.png</filename>
-                    <filename>../Idle/necromancer_indle-8.png</filename>
-                    <filename>../Idle/necromancer_indle-9.png</filename>
                     <filename>../Spawn/necromancer_spawn-0.png</filename>
                     <filename>../Spawn/necromancer_spawn-1.png</filename>
                     <filename>../Spawn/necromancer_spawn-10.png</filename>
@@ -566,6 +515,57 @@
                     <filename>../Walk/necromancer_walk-7.png</filename>
                     <filename>../Walk/necromancer_walk-8.png</filename>
                     <filename>../Walk/necromancer_walk-9.png</filename>
+                    <filename>../Death/necromancer_death-51.png</filename>
+                    <filename>../Idle/necromancer_idle-0.png</filename>
+                    <filename>../Idle/necromancer_idle-1.png</filename>
+                    <filename>../Idle/necromancer_idle-10.png</filename>
+                    <filename>../Idle/necromancer_idle-11.png</filename>
+                    <filename>../Idle/necromancer_idle-12.png</filename>
+                    <filename>../Idle/necromancer_idle-13.png</filename>
+                    <filename>../Idle/necromancer_idle-14.png</filename>
+                    <filename>../Idle/necromancer_idle-15.png</filename>
+                    <filename>../Idle/necromancer_idle-16.png</filename>
+                    <filename>../Idle/necromancer_idle-17.png</filename>
+                    <filename>../Idle/necromancer_idle-18.png</filename>
+                    <filename>../Idle/necromancer_idle-19.png</filename>
+                    <filename>../Idle/necromancer_idle-2.png</filename>
+                    <filename>../Idle/necromancer_idle-20.png</filename>
+                    <filename>../Idle/necromancer_idle-21.png</filename>
+                    <filename>../Idle/necromancer_idle-22.png</filename>
+                    <filename>../Idle/necromancer_idle-23.png</filename>
+                    <filename>../Idle/necromancer_idle-24.png</filename>
+                    <filename>../Idle/necromancer_idle-25.png</filename>
+                    <filename>../Idle/necromancer_idle-26.png</filename>
+                    <filename>../Idle/necromancer_idle-27.png</filename>
+                    <filename>../Idle/necromancer_idle-28.png</filename>
+                    <filename>../Idle/necromancer_idle-29.png</filename>
+                    <filename>../Idle/necromancer_idle-3.png</filename>
+                    <filename>../Idle/necromancer_idle-30.png</filename>
+                    <filename>../Idle/necromancer_idle-31.png</filename>
+                    <filename>../Idle/necromancer_idle-32.png</filename>
+                    <filename>../Idle/necromancer_idle-33.png</filename>
+                    <filename>../Idle/necromancer_idle-34.png</filename>
+                    <filename>../Idle/necromancer_idle-35.png</filename>
+                    <filename>../Idle/necromancer_idle-36.png</filename>
+                    <filename>../Idle/necromancer_idle-37.png</filename>
+                    <filename>../Idle/necromancer_idle-38.png</filename>
+                    <filename>../Idle/necromancer_idle-39.png</filename>
+                    <filename>../Idle/necromancer_idle-4.png</filename>
+                    <filename>../Idle/necromancer_idle-40.png</filename>
+                    <filename>../Idle/necromancer_idle-41.png</filename>
+                    <filename>../Idle/necromancer_idle-42.png</filename>
+                    <filename>../Idle/necromancer_idle-43.png</filename>
+                    <filename>../Idle/necromancer_idle-44.png</filename>
+                    <filename>../Idle/necromancer_idle-45.png</filename>
+                    <filename>../Idle/necromancer_idle-46.png</filename>
+                    <filename>../Idle/necromancer_idle-47.png</filename>
+                    <filename>../Idle/necromancer_idle-48.png</filename>
+                    <filename>../Idle/necromancer_idle-49.png</filename>
+                    <filename>../Idle/necromancer_idle-5.png</filename>
+                    <filename>../Idle/necromancer_idle-6.png</filename>
+                    <filename>../Idle/necromancer_idle-7.png</filename>
+                    <filename>../Idle/necromancer_idle-8.png</filename>
+                    <filename>../Idle/necromancer_idle-9.png</filename>
                 </array>
             </struct>
         </map>

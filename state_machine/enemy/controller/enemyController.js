@@ -1,8 +1,9 @@
 import AttackState from "../attackState.js";
 import FollowPlayerState from "../followPlayerState.js";
 import IdleState from "../idleState.js";
-import ArrowState from "../ArrowState.js";
+import ProjectileState from "../projectileState.js";
 import MeleeState from "../meleeState.js";
+import SpawnState from "../spawnState.js";
 
 class EnemyController {
   states;
@@ -13,8 +14,9 @@ class EnemyController {
       idle: new IdleState(enemy),
       followPlayer: new FollowPlayerState(enemy, player),
       attack: new AttackState(scene, enemy),
-      arrowAttack: new ArrowState(enemy, scene, player),
-      melee: new MeleeState(scene, enemy)
+      projectileAttack: new ProjectileState(enemy, scene, player),
+      melee: new MeleeState(scene, enemy),
+      spawn: new SpawnState(scene, enemy)
     };
   }
 
