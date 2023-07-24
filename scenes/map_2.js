@@ -168,25 +168,25 @@ class Map2 extends Map {
       30
     );
 
-    // this.archer = new Archer2(
-    //   1,
-    //   this,
-    //   { x: 400, y: 400 },
-    //   "archer2",
-    //   "archer2_idle-0.png",
-    //   "archer2_physics",
-    //   3,
-    //   2,
-    //   "arrow",
-    //   48,
-    //   30
-    // );
-    // this.archer.controller = new EnemyController(
-    //   this,
-    //   this.archer,
-    //   this.player
-    // );
-    // this.archer.controller.setState("idle");
+    this.archer = new Archer2(
+      1,
+      this,
+      { x: 400, y: 400 },
+      "archer2",
+      "archer2_idle-0.png",
+      "archer2_physics",
+      3,
+      2,
+      "arrow",
+      48,
+      30
+    );
+    this.archer.controller = new EnemyController(
+      this,
+      this.archer,
+      this.player
+    );
+    this.archer.controller.setState("idle");
     this.player_controller = new PlayerController(this, this.player);
     this.player_controller.setState("idle");
   }
