@@ -183,6 +183,109 @@
         }, 
         {
          "draworder":"topdown",
+         "id":21,
+         "name":"camera",
+         "objects":[
+                {
+                 "height":0,
+                 "id":25,
+                 "name":"0",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"height",
+                         "type":"int",
+                         "value":480
+                        }, 
+                        {
+                         "name":"width",
+                         "type":"int",
+                         "value":2112
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":0,
+                 "y":48
+                }, 
+                {
+                 "height":0,
+                 "id":26,
+                 "name":"1",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"height",
+                         "type":"int",
+                         "value":480
+                        }, 
+                        {
+                         "name":"width",
+                         "type":"int",
+                         "value":2112
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":0,
+                 "y":480
+                }, 
+                {
+                 "height":0,
+                 "id":27,
+                 "name":"2",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"height",
+                         "type":"int",
+                         "value":480
+                        }, 
+                        {
+                         "name":"width",
+                         "type":"int",
+                         "value":2112
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":0,
+                 "y":912
+                }, 
+                {
+                 "height":0,
+                 "id":28,
+                 "name":"3",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"height",
+                         "type":"int",
+                         "value":570
+                        }, 
+                        {
+                         "name":"width",
+                         "type":"int",
+                         "value":2112
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":0,
+                 "y":1344
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":17,
          "name":"warrior_spawn",
          "objects":[
@@ -869,8 +972,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":21,
- "nextobjectid":25,
+ "nextlayerid":22,
+ "nextobjectid":29,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",

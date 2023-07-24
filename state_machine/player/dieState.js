@@ -25,6 +25,8 @@ class DieState {
 
     this.player.hearts = this.player.max_health;
     this.player.updateHealth();
+
+    this.scene.resetCamera();
   }
 }
 

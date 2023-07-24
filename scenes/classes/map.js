@@ -1,10 +1,10 @@
-import { createWall, setCollision } from "../../utils/config.js";
-import { createLayer } from "../../utils/config.js";
+import { setCollision, createLayer } from "../../utils/config.js";
 
 class Map extends Phaser.Scene {
   key;
   characters;
   map;
+  floor;
   blocks;
   wall_layer;
   barrel_layer;
@@ -20,10 +20,10 @@ class Map extends Phaser.Scene {
       key: key,
       physics: {
         matter: {
-          debug: true,
+          debug: false,
         },
         arcade: {
-          debug: true,
+          debug: false,
           gravity: { y: 0 },
         },
       },
@@ -35,6 +35,9 @@ class Map extends Phaser.Scene {
   init() {
     this.cursors = this.input.keyboard.createCursorKeys();
     this.pointer = this.input.activePointer;
+
+    this.camera = this.cameras.main;
+    this.floor = 0;
 
     this.ladder_coords = [];
   }
@@ -66,11 +69,6 @@ class Map extends Phaser.Scene {
     this.trap_layer = createLayer(this, "armadilhas");
     this.barrel_layer = createLayer(this, "barris");
 
-    // Invisible walls
-   
-
-   
-
     // Set collisions
     setCollision(this, this.block_layer);
     setCollision(this, this.trap_layer);
@@ -92,7 +90,9 @@ class Map extends Phaser.Scene {
     });
 
     this.final_door = this.map.findObject("final_door", (obj) => obj.name === "final_door");
-    console.log(this.final_door);
+
+    // Create camera
+    this.resetCamera();
   }
 
   update(scene) {
@@ -119,6 +119,18 @@ class Map extends Phaser.Scene {
 
     if(spaceJustPressed) {
       scene.player.jump(scene);
+    }
+
+    // Camera Transitions
+    const next_camera = this.map.findObject("camera", (obj) => obj.name == this.floor + 1);
+
+    if(next_camera != null) {
+
+      if(this.player.y > next_camera.y) {
+        this.scale.resize(1280, next_camera.properties[0].value);
+        this.camera.setBounds(next_camera.x, next_camera.y, next_camera.properties[1].value, next_camera.properties[0].value);
+        this.floor++;
+      }
     }
 
     // Enemy AI
@@ -165,6 +177,15 @@ class Map extends Phaser.Scene {
       }
     }
     scene.player.fallDamageHandlerUpdate(scene);
+  }
+
+  resetCamera() {
+    const camera = this.map.findObject("camera", (obj) => obj.name == 0);
+
+    this.camera.setBounds(camera.x, camera.y, camera.properties[1].value, camera.properties[0].value);
+    this.scale.resize(1280, camera.properties[0].value);
+
+    this.floor = 0;
   }
 }
 
