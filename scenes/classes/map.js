@@ -62,7 +62,6 @@ class Map extends Phaser.Scene {
     // Create layers
     createLayer(this, "fundo_interno");
     createLayer(this, "fundo");
-    createLayer(this, "escadas");
     
     this.wall_layer = createLayer(this, "paredes");
     this.block_layer = createLayer(this, "blocklayer");
@@ -75,19 +74,19 @@ class Map extends Phaser.Scene {
     setCollision(this, this.barrel_layer);
 
     // Ladder coordinates
-    const ladder_layer = this.map.getLayer("escadas");
-    const ladder_tiles = ladder_layer.tilemapLayer.getTilesWithin();
+    // const ladder_layer = this.map.getLayer("escadas");
+    // const ladder_tiles = ladder_layer.tilemapLayer.getTilesWithin();
 
-    ladder_tiles.forEach((tile) => {
-      if(tile.index === 8 || tile.index === 9 || tile.index === 47) {
-        this.ladder_coords.push({
-          x: tile.pixelX,
-          y: tile.pixelY,
-          height: 48,
-          width: 48,
-        });
-      }
-    });
+    // ladder_tiles.forEach((tile) => {
+    //   if(tile.index === 8 || tile.index === 9 || tile.index === 47) {
+    //     this.ladder_coords.push({
+    //       x: tile.pixelX,
+    //       y: tile.pixelY,
+    //       height: 48,
+    //       width: 48,
+    //     });
+    //   }
+    // });
 
     this.final_door = this.map.findObject("final_door", (obj) => obj.name === "final_door");
 

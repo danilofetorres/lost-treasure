@@ -74,7 +74,7 @@ class Map2 extends Map {
 
     createLayer(this, "objetos");
     createLayer(this, "baus");
-    createLayer(this, "moedas")
+    createLayer(this, "moedas");
     this.bloco_removivel_layer = createLayer(this, "bloco_removivel");
 
     setCollision(this, this.bloco_removivel_layer);
