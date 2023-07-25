@@ -27,11 +27,11 @@
   </tile>
   <tile id="93">
    <properties>
-    <property name="collides" type="bool" value="false"/>
+    <property name="collides" type="bool" value="true"/>
    </properties>
    <objectgroup draworder="index" id="2">
     <object id="1" x="0" y="0.124449">
-     <polygon points="0,0 48.0373,0 48.1618,47.9129 0,48.0373"/>
+     <polygon points="0,0 47.8759,0 48,47.7516 0,47.8756"/>
     </object>
    </objectgroup>
   </tile>
