@@ -45,6 +45,8 @@ class Map1 extends Map {
   }
 
   create() {
+    this.camera.fadeIn(1000, 0, 0, 0); 
+
     super.create();
 
     createLayer(this, "porta_fechada");
@@ -107,7 +109,7 @@ class Map1 extends Map {
     });  
 
     //stopwatch.startTimer(this);
-    this.destroy();
+    // this.destroy();
   }
 
   update() {
@@ -139,7 +141,11 @@ class Map1 extends Map {
 
     this.scale.resize(1280, 528);
 
-    this.scene.start("map2");
+    this.cameras.main.fadeOut(400, 0, 0, 0);
+
+    this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+      this.scene.start("map2");
+    });
   }
 }
 

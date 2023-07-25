@@ -12,14 +12,16 @@ canvas {
   border: 2px solid #333;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 12rem;
 }
 
 h1 {
   color: #f8f3f3;
+  display: none;
   font-family: "MedievalSharp", cursive;
   font-size: 40px;
   font-weight: bold;
-  margin: 5rem 0 1.5rem;
+  margin: 7rem 0 1.5rem;
   text-align: center;
 }
 
@@ -28,6 +30,7 @@ ul {
 }
 
 .buttons {
+  display: none;
   margin-top: 1rem;
   order: 1;
 }

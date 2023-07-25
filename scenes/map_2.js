@@ -30,40 +30,21 @@ class Map2 extends Map {
   }
 
   preload() {
+    this.camera.fadeIn(1000, 0, 0, 0);
+
     super.preload();
 
-    // this.load.image('fundo_vermelho', 'assets/tilesets/fundo_vermelho.png');
-    // this.load.image('chest(0px)', 'assets/tilesets/chest(0px).png');
-    // this.load.image('coins', 'assets/tilesets/image-removebg-preview-removebg-preview.png');
+    this.load.atlas("knight", "assets/character/knight/atlas/knight.png", "assets/character/knight/atlas/knight.json");
+    this.load.json("knight_physics", "assets/character/knight/physics/knight.json");
 
-    this.load.atlas(
-      "knight",
-      "assets/character/knight/atlas/knight.png",
-      "assets/character/knight/atlas/knight.json"
-    );
-    this.load.json(
-      "knight_physics",
-      "assets/character/knight/physics/knight.json"
-    );
-    this.load.atlas(
-      "archer2",
-      "assets/character/archer_2/atlas/archer.png",
-      "assets/character/archer_2/atlas/archer.json"
-    );
-    this.load.json(
-      "archer2_physics",
-      "assets/character/archer_2/physics/archer2.json"
-    );
-    this.load.atlas(
-      "necromancer",
-      "assets/character/necromancer/atlas/necromancer.png",
-      "assets/character/necromancer/atlas/necromancer.json"
-    );
-    this.load.json(
-      "necromancer_physics",
-      "assets/character/necromancer/physics/necromancer.json"
-    );
+    this.load.atlas("archer2", "assets/character/archer_2/atlas/archer.png", "assets/character/archer_2/atlas/archer.json");
+    this.load.json("archer2_physics", "assets/character/archer_2/physics/archer2.json");
+    
+    this.load.atlas("necromancer", "assets/character/necromancer/atlas/necromancer.png", "assets/character/necromancer/atlas/necromancer.json");
+    this.load.json("necromancer_physics", "assets/character/necromancer/physics/necromancer.json");
+
     this.load.image("projectile", "assets/character/necromancer/Attack/necromancer_projectile.png");
+
     this.load.atlas("knight", "assets/character/knight/atlas/knight.png", "assets/character/knight/atlas/knight.json");
     this.load.json("knight_physics", "assets/character/knight/physics/knight.json");
     
@@ -72,6 +53,8 @@ class Map2 extends Map {
   }
 
   create() {
+    this.camera.fadeIn(1000, 0, 0, 0); 
+
     super.create();
 
     createLayer(this, "objetos");
@@ -120,25 +103,14 @@ class Map2 extends Map {
     this.player_spawn = this.map.findObject("player_spawn", (obj) => obj.name === "player_spawn");
 
     this.player = new Knight(this, this.player_spawn, "knight", "knight_idle-0.png", "knight_physics", 10, 3.5, 48, 30);
+
     this.player_controller = new PlayerController(this, this.player);
     this.player_controller.setState("idle");
     
     this.camera.startFollow(this.player, true, 0.08, 0.08, 80);
 
     const necromancer_spawn = this.map.findObject("necromancer_spawn", (obj) => obj.name === "necromancer_spawn");
-    const necromancer =new Necromancer(
-      1,
-      this,
-      necromancer_spawn,
-      "necromancer",
-      "necromancer_idle-0.png",
-      "necromancer_physics",
-      15,
-      2,
-      "projectile",
-      48,
-      30
-    );
+    const necromancer = new Necromancer(1, this, necromancer_spawn, "necromancer", "necromancer_idle-0.png", "necromancer_physics", 15, 2, "projectile", 48, 30);
 
     this.enemies.push(necromancer);
 
@@ -147,6 +119,7 @@ class Map2 extends Map {
     for(let i=1; i<=8; i++){
       const spawn = this.map.findObject("archer2_spawn", (obj) => obj.name === `spawn_${i}`);
       const archer2 = new Archer2(enemy_id++, this, spawn, "archer2", "archer2_idle-0.png", "archer2_physics", 3, 2, "arrow", 48, 30);
+
       this.enemies.push(archer2);
     }
 
