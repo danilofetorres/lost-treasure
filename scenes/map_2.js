@@ -55,6 +55,8 @@ class Map2 extends Map {
   }
 
   create() {
+    this.scale.resize(1280, 528);
+
     this.camera.fadeIn(1000, 0, 0, 0); 
 
     super.create();
@@ -155,12 +157,12 @@ class Map2 extends Map {
     });  
 
     this.input.keyboard.on('keydown-C',  (event) => {
-      if (!cKeyPressed && this.player.healing_potions > 0) {
+      
+      if(!cKeyPressed && this.player.healing_potions > 0) {
         cKeyPressed = true;
         this.player.healing_potions--;
         this.player.hearts = 10;
         this.player.updateHealth();
-       // Add your own custom function calls or game logic here
       }
     });
   }

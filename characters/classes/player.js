@@ -1,7 +1,5 @@
 import Character from "./character.js";
 
-import collide from "../../utils/helper.js";
-
 class Player extends Character {
   health_bar;
   heart_group;
@@ -77,12 +75,6 @@ class Player extends Character {
   }
 
   jump(scene) {
-    // scene.ladder_coords.forEach((position) => {
-    //   if (collide(scene.player, position, 10, 1.05)) {
-    //     this.is_climbing_ladder = true;
-    //   }
-    // });
-
     this.scene.matter.world.once("collisionactive", (event) => {
       event.pairs.forEach((pair) => {
         const { bodyA, bodyB } = pair;
@@ -131,23 +123,6 @@ class Player extends Character {
     });
   }
 
-  // ladderCollider(scene) {
-  //   scene.ladder_coords.forEach((position) => {
-  //     if (collide(scene.player, position, 10, 1.05)) {
-  //       this.is_climbing_ladder = true;
-  //       this.setIgnoreGravity(true);
-
-  //       if (scene.input.keyboard.addKey("W").isDown) {
-  //         scene.player.climb("up");
-  //       } else if (scene.input.keyboard.addKey("S").isDown) {
-  //         scene.player.climb("down");
-  //       }
-  //     }
-  //   });
-
-  //   this.setIgnoreGravity(false);
-  // }
-
   trapCollider(event, scene) {
     event.pairs.forEach((pair) => {
       const { bodyA, bodyB } = pair;
@@ -171,12 +146,6 @@ class Player extends Character {
   }
 
   fallDamageHandlerUpdate(scene) {
-    // scene.ladder_coords.forEach((position) => {
-    //   if (collide(scene.player, position, 10, 1.05)) {
-    //     this.is_climbing_ladder = true;
-    //   }
-    // });
-
     const current_velocity_y = this.body.velocity.y;
     const fallDistance = this.previous_velocity_y - current_velocity_y;
 

@@ -1,4 +1,3 @@
-import * as stopwatch from "../utils/stopwatch.js";
 import { createLayer, createWall } from "../../utils/config.js";
 
 import Map from "./classes/map.js";
@@ -96,10 +95,6 @@ class Map1 extends Map {
       enemy.controller.setState("idle");
     }
 
-    // this.matter.world.on("beforeupdate", () => {
-    //   this.player.ladderCollider(this);
-    // });
-
     // Traps collision
     this.matter.world.on("collisionstart", (event) => {
       this.player.trapCollider(event, this);
@@ -108,9 +103,6 @@ class Map1 extends Map {
         enemy.trapCollider(event, this);
       }
     });  
-
-    //stopwatch.startTimer(this);
-     //this.destroy();
   }
 
   update() {
@@ -140,11 +132,9 @@ class Map1 extends Map {
     //   gameObject.destroy();
     // });
 
-    this.scale.resize(1280, 528);
-
-    this.cameras.main.fadeOut(400, 0, 0, 0);
-
-    this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+    this.camera.fadeOut(400, 0, 0, 0);
+    
+    this.camera.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
       this.scene.start("map2");
     });
   }

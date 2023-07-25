@@ -11,22 +11,18 @@ class DieState {
     this.player.play(`${this.player.texture.key}_death`);
 
     this.player.once("animationcomplete", () => {
-      this.scene.player_controller.setState("idle");
+      this.exit();
     });
   }
-
+  
   onUpdate() {}
-
+  
   exit() {
-    this.player.setX(this.scene.player_spawn.x);
-    this.player.setY(this.scene.player_spawn.y);
-
-    this.player.flipX = false;
-
-    this.player.hearts = this.player.max_health;
-    this.player.updateHealth();
-
-    this.scene.resetCamera();
+    this.scene.camera.fadeOut(400, 0, 0, 0);
+    
+    this.scene.camera.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+      this.scene.scene.start("game_over", { scene: this.scene.key });
+    });
   }
 }
 
