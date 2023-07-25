@@ -20,12 +20,12 @@ class King extends Enemy {
           can_hit: true, 
           frames: [21, 25], 
           m1: 1, 
-          m2: 1.01 
+          m2: 1.01, 
         },
         { 
           hitbox: scene.add.rectangle(this.x + 20, this.y + this.height / 5, 30, 50), 
           can_hit: true, 
-          frames: [36, 45], 
+          frames: [36, 42], 
           m1: 1, 
           m2: 1.01 
         },

@@ -39,7 +39,6 @@ class Map extends Phaser.Scene {
     this.camera = this.cameras.main;
     this.floor = 0;
 
-    this.ladder_coords = [];
   }
 
   preload() {
@@ -154,7 +153,36 @@ class Map extends Phaser.Scene {
             }
           }
 
-        } else {
+        }else if(enemy.texture.key == "necromancer"){
+          if(distance < 400 && distance >=200 && !enemy.isAttackAnimationDone) {
+            enemy.controller.setState("projectileAttack");
+
+          }else if (distance < 60 && !enemy.isAttackAnimationDone){
+            enemy.controller.setState("spawn");
+          } 
+          else if(enemy.isAttackAnimationDone) {
+            enemy.controller.setState("followPlayer");
+
+            if(distance < 400) {
+              enemy.isAttackAnimationDone = false;
+            }
+          }
+        } else if(enemy.texture.key == "archer2"){
+          if(distance < 600 && distance >=150 && !enemy.isAttackAnimationDone) {
+            enemy.controller.setState("projectileAttack");
+
+          }else if (distance < 60 && !enemy.isAttackAnimationDone){
+            enemy.controller.setState("melee");
+          } 
+          else if(enemy.isAttackAnimationDone) {
+            enemy.controller.setState("followPlayer");
+
+            if(distance < 600) {
+              enemy.isAttackAnimationDone = false;
+            }
+          }
+        }
+        else {
 
           if(distance < 60 && !enemy.isAttackAnimationDone) {
             enemy.controller.setState("attack");

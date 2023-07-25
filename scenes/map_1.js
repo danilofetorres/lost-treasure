@@ -74,14 +74,14 @@ class Map1 extends Map {
 
     let enemy_id = 0;
 
-    for(let i=1; i<=5; i++) {
+    for(let i=1; i<=6; i++) {
       const spawn = this.map.findObject("archer_spawn", (obj) => obj.name === `spawn_${i}`);
       const archer = new Archer(enemy_id++, this, spawn, "archer", "archer_idle-0.png", "archer_physics", 3, 1.5, "arrow", 48, 30);
 
       this.enemies.push(archer);
     }
 
-    for(let i=1; i<=5; i++) {
+    for(let i=1; i<=7; i++) {
       const spawn = this.map.findObject("warrior_spawn", (obj) => obj.name === `spawn_${i}`);
       const warrior = new Warrior(enemy_id++, this, spawn, "warrior", "warrior_idle-0.png", "warrior_physics", 3, 1.5, 48, 30);
 
@@ -93,9 +93,9 @@ class Map1 extends Map {
       enemy.controller.setState("idle");
     }
 
-    this.matter.world.on("beforeupdate", () => {
-      this.player.ladderCollider(this);
-    });
+    // this.matter.world.on("beforeupdate", () => {
+    //   this.player.ladderCollider(this);
+    // });
 
     // Traps collision
     this.matter.world.on("collisionstart", (event) => {
@@ -122,20 +122,20 @@ class Map1 extends Map {
   }  
 
   destroy() {
-    this.physics.world.shutdown();
+    // this.physics.world.shutdown();
 
-    const bodies = this.matter.world.getAllBodies();
+    // const bodies = this.matter.world.getAllBodies();
 
-    bodies.forEach((body) => {
-      this.matter.world.remove(body);
-    });
+    // bodies.forEach((body) => {
+    //   this.matter.world.remove(body);
+    // });
 
-    // Destroy all game objects
-    const gameObjects = this.children.getChildren();
+    // // Destroy all game objects
+    // const gameObjects = this.children.getChildren();
 
-    gameObjects.forEach((gameObject) => {
-      gameObject.destroy();
-    });
+    // gameObjects.forEach((gameObject) => {
+    //   gameObject.destroy();
+    // });
 
     this.scale.resize(1280, 528);
 

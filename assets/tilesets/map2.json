@@ -302,11 +302,11 @@
             88, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 88,
             88, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
             88, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 352, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
-            88, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 265, 346, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 536, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
-            88, 0, 0, 0, 0, 0, 0, 0, 346, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 346, 0, 0, 0, 0, 0, 0, 0, 346, 0, 0, 0, 536, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
-            88, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 346, 0, 0, 0, 0, 0, 0, 0, 346, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
-            88, 0, 0, 0, 0, 0, 346, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 346, 346, 0, 0, 0, 0, 123, 0, 0, 0, 0, 0, 88,
-            88, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 352, 352, 352, 352, 352, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 89, 0, 0, 0, 0, 346, 0, 0, 0, 0, 0, 88,
+            88, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 265, 536, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 536, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
+            88, 0, 0, 0, 0, 0, 0, 0, 536, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 346, 0, 0, 0, 0, 0, 0, 0, 346, 0, 0, 0, 536, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
+            88, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 536, 346, 0, 536, 346, 0, 0, 0, 0, 0, 0, 346, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
+            88, 0, 0, 0, 0, 0, 536, 536, 0, 536, 346, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 346, 346, 0, 0, 0, 0, 123, 0, 0, 0, 0, 0, 88,
+            88, 0, 0, 0, 0, 0, 0, 346, 0, 0, 0, 352, 352, 352, 352, 352, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 89, 0, 0, 0, 0, 346, 0, 0, 0, 0, 0, 88,
             88, 0, 0, 0, 346, 265, 265, 265, 0, 0, 0, 0, 352, 352, 352, 352, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 94, 0, 536, 536, 0, 0, 88,
             88, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 536, 94, 346, 536, 536, 0, 0, 88,
             88, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 94, 499, 536, 0, 0, 346, 88,
@@ -327,8 +327,8 @@
             88, 536, 247, 0, 346, 0, 0, 0, 0, 0, 0, 0, 0, 247, 247, 247, 247, 247, 247, 247, 247, 0, 0, 0, 0, 247, 247, 247, 0, 0, 0, 0, 0, 0, 0, 0, 0, 529, 529, 0, 0, 0, 0, 0, 88,
             88, 536, 247, 247, 536, 247, 0, 0, 0, 0, 0, 0, 0, 247, 247, 247, 247, 247, 247, 247, 0, 0, 346, 0, 0, 342, 344, 247, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 529, 0, 0, 0, 0, 0, 88,
             88, 536, 247, 247, 247, 289, 247, 346, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 342, 344, 0, 0, 0, 0, 247, 322, 324, 247, 0, 0, 346, 346, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
-            88, 247, 247, 0, 0, 0, 247, 536, 247, 247, 247, 0, 247, 247, 346, 247, 247, 247, 322, 324, 0, 0, 0, 0, 247, 322, 324, 247, 247, 247, 210, 210, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
-            88, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 322, 324, 247, 247, 247, 247, 247, 322, 324, 247, 247, 529, 529, 529, 529, 529, 247, 266, 268, 0, 0, 0, 0, 0, 0, 0, 88,
+            88, 247, 247, 0, 0, 0, 247, 536, 247, 247, 247, 0, 247, 247, 536, 346, 247, 247, 322, 324, 0, 0, 0, 0, 247, 322, 324, 247, 247, 247, 210, 210, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 88,
+            88, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 247, 346, 247, 247, 247, 247, 322, 324, 247, 247, 247, 247, 247, 322, 324, 247, 247, 529, 529, 529, 529, 529, 247, 266, 268, 0, 0, 0, 0, 0, 0, 0, 88,
             88, 0, 0, 0, 0, 247, 247, 247, 247, 325, 327, 0, 0, 0, 0, 0, 0, 0, 322, 324, 247, 247, 247, 0, 0, 322, 324, 247, 247, 247, 247, 247, 247, 247, 247, 322, 324, 0, 0, 0, 0, 0, 0, 0, 88,
             88, 0, 0, 0, 127, 127, 127, 127, 342, 343, 344, 127, 127, 127, 127, 127, 127, 0, 339, 341, 247, 0, 0, 0, 0, 339, 341, 247, 247, 0, 0, 0, 0, 0, 247, 339, 341, 0, 0, 346, 0, 0, 0, 0, 88,
             88, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 172, 0, 0, 0, 0, 0, 0, 346, 88,
@@ -365,6 +365,688 @@
          "type":"tilelayer",
          "visible":true,
          "width":45,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":14,
+         "locked":true,
+         "name":"archer_spawn",
+         "objects":[
+                {
+                 "height":0,
+                 "id":12,
+                 "name":"spawn_2",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1849.33333333333,
+                 "y":402.666666666667
+                }, 
+                {
+                 "height":0,
+                 "id":13,
+                 "name":"spawn_1",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":934.666666666667,
+                 "y":261.333333333333
+                }],
+         "offsetx":1.33333333333337,
+         "offsety":-14.6666666666667,
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":15,
+         "locked":true,
+         "name":"archer2_spawn",
+         "objects":[
+                {
+                 "height":0,
+                 "id":14,
+                 "name":"spawn_8",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1200,
+                 "y":780
+                }, 
+                {
+                 "height":0,
+                 "id":15,
+                 "name":"spawn_7",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":365.333333333333,
+                 "y":990.666666666667
+                }, 
+                {
+                 "height":0,
+                 "id":16,
+                 "name":"spawn_6",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1246.66666666667,
+                 "y":1276
+                }, 
+                {
+                 "height":0,
+                 "id":17,
+                 "name":"spawn_5",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1726.66666666667,
+                 "y":1421.33333333333
+                }, 
+                {
+                 "height":0,
+                 "id":18,
+                 "name":"spawn_4",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1418.66666666667,
+                 "y":1882.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":19,
+                 "name":"spawn_3",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":626.666666666667,
+                 "y":1884
+                }, 
+                {
+                 "height":0,
+                 "id":20,
+                 "name":"spawn_2",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":4
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1412,
+                 "y":2320
+                }, 
+                {
+                 "height":0,
+                 "id":21,
+                 "name":"spawn_1",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":4
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":910.666666666667,
+                 "y":2413.33333333333
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":16,
+         "locked":true,
+         "name":"warrior_spawn",
+         "objects":[
+                {
+                 "height":0,
+                 "id":25,
+                 "name":"spawn_24",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1126.66666666667,
+                 "y":965.333333333333
+                }, 
+                {
+                 "height":0,
+                 "id":26,
+                 "name":"spawn_23",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1264,
+                 "y":958.666666666667
+                }, 
+                {
+                 "height":0,
+                 "id":27,
+                 "name":"spawn_22",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":645.333333333333,
+                 "y":1534.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":28,
+                 "name":"spawn_21",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":789.333333333333,
+                 "y":1530.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":29,
+                 "name":"spawn_20",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":490.666666666667,
+                 "y":1484
+                }, 
+                {
+                 "height":0,
+                 "id":30,
+                 "name":"spawn_19",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1030.66666666667,
+                 "y":1536
+                }, 
+                {
+                 "height":0,
+                 "id":31,
+                 "name":"spawn_18",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1133.33333333333,
+                 "y":1532
+                }, 
+                {
+                 "height":0,
+                 "id":32,
+                 "name":"spawn_17",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1372,
+                 "y":1532
+                }, 
+                {
+                 "height":0,
+                 "id":33,
+                 "name":"spawn_16",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1505.33333333333,
+                 "y":1526.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":34,
+                 "name":"spawn_15",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1642.66666666667,
+                 "y":1530.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":35,
+                 "name":"spawn_14",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1418.66666666667,
+                 "y":1990.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":36,
+                 "name":"spawn_13",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1602.66666666667,
+                 "y":2036
+                }, 
+                {
+                 "height":0,
+                 "id":37,
+                 "name":"spawn_12",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1706.66666666667,
+                 "y":2034.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":38,
+                 "name":"spawn_11",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":938.666666666667,
+                 "y":2022.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":39,
+                 "name":"spawn_10",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":661.333333333333,
+                 "y":2021.33333333333
+                }, 
+                {
+                 "height":0,
+                 "id":40,
+                 "name":"spawn_9",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":802.666666666667,
+                 "y":1961.33333333333
+                }, 
+                {
+                 "height":0,
+                 "id":41,
+                 "name":"spawn_8",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":501.333333333333,
+                 "y":2004
+                }, 
+                {
+                 "height":0,
+                 "id":42,
+                 "name":"spawn_7",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":3
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1060,
+                 "y":1942.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":43,
+                 "name":"spawn_6",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":4
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":238.666666666667,
+                 "y":2542.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":44,
+                 "name":"spawn_5",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":4
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":694.666666666667,
+                 "y":2542.66666666667
+                }, 
+                {
+                 "height":0,
+                 "id":45,
+                 "name":"spawn_4",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":4
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":960,
+                 "y":2537.33333333333
+                }, 
+                {
+                 "height":0,
+                 "id":46,
+                 "name":"spawn_3",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":4
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1181.33333333333,
+                 "y":2536
+                }, 
+                {
+                 "height":0,
+                 "id":47,
+                 "name":"spawn_2",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":4
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1413.33333333333,
+                 "y":2533.33333333333
+                }, 
+                {
+                 "height":0,
+                 "id":48,
+                 "name":"spawn_1",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":4
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1653.33333333333,
+                 "y":2533.33333333333
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":17,
+         "locked":true,
+         "name":"necromancer_spawn",
+         "objects":[
+                {
+                 "height":0,
+                 "id":49,
+                 "name":"necromancer_spawn",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"floor",
+                         "type":"int",
+                         "value":4
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1966.66666666667,
+                 "y":2400
+                }],
+         "offsetx":1.33333333333348,
+         "offsety":-32,
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
          "x":0,
          "y":0
         }, 
@@ -800,8 +1482,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":14,
- "nextobjectid":12,
+ "nextlayerid":18,
+ "nextobjectid":50,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",
@@ -933,8 +1615,8 @@
                              "type":"",
                              "visible":true,
                              "width":0,
-                             "x":-0.133314817386474,
-                             "y":30.929037633662
+                             "x":-0.133315,
+                             "y":30.929
                             }],
                      "opacity":1,
                      "type":"objectgroup",
@@ -1491,18 +2173,18 @@
                                     }, 
                                     {
                                      "x":48,
-                                     "y":12.7339258436328
+                                     "y":12.7339
                                     }, 
                                     {
                                      "x":0,
-                                     "y":12.7339258436328
+                                     "y":12.7339
                                     }],
                              "rotation":0,
                              "type":"",
                              "visible":true,
                              "width":0,
-                             "x":0.199972226079712,
-                             "y":35.1284543813359
+                             "x":0.199972,
+                             "y":35.1285
                             }],
                      "opacity":1,
                      "type":"objectgroup",
@@ -2084,18 +2766,18 @@
                                     }, 
                                     {
                                      "x":48,
-                                     "y":12.9338980697125
+                                     "y":12.9339
                                     }, 
                                     {
                                      "x":0,
-                                     "y":12.9338980697125
+                                     "y":12.9339
                                     }],
                              "rotation":0,
                              "type":"",
                              "visible":true,
                              "width":0,
-                             "x":-0.266629634772949,
-                             "y":30.662407998889
+                             "x":-0.26663,
+                             "y":30.6624
                             }],
                      "opacity":1,
                      "type":"objectgroup",
@@ -2143,8 +2825,8 @@
                              "type":"",
                              "visible":true,
                              "width":0,
-                             "x":-0.066657408693235,
-                             "y":30.7290654075823
+                             "x":-0.0666574,
+                             "y":30.7291
                             }],
                      "opacity":1,
                      "type":"objectgroup",

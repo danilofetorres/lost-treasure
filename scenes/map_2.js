@@ -6,6 +6,8 @@ import Archer2 from "../characters/archer2.js";
 import PlayerController from "../state_machine/player/controller/playerController.js";
 import EnemyController from "../state_machine/enemy/controller/enemyController.js";
 import Necromancer from "../characters/necromancer.js";
+import Warrior from "../characters/warrior.js";
+import Archer from "../characters/archer.js";
 
 class Map2 extends Map {
   player;
@@ -117,52 +119,55 @@ class Map2 extends Map {
     // Create characters
     this.player_spawn = this.map.findObject("player_spawn", (obj) => obj.name === "player_spawn");
 
-    this.archer = new Archer2(1,
-      this,
-      { x: 500, y: 400 },
-      "archer2",
-      "archer2_idle-0.png",
-      "archer2_physics",
-      3,
-      2,
-      "arrow",
-      48,
-      30)
-    this.necro = new Necromancer(
+    this.player = new Knight(this, this.player_spawn, "knight", "knight_idle-0.png", "knight_physics", 10, 3.5, 48, 30);
+    this.player_controller = new PlayerController(this, this.player);
+    this.player_controller.setState("idle");
+    
+    this.camera.startFollow(this.player, true, 0.08, 0.08, 80);
+
+    const necromancer_spawn = this.map.findObject("necromancer_spawn", (obj) => obj.name === "necromancer_spawn");
+    const necromancer =new Necromancer(
       1,
       this,
-      { x: 400, y: 400 },
+      necromancer_spawn,
       "necromancer",
       "necromancer_idle-0.png",
       "necromancer_physics",
-      3,
+      15,
       2,
       "projectile",
       48,
       30
     );
-    this.archer.controller = new EnemyController(
-      this,
-      this.archer,
-      this.player
-    );
 
-    this.necro.controller = new EnemyController(
-      this,
-      this.necro,
-      this.player
-    );
-   // this.archer.controller.setState("projectileAttack");
-    this.necro.controller.setState("projectileAttack");
-    this.player = new Knight(this, this.player_spawn, "knight", "knight_idle-0.png", "knight_physics", 10, 3.5, 48, 30);
-    this.player_controller = new PlayerController(this, this.player);
-    this.player_controller.setState("idle");
+    this.enemies.push(necromancer);
 
-    this.archer = new Archer2(1, this, { x: 400, y: 400 }, "archer2", "archer2_idle-0.png", "archer2_physics", 3, 2, "arrow", 48, 30);
-    this.archer.controller = new EnemyController(this, this.archer, this.player);
-    this.archer.controller.setState("idle");
-    
-    this.camera.startFollow(this.player, true, 0.08, 0.08, 80);
+    let enemy_id = 0;
+
+    for(let i=1; i<=8; i++){
+      const spawn = this.map.findObject("archer2_spawn", (obj) => obj.name === `spawn_${i}`);
+      const archer2 = new Archer2(enemy_id++, this, spawn, "archer2", "archer2_idle-0.png", "archer2_physics", 3, 2, "arrow", 48, 30);
+      this.enemies.push(archer2);
+    }
+
+    for(let i=1; i<=2; i++) {
+      const spawn = this.map.findObject("archer_spawn", (obj) => obj.name === `spawn_${i}`);
+      const archer = new Archer(enemy_id++, this, spawn, "archer", "archer_idle-0.png", "archer_physics", 3, 1.5, "arrow", 48, 30);
+
+      this.enemies.push(archer);
+    }
+
+    for(let i=1; i<=22; i++) {
+      const spawn = this.map.findObject("warrior_spawn", (obj) => obj.name === `spawn_${i}`);
+      const warrior = new Warrior(enemy_id++, this, spawn, "warrior", "warrior_idle-0.png", "warrior_physics", 3, 1.5, 48, 30);
+
+      this.enemies.push(warrior);
+    }
+
+    for(const enemy of this.enemies) {
+      enemy.controller = new EnemyController(this, enemy, this.player);
+      enemy.controller.setState("idle");
+    }
   }
 
   update() {

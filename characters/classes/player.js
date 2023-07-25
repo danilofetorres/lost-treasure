@@ -76,18 +76,17 @@ class Player extends Character {
   }
 
   jump(scene) {
-    scene.ladder_coords.forEach((position) => {
-      if (collide(scene.player, position, 10, 1.05)) {
-        this.is_climbing_ladder = true;
-      }
-    });
+    // scene.ladder_coords.forEach((position) => {
+    //   if (collide(scene.player, position, 10, 1.05)) {
+    //     this.is_climbing_ladder = true;
+    //   }
+    // });
 
     this.scene.matter.world.once("collisionactive", (event) => {
       event.pairs.forEach((pair) => {
         const { bodyA, bodyB } = pair;
 
         if (
-          this.is_climbing_ladder ||
           ((bodyA.label === `${this.texture.key}` ||
             bodyB.label === `${this.texture.key}`) &&
             (bodyA.gameObject?.tile?.layer.name ===
@@ -131,22 +130,22 @@ class Player extends Character {
     });
   }
 
-  ladderCollider(scene) {
-    scene.ladder_coords.forEach((position) => {
-      if (collide(scene.player, position, 10, 1.05)) {
-        this.is_climbing_ladder = true;
-        this.setIgnoreGravity(true);
+  // ladderCollider(scene) {
+  //   scene.ladder_coords.forEach((position) => {
+  //     if (collide(scene.player, position, 10, 1.05)) {
+  //       this.is_climbing_ladder = true;
+  //       this.setIgnoreGravity(true);
 
-        if (scene.input.keyboard.addKey("W").isDown) {
-          scene.player.climb("up");
-        } else if (scene.input.keyboard.addKey("S").isDown) {
-          scene.player.climb("down");
-        }
-      }
-    });
+  //       if (scene.input.keyboard.addKey("W").isDown) {
+  //         scene.player.climb("up");
+  //       } else if (scene.input.keyboard.addKey("S").isDown) {
+  //         scene.player.climb("down");
+  //       }
+  //     }
+  //   });
 
-    this.setIgnoreGravity(false);
-  }
+  //   this.setIgnoreGravity(false);
+  // }
 
   trapCollider(event, scene) {
     event.pairs.forEach((pair) => {
@@ -171,16 +170,16 @@ class Player extends Character {
   }
 
   fallDamageHandlerUpdate(scene) {
-    scene.ladder_coords.forEach((position) => {
-      if (collide(scene.player, position, 10, 1.05)) {
-        this.is_climbing_ladder = true;
-      }
-    });
+    // scene.ladder_coords.forEach((position) => {
+    //   if (collide(scene.player, position, 10, 1.05)) {
+    //     this.is_climbing_ladder = true;
+    //   }
+    // });
 
     const current_velocity_y = this.body.velocity.y;
     const fallDistance = this.previous_velocity_y - current_velocity_y;
 
-    if (fallDistance > 9.2 && !this.is_climbing_ladder && this.y > this.previous_position_y) {
+    if (fallDistance > 9.2 && this.y > this.previous_position_y) {
       this.getHit(Math.floor(fallDistance ** 2 / 2.5 / 10) / 2);
     }
 
