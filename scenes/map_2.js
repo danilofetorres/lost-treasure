@@ -141,6 +141,15 @@ class Map2 extends Map {
       enemy.controller = new EnemyController(this, enemy, this.player);
       enemy.controller.setState("idle");
     }
+
+    // Traps collision
+    this.matter.world.on("collisionstart", (event) => {
+      this.player.trapCollider(event, this);
+
+      for(const enemy of this.enemies) {
+        enemy.trapCollider(event, this);
+      }
+    });  
   }
 
   update() {

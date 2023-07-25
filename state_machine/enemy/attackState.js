@@ -30,7 +30,7 @@ class AttackState {
     this.enemy.updateFlipX();
     
     const hit = (index) => {
-      this.hitboxes[index].hitbox.x = this.hitboxes[index].x === 0 ? this.enemy.x : (this.enemy.flipX ? this.enemy.x - 45 : this.enemy.x + 30);
+      this.hitboxes[index].hitbox.x = this.hitboxes[index].x === 0 ? this.enemy.x : (this.enemy.flipX ? this.enemy.x - this.hitboxes[index].flipX : this.enemy.x + 30);
       this.hitboxes[index].hitbox.y =  this.hitboxes[index].y > 0 ? this.hitboxes[index].y + this.enemy.y : this.enemy.y - 5;
       
       this.hitboxes[index].hitbox.body.enable = true;

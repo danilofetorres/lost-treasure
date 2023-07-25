@@ -181,7 +181,7 @@ class Map extends Phaser.Scene {
               enemy.isAttackAnimationDone = false;
             }
           }
-        }
+        } 
         else {
 
           if(distance < 60 && !enemy.isAttackAnimationDone) {

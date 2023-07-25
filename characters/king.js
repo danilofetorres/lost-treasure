@@ -21,13 +21,15 @@ class King extends Enemy {
           frames: [21, 25], 
           m1: 1, 
           m2: 1.01, 
+          flipX: 30,
         },
         { 
           hitbox: scene.add.rectangle(this.x + 20, this.y + this.height / 5, 30, 50), 
           can_hit: true, 
           frames: [36, 42], 
           m1: 1, 
-          m2: 1.01 
+          m2: 1.01,
+          flipX: 30, 
         },
       ],
       [
@@ -52,11 +54,11 @@ class King extends Enemy {
 
     this.resetHitbox(scene);
 
-    this.isAttackAnimationDone = false;
+    this.isAttackAnimationDone = true;
 
     createAnim(scene, "idle", "king", 17, this.id);
     createAnim(scene, "walk", "king", 7, this.id);
-    createAnim(scene, "attack_0", "king", 57, this.id, 0, 10, -1, "attack");
+    createAnim(scene, "attack_0", "king", 57, this.id, 0, 15, -1, "attack");
     createAnim(scene, "attack_1", "king", 29, this.id, 0, 10, -1, "ground_attack");
     createAnim(scene, "death", "king", 36, this.id, 0, 30, 0);
   }
