@@ -16,6 +16,7 @@ class Map1 extends Map {
   enemies;
   projectiles;
   scene_active = true;
+  king_killed = false;
 
   constructor() {
     super("map1");
@@ -109,14 +110,14 @@ class Map1 extends Map {
     });  
 
     //stopwatch.startTimer(this);
-    // this.destroy();
+     //this.destroy();
   }
 
   update() {
     if(this.scene_active){
       super.update(this); 
        
-      if(this.player.x <= this.final_door.x && this.player.y >= this.final_door.y) {
+      if(this.player.x <= this.final_door.x && this.player.y >= this.final_door.y && this.king_killed) {
         this.scene_active = false;
         this.destroy();        
       }

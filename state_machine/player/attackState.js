@@ -36,6 +36,11 @@ class AttackState {
             if(enemy.hearts <= 0) {
               enemy.die(`${enemy.texture.key}_death_${enemy.id}`, () => {
                 enemy.resetHitbox(this.scene);
+                if(enemy.texture.key === "king"){
+                  this.scene.king_killed = true;
+                } else if (enemy.texture.key === "necromancer"){
+                  this.scene.necro_killed = true;
+                }
                 enemy.destroy();
               });
 

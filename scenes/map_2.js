@@ -9,6 +9,7 @@ import Necromancer from "../characters/necromancer.js";
 import Warrior from "../characters/warrior.js";
 import Archer from "../characters/archer.js";
 
+var cKeyPressed = false;
 class Map2 extends Map {
   player;
   player_spawn;
@@ -17,6 +18,7 @@ class Map2 extends Map {
   projectiles;
   bloco_removivel_layer;
   archer;
+  necro_killed = true;
 
   constructor() {
     super("map2");
@@ -115,6 +117,7 @@ class Map2 extends Map {
     this.enemies.push(necromancer);
 
     let enemy_id = 0;
+    console.log(this.cursors);
 
     for(let i=1; i<=8; i++){
       const spawn = this.map.findObject("archer2_spawn", (obj) => obj.name === `spawn_${i}`);
@@ -150,11 +153,26 @@ class Map2 extends Map {
         enemy.trapCollider(event, this);
       }
     });  
+
+    this.input.keyboard.on('keydown-C',  (event) => {
+      if (!cKeyPressed && this.player.healing_potions > 0) {
+        cKeyPressed = true;
+        this.player.healing_potions--;
+        this.player.hearts = 10;
+        this.player.updateHealth();
+       // Add your own custom function calls or game logic here
+      }
+    });
   }
 
   update() {
     super.update(this);
+     if(this.necro_killed){
 
+      //this.bloco_removivel_layer.setCollisionByProperty({ collides: false });
+      this.bloco_removivel_layer.destroy();
+      this.necro_killed = false;
+    }
     // this.archer.updateHealthBar();
     // this.archer.controller.update();
     //  this.necro.controller.update();
@@ -180,5 +198,9 @@ class Map2 extends Map {
     // }
   }
 }
+function resetCKey() {
+  cKeyPressed = false;
+}
+document.addEventListener('keyup', resetCKey);
 
 export default Map2;

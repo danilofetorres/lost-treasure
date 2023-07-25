@@ -10,6 +10,7 @@ class Player extends Character {
   can_jump;
   previous_velocity_y;
   previous_position_y;
+  healing_potions = 3;
 
   constructor(
     scene,
