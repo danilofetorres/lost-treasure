@@ -5,6 +5,7 @@ import PlayerController from "../state_machine/player/controller/playerControlle
 import { createWall, createLayer } from "../utils/config.js";
 
 class TreasureRoom extends Map {
+  user;
   player;
   player_spawn;
   player_controller;
@@ -115,6 +116,7 @@ class TreasureRoom extends Map {
       this.camera.fadeOut(10000, 0, 0, 0);
 
       this.camera.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+        this.scene.stop("stopwatch");
         this.scene.start("start");
       });
     }

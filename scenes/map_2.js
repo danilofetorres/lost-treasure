@@ -12,6 +12,7 @@ import { createWall, setCollision, createLayer } from "../utils/config.js";
 var cKeyPressed = false;
 
 class Map2 extends Map {
+  user;
   player;
   player_spawn;
   player_controller;
@@ -205,7 +206,7 @@ class Map2 extends Map {
       this.camera.fadeOut(400, 0, 0, 0);
     
       this.camera.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
-        this.scene.start("treasure_room", {x: this.player.x, y: this.player.y});
+        this.scene.start("treasure_room", { x: this.player.x, y: this.player.y });
       });
     }
   }

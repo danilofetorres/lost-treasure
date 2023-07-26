@@ -9,6 +9,7 @@ import EnemyController from "../state_machine/enemy/controller/enemyController.j
 import { createLayer, createWall } from "../utils/config.js";
 
 class Map1 extends Map {  
+  user;
   player;
   player_spawn;
   player_controller;
@@ -27,7 +28,7 @@ class Map1 extends Map {
     this.enemies = [];
     this.projectiles = [];
 
-    this.king_killed = true;
+    this.king_killed = false;
   }
 
   preload() {
@@ -51,6 +52,9 @@ class Map1 extends Map {
     this.camera.fadeIn(1000, 0, 0, 0); 
 
     super.create();
+    
+    this.scene.run("stopwatch");
+    this.scene.get("stopwatch").scene.bringToTop();
 
     // Create Layers
     createLayer(this, "porta_fechada");

@@ -18,6 +18,8 @@ class DieState {
   onUpdate() {}
   
   exit() {
+    this.scene.scene.sleep("stopwatch");
+
     this.scene.camera.fadeOut(400, 0, 0, 0);
     
     this.scene.camera.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {

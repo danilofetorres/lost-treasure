@@ -4,10 +4,10 @@ $(".ldb").click(function() {
   
     ranking.sort((a, b) => a.time - b.time);
 
-    $(".modal-body").html("<ul></ul>");
+    $(".ranking").html("<ul></ul>");
   
     ranking.forEach((entry, index) => {
-      $(".modal-body ul").append(`<p>${index + 1}. ${entry.player}: ${entry.time}</p>`);
+      $(".ranking ul").append(`<p>${index + 1}. ${entry.player}: ${entry.time}</p>`);
     });
   
   });
