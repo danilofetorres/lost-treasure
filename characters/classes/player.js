@@ -80,20 +80,22 @@ class Player extends Character {
         const { bodyA, bodyB } = pair;
 
         if (
-          ((bodyA.label === `${this.texture.key}` ||
+          (bodyA.label === `${this.texture.key}` ||
             bodyB.label === `${this.texture.key}`) &&
-            (bodyA.gameObject?.tile?.layer.name ===
+          (bodyA.gameObject?.tile?.layer.name ===
+            scene.block_layer.layer.name ||
+            bodyB.gameObject?.tile?.layer.name ===
               scene.block_layer.layer.name ||
-              bodyB.gameObject?.tile?.layer.name ===
-                scene.block_layer.layer.name ||
-              bodyA.gameObject?.tile?.layer.name ===
-                scene.barrel_layer.layer.name ||
-              bodyB.gameObject?.tile?.layer.name ===
-                scene.barrel_layer.layer.name ||
-              bodyA.gameObject?.tile?.layer.name ===
-                scene.trap_layer.layer.name ||
-              bodyB.gameObject?.tile?.layer.name ===
-                scene.trap_layer.layer.name))
+            bodyA.gameObject?.tile?.layer.name ===
+              scene.barrel_layer.layer.name ||
+            bodyB.gameObject?.tile?.layer.name ===
+              scene.barrel_layer.layer.name ||
+            bodyA.gameObject?.tile?.layer.name ===
+              scene.trap_layer.layer.name ||
+            bodyB.gameObject?.tile?.layer.name ===
+              scene.trap_layer.layer.name ||
+            bodyA.gameObject?.tile?.layer.name === "bloco_removivel" ||
+            bodyB.gameObject?.tile?.layer.name === "bloco_removivel")
         ) {
           this.previous_position_y = this.y;
           this.setVelocityY(-8);

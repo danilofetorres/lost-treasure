@@ -59,7 +59,7 @@ class King extends Enemy {
     createAnim(scene, "idle", "king", 17, this.id);
     createAnim(scene, "walk", "king", 7, this.id);
     createAnim(scene, "attack_0", "king", 57, this.id, 0, 15, -1, "attack");
-    createAnim(scene, "attack_1", "king", 29, this.id, 0, 10, -1, "ground_attack");
+    createAnim(scene, "attack_1", "king", 29, this.id, 0, 20, -1, "ground_attack");
     createAnim(scene, "death", "king", 36, this.id, 0, 30, 0);
   }
 }
