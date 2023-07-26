@@ -1,5 +1,3 @@
-import { createWall, setCollision, createLayer } from "../utils/config.js";
-
 import Map from "./classes/map.js";
 import Knight from "../characters/knight.js";
 import Archer2 from "../characters/archer2.js";
@@ -9,7 +7,10 @@ import Necromancer from "../characters/necromancer.js";
 import Warrior from "../characters/warrior.js";
 import Archer from "../characters/archer.js";
 
+import { createWall, setCollision, createLayer } from "../utils/config.js";
+
 var cKeyPressed = false;
+
 class Map2 extends Map {
   player;
   player_spawn;
@@ -18,12 +19,12 @@ class Map2 extends Map {
   projectiles;
   bloco_removivel_layer;
   archer;
-  necro_killed = false;
+  necro_killed;
   potion;
   potion_group;
 
   constructor() {
-    super("map2", "map2");
+    super("map2");
   }
 
   init() {
@@ -31,6 +32,8 @@ class Map2 extends Map {
   
     this.enemies = [];
     this.projectiles = [];
+
+    this.necro_killed = false;
   }
 
   preload() {
@@ -38,6 +41,7 @@ class Map2 extends Map {
 
     super.preload();
 
+    // Load character assets
     this.load.atlas("knight", "assets/character/knight/atlas/knight.png", "assets/character/knight/atlas/knight.json");
     this.load.json("knight_physics", "assets/character/knight/physics/knight.json");
 
@@ -47,14 +51,15 @@ class Map2 extends Map {
     this.load.atlas("necromancer", "assets/character/necromancer/atlas/necromancer.png", "assets/character/necromancer/atlas/necromancer.json");
     this.load.json("necromancer_physics", "assets/character/necromancer/physics/necromancer.json");
 
-    this.load.image("projectile", "assets/character/necromancer/Attack/necromancer_projectile.png");
-
+    
     this.load.atlas("knight", "assets/character/knight/atlas/knight.png", "assets/character/knight/atlas/knight.json");
     this.load.json("knight_physics", "assets/character/knight/physics/knight.json");
     
     this.load.atlas("archer2", "assets/character/archer_2/atlas/archer.png", "assets/character/archer_2/atlas/archer.json");
     this.load.json("archer2_physics", "assets/character/archer_2/physics/archer2.json");
-
+    
+    // Icons
+    this.load.image("projectile", "assets/character/necromancer/Attack/necromancer_projectile.png");
     this.load.image("potion", "assets/icons/potion.png");
   }
 
@@ -65,6 +70,7 @@ class Map2 extends Map {
 
     super.create();
 
+    // Create layers
     createLayer(this, "objetos");
     createLayer(this, "baus");
     createLayer(this, "moedas");
@@ -72,6 +78,7 @@ class Map2 extends Map {
 
     setCollision(this, this.bloco_removivel_layer);
 
+    // Invisible walls
     const wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 6000, { isStatic: true, label: "paredes" });
     const wallCollisionRight = this.matter.add.rectangle(2120, 0, 10, 6000, { isStatic: true, label: "paredes" });
 
@@ -113,22 +120,19 @@ class Map2 extends Map {
     this.potion.setScrollFactor(0);
     this.potion_group = this.add.group();
 
-    for (let i = 0; i < 3; i++) {
-      const potion_x =13+ 32 * i;
-
-      const potion = this.add
-        .image(potion_x, 70, "potion")
-        .setOrigin(0, 0);
+    for(let i=0; i<3; i++) {
+      const potion_x = 13 + 32*i;
+      const potion = this.add.image(potion_x, 70, "potion").setOrigin(0, 0);
 
       this.potion_group.add(potion);
     }
+
     this.potion_group.children.iterate((potion) => {
       potion.setScrollFactor(0);
     });
 
     // Create characters
     this.player_spawn = this.map.findObject("player_spawn", (obj) => obj.name === "player_spawn");
-
     this.player = new Knight(this, this.player_spawn, "knight", "knight_idle-0.png", "knight_physics", 10, 3.5, 48, 30);
 
     this.player_controller = new PlayerController(this, this.player);
@@ -180,79 +184,59 @@ class Map2 extends Map {
 
     this.input.keyboard.on('keydown-C',  (event) => {
       
-      if(!cKeyPressed && this.player.healing_potions > 0) {
+      if(!cKeyPressed && this.player.healing_potions > 0 && this.player.hearts != this.player.max_health && this.player.hearts > 0) {
         cKeyPressed = true;
+
         this.player.healing_potions--;
         this.player.hearts = 10;
+
         this.player.updateHealth();
         this.updatePotion();
       }
     });
-
   }
 
   update() {
     super.update(this);
-     if(this.necro_killed){
-      console.log("necro killed")
+
+     if(this.necro_killed) {
+      this.necro_killed =  false;
+
       this.camera.fadeOut(400, 0, 0, 0);
     
       this.camera.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
         this.scene.start("treasure_room", {x: this.player.x, y: this.player.y});
       });
-      this.necro_killed =  false;
     }
-    // this.archer.updateHealthBar();
-    // this.archer.controller.update();
-    //  this.necro.controller.update();
-
-    // const distance = Phaser.Math.Distance.Between(
-    //   this.player.x,
-    //   this.player.y,
-    //   this.necro.x,
-    //   this.necro.y
-    // );
-    // if((distance > 70 && distance < 600) && !this.necro.isAttackAnimationDone) {
-    //   this.necro.controller.setState("projectileAttack");
-    // } else if (distance <= 70 && !this.necro.isAttackAnimationDone){
-    //   this.necro.controller.setState("spawn");
-    // }
-    
-    // else if(this.necro.isAttackAnimationDone) {
-    //   this.necro.controller.setState("followPlayer");
-
-    //   if(distance < 600) {
-    //     this.necro.isAttackAnimationDone = false;
-    //   }
-    // }
   }
 
-  updatePotion(){
+  updatePotion() {
     this.potion.clear();
     this.potion_group.clear(true, true);
-    if(this.player.healing_potions > 0){
+
+    if(this.player.healing_potions > 0) {
       this.potion.fillStyle(0xede6e6, 1);
       this.potion.fillRoundedRect(13, 70, 32 * this.player.healing_potions, 32, 10);
       this.potion.setScrollFactor(0);
   
-      for (let i = 0; i < this.player.healing_potions; i++) {
+      for(let i=0; i<this.player.healing_potions; i++) {
         const potion_x = 13 + 32 * i;
-  
-        const potion = this.add
-          .image(potion_x, 70, "potion")
-          .setOrigin(0, 0);  
+        const potion = this.add.image(potion_x, 70, "potion").setOrigin(0, 0);
+
         this.potion_group.add(potion);
       }
+
       this.potion_group.children.iterate((potion) => {
         potion.setScrollFactor(0);
       });
     }
-    
   }
 }
+
 function resetCKey() {
   cKeyPressed = false;
 }
+
 document.addEventListener('keyup', resetCKey);
 
 export default Map2;

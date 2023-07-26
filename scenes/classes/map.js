@@ -2,20 +2,19 @@ import { setCollision, createLayer } from "../../utils/config.js";
 
 class Map extends Phaser.Scene {
   key;
-  characters;
   map;
+  map_key;
+  camera;
   floor;
   blocks;
   wall_layer;
   barrel_layer;
   block_layer;
   trap_layer;
-  ladder_coords;
   cursors;
   pointer;
-  final_door;
 
-  constructor(key, map) {
+  constructor(key, map = key) {
     super({
       key: key,
       physics: {
@@ -29,7 +28,8 @@ class Map extends Phaser.Scene {
       },
     });
 
-    this.key = map;
+    this.key = key;
+    this.map_key = map;
   }
 
   init() {
@@ -38,22 +38,23 @@ class Map extends Phaser.Scene {
 
     this.camera = this.cameras.main;
     this.floor = 0;
-
   }
 
   preload() {
     // Load map
-    this.load.tilemapTiledJSON(this.key, `assets/tilesets/${this.key}.json`);
+    this.load.tilemapTiledJSON(this.map_key, `assets/tilesets/${this.map_key}.json`);
 
     // Load images
     this.load.image("arrow", "assets/character/archer/attack/archer_arrow.png");
     this.load.image("tileset", "assets/tilesets/tileset.png");
+
+    // Heart icons
     this.load.atlas("heart", "assets/icons/atlas/heart.png", "assets/icons/atlas/heart.json");
   }
 
   create() {
     // Create map
-    this.map = this.make.tilemap({ key: this.key });
+    this.map = this.make.tilemap({ key: this.map_key });
 
     // Create tiles
     this.blocks = this.map.addTilesetImage("tileset", "tileset");
@@ -72,10 +73,11 @@ class Map extends Phaser.Scene {
     setCollision(this, this.trap_layer);
     setCollision(this, this.barrel_layer);
 
-    this.final_door = this.map.findObject("final_door", (obj) => obj.name === "final_door");
-
     // Create camera
-    this.resetCamera();
+    const camera = this.map.findObject("camera", (obj) => obj.name == 0);
+
+    this.camera.setBounds(camera.x, camera.y, camera.properties[1].value, camera.properties[0].value);
+    this.scale.resize(1280, camera.properties[0].value);
   }
 
   update(scene) {
@@ -98,20 +100,25 @@ class Map extends Phaser.Scene {
       scene.player_controller.setState("idle");
     }
 
+    // Character jump
     const spaceJustPressed = Phaser.Input.Keyboard.JustDown(this.cursors.space);
 
     if(spaceJustPressed) {
       scene.player.jump(scene);
     }
 
-    // Camera Transitions
+    // Camera transitions
     const next_camera = this.map.findObject("camera", (obj) => obj.name == this.floor + 1);
 
     if(next_camera != null) {
 
       if(this.player.y > next_camera.y) {
-        this.scale.resize(1280, next_camera.properties[0].value);
-        this.camera.setBounds(next_camera.x, next_camera.y, next_camera.properties[1].value, next_camera.properties[0].value);
+        const cam_width = next_camera.properties[1].value;
+        const cam_height = next_camera.properties[0].value;
+
+        this.scale.resize(1280, cam_height);
+        this.camera.setBounds(next_camera.x, next_camera.y, cam_width, cam_height);
+
         this.floor++;
       }
     }
@@ -138,36 +145,38 @@ class Map extends Phaser.Scene {
             }
           }
 
-        }else if(enemy.texture.key == "necromancer"){
+        } else if(enemy.texture.key == "necromancer") {
+
           if(distance < 400 && distance >=200 && !enemy.isAttackAnimationDone) {
             enemy.controller.setState("projectileAttack");
 
-          }else if (distance < 60 && !enemy.isAttackAnimationDone){
+          } else if(distance < 60 && !enemy.isAttackAnimationDone) {
             enemy.controller.setState("spawn");
-          } 
-          else if(enemy.isAttackAnimationDone) {
+
+          } else if(enemy.isAttackAnimationDone) {
             enemy.controller.setState("followPlayer");
 
             if(distance < 400) {
               enemy.isAttackAnimationDone = false;
             }
           }
-        } else if(enemy.texture.key == "archer2"){
+
+        } else if(enemy.texture.key == "archer2") {
+
           if(distance < 600 && distance >=150 && !enemy.isAttackAnimationDone) {
             enemy.controller.setState("projectileAttack");
 
-          }else if (distance < 60 && !enemy.isAttackAnimationDone){
+          } else if (distance < 60 && !enemy.isAttackAnimationDone){
             enemy.controller.setState("melee");
-          } 
-          else if(enemy.isAttackAnimationDone) {
+
+          } else if(enemy.isAttackAnimationDone) {
             enemy.controller.setState("followPlayer");
 
             if(distance < 600) {
               enemy.isAttackAnimationDone = false;
             }
           }
-        } 
-        else {
+        } else {
 
           if(distance < 60 && !enemy.isAttackAnimationDone) {
             enemy.controller.setState("attack");
@@ -188,16 +197,9 @@ class Map extends Phaser.Scene {
         enemy.controller.setState("idle");
       }
     }
+
+    // Fall damage
     scene.player.fallDamageHandlerUpdate(scene);
-  }
-
-  resetCamera() {
-    const camera = this.map.findObject("camera", (obj) => obj.name == 0);
-
-    this.camera.setBounds(camera.x, camera.y, camera.properties[1].value, camera.properties[0].value);
-    this.scale.resize(1280, camera.properties[0].value);
-
-    this.floor = 0;
   }
 }
 

@@ -507,8 +507,8 @@
 171,172,172,172,172,172,172,172,172,172,172,172,172,175,177,177,177,177,177,177,177,177,177,177,177,177,172,172,172,172,172,172,172,172,172,172,172,172,172,172,172,172,172,183,0
 </data>
  </layer>
- <objectgroup id="16" name="player_spawn" locked="1">
-  <object id="5" name="player_spawn" x="72" y="425">
+ <objectgroup id="16" name="player_spawn">
+  <object id="5" name="player_spawn" x="73" y="380">
    <point/>
   </object>
  </objectgroup>

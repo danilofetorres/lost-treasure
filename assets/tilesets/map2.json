@@ -77,7 +77,6 @@
         {
          "draworder":"topdown",
          "id":11,
-         "locked":true,
          "name":"camera",
          "objects":[
                 {
@@ -203,8 +202,53 @@
         }, 
         {
          "draworder":"topdown",
+         "id":18,
+         "name":"treasure",
+         "objects":[
+                {
+                 "height":0,
+                 "id":52,
+                 "name":"5",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"height",
+                         "type":"int",
+                         "value":576
+                        }, 
+                        {
+                         "name":"width",
+                         "type":"int",
+                         "value":2160
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":0,
+                 "y":2304
+                }, 
+                {
+                 "height":0,
+                 "id":53,
+                 "name":"trigger",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":0,
+                 "y":2613
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":12,
-         "locked":true,
          "name":"player_spawn",
          "objects":[
                 {
@@ -217,7 +261,7 @@
                  "visible":true,
                  "width":0,
                  "x":71,
-                 "y":475
+                 "y":478
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -549,7 +593,7 @@
                  "visible":true,
                  "width":0,
                  "x":1416,
-                 "y":2306.66666666667
+                 "y":2306.67
                 }, 
                 {
                  "height":0,
@@ -1428,8 +1472,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":18,
- "nextobjectid":50,
+ "nextlayerid":19,
+ "nextobjectid":54,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.1",

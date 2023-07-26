@@ -1,17 +1,16 @@
-import { createWall, setCollision, createLayer } from "../utils/config.js";
-
 import Map from "./classes/map.js";
 import Knight from "../characters/knight.js";
 import PlayerController from "../state_machine/player/controller/playerController.js";
 
+import { createWall, createLayer } from "../utils/config.js";
 
-var cKeyPressed = false;
 class TreasureRoom extends Map {
   player;
   player_spawn;
   player_controller;
   enemies;
   projectiles;
+  in_treasure_room;
 
   constructor() {
     super("treasure_room", "map2");
@@ -22,6 +21,8 @@ class TreasureRoom extends Map {
   
     this.enemies = [];
     this.projectiles = [];
+
+    this.in_treasure_room = false;
   }
 
   preload() {
@@ -39,9 +40,10 @@ class TreasureRoom extends Map {
     this.camera.fadeIn(1000, 0, 0, 0); 
     
     super.create();
+    
     createLayer(this, "objetos");
-    createLayer(this, "baus");
     createLayer(this, "moedas");
+    createLayer(this, "baus");
     const wallCollisionLeft = this.matter.add.rectangle(40, 0, 10, 6000, { isStatic: true, label: "paredes" });
     const wallCollisionRight = this.matter.add.rectangle(2120, 0, 10, 6000, { isStatic: true, label: "paredes" });
 
@@ -99,6 +101,23 @@ class TreasureRoom extends Map {
 
   update() {
     super.update(this);
+
+    const trigger = this.map.findObject("treasure", (obj) => obj.name === "trigger");
+
+    if(this.player.y > trigger.y && !this.in_treasure_room) {
+      this.in_treasure_room = true;
+
+      const camera = this.map.findObject("treasure", (obj) => obj.name == 5);
+
+      this.scale.resize(1280, camera.properties[0].value);
+      this.camera.setBounds(camera.x, camera.y, camera.properties[1].value, camera.properties[0].value);
+
+      this.camera.fadeOut(10000, 0, 0, 0);
+
+      this.camera.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+        this.scene.start("start");
+      });
+    }
   }
 }
 
