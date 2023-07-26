@@ -33,7 +33,7 @@ class Stopwatch extends Phaser.Scene {
     });
 
     this.events.on('wake', () => {
-      timer.setText('00:00');
+      this.timer.setText('00:00');
 
       const start_time2 = Date.now(); 
 
@@ -45,7 +45,7 @@ class Stopwatch extends Phaser.Scene {
         
         const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   
-        timer.setText(formattedTime);
+        this.timer.setText(formattedTime);
       }, 1000);
     });
 
