@@ -21,7 +21,7 @@
     <h1 id="title">The Quest for The Lost Treasure</h1>
     <div class="buttons">
       <button type="button" class="btn btn-danger ldb" data-bs-toggle="modal" data-bs-target="#leaderboard">Leaderboard</button>
-      <button class="btn btn-danger">Controls</button>
+      <button type="button" class="btn btn-danger ctrls" data-bs-toggle="modal" data-bs-target="#controls">Controls</button>
     </div>
     <div class="modal fade" id="leaderboard" tabindex="-1" aria-labelledby="leaderboardLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -31,6 +31,20 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">Loading... (this might take about 20s)</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="controls" tabindex="-1" aria-labelledby="controlsLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="controlsLabel">Controls</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body"><p>A - andar para a esquerda </p> <p>D - andar para a direita </p> <p>Barra de Espaço - pular </p> <p> C - Usar poção de cura (fase 2) </p> <p> Botão esquerdo do mouse (segurar) - atacar </p></div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
           </div>
