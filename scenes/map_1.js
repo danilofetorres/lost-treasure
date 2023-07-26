@@ -103,6 +103,7 @@ class Map1 extends Map {
         enemy.trapCollider(event, this);
       }
     });  
+    this.destroy();
   }
 
   update() {

@@ -109,17 +109,16 @@ class Map2 extends Map {
 
     this.potion = this.add.graphics();
     this.potion.fillStyle(0xede6e6, 1);
-    this.potion.fillRoundedRect(13, 70, 240, 80, 10);
+    this.potion.fillRoundedRect(13, 70, 96, 32, 10);
     this.potion.setScrollFactor(0);
     this.potion_group = this.add.group();
 
     for (let i = 0; i < 3; i++) {
-      const potion_x = 20 + 80 * i;
+      const potion_x =13+ 32 * i;
 
       const potion = this.add
-        .image(potion_x, 80, "potion")
-        .setOrigin(0, 0)
-        .setScale(2);
+        .image(potion_x, 70, "potion")
+        .setOrigin(0, 0);
 
       this.potion_group.add(potion);
     }
@@ -233,17 +232,15 @@ class Map2 extends Map {
     this.potion_group.clear(true, true);
     if(this.player.healing_potions > 0){
       this.potion.fillStyle(0xede6e6, 1);
-      this.potion.fillRoundedRect(13, 70, 80 * this.player.healing_potions, 80, 10);
+      this.potion.fillRoundedRect(13, 70, 32 * this.player.healing_potions, 32, 10);
       this.potion.setScrollFactor(0);
   
       for (let i = 0; i < this.player.healing_potions; i++) {
-        const potion_x = 20 + 80 * i;
+        const potion_x = 13 + 32 * i;
   
         const potion = this.add
-          .image(potion_x, 80, "potion")
-          .setOrigin(0, 0)
-          .setScale(2);
-  
+          .image(potion_x, 70, "potion")
+          .setOrigin(0, 0);  
         this.potion_group.add(potion);
       }
       this.potion_group.children.iterate((potion) => {

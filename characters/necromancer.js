@@ -63,7 +63,7 @@ class Necromancer extends Enemy {
     createAnim(scene, "walk", "necromancer", 9, this.id, 0, 10, -1);
     createAnim(scene, "attack", "necromancer", 46, this.id, 0, 50, -1);
     createAnim(scene, "death", "necromancer", 51, this.id, 0, 30, 0);
-    createAnim(scene, "spawn", "necromancer", 19, this.id, 0, 10, -1);
+    createAnim(scene, "spawn", "necromancer", 19, this.id, 0, 15, -1);
 
     this.can_hit = true;
 
