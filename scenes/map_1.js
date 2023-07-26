@@ -1,4 +1,4 @@
-import { createLayer, createWall } from "../../utils/config.js";
+import { createLayer, createWall } from "../utils/config.js";
 
 import Map from "./classes/map.js";
 import Knight from "../characters/knight.js";
