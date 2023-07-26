@@ -18,10 +18,12 @@ class Map2 extends Map {
   projectiles;
   bloco_removivel_layer;
   archer;
-  necro_killed = true;
+  necro_killed = false;
+  potion;
+  potion_group;
 
   constructor() {
-    super("map2");
+    super("map2", "map2");
   }
 
   init() {
@@ -52,6 +54,8 @@ class Map2 extends Map {
     
     this.load.atlas("archer2", "assets/character/archer_2/atlas/archer.png", "assets/character/archer_2/atlas/archer.json");
     this.load.json("archer2_physics", "assets/character/archer_2/physics/archer2.json");
+
+    this.load.image("potion", "assets/icons/potion.png");
   }
 
   create() {
@@ -103,6 +107,26 @@ class Map2 extends Map {
     createWall(this, wall_13);
     createWall(this, wall_14);
 
+    this.potion = this.add.graphics();
+    this.potion.fillStyle(0xede6e6, 1);
+    this.potion.fillRoundedRect(13, 70, 240, 80, 10);
+    this.potion.setScrollFactor(0);
+    this.potion_group = this.add.group();
+
+    for (let i = 0; i < 3; i++) {
+      const potion_x = 20 + 80 * i;
+
+      const potion = this.add
+        .image(potion_x, 80, "potion")
+        .setOrigin(0, 0)
+        .setScale(2);
+
+      this.potion_group.add(potion);
+    }
+    this.potion_group.children.iterate((potion) => {
+      potion.setScrollFactor(0);
+    });
+
     // Create characters
     this.player_spawn = this.map.findObject("player_spawn", (obj) => obj.name === "player_spawn");
 
@@ -119,7 +143,6 @@ class Map2 extends Map {
     this.enemies.push(necromancer);
 
     let enemy_id = 0;
-    console.log(this.cursors);
 
     for(let i=1; i<=8; i++){
       const spawn = this.map.findObject("archer2_spawn", (obj) => obj.name === `spawn_${i}`);
@@ -135,7 +158,7 @@ class Map2 extends Map {
       this.enemies.push(archer);
     }
 
-    for(let i=1; i<=22; i++) {
+    for(let i=4; i<=22; i++) {
       const spawn = this.map.findObject("warrior_spawn", (obj) => obj.name === `spawn_${i}`);
       const warrior = new Warrior(enemy_id++, this, spawn, "warrior", "warrior_idle-0.png", "warrior_physics", 3, 1.5, 48, 30);
 
@@ -163,17 +186,22 @@ class Map2 extends Map {
         this.player.healing_potions--;
         this.player.hearts = 10;
         this.player.updateHealth();
+        this.updatePotion();
       }
     });
+
   }
 
   update() {
     super.update(this);
      if(this.necro_killed){
-
-      //this.bloco_removivel_layer.setCollisionByProperty({ collides: false });
-      this.bloco_removivel_layer.destroy();
-      this.necro_killed = false;
+      console.log("necro killed")
+      this.camera.fadeOut(400, 0, 0, 0);
+    
+      this.camera.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+        this.scene.start("treasure_room", {x: this.player.x, y: this.player.y});
+      });
+      this.necro_killed =  false;
     }
     // this.archer.updateHealthBar();
     // this.archer.controller.update();
@@ -198,6 +226,31 @@ class Map2 extends Map {
     //     this.necro.isAttackAnimationDone = false;
     //   }
     // }
+  }
+
+  updatePotion(){
+    this.potion.clear();
+    this.potion_group.clear(true, true);
+    if(this.player.healing_potions > 0){
+      this.potion.fillStyle(0xede6e6, 1);
+      this.potion.fillRoundedRect(13, 70, 80 * this.player.healing_potions, 80, 10);
+      this.potion.setScrollFactor(0);
+  
+      for (let i = 0; i < this.player.healing_potions; i++) {
+        const potion_x = 20 + 80 * i;
+  
+        const potion = this.add
+          .image(potion_x, 80, "potion")
+          .setOrigin(0, 0)
+          .setScale(2);
+  
+        this.potion_group.add(potion);
+      }
+      this.potion_group.children.iterate((potion) => {
+        potion.setScrollFactor(0);
+      });
+    }
+    
   }
 }
 function resetCKey() {

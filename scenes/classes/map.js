@@ -15,7 +15,7 @@ class Map extends Phaser.Scene {
   pointer;
   final_door;
 
-  constructor(key) {
+  constructor(key, map) {
     super({
       key: key,
       physics: {
@@ -29,7 +29,7 @@ class Map extends Phaser.Scene {
       },
     });
 
-    this.key = key;
+    this.key = map;
   }
 
   init() {

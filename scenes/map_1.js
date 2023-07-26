@@ -18,7 +18,7 @@ class Map1 extends Map {
   king_killed = false;
 
   constructor() {
-    super("map1");
+    super("map1", "map1");
   }
 
   init() {
